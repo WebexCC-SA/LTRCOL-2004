@@ -1,5 +1,3 @@
 # Lab topologies
 
-<figure markdown>
-  ![ACI](./assets/aci.png)
-</figure>
+NEED TO UPDATE THIS WITH CORRECT IMAGE

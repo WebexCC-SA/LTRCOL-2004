@@ -94,6 +94,7 @@ nav:
       - Module 2 - Webex Zero Trust Encryption: module2_zero_trust_encryption.md
       - Module 3 - Webex Compliance: module3_compliance.md
       - Conclusion: conclusion.md
+      - Appendix: appendix.md
   - Topologies: topologies.md
   - How to use this guide:
       - Setting up and using the tool:
