@@ -35,64 +35,59 @@ available with Webex deployments, including:
 
 [Getting Started](#getting-started)
 
-[Module 1: Webex Identity and Authentication/Authorization with Duo](#module-1-webex-identity-and-authenticationauthorization-with-duo)
+[Module 1: Webex Identity and Authentication/Authorization with Duo](module1_identity.md#module-1-webex-identity-and-authenticationauthorization-with-duo)
 
-[Sync Users from Active Directory to Duo](#sync-users-from-active-directory-to-duo)
+[Sync Users from Active Directory to Duo](module1_identity.md#sync-users-from-active-directory-to-duo)
 
-[Sync Users from Duo to Webex](#sync-users-from-duo-to-webex)
+[Sync Users from Duo to Webex](module1_identity.md#sync-users-from-duo-to-webex)
 
-[Webex Licensing and Settings Templates](#webex-licensing-and-settings-templates)
+[Webex Licensing and Settings Templates](module1_identity.md#webex-licensing-and-settings-templates)
 
-[Configuring Duo to Use Active Directory for User Authentication](#configuring-duo-to-use-active-directory-for-user-authentication)
+[Configuring Duo to Use Active Directory for User Authentication](module1_identity.md#configuring-duo-to-use-active-directory-for-user-authentication)
 
-[Single Sign-On with Webex and Duo (SAML and OIDC)](#single-sign-on-with-webex-and-duo-saml-and-oidc)
+[Single Sign-On with Webex and Duo (SAML and OIDC)](module1_identity.md#single-sign-on-with-webex-and-duo-saml-and-oidc)
 
-[Duo SSO Setup (SAML)](#duo-sso-setup-saml)
+[Duo SSO Setup (SAML)](module1_identity.md#duo-sso-setup-saml)
 
-[Duo SSO Setup (OIDC)](#duo-sso-setup-oidc)
+[Duo SSO Setup (OIDC)](module1_identity.md#duo-sso-setup-oidc)
 
-[OpenID Connect -- Proof Key for Code Exchange (PKCE)](#openid-connect-proof-key-for-code-exchange-pkce)
+[OpenID Connect -- Proof Key for Code Exchange (PKCE)](module1_identity.md#openid-connect-proof-key-for-code-exchange-pkce)
 
-[Multiple Identity Providers with Webex](#multiple-identity-providers-with-webex)
+[Multiple Identity Providers with Webex](module1_identity.md#multiple-identity-providers-with-webex)
 
-[Enable Multi-Factor Authentication (MFA) using Duo](#enable-multi-factor-authentication-mfa-using-duo)
+[Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
 
-[Module 2: Webex Compliance with Webex and Cisco Cloudlock and Theta
-Lake](#module-2-webex-compliance-with-webex-and-cisco-cloudlock-and-theta-lake)
+[Generating User Data for Compliance in Meetings](module2_zero_trust_encryption.md#generating-user-data-for-compliance-in-meetings)
 
-[Webex Compliance and Preparing for Compliance Platform Integration](#webex-compliance-and-preparing-for-compliance-platform-integration)
+[Provision users and enable recording for Webex Calling for data compliance.](module2_zero_trust_encryption.md#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
 
-[Integrate Webex with Cloudlock and Configure DLP Policies](#integrate-webex-with-cloudlock-and-configure-dlp-policies)
+[Explore Compliance Options for Webex Meetings in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-meetings-in-theta-lake)
 
-[Generate user data via Webex App and Observe DLP Operation](#generate-user-data-via-webex-app-and-observe-dlp-operation)
+[Explore Compliance Options for Webex Calling in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-calling-in-theta-lake)
 
-[Explore Theta Lake eDiscovery and Legal Hold](#explore-theta-lake-ediscovery-and-legal-hold)
+[Schedule an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#schedule-an-end-to-end-encrypted-meeting)
 
-[Archiving](#archiving)
+[Features in an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#features-in-an-end-to-end-encrypted-meeting)
 
-[eDiscovery / Legal Hold](#ediscovery--legal-hold)
+[Audio and Visual Watermarking and Watermark Analysis](module2_zero_trust_encryption.md#audio-and-visual-watermarking-and-watermark-analysis)
 
-[Observer Webex Anti-Malware Protection (AMP)](#observer-webex-anti-malware-protection-amp)
+[Enable Multi-Factor Authentication (MFA) using Duo](module1_identity.md#enable-multi-factor-authentication-mfa-using-duo)
 
-[Module 3: Webex Meetings, Calling, and Slido Compliance and End-to-End
-Encrypted Meetings with Zero Trust](#module-3-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+[Module 3: Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
 
-[Generating User Data for Compliance in Meetings](#generating-user-data-for-compliance-in-meetings)
+[Webex Compliance and Preparing for Compliance Platform Integration](module3_compliance.md#webex-compliance-and-preparing-for-compliance-platform-integration)
 
-[Provision users and enable recording for Webex Calling for data
-compliance.](#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
+[Integrate Webex with Cloudlock and Configure DLP Policies](module3_compliance.md#integrate-webex-with-cloudlock-and-configure-dlp-policies)
 
-[Explore Compliance Options for Webex Meetings in Theta Lake](#explore-compliance-options-for-webex-meetings-in-theta-lake)
+[Generate user data via Webex App and Observe DLP Operation](module3_compliance.md#generate-user-data-via-webex-app-and-observe-dlp-operation)
 
-[Schedule an End-to-End Encrypted Meeting](#schedule-an-end-to-end-encrypted-meeting)
+[Explore Theta Lake eDiscovery and Legal Hold](module3_compliance.md#explore-theta-lake-ediscovery-and-legal-hold)
 
-[Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
+[Observe Webex Anti-Malware Protection (AMP)](module3_compliance.md#observe-webex-anti-malware-protection-amp)
 
-[Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
+[Appendix](appendix.md#appendix)
 
-[Appendix](#appendix)
-
-[Explore Webex eDiscovery Search and Extraction Portal](#explore-webex-ediscovery-search-and-extraction-portal)
+[Explore Webex eDiscovery Search and Extraction Portal](appendix.md#explore-webex-ediscovery-search-and-extraction-portal)
 
 ---
 
@@ -100,10 +95,10 @@ compliance.](#provision-users-and-enable-recording-for-webex-calling-for-data-co
 - **About This Lab** → [About This Lab](#about-this-lab)
 - **Topology** → [Lab Topology](#topology)  
 - **Getting Started** → [Getting Started](#getting-started)
-- **Module 1** → [Webex Identity and Authentication/Authorization with Duo](#module-1-webex-identity-and-authenticationauthorization-with-duo)
-- **Module 2** → [Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](#module-2-webex-compliance-with-webex-and-cisco-cloudlock-and-theta-lake)
-- **Module 3** → [Webex End-to-End Encryption and Zero Trust Meetings with Verified Identity](#module-3-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
-- **Appendix** → [Explore Webex eDiscovery Search and Extraction Portal](#appendix)
+- **Module 1** → [Webex Identity and Authentication/Authorization with Duo](module1_identity.md#module-1-webex-identity-and-authenticationauthorization-with-duo)
+- **Module 2** → [Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
+- **Module 3** → [Webex End-to-End Encryption and Zero Trust Meetings with Verified Identity](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+- **Appendix** → [Explore Webex eDiscovery Search and Extraction Portal](appendix.md#appendix)
 
 ---
 
@@ -134,17 +129,15 @@ this lab guide will walk you through the entire lab.
 ## Lab Details
 This lab contains 3 modules:
 
-- [Module 1: Webex Identity and Authentication/Authorization with
-  Duo](#module-1-webex-identity-and-authenticationauthorization-with-duo)
+- [Module 1: Webex Identity and Authentication/Authorization with Duo](module1_identity.md#module-1-webex-identity-and-authenticationauthorization-with-duo)
 
      This module explores Webex identity, provisioning, and
      authentication/authorization using Duo. This module explores SSO using
      SAML and OpenID Connect along with setting up multiple Identity
-     Providers (IdP) in one organization.\
+     Providers (IdP) in one organization.
      (Components: Active Directory, Webex Control Hub, Duo)
 
-- [Module 2: Webex Compliance with Webex and Cisco Cloudlock and Theta
-  Lake](#module-2-webex-compliance-with-webex-and-cisco-cloudlock-and-theta-lake)
+- [Module 2: Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
   
      This module examines Webex compliance for messaging including
      integration to cloud-based DLP and archiving systems. It also examines
@@ -153,8 +146,7 @@ This lab contains 3 modules:
      (Components: Webex Control Hub, eDiscovery Search and Extraction,
      Cisco Cloudlock, Theta Lake)
 
-- [Module 3: Webex End-to-End Encryption and Zero Trust Meetings with
-  Verified Identity](#module-3-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+- [Module 3: Webex End-to-End Encryption and Zero Trust Meetings with Verified Identity](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
   
      This module investigates zero trust Webex Meetings with end-to-end
      encryption (E2EE) and verified identity. It also explores, meeting

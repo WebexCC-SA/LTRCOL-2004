@@ -801,6 +801,6 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
 
       ![](./media/image241.png)
 
-This concludes the module on Webex compliance with Webex, Cisco Cloudlock and Theta Lake. Proceed to Module #3.
+This concludes the module on Webex compliance with Webex, Cisco Cloudlock and Theta Lake.
 
 **\*\*\* END of MODULE #2 \*\*\***

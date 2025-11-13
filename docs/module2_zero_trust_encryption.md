@@ -1,4 +1,4 @@
-# Module 3: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust
+# Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust
 In this module, you will learn about Zero-Trust End-to-End Encryption.
 We will walk you through the process of verifying compliance policies
 for your standard meetings, scheduling an end-to-end encrypted meeting,
@@ -7,7 +7,6 @@ participants' identity, and finally setting up compliance policies for
 your end-to-end encrypted meetings.
 
 There are 7 sections in this module:
-
 
 i. [Generating User Data for Compliance in Meetings](#generating-user-data-for-compliance-in-meetings)
 
@@ -199,6 +198,8 @@ verbally mentioning credit card numbers/SSN/DOB). You will learn how Theta Lake 
 
 We want you to spend some time reviewing some of the compliance options
 for Webex Calling available in Theta Lake.
+
+## Explore Compliance Options for Webex Calling in Theta Lake
 
 Theta lake offers Compliance and Security for Webex Cloud Calling &
 Customer Assist. Theta Lake's turn-key archiving, compliance,
