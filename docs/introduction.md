@@ -1,0 +1,294 @@
+![](./media/image1.png)
+
+![](./media/image2.png)
+
+# Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+
+This lab explores Webex security and educates attendees on the practical
+steps required to enable and manage security features and functions
+available with Webex deployments, including:
+
+- Identity, Authentication (AuthN), and Authorization (AuthZ): Enable
+  user provisioning and directory synchronization, explore settings and
+  licensing templates, enable multi-factor authentication, and configure
+  single sign-on (SSO) using SAML and OpenID Connect.
+
+- End-to-End (E2E) Encryption: Examine Webex Zero Trust End-to-End
+  encrypted meetings, DLP compliance, and digital watermarking
+  capabilities in Webex Meetings.
+
+- Compliance: Investigate Webex data control including data loss
+  prevention (DLP), eDiscovery, anti-malware protection, and data
+  retention with built-in Webex capabilities and integrations to
+  external compliance platforms. Cisco Cloudlock, and Theta Lake will be
+  used to explore DLP and other compliance operations for Webex.
+
+**Table of Contents**
+
+[About This Lab](#about-this-lab)
+
+[Requirements](#requirements)
+
+[Lab Details](#lab-details)
+
+[Topology](#topology)
+
+[Getting Started](#getting-started)
+
+[Module 1: Webex Identity and Authentication/Authorization with Duo](#module-1-webex-identity-and-authenticationauthorization-with-duo)
+
+[Sync Users from Active Directory to Duo](#sync-users-from-active-directory-to-duo)
+
+[Sync Users from Duo to Webex](#sync-users-from-duo-to-webex)
+
+[Webex Licensing and Settings Templates](#webex-licensing-and-settings-templates)
+
+[Configuring Duo to Use Active Directory for User Authentication](#configuring-duo-to-use-active-directory-for-user-authentication)
+
+[Single Sign-On with Webex and Duo (SAML and OIDC)](#single-sign-on-with-webex-and-duo-saml-and-oidc)
+
+[Duo SSO Setup (SAML)](#duo-sso-setup-saml)
+
+[Duo SSO Setup (OIDC)](#duo-sso-setup-oidc)
+
+[OpenID Connect -- Proof Key for Code Exchange (PKCE)](#openid-connect-proof-key-for-code-exchange-pkce)
+
+[Multiple Identity Providers with Webex](#multiple-identity-providers-with-webex)
+
+[Enable Multi-Factor Authentication (MFA) using Duo](#enable-multi-factor-authentication-mfa-using-duo)
+
+[Module 2: Webex Compliance with Webex and Cisco Cloudlock and Theta
+Lake](#module-2-webex-compliance-with-webex-and-cisco-cloudlock-and-theta-lake)
+
+[Webex Compliance and Preparing for Compliance Platform Integration](#webex-compliance-and-preparing-for-compliance-platform-integration)
+
+[Integrate Webex with Cloudlock and Configure DLP Policies](#integrate-webex-with-cloudlock-and-configure-dlp-policies)
+
+[Generate user data via Webex App and Observe DLP Operation](#generate-user-data-via-webex-app-and-observe-dlp-operation)
+
+[Explore Theta Lake eDiscovery and Legal Hold](#explore-theta-lake-ediscovery-and-legal-hold)
+
+[Archiving](#archiving)
+
+[eDiscovery / Legal Hold](#ediscovery--legal-hold)
+
+[Observer Webex Anti-Malware Protection (AMP)](#observer-webex-anti-malware-protection-amp)
+
+[Module 3: Webex Meetings, Calling, and Slido Compliance and End-to-End
+Encrypted Meetings with Zero Trust](#module-3-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+
+[Generating User Data for Compliance in Meetings](#generating-user-data-for-compliance-in-meetings)
+
+[Provision users and enable recording for Webex Calling for data
+compliance.](#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
+
+[Explore Compliance Options for Webex Meetings in Theta Lake](#explore-compliance-options-for-webex-meetings-in-theta-lake)
+
+[Schedule an End-to-End Encrypted Meeting](#schedule-an-end-to-end-encrypted-meeting)
+
+[Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
+
+[Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
+
+[Appendix](#appendix)
+
+[Explore Webex eDiscovery Search and Extraction Portal](#explore-webex-ediscovery-search-and-extraction-portal)
+
+---
+
+## Lab Sections Quick Links
+- **About This Lab** → [About This Lab](#about-this-lab)
+- **Topology** → [Lab Topology](#topology)  
+- **Getting Started** → [Getting Started](#getting-started)
+- **Module 1** → [Webex Identity and Authentication/Authorization with Duo](#module-1-webex-identity-and-authenticationauthorization-with-duo)
+- **Module 2** → [Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](#module-2-webex-compliance-with-webex-and-cisco-cloudlock-and-theta-lake)
+- **Module 3** → [Webex End-to-End Encryption and Zero Trust Meetings with Verified Identity](#module-3-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+- **Appendix** → [Explore Webex eDiscovery Search and Extraction Portal](#appendix)
+
+---
+
+# About This Lab
+Cisco Webex provides customers with a comprehensive set of security and
+compliance capabilities across the Webex suite. This includes:
+
+- On-premises or cloud corporate directory integration capabilities for
+  managing Webex user identity and service provisioning.
+
+- Support for standard-based Security Assertion Markup Language (SAML)
+  and Open ID Connect (OIDC) authentication and authorization mechanisms
+  with single sign-on (SSO) and multi-factor authentication.
+
+- Built-in policy and compliance functionality as well as configurable
+  integration(s) to third-party data loss prevention (DLP), eDiscovery,
+  and Archival vendor solutions for messaging and meeting compliance.
+
+- State of the art end-to-end encryption and verified identity
+  capabilities for zero trust meetings on the encrypted in transit,
+  encrypted at rest Webex architecture to ensure that customer data is
+  always protected.
+
+## Requirements
+There are no requirements for this lab beyond the laptop provided and
+this lab guide will walk you through the entire lab.
+
+## Lab Details
+This lab contains 3 modules:
+
+- [Module 1: Webex Identity and Authentication/Authorization with
+  Duo](#module-1-webex-identity-and-authenticationauthorization-with-duo)
+
+     This module explores Webex identity, provisioning, and
+     authentication/authorization using Duo. This module explores SSO using
+     SAML and OpenID Connect along with setting up multiple Identity
+     Providers (IdP) in one organization.\
+     (Components: Active Directory, Webex Control Hub, Duo)
+
+- [Module 2: Webex Compliance with Webex and Cisco Cloudlock and Theta
+  Lake](#module-2-webex-compliance-with-webex-and-cisco-cloudlock-and-theta-lake)
+  
+     This module examines Webex compliance for messaging including
+     integration to cloud-based DLP and archiving systems. It also examines
+     eDiscovery and Legal Hold capabilities as well as anti-malware
+     protection (AMP).\
+     (Components: Webex Control Hub, eDiscovery Search and Extraction,
+     Cisco Cloudlock, Theta Lake)
+
+- [Module 3: Webex End-to-End Encryption and Zero Trust Meetings with
+  Verified Identity](#module-3-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+  
+     This module investigates zero trust Webex Meetings with end-to-end
+     encryption (E2EE) and verified identity. It also explores, meeting
+     compliance with Theta Lake.\
+     (Components: Webex Control Hub, Theta Lake)
+
+Upon completion of all modules, participants will gain a good working
+knowledge of the latest Webex security capabilities including identity
+management and provisioning with SSO, using multiple IdPs, messaging and
+meeting compliance with DLP/eDiscovery/Archive integrations, and zero
+trust E2EE meetings with verified identity.
+
+# Topology
+This overall topology for this lab is shown in Figure 1 below. The
+topology consists of:
+
+- An on-premises network with Microsoft application server (e.g.,
+  Microsoft Active Directory / Domain Name Service (DNS)).
+
+- Three on-premises Windows Workstations with the Webex App serving as
+  the software client used throughout this lab. These workstations are
+  also used for all configuration as outlined in this guide.
+
+- Dedicated Webex organization enabling the delivery of cloud
+  collaboration services including meeting, messaging, and calling.
+
+- Dedicated cloud service components for identity and compliance (Duo,
+  Cisco Cloudlock, Theta Lake).
+
+![Figure 1. Webex Security Lab
+Topology](./media/image4.png)
+
+This lab includes pre-configured users and components to facilitate the
+lab scenarios covering the features and capabilities of Webex security.
+Most components are fully configurable with predefined administrative
+user accounts.
+
+Refer to the Server and Application Credentials and
+Details table (Table 1) below for application server IP
+addresses and administration account credentials for accessing lab
+components and performing the required configuration and operations.
+
+Note: You may not use all the components listed in Table 1 for this lab.
+
+
+## Server and Application Credentials
+> **Note**: WW, XXX, YY, and ZZZZ in the credentials below are unique to your pod. Refer to your eXpo page for these values.
+
+### Active Directory & DNS
+- **Host Name**: ad1.dcloud.cisco.com
+- **IP Address**: 198.18.133.1
+- **Username**: administrator
+- **Password**: dCloud123!
+- **Description**: Windows Server 2012
+
+### Workstation 1
+- **Host Name**: wkst1.dcloud.cisco.com
+- **IP Address**: 198.18.1.36
+- **Windows Username**: cholland / dCloud123!
+- **Webex App User**: cholland@cbXXX.dc-YY.com
+      - SSO disabled: **dCloudZZZZ!**
+      - SSO enabled: **dCloud123!**
+
+### Workstation 2
+- **Host Name**: wkst2.dcloud.cisco.com
+- **IP Address**: 198.18.1.37
+- **Windows Username**: aperez / dCloud123!
+- **Webex App User**: aperez@cbXXX.dc-YY.com
+      - SSO disabled: **dCloudZZZZ!**
+      - SSO enabled: **dCloud123!**
+
+### Workstation 3
+- **Host Name**: wkst3.dcloud.cisco.com
+- **IP Address**: 198.18.1.38
+- **Windows Username**: kmelby / dCloud123!
+- **Webex App User**: kmelby@cbXXX.dc-YY.com
+      - SSO disabled: **dCloudZZZZ!**
+      - SSO enabled: **dCloud123!**
+
+### Webex Control Hub
+- **URL**: https://admin.webex.com/
+- **Users**: cholland@cbXXX.dc-YY.com, aperez@cbXXX.dc-YY.com
+- **Password** (SSO disabled): **dCloudZZZZ!**
+- **Password** (SSO enabled): **dCloud123!**
+
+### Cisco Duo Admin Portal
+- **URL**: https://admin-demodemo.duosecurity.com
+- **Username**: cholland@cbXXX.dc-YY.com
+- **Password**: dCloud12345!
+
+### Cisco Cloudlock
+- **URL**: https://demo.cloudlockng.com/
+- **Username**: aperez@cbXXX.dc-YY.com
+- **Password** (SSO disabled): **dCloudZZZZ!**
+- **Password** (SSO enabled): **dCloud123!**
+
+### Theta Lake
+- **URL**: https://useast.thetalake.ai/
+- **Username**: aperez@cbXXX.dc-YY.com
+- **Password**: dCloud123!
+
+---
+# Getting Started
+Follow the steps below to connect to your lab pod before proceeding with
+Module 1.
+
+1. From your workstation, navigate to the eXpo URL in Chrome.
+
+      Link to eXpo: https://expo.ciscodcloud.com/cq1rgx82s4q2slxqiim1f760e
+
+      Click **Explore**, enter your email address and accept the disclaimer.
+      On the eXpo page, you will see two important tabs, **Network** and
+      **Details**. To connect to your VMs, you will navigate to the
+      **Network** tab and click the **Remote Desktop** link for the VM that
+      the lab guide instructs you to access.
+
+      ![](./media/image5.png)
+
+1. You can find the last 4 digits of your unique **Session ID** on the
+    eXpo page. This is needed when authenticating to Webex prior to
+    enabling SSO. You will also need the domain that is unique to your
+    dCloud session. This can be found by clicking **Details** \> **DNS
+    Address** on your eXpo page.
+
+      ![](./media/image6.png)
+
+1. In addition to connecting to the AD server and workstations via web
+    RDP for endpoint operations, you will use a web browser and other
+    applications on the workstations (as indicated in this lab guide) to
+    perform all operations and configuration.
+
+In this lab, you will primarily utilize the following VMs:
+
+- Active Directory: ad1.dcloud.cisco.com
+- Workstation 1: wkst1.dcloud.cisco.com
+- Workstation 2: wkst2.dcloud.cisco.com
+- Workstation 3: wkst3.dcloud.cisco.com
