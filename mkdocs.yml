@@ -87,8 +87,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Lab:
-      - Overview: overview.md
-      - Placeholder: lab1_getting_started.md
       - Introduction: introduction.md
       - Module 1 - Webex Identity: module1_identity.md
       - Module 2 - Webex Zero Trust Encryption: module2_zero_trust_encryption.md
