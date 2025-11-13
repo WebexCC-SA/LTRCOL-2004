@@ -93,7 +93,6 @@ nav:
       - Module 3 - Webex Compliance: module3_compliance.md
       - Conclusion: conclusion.md
       - Appendix: appendix.md
-  - Topologies: topologies.md
   - How to use this guide:
       - Setting up and using the tool:
         - Initial Setup: howToUse/initialSetup.md

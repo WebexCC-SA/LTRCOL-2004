@@ -1,3 +1,0 @@
-# Lab topologies
-
-NEED TO UPDATE THIS WITH CORRECT IMAGE
