@@ -11,7 +11,7 @@ iii. [Generate user data via Webex App and Observe DLP Operation](#generate-user
 
 iv. [Explore Theta Lake eDiscovery and Legal Hold](#explore-theta-lake-ediscovery-and-legal-hold)
 
-v. [Observer Webex Anti-Malware Protection (AMP)](#observer-webex-anti-malware-protection-amp)
+v. [Observe Webex Anti-Malware Protection (AMP)](#observe-webex-anti-malware-protection-amp)
 
 Compliance integrations are critical for protecting an organization's private data from leakage and ensuring that it complies with appropriate rules and laws related to maintaining business and communication records.
 
@@ -66,7 +66,7 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 | **Webex (built-in)** | - Data retention<br>- External communications<br>- Collaboration restrictions | [Webex Compliance and Preparing for Compliance Platform Integration](#webex-compliance-and-preparing-for-compliance-platform-integration) |
 | **Cisco Cloudlock** | - Near real-time message & file DLP<br>- Real-time file DLP | [Integrate Webex with Cloudlock and Configure DLP Policies](#integrate-webex-with-cloudlock-and-configure-dlp-policies)<br><br>[Generate user data via Webex App and Observe DLP Operation](#generate-user-data-via-webex-app-and-observe-dlp-operation) |
 | **Theta Lake** | - eDiscovery & Legal Hold<br>- Archival | [Explore Theta Lake eDiscovery and Legal Hold](#explore-theta-lake-ediscovery-and-legal-hold) |
-| **Webex built-in Anti-Malware Protection** | - Anti-malware protection (AMP) | [Observer Webex Anti-Malware Protection (AMP)](#observer-webex-anti-malware-protection-amp) |
+| **Webex built-in Anti-Malware Protection** | - Anti-malware protection (AMP) | [Observe Webex Anti-Malware Protection (AMP)](#observe-webex-anti-malware-protection-amp) |
 
 ## Webex Compliance and Preparing for Compliance Platform Integration
 1. Enable compliance officer role for user Anita Perez.
