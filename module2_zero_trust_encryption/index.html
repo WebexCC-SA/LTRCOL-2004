@@ -1,0 +1,1742 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance">
+      
+      
+        <meta name="author" content="Scott Kiewert">
+      
+      
+      
+        <link rel="prev" href="../module1_identity/">
+      
+      
+        <link rel="next" href="../module3_compliance/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/cisco_logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Module 2 - Webex Zero Trust Encryption - LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-header__button md-logo" aria-label="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/cisco_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 2 - Webex Zero Trust Encryption
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Lab
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../topologies/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Topologies
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../howToUse/initialSetup/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  How to use this guide
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-nav__button md-logo" aria-label="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/cisco_logo.png" alt="logo">
+
+    </a>
+    LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lab
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1_identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Webex Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Webex Zero Trust Encryption
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Webex Zero Trust Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generating-user-data-for-compliance-in-meetings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generating User Data for Compliance in Meetings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provision-users-and-enable-recording-for-webex-calling-for-data-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provision users and enable recording for Webex Calling for data compliance.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-compliance-options-for-webex-meetings-in-theta-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore Compliance Options for Webex Meetings in Theta Lake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-compliance-options-for-webex-calling-in-theta-lake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore Compliance Options for Webex Calling in Theta Lake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schedule-an-end-to-end-encrypted-meeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schedule an End-to-End Encrypted Meeting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#features-in-an-end-to-end-encrypted-meeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Features in an End-to-End Encrypted Meeting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audio-and-visual-watermarking-and-watermark-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio and Visual Watermarking and Watermark Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3_compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Webex Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topologies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Topologies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to use this guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How to use this guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up and using the tool
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Setting up and using the tool
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/initialSetup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Initial Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/postInitial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the tool after the initial setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/syncChanges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publishing your changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Styling and Advanced Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Styling and Advanced Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Markdown and Other References
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/customFeatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../howToUse/admonition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Admonitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust">Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust</h1>
+<p>In this module, you will learn about Zero-Trust End-to-End Encryption.
+We will walk you through the process of verifying compliance policies
+for your standard meetings, scheduling an end-to-end encrypted meeting,
+verifying that meeting indeed is end-to-end encrypted, verifying
+participants' identity, and finally setting up compliance policies for
+your end-to-end encrypted meetings.</p>
+<p>There are 7 sections in this module:</p>
+<p>i. <a href="#generating-user-data-for-compliance-in-meetings">Generating User Data for Compliance in Meetings</a></p>
+<p>ii. <a href="#provision-users-and-enable-recording-for-webex-calling-for-data-compliance">Provision users and enable recording for Webex Calling for data compliance</a></p>
+<p>iii. <a href="#explore-compliance-options-for-webex-meetings-in-theta-lake">Explore Compliance Options for Webex Meetings in Theta Lake</a></p>
+<p>iv. <a href="#explore-compliance-options-for-webex-calling-in-theta-lake">Explore Compliance Options for Webex Calling in Theta Lake</a></p>
+<p>v. <a href="#schedule-an-end-to-end-encrypted-meeting">Schedule an End-to-End Encrypted Meeting</a></p>
+<p>vi. <a href="#features-in-an-end-to-end-encrypted-meeting">Features in an End-to-End Encrypted Meeting</a></p>
+<p>vii. <a href="#audio-and-visual-watermarking-and-watermark-analysis">Audio and Visual Watermarking and Watermark Analysis</a></p>
+<h2 id="generating-user-data-for-compliance-in-meetings">Generating User Data for Compliance in Meetings</h2>
+<p><strong>Step 1:</strong></p>
+<ol>
+<li>
+<p>In this section, you will learn how to configure Compliance and Supervision for Webex Meetings. Theta Lake provides AI-based archiving, eDiscovery, and supervision for Webex Meetings with automated detection of compliance risks in audio and visual content. Open a remote desktop session to WKST1, navigate to https://admin.webex.com and click <strong>Sign in.</strong> Enter the credentials for cholland, <a href="mailto:cholland@cbXXX.dc-YY.com">cholland@cbXXX.dc-YY.com</a> and password <strong>dCloud123!</strong> (if you didn't complete module 1, refer to last 4 digits of the Session ID on eXpo dCloud Session View page for the non-SSO password).</p>
+</li>
+<li>
+<p>Go to Services &gt; Meeting and copy the site name.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image242.png" data-desc-position="top"><img alt="" src="../media/image242.png"></a></p>
+</li>
+<li>
+<p>Open an instance of Chrome browser and navigate to the sitename e.g., cb46001.webex.com and log in with credentials for cholland, <a href="mailto:cholland@cbXXX.dc-YY.com">cholland@cbXXX.dc-YY.com</a> and password <strong>dCloud123!</strong> (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).</p>
+</li>
+<li>
+<p>Click <strong>Schedule</strong> and then <strong>Schedule a meeting</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image243.png" data-desc-position="top"><img alt="" src="../media/image243.png"></a></p>
+</li>
+<li>
+<p>Set your meeting type as <strong>Webex Meetings Pro Meeting</strong> and set a meeting topic. Invite Anita Perez and Kellie Melby.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image244.png" data-desc-position="top"><img alt="" src="../media/image244.png"></a></p>
+<p>Click <strong>Schedule</strong> (or <strong>Start</strong>).</p>
+</li>
+<li>
+<p>On WKST1, start the meeting from the Webex App. Click <strong>OK</strong> to the <strong>Microphone Not Available</strong> prompt and click on Start Meeting.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image245.png" data-desc-position="top"><img alt="" src="../media/image245.png"></a></p>
+</li>
+<li>
+<p>Click OK on the subsequent microphone warning once the meeting is launched.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image246.png" data-desc-position="top"><img alt="" src="../media/image246.png"></a></p>
+</li>
+<li>
+<p>Log in to <strong>WKST2</strong> and <strong>WKST3</strong> with Anita (aperez@cbXXX.dc-YY.com) and Kellie (kmelby@cbXXX.dc-YY.com) respectively and launch the Webex App. Click the green Join button to join the meeting.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image247.png" data-desc-position="top"><img alt="" src="../media/image247.png"></a></p>
+</li>
+<li>
+<p>On WKST1, click <strong>Record the meeting</strong> and save to the cloud option. Once Charles, Anita, and Kellie are in the meeting, open the in-meeting chat from any of the workstations and populate the chat with fake confidential or PII like date of birth, SSNs, credit card numbers, or keywords like Top Secret or Confidential.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image248.png" data-desc-position="top"><img alt="" src="../media/image248.png"></a></p>
+<p>Example:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image249.png" data-desc-position="top"><img alt="" src="../media/image249.png"></a></p>
+</li>
+<li>
+<p>On <strong>WKST1</strong>, click the bottom-right ellipsis next to the chat button, then select <strong>Slido (polling and Q&amp;A)</strong> and click <strong>Open</strong> to launch Slido.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image250.png" data-desc-position="top"><img alt="" src="../media/image250.png"></a></p>
+</li>
+<li>
+<p>Click <strong>Open</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image251.png" data-desc-position="top"><img alt="" src="../media/image251.png"></a></p>
+</li>
+<li>
+<p>Click on <strong>Create Slido</strong>, click on <strong>Add</strong> and select <strong>Audience Q&amp;A</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image252.png" data-desc-position="top"><img alt="" src="../media/image252.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image253.png" data-desc-position="top"><img alt="" src="../media/image253.png"></a></p>
+</li>
+<li>
+<p>Navigate to WKST2 (Anita) and WKST3 (Kellie), launch Slido (if it's not already launched) and ask questions that contain sensitive data.e.g. from Anita's WKST2, you can this question "Charles, I am sharing my Credit Card Details here. It is 5678-0987-1234-0987 - is this what you wanted?"</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image254.png" data-desc-position="top"><img alt="" src="../media/image254.png"></a></p>
+</li>
+<li>
+<p>From Kellie's WKST3 ask the following question as e.g. "Here is my data, Charles. Date of Birth == 12th Jan 1984 SSN == 123-25-6078, is this fine?"</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image255.png" data-desc-position="top"><img alt="" src="../media/image255.png"></a></p>
+</li>
+<li>
+<p>Now that we have provided Input on Q&amp;A, lets launch a poll and share sensitive data.</p>
+</li>
+<li>
+<p>Navigate to WKST1 and click on home in the Slido panel and then Add and Select Survey. Slido offers multiple poll options like Word Cloud, Multiple Choice, Quizzes, Ranking, Ratings and Surveys along with Open Text. For the lab select <strong>Survey</strong>. Then, select any option, and populate it with sensitive data.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image256.png" data-desc-position="top"><img alt="" src="../media/image256.png"></a></p>
+</li>
+<li>
+<p>Add a couple of questions to the survey and click <strong>Launch</strong> to start the survey.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image257.png" data-desc-position="top"><img alt="" src="../media/image257.png"></a></p>
+</li>
+<li>
+<p>Go to WKST2 and WKST3 and provide fake sensitive data for the questions asked like "Mothers Maiden Name" and "Credit Card Numbers". Once you have provided the inputs, from WKST1, click on Deactivate Survey and close the Slido App Panel.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image258.png" data-desc-position="top"><img alt="" src="../media/image258.png"></a></p>
+</li>
+<li>
+<p>The poll has confidential and sensitive information like a mother's maiden name, and credit card number. This simulates end users sharing confidential or proprietary information and demonstrates how compliance platforms like Theta Lake effectively identify and act on the offense. End the meeting from WKST1 by clicking on Red "X" and Select "End Meeting for all".</p>
+</li>
+</ol>
+<h2 id="provision-users-and-enable-recording-for-webex-calling-for-data-compliance">Provision users and enable recording for Webex Calling for data compliance.</h2>
+<p>In this section, we shall setup the users with Webex calling, enable the native recording capability now available with Webex.</p>
+<ol>
+<li>
+<p>RDP to WKST1, navigate to admin.webex.com and click on Sign in with credentials for cholland, <a href="mailto:cholland@cbXXX.dc-YY.com">cholland@cbXXX.dc-YY.com</a> and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).</p>
+</li>
+<li>
+<p>Navigate to Services &gt; Calling &gt; Service Settings</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image259.png" data-desc-position="top"><img alt="" src="../media/image259.png"></a></p>
+</li>
+<li>
+<p>Scroll to call recording and select Provider as Webex, Storage region as United States along with Call recording failure settings to Proceed with the call with announcement, select the compliance announcements to Play Announcements for inbound as well as outbound PSTN calls.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image260.png" data-desc-position="top"><img alt="" src="../media/image260.png"></a></p>
+<p>Click <strong>Save</strong> to save these settings.</p>
+</li>
+<li>
+<p>Now let's allocate Webex calling Professional licenses for two users Ricardo Filice and Eric Steele.</p>
+</li>
+<li>
+<p>Navigate to Management tab on the left and the Users option. Search for
+Eric Steele and under the Summary tab, navigate to Licenses and select
+Edit Licenses.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image261.png" data-desc-position="top"><img alt="" src="../media/image261.png"></a></p>
+</li>
+<li>
+<p>Select Edit Licenses on the next screen, go to calling and uncheck Call on Webex (1:1 call, non-PSTN) to Webex Calling option at the bottom and select Webex Calling Professional. For the purposes of this lab, you don't need to select Attendant Console and click Save.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image262.png" data-desc-position="top"><img alt="" src="../media/image262.png"></a></p>
+</li>
+<li>
+<p>Let's assign a calling number to Eric, in the Location Drop-down select DCloud, Phone Number leave as is and in extension provide an extension number to Eric e.g. in the screenshot, I have provided 5001 and hit Save.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image263.png" data-desc-position="top"><img alt="" src="../media/image263.png"></a></p>
+</li>
+<li>
+<p>Perform the same steps for Ricardo Filice (rfilice) and assign him
+extension 5002.</p>
+</li>
+</ol>
+<p>For this lab, we are not setting up PSTN either via Local GW or Cisco
+Calling plans, the aim of this module is to showcase the built-in call
+recording capability now available for our calling platform in addition
+to meetings.</p>
+<p>Next, you'll use the login credentials of the <strong>read-only compliance
+officer account</strong> to see sample data that we have compiled in a Theta
+Lake tenant over the last year, including data that matches the test
+meeting you just scheduled and attended.</p>
+<p>In the subsequent two modules we shall cover with examples how Theta
+Lake can flag compliance issues in Meetings, Calling, Slido Polling and
+Q&amp;A.</p>
+<h2 id="explore-compliance-options-for-webex-meetings-in-theta-lake">Explore Compliance Options for Webex Meetings in Theta Lake</h2>
+<p>We want you to spend some time reviewing some of the compliance options for Webex meetings available via Theta Lake.</p>
+<p>Theta Lake can process data from in-meeting chat, polls, Q&amp;A, shared
+files, and other meeting content (like the data you just generated).
+Theta Lake can also detect content from users' audio/video streams such
+as, files shared visually or verbally during the meeting (e.g., an
+attendee holding a paper with sensitive information written on it or
+verbally mentioning credit card numbers/SSN/DOB). You will learn how Theta Lake can help us flag these violations as well.</p>
+<p><strong>Step 1:</strong></p>
+<ol>
+<li>
+<p>Navigate to <a href="https://useast.thetalake.ai/#/users/login">https://useast.thetalake.ai/#/users/login</a> on WKST1. Log in with read-only Compliance Officer credentials (<strong>co.read.only@gmail.com</strong> // <strong>dCloud123!)</strong>. You will find pre-populated data that demonstrates some of the violations and types of data that Theta Lake can process. Once logged in click the <strong>Search</strong> tab, enter the search term <strong>Poll</strong>, and click the green <strong>Search</strong> button. Note: the screenshot below is using the <strong>Table</strong> viewing format. This can be found on the right side of the screen near the <strong>Sort by</strong> option.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image264.png" data-desc-position="top"><img alt="" src="../media/image264.png"></a></p>
+</li>
+<li>
+<p>Explore and review few records that have Meeting Poll and repeat the process by changing Poll to "Q&amp;A".</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image265.png" data-desc-position="top"><img alt="" src="../media/image265.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image266.png" data-desc-position="top"><img alt="" src="../media/image266.png"></a></p>
+</li>
+<li>
+<p>Close the Poll Search by clicking on the "x" next to search.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image267.png" data-desc-position="top"><img alt="" src="../media/image267.png"></a></p>
+<p>In the left-hand navigation menu, under the <strong>FAVORITES</strong> section, click <strong>Policy Hits</strong>. In the resulting dialog box, scroll through the drop-down menu and select the following built-in detection rules then click <strong>Apply</strong>:</p>
+<p><strong>Credit Card Number (CC#) -- Audio, Chat, Attachment, and EmailsCryptoCurrency Discussions -- Video, Audio, Chat, Attachment and Emails</strong> <strong>Social Security Numbers(SSN) -- Audio, Chat, Attachment and Emails</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image268.png" data-desc-position="top"><img alt="" src="../media/image268.png"></a></p>
+</li>
+<li>
+<p>Scroll down to the <strong>Media</strong> category in the left-hand navigation menu and click to expand the filter. Click <strong>Media Type</strong> and tick the boxes for <strong>Audio</strong> and <strong>Video</strong> then click <strong>Apply</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image269.png" data-desc-position="top"><img alt="" src="../media/image269.png"></a></p>
+</li>
+<li>
+<p>Select any meeting, you will observe a recording of the meeting and flags where the users have violated policies. You can use <strong>Record ID</strong> 576714780 as an example.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image270.png" data-desc-position="top"><img alt="" src="../media/image270.png"></a></p>
+<p>If you are reviewing record 576714780, scroll to approximately 7 minutes and 06 seconds into the meeting and you will see that Theta Lake has the ability to flag documents held up to the screen containing PII and confidential data.</p>
+<p>Feel free to take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities.Once you have completed reviewing the options, clear out all the filters that you have selected by clicking "Clear All" on the top left of the screen.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image271.png" data-desc-position="top"><img alt="" src="../media/image271.png"></a></p>
+</li>
+</ol>
+<p>We want you to spend some time reviewing some of the compliance options
+for Webex Calling available in Theta Lake.</p>
+<h2 id="explore-compliance-options-for-webex-calling-in-theta-lake">Explore Compliance Options for Webex Calling in Theta Lake</h2>
+<p>Theta lake offers Compliance and Security for Webex Cloud Calling &amp;
+Customer Assist. Theta Lake's turn-key archiving, compliance,
+surveillance, and data security products natively integrate with the
+Webex Suite, with comprehensive support for Webex Calling, including
+Webex Cloud Calling, Business Texting (SMS), Voice Recordings, and Call
+Detail Records (CDRs).</p>
+<p>In this section you will learn how to configure Compliance and
+Supervision for Webex Calling using Theta Lake. Theta Lake provides
+AI-based archiving, eDiscovery, and supervision for Webex Calling with
+automated detection of compliance risks in audio content.</p>
+<p><strong>Step 1:</strong></p>
+<ol>
+<li>
+<p>Navigate to <a href="https://useast.thetalake.ai/#/users/login">https://useast.thetalake.ai/#/users/login</a> on WKST1. Log in with read-only Compliance Officer credentials (<strong>co.read.only@gmail.com</strong> // <strong>dCloud123!)</strong>. You will find pre-populated data that demonstrates some of the violations and types of data that Theta Lake can process. Once logged in, navigate to Search. Click on Webex Calling option and click on the Media Type option and select Audio and select Apply. Next, click Webex Calling to add a platform filter. Note: the screenshot below is using the <strong>Table</strong> viewing format. This can be found on the right side of the screen near the <strong>Sort by</strong> option.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image272.png" data-desc-position="top"><img alt="" src="../media/image272.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image273.png" data-desc-position="top"><img alt="" src="../media/image273.png"></a></p>
+</li>
+<li>
+<p>Explore and review few records that have been filtered.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image274.png" data-desc-position="top"><img alt="" src="../media/image274.png"></a></p>
+</li>
+<li>
+<p>I have 4 records here, traditionally these records are pairs, let's take an example record 576727299 and record 576727182, where one of is the CDR record / call details and the second one being capture of the actual call and flagged for compliance violations.Looking at record 576727182, click on the record &gt; Content Review and Attributes. You will see that this record has CDR information and other call attributes.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image275.png" data-desc-position="top"><img alt="" src="../media/image275.png"></a></p>
+</li>
+<li>
+<p>Now let's look at record 576727299, you will observe a recording of the audio call and flags where the users have violated policies.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image276.png" data-desc-position="top"><img alt="" src="../media/image276.png"></a></p>
+</li>
+<li>
+<p>Feel free to take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities.This concludes the compliance for Webex calling module, before you move to the next section ensure that you have cleared any filters and log out of Theta Lake.</p>
+</li>
+</ol>
+<h2 id="schedule-an-end-to-end-encrypted-meeting">Schedule an End-to-End Encrypted Meeting</h2>
+<p>In this section, you will learn how to schedule an E2EE meeting and learn the benefits and features of an E2EE meeting.</p>
+<p>Before proceeding with the configuration, it's important to understand
+how an E2EE meeting works at a high level. End-to-end encrypted meetings
+are designed to ensure that meeting content can only be accessed by the
+desired parties. The meeting content encryption key is generated by the
+meeting host, encrypted with media encryption key, and shared with other
+participants. Webex cloud services DO NOT have access to content
+encryption key. Without the encryption key, Webex cannot decrypt any of
+the meeting content, so features like meeting chat transcripts, files, whiteboards, annotations, and recordings are not available when the meeting ends.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image277.png" data-desc-position="top"><img alt="" src="../media/image277.png"></a></p>
+<p>Features that can be provided by processing information locally device are available in End-to-End encrypted meetings:</p>
+<ul>
+<li>Audio and video watermarking</li>
+<li>Face and gesture recognition</li>
+<li>Room interpretation</li>
+<li>People presence detection</li>
+<li>Proximity pairing</li>
+<li>Background noise removal</li>
+</ul>
+<p>Additionally, E2EE meetings are available to enterprise and consumer
+customers and are supported by the Webex App (desktop and mobile) and
+Webex devices with up to 1000 participants.</p>
+<p>Before you start this section, lets enable watermarking capabilities in Control Hub, you will need it for the next section.</p>
+<ol>
+<li>
+<p>Log in to <strong>WKST1</strong> as <strong>dCloud\cholland</strong> and <strong>dCloud123!</strong>. Open an instance of Chrome and navigate to <a href="https://admin.webex.com/">https://admin.webex.com/</a>. Login with Charles Holland's Webex credentials (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password. In <strong>Control Hub</strong>, navigate to <strong>Organization Settings</strong> and scroll down to the option for 'Add an audio watermark' and 'Show visual watermarks' and enable them. Enable all the three options below 'Show visual watermarks'. Click <strong>Save</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image278.png" data-desc-position="top"><img alt="" src="../media/image278.png"></a></p>
+<p>This will enable the digital watermarking option to present itself to users when scheduling meetings of supported types. Please note that it will take some time in some cases about 15 minutes for the option to appear for end users once enabled in Control Hub.</p>
+<p>You will now schedule an end-to-end encrypted meeting.</p>
+</li>
+<li>
+<p>RDP to WKST1, navigate to admin.webex.com and click on <strong>Sign in</strong> with credentials for cholland, <a href="mailto:cholland@cbXXX.dc-YY.com">cholland@cbXXX.dc-YY.com</a> and password <strong>dCloud123!</strong> (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).</p>
+<p>Go to Services--&gt;Meeting and copy the site name.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image279.png" data-desc-position="top"><img alt="" src="../media/image279.png"></a></p>
+</li>
+<li>
+<p>Open an instance of Chrome browser and navigate to the sitename e.g. cb46001.webex.com and sign in with credentials for cholland, cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). Click Schedule &gt; Schedule a meeting, set the meeting type to <strong>Webex Meetings Pro-End to End Encryption_VOIPonly</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image280.png" data-desc-position="top"><img alt="" src="../media/image280.png"></a></p>
+</li>
+<li>
+<p>Set a <strong>Meeting topic, Date/Time</strong>, and invitees (Anita Perez <a href="mailto:aperez@cbXXX.dc-YY.com">aperez@cbXXX.dc-YY.com</a> and Kellie Melby <a href="mailto:kmelby@cbXXX.dc-YY.com">kmelby@cbXXX.dc-YY.com</a>).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image281.png" data-desc-position="top"><img alt="" src="../media/image281.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image282.png" data-desc-position="top"><img alt="" src="../media/image282.png"></a></p>
+</li>
+<li>
+<p>Click on <strong>Schedule</strong> and click <strong>Start</strong>. Click 'Open Webex' to start the meeting in the Webex App.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image283.png" data-desc-position="top"><img alt="" src="../media/image283.png"></a></p>
+</li>
+<li>
+<p>To start, let Charles be the only participant in the meeting. Click OK on the <strong>No Microphone found</strong> prompt and Click on Start Meeting.Click OK on the "No Microphone found" after starting the meeting. Observe the blue shield icon at the top left of the meeting window, the padlock indicates that this is an E2EE meeting.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image284.png" data-desc-position="top"><img alt="" src="../media/image284.png"></a></p>
+</li>
+<li>
+<p>In the meeting window, click the <strong>Meeting Info</strong> option and then <strong>Security</strong>. Ensure that you are seeing the security code, the server connection as <strong>TLS with AES-256-GCM-SHA384</strong>, and Media connection is <strong>AEAD-AES-256-GCM</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image285.png" data-desc-position="top"><img alt="" src="../media/image285.png"></a></p>
+<p>Make a note of the security code.</p>
+<p>Navigate to the Participants Tab and click on the "i" icon next to Charles's name. You will see the certificate and therefore the identity of Charles is verified by <strong>Webex</strong>. You can click the "i" to see the certificate information.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image286.png" data-desc-position="top"><img alt="" src="../media/image286.png"></a></p>
+</li>
+<li>
+<p>Now login to <strong>WKST2</strong> with <strong>dcloud\aperez</strong> (password <strong>dCloud123!</strong>). Launch the Webex App and login with <a href="mailto:aperez@cbXXX.dc-YY.com"><strong>aperez@cbXXX.dc-YY.com</strong></a> and password <strong>dCloud123!</strong> (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). You will see the Join meeting notification:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image287.png" data-desc-position="top"><img alt="" src="../media/image287.png"></a></p>
+</li>
+<li>
+<p>Click on <strong>Join</strong>, click <strong>OK</strong> in the <strong>No microphone found</strong> prompt. Click Join Meeting to enter the meeting.</p>
+<p>Click on <strong>Meeting Info</strong> then select <strong>Security</strong> and observe the security code. It has changed now that a new attendee has joined. Feel free to verify the certificate for Anita.</p>
+<p>Login to <strong>WKST3</strong> with <strong>dcloud\kmelby</strong> (password provided in the pod sheet). aunch the Webex App and login with kmelby<a href="mailto:aperez@cbXXX.dc-YY.com"><strong>\@cbXXX.dc-YY.com</strong></a> and password <strong>dCloud123!</strong> (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). You will see the Join meeting notification, join the meeting by clicking on the green <strong>Join</strong> button.</p>
+<p>Click on <strong>Meeting Info &gt; Security</strong> and verify that the security code has changed again. Feel free to verify the certificate for Kellie.</p>
+<p><strong>Note: Message Layer Security (MLS)</strong> uses key packages to identify users and to generate new meeting encryption keys as participants join the meeting. Note that, like the meeting security code, the meeting encryption key changes every time a new participant joins the end-to-end encrypted meeting.</p>
+</li>
+</ol>
+<p>Each MLS key package contains:</p>
+<ul>
+<li>Participant's Identity Info &amp; Public Key (Verified Credentials/certificate).</li>
+<li>A tree hash value that represents the cryptographic group state and credentials of the group members (meeting participants).</li>
+<li>An identifier for the current version of the meeting encryption key.</li>
+<li>A new meeting encryption key is created when participants join or leave the meeting.</li>
+</ul>
+<p><strong>Note: Secure Frames:</strong> Secure Media Frames provide an extra layer of authenticated encryption for media.</p>
+<p>The whole media frame is encrypted before being placed into individual SRTP payloads. SFrames use MLS to provide the encryption keys that each meeting participant needs to decrypt media.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image288.png" data-title="A diagram of a cloud computing network Description automatically
+generated" data-desc-position="top"><img alt="A diagram of a cloud computing network Description automatically
+generated" src="../media/image288.png"></a></p>
+<h2 id="features-in-an-end-to-end-encrypted-meeting">Features in an End-to-End Encrypted Meeting</h2>
+<p>In this section, you will learn some features that are made available in an End-to-End Encrypted (E2EE) meeting.</p>
+<ol>
+<li>
+<p>Record the Meeting: Navigate to WKST1 and open the meeting that is still in progress. Click the record button. The only option that is made available is 'Save to my computer'. There is no cloud recording option available because Webex does not have access to the media encryption keys needed to decrypt the media:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image289.png" data-desc-position="top"><img alt="" src="../media/image289.png"></a></p>
+<p>Note the message that displays when you hover over the Record button indicating that AI summaries are only available for cloud-based recordings. Since the only option here is to record to the local computer, AI meeting summaries won't be available.This is important point to remember about end-to-end encrypted meetings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image290.png" data-desc-position="top"><img alt="" src="../media/image290.png"></a></p>
+</li>
+<li>
+<p>Connect to a Video System: In an E2EE meeting, Cisco video devices (RoomOS) can seamlessly join a meeting. In this lab, there are no video endpoints available for testing. However, you should know that Cisco video devices (RoomOS) can join an E2EE meeting. Refer to the screenshots below showing a video device joining a meeting and the identity certificate issued to the device.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image291.png" data-desc-position="top"><img alt="" src="../media/image291.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image292.png" data-desc-position="top"><img alt="" src="../media/image292.png"></a></p>
+</li>
+<li>
+<p>Click the arrow next to the Unmute button to review. Audio Options: Zero Trust E2EE meetings do not give Webex access to meeting encryption keys. This means that cloud services and endpoints that need to decrypt meeting content cannot participate in E2EE meetings: e.g., PSTN and SIP endpoints. So, the only audio-only option available is a computer running the Webex App.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image293.png" data-desc-position="top"><img alt="" src="../media/image293.png"></a></p>
+</li>
+<li>
+<p>Webex Smart Audio: Webex Smart Audio and noise removal is available in an E2EE meeting because the processing for this feature is handled locally on the device.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image294.png" data-desc-position="top"><img alt="" src="../media/image294.png"></a></p>
+</li>
+<li>
+<p>Gestures and Reactions: Gestures and reactions are available in an E2EE meeting.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image295.png" data-desc-position="top"><img alt="" src="../media/image295.png"></a></p>
+</li>
+<li>
+<p>Raise hand is available in an E2EE Meeting from both the Webex app and the video endpoint.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image296.png" data-desc-position="top"><img alt="" src="../media/image296.png"></a></p>
+</li>
+<li>
+<p>On WKST1, navigate to the desktop, there is PowerPoint presentation called presentation.pptx, launch the presentation.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image297.png" data-desc-position="top"><img alt="" src="../media/image297.png"></a></p>
+</li>
+<li>
+<p>Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image298.png" data-desc-position="top"><img alt="" src="../media/image298.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image299.png" data-desc-position="top"><img alt="" src="../media/image299.png"></a></p>
+</li>
+<li>
+<p>Stop Sharing and finally the end the meeting for All.</p>
+</li>
+</ol>
+<h2 id="audio-and-visual-watermarking-and-watermark-analysis">Audio and Visual Watermarking and Watermark Analysis</h2>
+<p>In this section, you will learn how watermarking can help with data
+leak protection. Audio and visual watermarking can help identify the
+source of unauthorized recordings, images, captures of confidential
+meetings.</p>
+<p><strong>Audio Watermark</strong></p>
+<p>The audio watermark feature can't identify the person responsible for recording the meeting, but it can help identify the source client or device that was recorded.</p>
+<p>Feature details:</p>
+<ul>
+<li>Add a unique identifier (indiscernible, hidden watermark) for each client or device in a watermarked meeting.</li>
+<li>Available with all Meetings.</li>
+<li>Admin can control availability of the audio watermarking feature for their organization.</li>
+<li>Admin can upload media files for watermark analysis via Control Hub to identify the source client or device that was recorded.</li>
+<li>Admin can get details of the meeting from identified watermarks, such as meeting number, host name, etc.</li>
+<li>Admin can only analyze watermarks for meetings hosted in their organization.</li>
+<li>Watermark information is retained for the same duration as the organization's meeting information.</li>
+</ul>
+<p><strong>Visual Watermark</strong></p>
+<ul>
+<li>Visual watermarks superimpose a watermark image over the meeting video and shared content. Each meeting participant sees a watermark image with their own email address. If a meeting participant isn\'t signed in to Webex, the watermark includes their display name and email address. Users can adjust the watermark opacity, so the pattern is visible but doesn\'t cause too much distraction.</li>
+<li>Local recordings are disabled when audio watermarks are turned on.</li>
+</ul>
+<p>Let's look at enabling and testing these features: We have already
+enabled the Control Hub Toggles for these features at the beginning of
+the module.</p>
+<p><strong>Step 1: Audio Watermarking</strong></p>
+<ol>
+<li>
+<p>If not already logged in, log in to <strong>WKST1</strong> as <strong>dCloud\cholland</strong> and <strong>dCloud123!</strong> Launch the Webex App and go to Meetings. Click on Schedule a Meeting and invite Anita and Kelly to the meeting. Ensure that the meeting link is set to "Generate a one-time meeting link"</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image300.png" data-desc-position="top"><img alt="" src="../media/image300.png"></a></p>
+</li>
+<li>
+<p>Click on Advanced Settings. Select the Security tab on top and select the tick for Add watermarks to meeting audio.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image301.png" data-desc-position="top"><img alt="" src="../media/image301.png"></a></p>
+</li>
+<li>
+<p>Pay close attention to the capabilities available with watermarking.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image302.png" data-desc-position="top"><img alt="" src="../media/image302.png"></a></p>
+<p>Click on the arrow next to Advanced Settings on the top of the window to return to basic settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image303.png" data-desc-position="top"><img alt="" src="../media/image303.png"></a></p>
+</li>
+<li>
+<p>Click on Schedule, there is no need to start the meeting as you shall
+use a shared org to test watermark analysis.</p>
+</li>
+</ol>
+<p><strong>For the purpose of this lab and the practicality of multiple participants
+recording audio simultaneously for testing this feature, the below part
+is review only. Please see a proctor to get an audio file for testing
+with a shared org in Step 2 below.</strong></p>
+<p><em>There are many factors involved in successfully decoding a recorded
+watermark. These include distance between the recording device and the
+speaker outputting the audio, audio volume, environmental noise,
+etc.</em></p>
+<p><em>Webex watermarking has additional resiliency to being encoded multiple
+times as might happen when the media is shared. The goal of the feature
+is to enable a successful decode of the watermark identifier in a broad
+but reasonable set of circumstances. The goal is that a recording
+device, such as a mobile phone, laying on a desk near a personal
+endpoint or laptop client will create a recording that yields a
+successful analysis. As the recording device is moved away from the
+source or obscured from hearing the full audio spectrum it will degrade
+the chances of a successful analysis. In summary, the recording device
+needs a reasonable capture of the meeting audio. If a user captures the audio on the computer that is hosting the client, then no limitations should apply.</em></p>
+<p>Once about 90 seconds have elapsed, end the meeting and the stop the recording.</p>
+<p><strong>Step 2: Watermark Analysis:</strong></p>
+<p>Next, you will analyze if the watermarks are present in the recording.</p>
+<ol>
+<li>
+<p>Please reach out to one of the proctors for an audio file for analysis.</p>
+</li>
+<li>
+<p>If not already logged in, log in to <strong>WKST1</strong> and open an incognito
+instance of Chrome.</p>
+</li>
+<li>
+<p>If you haven\'t received the file, please do not proceed to step 4.</p>
+<p>Navigate to admin.webex.com and login with <strong>cholland@cb460.dc-01.com</strong> and password as <strong>dCloud8088!</strong> - (please note this is a shared instance that will be used by other attendees, kindly do not make any changes).</p>
+<p>In <strong>Control Hub</strong>, navigate to <strong>Troubleshooting</strong> listed in the sidebar.</p>
+<p>Select the <strong>Watermark Analysis</strong> tab and select Analyze File.</p>
+<p>The <strong>Analyze audio watermark</strong> popup allows you to provide a name e.g., Pod1watermark for the analysis and some additional notes to help associate this request to any internal investigation case or point of contact. The file requirements are listed on the dialog and as of this writing we are guiding to a minimum supported length of 90 seconds.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image304.png" data-desc-position="top"><img alt="" src="../media/image304.png"></a></p>
+</li>
+<li>
+<p>The following audio file formats are supported: .wav, .aac, .mp3, .mp4, .avi or .mov. Upload the recorded meeting .mp4 file to the analysis tool and provide an <strong>Analysis name</strong> and <strong>note</strong> for reference:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image305.png" data-desc-position="top"><img alt="" src="../media/image305.png"></a></p>
+</li>
+<li>
+<p>The dialog will guide you through the process. Once the upload has completed, click <strong>Close</strong>. The analysis depends on the size of the file. After a short delay, you should see that the analysis is complete.</p>
+<p>Note that since other lab attendees are also uploading files you may see multiple instances of watermark analysis in the list.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image306.png" data-desc-position="top"><img alt="" src="../media/image306.png"></a></p>
+</li>
+<li>
+<p>Now, if the meeting recording was leaked, or if someone was recording the meeting using a phone or other source, an administrator could use this feature to determine which user's device, or location may have been compromised during the meeting. When you click on the analyzed file you will quickly see the leak / watermark source where this mp4/mp3 file originated from.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image307.png" data-desc-position="top"><img alt="" src="../media/image307.png"></a></p>
+<p>When Audio Watermarking is enabled, the meeting audio includes a unique identifier for each participant. An administrator can upload audio recordings to Control Hub where an analysis is performed, and these watermarks can be detected.</p>
+<ul>
+<li>To be analyzed, the recording must be an AAC, MP3, M4A, WAV, MP4, AVI, or MOV file no larger than 500MB.</li>
+<li>The recording must be longer than 90 seconds.</li>
+<li>You can only analyze recordings for meetings hosted by users in your organization.</li>
+<li>Analyzed recordings are deleted as soon as the analysis is complete.</li>
+</ul>
+</li>
+<li>
+<p>Logout of the test control hub and use the login credentials provided
+in your eXpo dCloud Session for the subsequent sections.</p>
+</li>
+</ol>
+<p><strong>Step 3: Visual Watermarking</strong></p>
+<ol>
+<li>
+<p>If not already logged in, log in to <strong>WKST1</strong> as <strong>dCloud\cholland</strong> and <strong>dCloud123!</strong> (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).</p>
+</li>
+<li>
+<p>If required, launch the Webex App and go to Meetings. Click on Schedule a Meeting and invite Anita and Kelly to the meeting. Ensure that the meeting link is set to "Generate a one-time meeting link"</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image300.png" data-desc-position="top"><img alt="" src="../media/image300.png"></a></p>
+</li>
+<li>
+<p>Click on Advanced Settings. Select the Security tab on top and select the option for "Add Visual watermarks to participant videos and shared content".</p>
+</li>
+<li>
+<p>There is a slider to adjust the watermark's opacity level with a preview of what the watermark will look like. This gives you control over how visible the watermark will be during a meeting. Lower opacity means less distraction for meeting participants, while higher opacity shows a much clearer watermark. Set the opacity level to higher than 50%.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image308.png" data-desc-position="top"><img alt="" src="../media/image308.png"></a></p>
+</li>
+<li>
+<p>Click on the arrow next to Advanced Settings on the top of the window to return to basic settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image303.png" data-desc-position="top"><img alt="" src="../media/image303.png"></a></p>
+</li>
+<li>
+<p>Click on <strong>Schedule</strong> and click on <strong>Start meeting</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image309.png" data-desc-position="top"><img alt="" src="../media/image309.png"></a></p>
+</li>
+<li>
+<p>Click <strong>OK</strong> in the Microphone Not Available prompt. Click 'Start meeting' to launch the meeting.</p>
+<p>Login to WKST2 with Anita and WKST3 as Kellie and join the meeting.</p>
+<p>Navigate to WKST1 and explore the recording capabilities. Only cloud recording capabilities are available when visual watermarks are enabled. Once enabled for a meeting during scheduling, the visual watermark feature cannot be turned off. To have a meeting without visual watermarking, a new meeting must be scheduled. If a user is on an older version that does not support visual watermarking and attempts to join a meeting where it is required, they will not be allowed to join the meeting. Local recording is always disabled when visual watermark is turned on for a meeting.On WKST 1, share a document named presentation.pptx, now navigate to WKST2 and see that the watermark is present on the shared content. This provides traceability of the data loss to the source that captured or took screenshots.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image310.png" data-desc-position="top"><img alt="" src="../media/image310.png"></a></p>
+<p>End the meeting for all.</p>
+</li>
+</ol>
+<p>This concludes the module on Webex End-to-End Encryption and Zero Trust Meetings.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../module1_identity/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Module 1 - Webex Identity">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Module 1 - Webex Identity
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../module3_compliance/" class="md-footer__link md-footer__link--next" aria-label="Next: Module 3 - Webex Compliance">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Module 3 - Webex Compliance
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
