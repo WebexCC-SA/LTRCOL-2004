@@ -24,15 +24,14 @@ Webex supports both built-in compliance capabilities as well as API-based 3rd pa
 In this module you will examine the following product-specific capabilities:
 
 - Webex built-in compliance capabilities including:
-  - Archiving with flexible data retention.
-  - External communication controls, and message and meeting specific collaboration restrictions.
+      - Archiving with flexible data retention.
+      - External communication controls, and message and meeting specific collaboration restrictions.
 
 - Other compliance products:
-  - Cisco Cloudlock -- Data Loss Prevention
-  - Theta Lake -- Archiving, eDiscovery, Legal Hold
+      - Cisco Cloudlock -- Data Loss Prevention
+      - Theta Lake -- Archiving, eDiscovery, Legal Hold
 
-Figure 2 below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations.
-. Webex Events API for Compliance Platform Integration
+Figure 2 below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. Webex Events API for Compliance Platform Integration
 
 ![](./media/image152.png)
 
