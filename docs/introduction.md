@@ -72,7 +72,7 @@ available with Webex deployments, including:
 
 ---
 
-# About This Lab
+## About This Lab
 Webex provides customers with a comprehensive set of security and
 compliance capabilities across the Webex suite. This includes:
 
@@ -129,7 +129,7 @@ management and provisioning with SSO, using multiple IdPs, messaging and
 meeting compliance with DLP/eDiscovery/Archive integrations, and zero
 trust E2EE meetings with verified identity.
 
-# Topology
+## Topology
 This overall topology for this lab is shown in Figure 1 below. The
 topology consists of:
 
@@ -219,7 +219,7 @@ Note: You may not use all the components listed in Table 1 for this lab.
 - **Password**: dCloud123!
 
 ---
-# Getting Started
+## Getting Started
 Follow the steps below to connect to your lab pod before proceeding with
 Module 1.
 
