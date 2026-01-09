@@ -534,18 +534,22 @@
                 border: 2px solid #0f3460;
                 border-radius: 16px;
                 padding: 28px;
-                max-width: 500px;
+                max-width: 520px;
                 width: 90%;
                 max-height: 90vh;
                 overflow-y: auto;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(-20px) scale(1);
                 transition: opacity 0.3s, transform 0.3s;
+                font-size: 16px;
+                line-height: 1.5;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
             }
             .lab-config-modal-overlay.active .lab-config-modal {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
             .lab-config-modal-close {
                 position: absolute;
@@ -565,7 +569,8 @@
                 color: #00d4aa;
                 margin-top: 0;
                 margin-bottom: 16px;
-                font-size: 1.3em;
+                font-size: 22px;
+                font-weight: 600;
                 display: flex;
                 align-items: center;
                 gap: 10px;
@@ -573,7 +578,7 @@
             .lab-config-modal p {
                 color: #a0a0a0;
                 margin-bottom: 20px;
-                font-size: 0.95em;
+                font-size: 15px;
             }
             .lab-config-modal-input-group {
                 margin-bottom: 16px;
@@ -583,19 +588,21 @@
                 color: #e0e0e0;
                 margin-bottom: 6px;
                 font-weight: 500;
+                font-size: 15px;
             }
             .lab-config-modal-input-group label span {
                 color: #888;
                 font-weight: normal;
+                font-size: 14px;
             }
             .lab-config-modal-input-group input {
                 width: 100%;
-                padding: 10px 14px;
+                padding: 12px 14px;
                 border: 2px solid #0f3460;
                 border-radius: 6px;
                 background: #0d1b2a;
                 color: #ffffff;
-                font-size: 1em;
+                font-size: 16px;
                 box-sizing: border-box;
                 transition: border-color 0.2s;
             }
@@ -607,6 +614,7 @@
                 color: #666;
                 display: block;
                 margin-top: 4px;
+                font-size: 13px;
             }
             .lab-config-modal-buttons {
                 display: flex;
@@ -623,7 +631,7 @@
                 border-radius: 6px;
                 cursor: pointer;
                 font-weight: 600;
-                font-size: 1em;
+                font-size: 16px;
                 transition: transform 0.2s, box-shadow 0.2s;
             }
             .lab-config-modal-save:hover {
@@ -638,7 +646,7 @@
                 border-radius: 6px;
                 cursor: pointer;
                 font-weight: 500;
-                font-size: 0.95em;
+                font-size: 15px;
                 transition: background 0.2s;
             }
             .lab-config-modal-clear:hover {
@@ -656,6 +664,7 @@
                 background: #0d1b2a;
                 border-radius: 8px;
                 border: 1px solid #0f3460;
+                font-size: 15px;
             }
             .lab-config-modal-preview strong {
                 color: #00d4aa;
@@ -664,6 +673,7 @@
                 color: #e0e0e0;
                 margin-top: 8px;
                 font-family: monospace;
+                font-size: 14px;
             }
             .lab-config-modal-preview-values span {
                 color: #4ecdc4;
