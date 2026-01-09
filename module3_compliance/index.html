@@ -1,0 +1,1462 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance">
+      
+      
+        <meta name="author" content="Scott Kiewert">
+      
+      
+      
+        <link rel="prev" href="../module2_zero_trust_encryption/">
+      
+      
+        <link rel="next" href="../conclusion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/cisco_logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Module 3 - Webex Compliance - LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-header__button md-logo" aria-label="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/cisco_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 3 - Webex Compliance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab_setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab Setup
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module1_identity/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 1 - Webex Identity
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module2_zero_trust_encryption/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 2 - Webex Zero Trust Encryption
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 3 - Webex Compliance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conclusion/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusion
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../appendix/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Appendix
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../print_page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Print Lab Guide
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-nav__button md-logo" aria-label="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/cisco_logo.png" alt="logo">
+
+    </a>
+    LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1_identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Webex Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2_zero_trust_encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Webex Zero Trust Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Webex Compliance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Webex Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#webex-compliance-and-preparing-for-compliance-platform-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex Compliance and Preparing for Compliance Platform Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrate-webex-with-cloudlock-and-configure-dlp-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrate Webex with Cloudlock and Configure DLP Policies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-user-data-via-webex-app-and-observe-dlp-operation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate user data via Webex App and Observe DLP Operation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-theta-lake-ediscovery-and-legal-hold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore Theta Lake eDiscovery and Legal Hold
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore Theta Lake eDiscovery and Legal Hold">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#archiving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Archiving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ediscovery-legal-hold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eDiscovery / Legal Hold
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observe-webex-anti-malware-protection-amp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Observe Webex Anti-Malware Protection (AMP)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print Lab Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake">Module 3: Webex Compliance with Cisco Cloudlock and Theta Lake</h1>
+<p>In this module, you will examine Webex compliance features and capabilities for messaging and meetings including integration to cloud-based data loss prevention (DLP) and archiving systems. You will also explore eDiscovery and Legal Hold capabilities as well as anti-malware protection (AMP)</p>
+<p>There are 5 sections in this module:</p>
+<p>i. <a href="#webex-compliance-and-preparing-for-compliance-platform-integration">Webex Compliance and Preparing for Compliance Platform Integration</a></p>
+<p>ii. <a href="#integrate-webex-with-cloudlock-and-configure-dlp-policies">Integrate Webex with Cloudlock and Configure DLP Policies</a></p>
+<p>iii. <a href="#generate-user-data-via-webex-app-and-observe-dlp-operation">Generate user data via Webex App and Observe DLP Operation</a></p>
+<p>iv. <a href="#explore-theta-lake-ediscovery-and-legal-hold">Explore Theta Lake eDiscovery and Legal Hold</a></p>
+<p>v. <a href="#observe-webex-anti-malware-protection-amp">Observe Webex Anti-Malware Protection (AMP)</a></p>
+<p>Compliance integrations are critical for protecting an organization's private data from leakage and ensuring that it complies with appropriate rules and laws related to maintaining business and communication records.</p>
+<p>Webex supports both built-in compliance capabilities as well as API-based 3rd party integrations. Specifically:</p>
+<ul>
+<li>Webex provides a set of basic built-in compliance capabilities for <strong>data loss prevention (DLP), eDiscovery/Legal Hold, and data retention (archive)</strong>.</li>
+<li>Webex also integrates with 3rd party DLP, eDiscovery/Legal Hold, and Archiving applications and services for advanced compliance capabilities including automatic remediation.</li>
+<li>Integrations with compliance services rely on <strong>Webex Events API</strong> to deliver message and meeting data to compliance services.</li>
+</ul>
+<p>In this module you will examine the following product-specific capabilities:</p>
+<ul>
+<li>
+<p>Webex built-in compliance capabilities including:</p>
+<ul>
+<li>Archiving with flexible data retention.</li>
+<li>External communication controls, and message and meeting specific collaboration restrictions.</li>
+</ul>
+</li>
+<li>
+<p>Other compliance products:</p>
+<ul>
+<li>Cisco Cloudlock -- Data Loss Prevention</li>
+<li>Theta Lake -- Archiving, eDiscovery, Legal Hold</li>
+</ul>
+</li>
+</ul>
+<p>Figure 2 below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. Webex Events API for Compliance Platform Integration</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image152.png" data-desc-position="top"><img alt="" src="../media/image152.png"></a></p>
+<p>Webex has also introduced Webhooks capability enabling proactive notification of messaging events (e.g., messages with file attachments) to a configured Webhook (web URL). This proactive notification provides a framework for delivering real-time file DLP -- scanning files for compliance policy violations before allowing them to be sent/received via messaging.</p>
+<p>As shown in Figure 3, once notification via the Webhook is received at the
+compliance platform web service (step 1), the DLP retrieves the file
+(step 2) and can then take action (e.g., scan file) and notify Webex via
+API whether to allow or block the file (step 3). Webex Webhooks for Real-time File DLP</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image153.png" data-desc-position="top"><img alt="" src="../media/image153.png"></a></p>
+<p>Unlike the Webex Events API method for compliance where the compliance platform must periodically poll Webex for communications events (space creation, space membership, messages, file attachments, meetings, etc.) and then take action, Webhooks enable real-time notification of events without having to wait for the next polling interval, so the compliance platform DLP service can take immediate action. Cisco Cloudlock supports real-time file DLP for Webex with Webhooks.</p>
+<p>Webex Webhooks and Webex Events APIs as well as remediation APIs require administrators to have the Compliance Officer role to enable and authorize these operations.</p>
+<p>For more information for Webex compliance with Webhooks and Webex APIs, please refer to the Webex for Developers site for documentation including:</p>
+<ul>
+<li>Compliance and Events: <a href="https://developer.webex.com/compliance/docs/compliance">https://developer.webex.com/compliance/docs/compliance</a></li>
+<li>Webex Events API: <a href="https://developer.webex.com/admin/docs/api/v1/events">https://developer.webex.com/admin/docs/api/v1/events</a></li>
+<li>Webex Messages API: <a href="https://developer.webex.com/messaging/docs/api/v1/messages">https://developer.webex.com/messaging/docs/api/v1/messages</a></li>
+<li>Webex Meetings API: <a href="https://developer.webex.com/docs/api/v1/meetings">https://developer.webex.com/docs/api/v1/meetings</a></li>
+<li>Webex Real-time File DLP Guide: <a href="https://developer.webex.com/admin/docs/api/guides/webex-real-time-file-dlp-basics">https://developer.webex.com/admin/docs/api/guides/webex-real-time-file-dlp-basics</a></li>
+<li>Webhooks documentation and API reference: <a href="https://developer.webex.com/messaging/docs/api/v1/webhooks">https://developer.webex.com/messaging/docs/api/v1/webhooks</a>
+This lab guide contains coverage for two external compliance platforms: Cisco Cloudlock and Theta Lake.</li>
+</ul>
+<p><strong>Table 2: Compliance Platform Options, Capabilities, and Applicable sections of this Module</strong></p>
+<table>
+<thead>
+<tr>
+<th>Compliance Platform</th>
+<th>Capabilities Explored</th>
+<th>Module Sections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Webex (built-in)</strong></td>
+<td>- Data retention<br>- External communications<br>- Collaboration restrictions</td>
+<td><a href="#webex-compliance-and-preparing-for-compliance-platform-integration">Webex Compliance and Preparing for Compliance Platform Integration</a></td>
+</tr>
+<tr>
+<td><strong>Cisco Cloudlock</strong></td>
+<td>- Near real-time message &amp; file DLP<br>- Real-time file DLP</td>
+<td><a href="#integrate-webex-with-cloudlock-and-configure-dlp-policies">Integrate Webex with Cloudlock and Configure DLP Policies</a><br><br><a href="#generate-user-data-via-webex-app-and-observe-dlp-operation">Generate user data via Webex App and Observe DLP Operation</a></td>
+</tr>
+<tr>
+<td><strong>Theta Lake</strong></td>
+<td>- eDiscovery &amp; Legal Hold<br>- Archival</td>
+<td><a href="#explore-theta-lake-ediscovery-and-legal-hold">Explore Theta Lake eDiscovery and Legal Hold</a></td>
+</tr>
+<tr>
+<td><strong>Webex built-in Anti-Malware Protection</strong></td>
+<td>- Anti-malware protection (AMP)</td>
+<td><a href="#observe-webex-anti-malware-protection-amp">Observe Webex Anti-Malware Protection (AMP)</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="webex-compliance-and-preparing-for-compliance-platform-integration">Webex Compliance and Preparing for Compliance Platform Integration</h2>
+<ol>
+<li>
+<p>Enable compliance officer role for user Anita Perez.</p>
+<p>To integrate compliance platforms with Webex, a full administrator with Compliance Officer privileges is required. This role gives the user permissions for DLP integrations, eDiscovery/Legal Hold, and retention and archival integrations. In this step you are assigning the organization Compliance Officer role to Anita Perez.</p>
+<p>Any full administrator can assign the compliance officer role to any person within their organization. However, full administrators cannot assign the Compliance Officer role to themselves, another full administrator must assign the role to them.</p>
+<p>To begin, connect to WKST1. Login will be as Charles Holland (dcloud\<strong>cholland</strong> // <strong>dCloud123!</strong>).</p>
+<p>a. Open the Chrome browser on WKST1 (wkst1.dcloud.cisco.com) and navigate to Webex Control Hub at <a href="http://admin.webex.com">http://admin.webex.com</a>.</p>
+<p>b. Login as full administrator, Charles Holland by entering: cholland@cbXXX.dc-YY.com (refer to the eXpo dCloud Session View Info page to find your DNS domain). Click <strong>Sign In</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image154.png" data-desc-position="top"><img alt="" src="../media/image154.png"></a></p>
+<p>(Replace XXX and YYY with the values for your eXpo dCloud pod)</p>
+<p>c. Enter password: <strong>dCloud123!</strong> (if you did not complete Module 1 and enable SSO, then the password will be <strong>dCloudZZZZ!</strong> replacing 'ZZZZ' with the last four digits of the dCloud session ID, refer to the eXpo dCloud Session View Info page for your session ID).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image155.png" data-desc-position="top"><img alt="" src="../media/image155.png"></a></p>
+<p>d. Once logged in, navigate to <strong>Users</strong> and select Anita Perez.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image156.png" data-desc-position="top"><img alt="" src="../media/image156.png"></a></p>
+<p>e. Scroll down and click Administrator roles.</p>
+<p>f. Promote Anita Perez to Compliance Officer for the organization by ticking the box next to 'Compliance officer'. Click <strong>Save</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image157.png" data-desc-position="top"><img alt="" src="../media/image157.png"></a></p>
+</li>
+<li>
+<p>Review retention settings for Webex Meetings and Messaging.</p>
+<p>One of the first compliance considerations is data retention. How long should data be retained before it is deleted? It's important for the compliance officer to understand the retention policies of the organization and to configure Webex to match these policies.</p>
+<p>Before proceeding, move to WKST2 (wkst2.dcloud.cisco.com). If not already connected, connect to WKST2. Login will be as Anita Prerez (dcloud\<strong>aperez</strong> // <strong>dCloud123!</strong>).</p>
+<p>a. Open the Chrome browser on WKST2 (wkst1.dcloud.cisco.com) and navigate to Control Hub at <a href="https://admin.webex.com">https://admin.webex.com</a>.</p>
+<p>b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cbXXX.dc-YY.com (refer to eXpo dCloud session info page for the DNS domain). Click <strong>Sign In</strong>.</p>
+<p>c. Enter password: <strong>dCloud123!</strong> (non-SSO password is <strong>dCloudZZZZ!</strong> - refer to eXpo dCloud session info page for the session ID and use the last 4 digits to replace 'ZZZZ').</p>
+<p>d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&amp;A, whiteboards, polls, etc.), and Webex Calling (business texting).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image158.png" data-desc-position="top"><img alt="" src="../media/image158.png"></a></p>
+<p>e. Click <strong>Settings</strong> under Webex App Messaging Retention Policy to review current messaging retention settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image159.png" data-desc-position="top"><img alt="" src="../media/image159.png"></a></p>
+<p>By default, the retention period is set to 360 days. Notice that separate retention periods can be set for 1:1 chat and group chat.</p>
+<p>For the purposes of this lab, there is no reason to change the message retention policy, so click <strong>Cancel</strong> to close the Webex Space retention policy window.</p>
+<p>f. Click <strong>Settings</strong> under Webex Meetings Retention Policy to review current meeting retention settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image160.png" data-desc-position="top"><img alt="" src="../media/image160.png"></a></p>
+<p>By default, the retention period is set to 360 days. Note that recording retention can be set to purge in 30 days, but by default the recordings follow the meetings retention policy. For the purposes of this lab, there is no reason to change the meeting retention policy, so just click <strong>Cancel</strong> to close the Webex Meetings Retention Policy window.</p>
+<p><strong>Note:</strong> Keep in mind that retention policies in Control Hub apply to data retention for data archived or stored on the Webex platform. When relying on a 3rd party archival system (e.g., Theta Lake), the retention setting of that platform will determine how long organization data is retained. Always ensure that the retention period configured in Control Hub and/or the 3rd party platform matches your organization's retention policy for data.</p>
+</li>
+<li>
+<p>Review external communication messaging settings.</p>
+<p>Webex has a set of built-in data leakage control features which provide some data loss protections without an integration to a 3rd party DLP compliance platform.</p>
+<p>By default, users in a Webex organization can communicate with users in any other Webex organization. However, you can block messaging communication between your users and users in other Webex organizations or allow messaging with only a subset of external Webex organization users.</p>
+<p>Let's review the external communication configuration for messaging.</p>
+<p>Return to the Chrome browser on WKST2 and on Control Hub navigate to Organization Settings. Scroll to 'External Communication' to locate the external communications settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image161.png" data-desc-position="top"><img alt="" src="../media/image161.png"></a></p>
+<p>By default, messaging to external organization users is allowed ('Allow all external messaging' is selected). As such, your user's will be able to join external Webex spaces and invite external contacts to your organization's Webex spaces.</p>
+<p>Webex provides setting options that enable an organization to control which external organizations its users can exchange messages with. An administrator can configure block ('Allow all domains except the blocked domains') or allowed ('Allow selected domains only') domain list(s).</p>
+<p>For the purposes of this lab, leave this setting at the default value ('Allow all external messaging').</p>
+<p><strong>Note:</strong> External messaging restrictions with allow or block domain lists also apply to 1:1 Webex calls between Webex Apps ('Call on Webex').</p>
+</li>
+<li>
+<p>Review messaging and meeting collaboration restrictions.</p>
+<p>Another built-in Webex data loss protection setting is available for restricting messaging file sharing activities. Let's review the collaboration restrictions configuration for messaging.</p>
+<p>On the Chrome browser on WKST2 (wkst2.dcloud.cisco.com) in Webex Control Hub, navigate to <strong>Messaging</strong> and review the Collaboration Restrictions configuration settings (at the top of the page).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image162.png" data-desc-position="top"><img alt="" src="../media/image162.png"></a></p>
+<p>By default, no messaging Collaboration Restrictions are configured, however with this functionality, an administrator has granular control over all aspects of file sharing including the ability to restrict file sharing to the corporate network and/or to specific file types or sizes. Likewise, the administrator can restrict file preview and file upload/download. These types of restrictions may sufficiently address organizational concerns or requirements regarding data loss.</p>
+<p>For the purposes of this lab, leave external file sharing, file preview/upload/ download, and file type and size restrictions at their default values (e.g., no restrictions).</p>
+<p>Now, let's review the communication restriction configuration for meetings.</p>
+</li>
+<li>
+<p>On Control Hub navigate to <strong>Meeting</strong>, click <strong>Settings</strong>, and review the data and communication restriction controls available for meetings.</p>
+<p>The internal and external meeting configuration options allow you to control which external users can join your organization's meetings (Internal Webex meetings) and which external organization's meetings (External Webex meeting sites) your users can join. This type of restriction control allows an organization to mitigate potential data loss by disallowing certain attendees and/or meeting sites and may sufficiently address organizational requirements regarding data loss.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image163.png" data-desc-position="top"><img alt="" src="../media/image163.png"></a></p>
+<p>By default, external users are allowed to attend your organization's meetings, and your users can attend external meeting sites. For the purposes of this lab, you can leave the default values (e.g., no restrictions).</p>
+<p>In addition to controlling which users can join meetings and which meetings users are allowed to join, you can also restrict specific meeting features for both internal and external meetings.</p>
+<p>Scroll down and review the various meeting capabilities that can be disabled for internal or external meetings. For example, you could disable in-meeting tools like polling, Q&amp;A, chat, and recording. This type of meeting data restriction control allows an organization to mitigate and reduce potential data loss by disallowing certain channels of communication (e.g., Q&amp;A, chat, polling, etc.).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image164.png" data-desc-position="top"><img alt="" src="../media/image164.png"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image165.png" data-desc-position="top"><img alt="" src="../media/image165.png"></a></p>
+<p>For the purposes of this lab, please leave the default values (e.g., no restrictions).</p>
+<p>Now that you've confirmed the Compliance Officer role for user Anita Perez and reviewed Webex's built-in data restrictions capabilities, it's time to move on to the Webex integration to external compliance platforms.</p>
+</li>
+</ol>
+<h2 id="integrate-webex-with-cloudlock-and-configure-dlp-policies">Integrate Webex with Cloudlock and Configure DLP Policies</h2>
+<p>In this section you will integrate Webex with Cloudlock and explore DLP policy configuration on the platform.</p>
+<ol>
+<li>
+<p>Login to the Cloudlock management portal using Webex compliance officer credentials.</p>
+<p>An account has already been pre-provisioned on the Cloudlock portal for the compliance officer, Anita Perez. You'll recall that in the previous section you configured this user with the Compliance Officer role in Control Hub.</p>
+<p>To get started with Cloudlock, make sure you can login to the Cloudlock account.</p>
+<p>a. From the Chrome browser on Anita Perez's workstation (WKST2), navigate to the Cloudlock portal at <a href="https://demo.cloudlockng.com/">https://demo.cloudlockng.com/</a>. Select <strong>Webex</strong> from the 'Sign in with' dropdown menu and click the <strong>LOG IN</strong> button.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image166.png" data-desc-position="top"><img alt="" src="../media/image166.png"></a></p>
+<p>b. Login with the compliance officer's (Anita Perez's) Webex account.</p>
+<p>At the Webex login prompt, enter <strong>aperez@cbXXX.dc-YY.com</strong> (see the eXpo dCloud Session View for domain / 'XXX' and 'YY' values) and the password <strong>dCloud123!</strong> then click the <strong>Sign In</strong> button. Refer to eXpo dCloud Session View for the Webex password if you did not complete module 1.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image167.png" data-desc-position="top"><img alt="" src="../media/image167.png"></a></p>
+<p>(Note: If SSO is enabled, you may not receive a password prompt since you recently authenticated)</p>
+<p>If prompted, click <strong>Accept</strong> to grant directory read permissions to Cloudlock platform.</p>
+<p>Since this is the first time the compliance officer has logged into the platform, the Cloudlock terms of service is presented. Click <strong>ACCEPT</strong> to continue.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image168.png" data-desc-position="top"><img alt="" src="../media/image168.png"></a></p>
+<p>You will be taken to the Cloudlock Dashboard page. (Note: If necessary, reload/refresh the page (F5) to get the page to finish loading)</p>
+</li>
+<li>
+<p>Configure the initial Webex Cloudlock platform integration.</p>
+<p>For the Cloudlock compliance platform to receive user data from Webex, your Webex org integration to Cloudlock must be authorized.</p>
+<p>a. Navigate to the Settings page on the Cloudlock portal. Click <strong>Settings</strong> in the left-hand navigation menu to load the Settings page.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image169.png" data-desc-position="top"><img alt="" src="../media/image169.png"></a></p>
+<p>On the 'Platforms' tab you'll notice that Webex platform integration needs authorization in the Cloudlock tenant.</p>
+<p>b. Click the <strong>Authorize</strong> button to authorize the platform integration for Webex.</p>
+<p>c. Select <strong>Webex Teams</strong> (messaging) and <strong>Webex Meetings</strong> platform services. (In this lab we'll focus on messaging, but it doesn't hurt to include meetings in the authorization).</p>
+<p>d. Click the <strong>AUTHORIZE</strong> button again.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image170.png" data-desc-position="top"><img alt="" src="../media/image170.png"></a></p>
+<p>e. Login to Webex with compliance officer account credentials (aperez@cbXXX.dc-YY.com) to complete the authorization.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image167.png" data-desc-position="top"><img alt="" src="../media/image167.png"></a></p>
+<p>(Note: Because SSO is enabled, you may not receive a password prompt since you recently authenticated)</p>
+<p>f. Grant Webex permissions to Cloudlock to complete the authorization process.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image171.png" data-desc-position="top"><img alt="" src="../media/image171.png"></a></p>
+<p>g. Confirm platform authorization for Webex.</p>
+<p>Ensure the platform shows 'Authorized'</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image172.png" data-desc-position="top"><img alt="" src="../media/image172.png"></a></p>
+<p>Once the platform is authorized, Cloudlock will begin actively collecting data from the Webex org for both messaging and meetings.</p>
+</li>
+<li>
+<p>Prepare Webex for real-time file DLP with webhooks.</p>
+<p>Since you will be exploring DLP including real-time DLP for files, enable webhooks. Return to Control Hub in the Chrome browser and navigate to <strong>Messaging</strong> and scroll down to the setting <strong>Real-time data loss prevention for files</strong> and toggle on.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image173.png" data-desc-position="top"><img alt="" src="../media/image173.png"></a></p>
+<p>This will enable webhooks for your Webex org so that compliance platform integrations can use webhooks for monitoring Webex data.</p>
+</li>
+<li>
+<p>Review and re-configure a built-in Cloudlock compliance policy.</p>
+<p>Return to the Cloudlock portal in the Chrome browser (on WKST2). Cloudlock compliance policies are managed on the Policies page.</p>
+<p>a. Navigate to the Policies page to begin reviewing and configuring compliance policies. Click <strong>Policies</strong> in the left-hand navigation menu to load the Policies page. All compliance policies for the Cloudlock platform are managed here.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image174.png" data-desc-position="top"><img alt="" src="../media/image174.png"></a></p>
+<p>You will notice that there are several active compliance policies already configured in your Cloudlock tenant.</p>
+<p>These policies are based on pre-defined policy detection rules on the Cloudlock platform.</p>
+<p>b. Review the pre-defined policy list. Before looking at policies that have already been configured, let's review the built-in or pre-defined policies available on Cloudlock. Click the <strong>ADD A POLICY</strong> button and select '<strong>Add Predefined Policy</strong>'.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image175.png" data-desc-position="top"><img alt="" src="../media/image175.png"></a></p>
+<p>In the Add Predefined Policy window under Predefined Policies click the '<strong>Select policy</strong>' dropdown and wait for the list of predefined policies to load. Scroll down to review the numerous built-in compliance policies including 'Credit Card Number' and 'US Social Security Number'. Click any of the policy names to load and review the full policy name and the description of the policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image176.png" data-desc-position="top"><img alt="" src="../media/image176.png"></a></p>
+<p>You'll add a new policy in the next step, so click the <strong>Cancel</strong> button to exit without creating a policy.</p>
+<p>c. Update the detection criteria for the pre-configured Social Security Number compliance policy.</p>
+<p>Before creating a new policy of your own, it's important to understand the configuration options for a policy.</p>
+<p>Cloudlock enables granular control of how the platform detects policy violations and how it responds. When first creating a policy and/or after clicking the 'Edit' link in the Detection Criteria column of an existing policy, a compliance officer is able to adjust the type of content looked for (Content Criteria), the sensitivity of the detection (Threshold, Tolerance, and Proximity), when it happens (Realtime), and the context in which the policy is applied (e.g., platform, file type, ownership, sensitivity labels).</p>
+<p>Begin by updating the pre-configured Social Security Number compliance policy to enforce it in real-time. This will enable the use of a Webex webhook to allow Cloudlock to provide real-time DLP to files sent via Webex.</p>
+<p>Click the '<strong>Edit</strong>' link in the Detection Criteria column for the Social Security Number policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image177.png" data-desc-position="top"><img alt="" src="../media/image177.png"></a></p>
+<p>First, note the Social Security Number policy is based upon the built-in predefined policy 'US Social Security Number'.</p>
+<p>Click '<strong>Tolerance</strong>' to configure the sensitivity of the policy. The purpose of this setting is to balance the matching of the policy against user generated data between false matches/more incidents ('Lenient') and fewer positive matches/less incidents ('Strict') where violating content may be missed.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image178.png" data-desc-position="top"><img alt="" src="../media/image178.png"></a></p>
+<p>Tick the '<strong>Moderate</strong>' radio button to have the policy be a bit more sensitive to possible matches. This will ensure the content (messages) you generate later will violate this policy. In a production deployment you would tune the tolerance level of each policy based on the organization's policy requirements and end-user behaviors.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image179.png" data-desc-position="top"><img alt="" src="../media/image179.png"></a></p>
+<p>Click '<strong>Realtime</strong>' to load the configuration option.</p>
+<p>Under Specific Platforms, tick the <strong>Webex</strong> box. This enables real-time policy detection (for files) on Webex using webhooks.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image180.png" data-desc-position="top"><img alt="" src="../media/image180.png"></a></p>
+<p>Feel free to explore the other sensitivity content settings (Threshold and Proximity) as well as the context settings (under the 'Context' tab), but do not make any additional changes. When you are through reviewing the other settings, click the <strong>SAVE ALL CHANGES</strong> button.</p>
+<p>Now that you've seen the controls the Cloudlock platform provides for detecting policy violations, investigate the controls for how the platform responds to a policy violation.</p>
+<p>d. Update the response actions for a pre-configured Social Security Number compliance policy.</p>
+<p>Returning to the Policy page, configure the actions the platform will take in response to a policy violation. Click the '<strong>Create</strong>' link in the Response Actions column of the Social Security Number policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image181.png" data-desc-position="top"><img alt="" src="../media/image181.png"></a></p>
+<p>The response action sequence builder page is displayed. To build a sequence of actions in response to a policy detection, the compliance officer drags actions from the left-hand action list to the first available action box. In some cases, the action requires configuration.</p>
+<p>To begin, assume that the first action you want to happen when there is a violation of the policy is that the violating message or file gets removed. To set the platform to remove a message or file on a violation select the '<strong>Webex Teams: Delete Message and/or File</strong>' action and drag to the open action box.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image182.png" data-desc-position="top"><img alt="" src="../media/image182.png"></a></p>
+<p>In addition to removing the message/file, it probably makes sense to notify an administrator of the Cloudlock platform that a violation has occurred. Drag the '<strong>Webex Teams: Notify Admin via Message</strong>' action to the next available action box.</p>
+<p><strong>Note:</strong> Be sure to select the '<strong>Webex Teams</strong>: Notify Admin via Message' action and NOT the '<strong>Webex Meeting</strong>: Notify Admin Via Message' action.</p>
+<p>This time you must configure the action. Click the 'select' drop-down and select '<strong>aperez@cbXXX.dc-YY.com</strong>' (where 'XXX' and 'YY' correspond to your pod domain -- refer to eXpo dCloud Session View page). The platform will notify this user by Webex message whenever this policy is violated. In this case, you are setting the compliance officer (Anita Perez) as the person to be notified.</p>
+<p><strong>Note:</strong> It takes approximately 5 minutes from the time the Webex platform is authorized in Cloudlock until the drop-down is populated with users. If 5 minutes has not passed, please wait and select 'aperez@...' once the drop-down is populated.</p>
+<p>You can customize the message that is sent to the compliance officer/administrator. Add the following message (or something similar) to the message box: <em>{{ user }} has violated the Webex security and compliance policy regarding </em><em>SSN</em><strong>. Click the </strong>SAVE** button to save the action configuration.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image183.png" data-desc-position="top"><img alt="" src="../media/image183.png"></a></p>
+<p>In the interest of transparency, it makes sense to also notify the user who has committed the violation. To do that, drag the '<strong>Webex Teams: Notify User via Message</strong>' action to the next available action box. (Note: Be sure to drag '<strong>Webex Teams</strong>: Notify User...' action and NOT the '<strong>Webex Meeting</strong>: Notify <strong>Host</strong>...' action).</p>
+<p>There is also configuration for this action. Add the message: <em>You have violated the company's Webex security and compliance policy for </em><em>SSN</em><em>. The offending message/file has been deleted. The incident has been logged and reported to the compliance officer.</em> Now, the platform will notify any user by Webex message whenever they violate the policy. Click the <strong>SAVE</strong> button to save this action configuration.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image184.png" data-desc-position="top"><img alt="" src="../media/image184.png"></a></p>
+<p>Finally, be sure to click the <strong>SAVE</strong> button at the bottom of the page to save the response action sequence for this policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image185.png" data-desc-position="top"><img alt="" src="../media/image185.png"></a></p>
+<p>To return to the Policies page, either click the '<strong>Go back to Policy List</strong>' link at the top of the sequence builder window or click <strong>Policies</strong> in the left-hand navigation window.</p>
+<p>You've successfully updated the configuration of both the detection criteria and the response actions for the policy. This completes the review and configuration of a compliance policy based on one of the Cloudlock platform's built-in predefined policies (Social Security Number).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image186.png" data-desc-position="top"><img alt="" src="../media/image186.png"></a></p>
+</li>
+<li>
+<p>Create a new custom compliance policy on the Cloudlock tenant.</p>
+<p>Now that you understand policy detection criteria and response actions better, you are ready to configure a new custom policy. For this policy, you'll configure a custom regular expression-based detection with the same response actions as you just configured on the Social Security Number policy.</p>
+<p>On the Policies page, click the <strong>ADD A POLICY</strong> button and select '<strong>Build your own</strong>'.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image187.png" data-desc-position="top"><img alt="" src="../media/image187.png"></a></p>
+<p>After the 'Create New Policy' window loads, configure the following value:</p>
+<ul>
+<li>Policy Type: Select '<strong>Custom Regex</strong>' from the drop-down list.</li>
+<li>Severity Level: Select '<strong>Alert</strong>' from the drop-down list.</li>
+<li>Policy Name: <strong>My Name/User ID</strong></li>
+<li>Policy Description: <strong>Build your own policy to identify name/user ID</strong></li>
+</ul>
+<p>Click the <strong>CONFIGURE POLICY</strong> button to continue.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image188.png" data-desc-position="top"><img alt="" src="../media/image188.png"></a></p>
+<p>Next, for Regex configure a regular expression to match the first letter of your first/given name and your last name/surname. In addition, ensure that the expression is case insensitive for the first two letters. For example, if your first name is <em>Bob</em> and your last name is <em>Smith</em>, you would enter: <em>[Bb][Ss]mith.</em></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image189.png" data-desc-position="top"><img alt="" src="../media/image189.png"></a></p>
+<p>You don't need to configure any other detection criteria (sensitivity, context) settings for this policy, so click the <strong>SAVE ALL CHANGES</strong> button to save the policy.</p>
+<p>Next, configure the response actions for this policy when violated. On the Policies page, click the '<strong>Create</strong>' link in the Response Actions column for the 'My Name/User ID' policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image190.png" data-desc-position="top"><img alt="" src="../media/image190.png"></a></p>
+<p>Create the same response actions sequence as you did for the Social Security Number policy with the following configuration settings:</p>
+<ul>
+<li>Action #1: Webex Teams: Delete Message and/or File</li>
+<li>Action #2: Webex Teams: Notify Admin via Message<ul>
+<li>Configuration -- Specify User: '<strong>aperez@cbXXX.dc-YY.com</strong>' (where 'XXX' and 'YY' correspond to your pod domain -- refer to eXpo dCloud Session View)</li>
+<li>Configuration -- Message: <em>{{ user }} has violated a Webex security and compliance policy for my name/userID.</em></li>
+<li>(Click <strong>SAVE</strong>)</li>
+</ul>
+</li>
+<li>Action #3: Webex Teams: Notify User via Message<ul>
+<li>Configuration -- Message: <em>You have violated the company's Webex security and compliance policy for my name/userID. The offending message/file has been deleted. The incident has been logged and reported to the compliance officer.</em></li>
+<li>(Click <strong>SAVE</strong>)</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image191.png" data-desc-position="top"><img alt="" src="../media/image191.png"></a></p>
+<p><strong>Note</strong>: Make sure 'Webex Teams...' actions are selected and not 'Webex Meeting...'</p>
+<p>Remember to click the bottom <strong>SAVE</strong> to save the action response configuration to the policy. Then click the '<strong>Go back to the Policy list</strong>' link (or just click <strong>Policies</strong> in the left-hand navigation menu) to return to the Polices page.</p>
+<p>You've successfully updated the configuration of both the detection criteria and the response actions for the new policy. This completes configuration of the new regex-based build your own compliance policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image192.png" data-desc-position="top"><img alt="" src="../media/image192.png"></a></p>
+<p>The Cloudlock tenant has now been fully integrated with the Webex org and compliance configuration is complete. It's now time to see the compliance platform DLP in action.</p>
+</li>
+</ol>
+<h2 id="generate-user-data-via-webex-app-and-observe-dlp-operation">Generate user data via Webex App and Observe DLP Operation</h2>
+<p>In this section you will generate user data using the Webex App. This data will be collected by the DLP platform.</p>
+<ol>
+<li>
+<p>Test the compliance policies you created/edited in Cloudlock by generating messages with the Webex App.</p>
+<p>a. Open the Webex App on Charles Holland's workstation (WKST1)</p>
+<p>If required, RDP to WKST1 and login with the following credentials: <strong>dCloud\cholland</strong> // <strong>dCloud123!</strong></p>
+<p>Once connected to WKST1, launch the Webex App. Login with Charles Holland's account username / password: <strong>cholland@cbXXX.dc-YY.com</strong> / <strong>dCloud123!</strong> (see eXpo dCloud Session View for 'XXX' and 'YY' values and the non-SSO password if you didn't complete Module 1).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image193.png" data-desc-position="top"><img alt="" src="../media/image193.png"></a></p>
+<p>For any application tour prompts, click <strong>Got it</strong>.</p>
+<p>b. Open the Webex App on Kellie Melby's workstation (WKST3)</p>
+<p>RDP to WKST3 and login with the following credentials: <strong>dCloud\kmelby</strong> // <strong>dCloud123!</strong></p>
+<p>Once connected to WKST3, launch the Webex App. Login with Kellie Melby's account username / password: <strong>kmelby@cbXXX.dc-YY.com</strong> / <strong>dCloud123!</strong> (see eXpo dCloud Session View for 'XXX' and 'YY' values and the non-SSO password if you didn't complete Module 1). Remember to click 'Skip Profile' when prompted for secondary email during this initial login.</p>
+<p>c. Return to Charles' Webex App on WKST1, create a 1:1 space with user Kellie Melby (kmelby) and send messages and a file to verify real-time file DLP. Click <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image194.png" data-desc-position="top"><img alt="" src="../media/image194.png"></a> and select '<strong>Send a message</strong>'. Type '<strong>Kellie Melby</strong>' in the search window and click the name when found to start a 1:1 space with Kellie.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image195.png" data-desc-position="top"><img alt="" src="../media/image195.png"></a></p>
+<p>Before proceeding, open Notepad++ by clicking the program icon on the task bar. Create a new notepad file (File &gt; New or click the add new icon <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image196.png" data-desc-position="top"><img alt="" src="../media/image196.png"></a>). Type your social security number on the first line of the file or use the following number: <em>405-09-7413</em>. Save the file to the Desktop as a text file named <strong>dlp_test_file_ssn.txt</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image197.png" data-desc-position="top"><img alt="" src="../media/image197.png"></a></p>
+<p>Now, send a message, followed by a file with a social security number. For example:</p>
+<ul>
+<li><em>Hi Kellie, Sending along a file</em></li>
+</ul>
+<p>Notice that the message is successfully sent. Now, upload the file you just created (<strong>dlp_test_file_ssn.txt</strong>) from the Desktop of WKST1 to the 1:1 space.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image198.png" data-desc-position="top"><img alt="" src="../media/image198.png"></a></p>
+<p>Once attached, press enter to send the file.</p>
+<p>d. Observe Cloudlock real-time file DLP in action.</p>
+<p>Once the file is sent, you will see the file being processed and almost immediately you see the file is blocked and then the blocked file is deleted. Notice that the file is deleted by Anita Perez, the organization's compliance office. This deletion was triggered by the Cloudlock platform once the file was scanned and blocked in real-time by the platform. This is the 'delete message or file' policy response action you configured for the Social Security Number policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image199.png" data-desc-position="top"><img alt="" src="../media/image199.png"></a></p>
+<p>Notice that Charles also receives a message from a Security Center bot. Click the Security Center space to review the message. This message should look familiar to you as it's the message you configured to send to the user with the 'notify user via message' policy response action.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image200.png" data-desc-position="top"><img alt="" src="../media/image200.png"></a></p>
+<p><strong>Note:</strong> If you missed the file block message/indication, you can return to the Cloudlock portal (return to Chrome browser on WKST2) and remove the 'Webex Teams: Delete Message or File' response action from the <strong>Social Security Number</strong> policy and save the policy again.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image201.png" data-desc-position="top"><img alt="" src="../media/image201.png"></a></p>
+<p>Now, repeat the test by sending the same file. This time the file will again be blocked, but the blocked file will not be deleted.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image202.png" data-desc-position="top"><img alt="" src="../media/image202.png"></a></p>
+<p>You will also see a second notification from the Security Center bot for this second violation to the user (cholland). You'll also see a second notification from the bot to the compliance officer/admin (aperez) in a later step.</p>
+<p>e. In Charles' Webex App on WKST1, send a message in the 1:1 space with Kellie to verify near real-time message DLP.</p>
+<p>Send messages including one that matches the custom regex policy (My Name/User ID) you created earlier to catch first letter of the first name and last name. For example:</p>
+<ul>
+<li><em>Hi, I'm sending my userID</em></li>
+<li><em>FLast</em></li>
+</ul>
+<p>Notice that the messages are successfully sent and received including the message that violates your custom regex policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image203.png" data-desc-position="top"><img alt="" src="../media/image203.png"></a></p>
+<p>f. Observe Cloud near real-time message DLP in action.</p>
+<p>After a short period of time, you will see the second message (e.g., FLast) get deleted by the compliance officer. This near-real time message deletion is triggered by the Cloudlock platform. The message contains a pattern that matches the custom regex detection criteria defined earlier. The deletion again occurs because of the 'delete message or file' policy response action configured for the 'My Name/User ID' custom regex policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image204.png" data-desc-position="top"><img alt="" src="../media/image204.png"></a></p>
+<p>Notice that Charles again receives a message from the Security Center bot in the Security Center space to review the message. This message should look familiar to you as it's the custom message you configured to send to the user with the 'notify user via message' policy response action for the policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image205.png" data-desc-position="top"><img alt="" src="../media/image205.png"></a></p>
+<p>g. Review the admin / compliance officer message notification from the Security Center bot.</p>
+<p>Because one of the policy response actions for both Cloudlock policies you configured was to 'notify the admin via message', confirm that the organization compliance officer (Anita Perez) receives message notification.</p>
+<p>Return to WKST2 -- if required RDP to the workstation and login with the following credentials: <strong>dCloud\aperez</strong> // <strong>dCloud123!</strong></p>
+<p>Once connected to WKST2, launch the Webex App. Login with Anita Perez's account username / password: <strong>aperez@cbXXX.dc-YY.com</strong> / <strong>dCloud123!</strong> (see eXpo dCloud Session View for 'XXX' and 'YY' values and the last 4-digits of the session ID for the non-SSO password if you didn't complete Module 1).</p>
+<p>Notice there are new messages in the Security Center space notifying Anita about Cloudlock DLP compliance policy violations. The messages match the 'notify admin via message' policy response action message you configured earlier for both of the policies.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image206.png" data-desc-position="top"><img alt="" src="../media/image206.png"></a></p>
+</li>
+<li>
+<p>Review the compliance violation incident management on the Cloudlock compliance platform.</p>
+<p>In addition to compliance policy violation response actions, the Cloudlock platform also provides incident reporting and management capabilities. Return to the Chrome browser on WKST2 and the Cloudlock portal. Navigate to the Incidents page by clicking <strong>Incidents</strong> in the left-hand navigation menu.</p>
+<p>Once the page loads scroll down to see a list of the most recent compliance violation incidents. You should see an incident for each of the policy violations you generated with the user content you sent via Webex App. One incident is related to violation of the 'My Name/User ID' policy (custom regex policy) and the other for violation of the 'Social Security Number' policy (predefined policy).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image207.png" data-desc-position="top"><img alt="" src="../media/image207.png"></a></p>
+<p>Click each incident to see a summary of the incident details including the platform, the owner/violator, and the policy that was violated. In addition, the incident summary includes detailed excerpts of the violating message or file.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image208.png" data-desc-position="top"><img alt="" src="../media/image208.png"></a></p>
+<p>Click the 'Incident History' tab to get details on the on the response actions taken by the platform for the policy violation. You should see an event for each of the three policy response actions you configured for the policies:</p>
+<p>i. Delete content -- 'Webex Teams: Delete Message and/or File'.
+  ii. Notify the compliance officer/admin -- 'Webex Teams: Notify Admin'.
+  iii. Notify the compliance officer/admin -- 'Webex Teams: Notify User'.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image209.png" data-desc-position="top"><img alt="" src="../media/image209.png"></a></p>
+</li>
+</ol>
+<h2 id="explore-theta-lake-ediscovery-and-legal-hold">Explore Theta Lake eDiscovery and Legal Hold</h2>
+<p>eDiscovery is the mechanism for searching through and retrieving data from the retained user-generated data archive of an organization. This ensures that the compliance officer has full access to all retained user data as needed for compliance management and enforcement. Because <strong>eDiscovery</strong> enables search and retrieval of data, this is often discussed together with <strong>Archiving</strong> capabilities which pertains with how and where the data that is being searched is stored.</p>
+<p>Webex has built-in eDiscovery/Legal Hold and archiving or data storage capabilities which may be sufficient for some organizations. The built-in Webex eDiscovery Search and Extraction portal provides Webex organizations the ability to access Webex stored and retained user-generated data. And as discussed earlier, there are retention settings in Control Hub which determine how long user-generated data is stored on the Webex platform. Note that exploring the Webex eDiscovery Search and Extraction portal is not part of this lab. However, for your reference, the Appendix of this lab guide has a module that covers the built-in Webex eDiscovery tool. If you are interested in this module, please complete the rest of the lab before exploring.</p>
+<p>For advanced implementations of eDiscovery and Archiving, a third-party compliance platform integration is generally preferred.</p>
+<p>Theta Lake has a full set of compliance capabilities including near real-time file and message DLP with flexible, granular DLP policies, and DLP incident management. In this module you'll explore the archiving and eDiscovery/Legal Hold capabilities of the Theta Lake platform.</p>
+<h3 id="archiving">Archiving</h3>
+<ol>
+<li>
+<p>Login to Theta Lake management portal with read-only admin login.</p>
+<p>As you examine Theta Lake eDiscovery capabilities, it helps to have some historical user data (something beyond just data you might generate today) so you can search and review data over a period days and weeks. In this section you'll use a read-only administrator account for a Theta Lake organization which contains months of user-generated message and meeting data.</p>
+<p>From the Chrome browser on Anita Perez's workstation (WKST2), navigate to the Theta Lake management portal at <a href="https://useast.thetalake.ai/">https://useast.thetalake.ai/</a>.</p>
+<p>Login using the read-only administrator account credentials (email / password): <strong>co.read.only@gmail.com</strong> / <strong>dCloud123!</strong></p>
+<p>Once logged in navigate to the Policies page by clicking '<strong>Policies</strong>' in the navigation menu at the top of the page.</p>
+</li>
+<li>
+<p>Review the Retention Library page.</p>
+<p>The retention library or archive is the final resting place for the data coming from the Webex platform, so it's important to understand where and how your data is archived before even thinking about DLP or eDiscovery.</p>
+<p>On the Theta Lake platform archiving is managed under the Policies sub-section '<strong>Content Destination</strong>'. Retention libraries are managed here.</p>
+<p>Navigate to the Archive retention libraries page by clicking 'Content Destination' in the left-hand navigation menu to expand, and then click 'Retention Libraries'.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image210.png" data-desc-position="top"><img alt="" src="../media/image210.png"></a></p>
+<p>By default. Theta Lake automatically configures a retention library called 'Default' when the Theta Lake org is created.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image211.png" data-desc-position="top"><img alt="" src="../media/image211.png"></a></p>
+<p>Notice that the default retention period for the default retention library is 'Forever', meaning that user data for your org will be archived and maintained indefinitely. Data records have been created and archived to this retention library (Record Count = <em>nnn</em>).</p>
+<p><em><strong>Note:</strong> You will see a second retention library called 'Delete Storage'. This retention library is for lab operational purposes. We use this library to clear data records from the Theta Lake tenant after the lab has been completed.</em></p>
+<p>Theta Lake allows for the creation of multiple retention libraries within an organization enabling you to segment data archiving to accommodate variable retention periods and storage requirements.</p>
+<p>Given this is a read-only account, you won't be able to edit the retention library and see details. Below is what the retention library edit dialog [would look like if you were to edit or create a new retention library.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image212.png" data-desc-position="top"><img alt="" src="../media/image212.png"></a></p>
+<p>Notice that there is a setting to enable specialized storage to meet certain archival compliance requirements for data retention and storage. Specifically, Theta Lake optionally provides SEC Rule 17a-4 compliant storage. Rule 17a-4 requires maintenance and preservation of electronic records exclusively in a non-rewriteable, non-erasable storage format -- referred to as WORM (write once, read many). We don't need WORM storage for the purposes of this lab, so this is not enabled.</p>
+<p>As mentioned earlier, this default library currently has no retention period set so data will be maintained indefinitely. If the compliance officer or administrator wanted to adjust the retention period, they simply enable the retention period and then specify the retention period in days.</p>
+</li>
+</ol>
+<h3 id="ediscovery-legal-hold">eDiscovery / Legal Hold</h3>
+<ol>
+<li>
+<p>Return to the Theta Lake portal with read-only admin login.</p>
+<p>As you examine Theta Lake eDiscovery capabilities, it helps to have some historical user data (something beyond just today) so you can search and review data over a period days and weeks. You'll continue to use the read-only administrator account for the Theta Lake organization which contains several months of user-generated message and meeting data.</p>
+<p>Once logged in, click 'Search' from the navigation menu for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting recordings. All available records are retrieved by default.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image213.png" data-desc-position="top"><img alt="" src="../media/image213.png"></a></p>
+<p>Note that this Theta Lake org has many Webex Messaging and Webex Meeting data records and lots of filters that can be applied to search easily through the records.</p>
+</li>
+<li>
+<p>eDiscovery search for user Charles Holland's Webex Messaging data.</p>
+<p>a. Review the Theta Lake search capabilities.</p>
+<p>Theta Lake provides a powerful set of search and filter capabilities for eDiscovery. Filtering data records is easy. Simply click one of the filter buttons at the top of the page just under the search bar and select one or more parameters before applying the filter.</p>
+<p>For example, the compliance officer can filter by collaboration platform integration by clicking the 'Platform' filter button and selecting an integration -- e.g., Webex Messaging, Webex Meetings, Zoom, etc. Likewise, they could filter by content type by clicking the 'Content' filter button and selecting a specific content format -- e.g., Adobe PDF, Microsoft PowerPoint, etc. You do <strong>not</strong> need to configure these search filters. These are just examples. You'll configure a set of search filters in the next step.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image214.png" data-desc-position="top"><img alt="" src="../media/image214.png"></a></p>
+<p>Carefully review the left-hand navigation menu and the various search and filter categories. Click to expand categories to see the full list of search criteria in each category.</p>
+<p>b. Create an eDiscovery search based on a specific set of search filters.</p>
+<p>Let's create a custom search to narrow the displayed list of data records.</p>
+<p>Suppose there have been repeated compliance policy violations from a specific user over the last 12 months and the compliance officer is investigating the potential impact and whether there is a pattern of the user sharing highly restricted data like credit card numbers over chat with other employees.</p>
+<p>The compliance officer needs to locate all instances of credit cards numbers sent or received via the company's messaging app (Webex) by user Charles Holland. Create a simple custom search to retrieve all user data records matching these parameters.</p>
+<p>In the left-hand navigation menu, under the 'FAVORITES' category, click '<strong>Policy Hits</strong>'. In the resulting dialog box, scroll through the drop-down menu and select built-in detection rule 'Credit Card Number (CC#) -- Audio, Chat, Attachment, and Emails'. Click <strong>Apply</strong> to add this search filter.</p>
+<p>Next, click the 'PEOPLE' category to expand the filter list and click '<strong>Participants</strong>'. (Alternatively, click the 'Participants' filter button at the top of the search window). In the resulting dialog box, select '<strong>FirstName</strong>' from the Attribute dropdown and then type 'Charles' to search. Select 'Charles' from the list. Click <strong>Apply</strong> to add this search filter.</p>
+<p>Finally, locate t­he 'PLATFORM' category in the left-hand navigation menu and click to expand the filter list. Click '<strong>Platform</strong>' and select 'Webex Messaging' from the drop-down menu. Click <strong>Apply</strong> to add this third and final search filter.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image215.png" data-desc-position="top"><img alt="" src="../media/image215.png"></a></p>
+</li>
+<li>
+<p>Review Charles Holland Webex Messaging data search results.</p>
+<p>a. Confirm the search filtering on policy hits, participants, and platforms has completed.</p>
+<p>Theta Lake eDiscovery returns a smaller subset of user data records after this search is complete.</p>
+<p>The resulting list of data records are sorted from newest to oldest by default. Included in the will be records with the title 'Stock Price' (corresponding to an activity in the 'Stock Price' message space).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image216.png" data-desc-position="top"><img alt="" src="../media/image216.png"></a></p>
+<p>b. Select the 'Stock Price' message space data record from the search results.</p>
+<p>Click the 'Stock Price' data record to expand. In the expanded record view, you'll notice that the message conversation flow for the 'Stock Price' space is displayed on the left-hand side of the record, while the Theta Lake system content analysis log is displayed on the right-hand side of the record.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image217.png" data-desc-position="top"><img alt="" src="../media/image217.png"></a></p>
+<p>View message window to read messages exchanged and captured in this record and the resulting system analysis. Hover over the numbered circles next to a message to review details about the system management of the data record including flagging of possible violations for review and automatic message redaction for specific detection rule triggers.</p>
+<p>c. Translate the messages in the record to another language</p>
+<p>Close the current record and move to a record with plenty of text. Click the <strong>Translate</strong> button to translate the messages in the record to a different language</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image218.png" data-desc-position="top"><img alt="" src="../media/image218.png"></a></p>
+<p>In the 'Translate to' drop down choose a language to translate the messages to -- e.g., Portuguese. Then, click <strong>Translate</strong> to translate.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image219.png" data-desc-position="top"><img alt="" src="../media/image219.png"></a></p>
+<p>Notice that the messages have been translated to the selected language.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image220.png" data-desc-position="top"><img alt="" src="../media/image220.png"></a></p>
+<p>Click <strong>Show Original</strong> to revert to the original language.</p>
+<p>d. View the full message conversation history of the selected user data record from the search results.</p>
+<p>The compliance officer has visibility to the conversation contained in the selected user data record ('Stock Price' message space). This visibility provides context for this specific compliance data record; however, it is sometimes necessary to review a larger historical conversation window to determine if a particular compliance violation is an isolated event or if this is a common or frequent occurrence.</p>
+<p>Click the '<strong>View Chat Timeline</strong>' button at the bottom (or top) of the expanded data record to load a complete view of the conversation chat history for this message space.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image221.png" data-desc-position="top"><img alt="" src="../media/image221.png"></a></p>
+<p>The historical conversation view provides the complete message history for the space. A scrolling conversation history timeline is provided on the left side of the window with possible compliance violations flagged along the timeline. The message conversation is displayed in the middle of the screen. And a complete set of content data analysis callouts across the message history is provided on the right side of the window.</p>
+<p>e. Search the full message conversation history for a specific set of words.</p>
+<p>This complete conversation view provides clear context to data compliance violations. Further, the entire conversation can be searched for words and phrases which are then highlighted in the main conversation in the middle of the window.</p>
+<p>In the 'Search the conversation' field at the top right of the screen, type in some key words to perform a search against the full conversation. For example, search for 'confidential', 'credit', and/or 'security' or similar combinations. For each search term or phrase, Theta Lake highlights all instances of the word in the message conversation flow and provides a color-coded indication on the conversation timeline for each instance of the searched term.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image222.png" data-desc-position="top"><img alt="" src="../media/image222.png"></a></p>
+<p>f. Summarize the conversation to get analysis of the message history over a period of time.</p>
+<p>Click the 3 dots in the upper right corner and select 'Summarize Conversation' from the dropdown menu.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image223.png" data-desc-position="top"><img alt="" src="../media/image223.png"></a></p>
+<p>Click <strong>Acknowledge</strong> to acknowledge the warning. Then, specify the date range of 1 year (e.g., June 10, 2024 -- June 10, 2025). Finally, click the <strong>Summarize</strong> button to begin summary generation.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image224.png" data-desc-position="top"><img alt="" src="../media/image224.png"></a></p>
+<p>After a few minutes, a notification will be received. Click the bell icon in the upper right corner to load the notification pane. Click the notification 'Your summary of the conversation in "Stock Price" is ready to view to load the conversation summary.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image225.png" data-desc-position="top"><img alt="" src="../media/image225.png"></a></p>
+<p>Review the conversation history summary (scroll to see the full summary).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image226.png" data-desc-position="top"><img alt="" src="../media/image226.png"></a></p>
+<p>Clearly, Charles has a long history of compliance policy violations. It might be time for his manager to have a serious conversation with him about his future at the company.</p>
+</li>
+<li>
+<p>Examine Theta Lake Legal Hold functionality.</p>
+<p>The Theta Lake compliance platform also provides Legal Hold support. As mentioned earlier, Legal Hold is a mechanism for creating and managing cases related to legal investigations where specific user data records must be maintained beyond the normal corporate data retention policies. User data records associated to a Legal Hold are maintained indefinitely until the Legal Hold case is closed.</p>
+<p>a. Navigate to the Theta Lake Legal Hold Case Management page.</p>
+<p>On the Theta Lake Portal click 'Cases' on the top navigation menu to reach the Legal Hold page.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image227.png" data-desc-position="top"><img alt="" src="../media/image227.png"></a></p>
+<p>b. Review existing Legal Hold case.</p>
+<p>Notice that a Legal Hold case already exists. Case number LHCR01003 has already been created on the Theta Lake org you are currently logged into. Since you are logged in with read-only admin access (co.read.only@gmail.com), you won't be able to create new or update existing Legal Hold cases.</p>
+<p>Let's review the existing Legal Hold case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image228.png" data-desc-position="top"><img alt="" src="../media/image228.png"></a></p>
+<p>Notice this existing open case has over 60 user data records already associated to it which will be maintained beyond the current retention period as long as the case remains open.</p>
+<p>Click the view icon ( <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image229.png" data-desc-position="top"><img alt="" src="../media/image229.png"></a> ) on the right to review the Legal Hold case details.</p>
+<p>The case details screen shows the basic details about the Legal Hold case including media type and risk score content summary graphics.</p>
+<p>A Legal Hold case log is maintained and displayed on the right hand-side of the page providing details about this case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image230.png" data-desc-position="top"><img alt="" src="../media/image230.png"></a></p>
+<p>Finally, click the '<strong>View Case Content</strong>' button in the upper left-hand corner to return to the eDiscovery search page and the associated set of data records for this case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image231.png" data-desc-position="top"><img alt="" src="../media/image231.png"></a></p>
+<p>c. Review workflow for adding records to a Legal Hold case.</p>
+<p>As mentioned previously, since we are logged in with a read-only admin access account (co.read.only@gmail.com), we cannot create or modify Legal Hold cases including associating user data records with the case.</p>
+<p>Instead, the following figures illustrate the process used for creating the existing Legal Hold case and associating user data records.</p>
+<p><strong>** REFERENCE ONLY -- The following steps have already been completed **</strong></p>
+<p>On the Legal Hold / Case page, administrator/compliance officer would click the <strong>Create Case</strong> button (step 1). Note this option is not available with the read-only login.</p>
+<p>Compliance officer fills in the case details including case number, name, and start date before clicking the <strong>Create</strong> button to generate the legal hold (see Step 2).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image232.png" data-desc-position="top"><img alt="" src="../media/image232.png"></a></p>
+<p>After the case was created, the compliance officer would associate user data records by searching for them via eDiscovery, selecting them, and then choosing '<strong>Add to Legal Hold Case</strong>' (step 3).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image233.png" data-desc-position="top"><img alt="" src="../media/image233.png"></a></p>
+<p>Finally, the compliance officer selects the Legal Hold case number from the drop-down and clicks <strong>Add</strong> (step 4) to associate the user data records to the case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image234.png" data-desc-position="top"><img alt="" src="../media/image234.png"></a></p>
+<p><strong>** END OF REFERENCE ONLY -- Proceed with the next section. **</strong></p>
+</li>
+</ol>
+<h2 id="observe-webex-anti-malware-protection-amp">Observe Webex Anti-Malware Protection (AMP)</h2>
+<p>Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security Pack. With this security pack, your organization has access to built-in AMP.</p>
+<ol>
+<li>
+<p>Enable Webex AMP on Control Hub.</p>
+<p>a. If not already connected to Control Hub, open the Chrome browser on WKST1 (wkst1.dcloud.cisco.com) and navigate to Control Hub at <a href="https://admin.webex.com/">https://admin.webex.com/</a>.</p>
+<p>b. If required, login to Control Hub as the administrator, Charles Holland by entering: <strong>cholland@cbXXX.dc-YY.com</strong> (refer to the eXpo dCloud Session View for domain). Click <strong>Sign In</strong>.</p>
+<p>c. Enter password: <strong>dCloud123!</strong> (refer to eXpo dCloud Session View for last for digits of session ID to use as values for non-SSO password -- dCloudZZZZ!).</p>
+<p>d. Once logged in, navigate to <strong>Messaging</strong> and scroll down to the Anti-Malware File Scanning section. Click to turn Virus and Malware Protection on.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image235.png" data-desc-position="top"><img alt="" src="../media/image235.png"></a></p>
+<p>e. Check Scan History to confirm that currently '0' threats have been found.</p>
+<p>Click the '<strong>Start date</strong>' field and select today's date (e.g., 10/21/24 for October 21, 2024).</p>
+<p>Click the '<strong>End date</strong>' field and select tomorrow's date (e.g., 10/22/24 for October 22, 2024).</p>
+<p><strong>Note:</strong> Ensure you specify <strong>tomorrow's date</strong> as the end date.</p>
+<p>Confirm that the '<strong>Threat Found</strong>' number is '<strong>0</strong>', indicating that no virus or malware has been detected in any files scanned in the last 2 days.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image236.png" data-desc-position="top"><img alt="" src="../media/image236.png"></a></p>
+<p>f. Open and sign-in to the Webex App on WKST1 (wkst1.dcloud.cisco.com) -- if required.</p>
+<p>Login with Charles Holland's account username / password: <strong>cholland@cbXXX.dc-YY.com</strong> / <strong>dCloud123!</strong> (refer to eXpo dCloud Session View for domain and the last 4-digits of the non-SSO password if you didn't complete Module 1).</p>
+<p>g. Create a 1:1 space (Send a message) with user Anita Perez and upload the test_malware.com file.</p>
+<p>The <strong>test_malware.com</strong> file is located on the desktop of Workstation 1. You may have to scroll down to find the file.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image237.png" data-desc-position="top"><img alt="" src="../media/image237.png"></a></p>
+<p>h. Observe AMP operation.</p>
+<p>Once uploaded and scanned by Webex, you will notice that the shared file has been marked as suspicious by Webex. Webex immediately blocks the file from being downloaded.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image238.png" data-desc-position="top"><img alt="" src="../media/image238.png"></a></p>
+<p>All users in the space will see the attached file as blocked and will not be able to download the file. Validate this with the Webex App on WKST2 (wkst2.dcloud.cisco.com).</p>
+<p>Log current user out of the Webex App on WKST2 (if required) and then, login with Anita Perez's account username / password: <strong>aperez@cbXXX.dc-YY.com</strong> / <strong>dCloud123!</strong> (refer to eXpo dCloud Session View for the domain and the last 4-digits of the non-SSO password if you didn't complete Module 1).</p>
+<p>Once signed in, navigate to the 1:1 space with Charles Holland and note that the <strong>test_malware.com</strong> file cannot be downloaded.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image239.png" data-desc-position="top"><img alt="" src="../media/image239.png"></a></p>
+<p>i. Check the Scan History again to confirm that AMP has logged the threat.</p>
+<p>Go back to Charles Holland's workstation (WKST1). On the Chrome browser on WKST1, return to the previous Control Hub admin session.</p>
+<p>If necessary, navigate to <strong>Messaging</strong> and scroll down to the <em>Anti-Malware File Scanning</em> section again.</p>
+<p>Again, select today's date (e.g., 10/21/24) for the '<strong>Start date</strong>' and select tomorrow's date (e.g., 10/22/24) for the '<strong>End date</strong>'.</p>
+<p><strong>Note:</strong> Ensure you specify <strong>tomorrow's date</strong> as the end date.</p>
+<p>Confirm that the '<strong>Threat Found</strong>' number is now '1', indicating that a virus or malware file has been detected in a file scanned in the last 2 days.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image240.png" data-desc-position="top"><img alt="" src="../media/image240.png"></a></p>
+<p><strong>Note:</strong> To see more details about the threat(s) you can also download and view an AMP report via the <strong>Download CSV</strong> link.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image241.png" data-desc-position="top"><img alt="" src="../media/image241.png"></a></p>
+</li>
+</ol>
+<p><strong>*** END of MODULE 3 **</strong></p>
+<p>Continue with either Module 1 or Module 2:</p>
+<ul>
+<li><a href="../module1_identity/">Module 1: Webex Identity</a></li>
+<li><a href="../module2_zero_trust_encryption/">Module 2: Zero Trust Encryption</a></li>
+<li><a href="./">Module 3: Webex Compliance</a> <em>(current)</em></li>
+<li><a href="../conclusion/">Conclusion</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../module2_zero_trust_encryption/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Module 2 - Webex Zero Trust Encryption">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Module 2 - Webex Zero Trust Encryption
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../conclusion/" class="md-footer__link md-footer__link--next" aria-label="Next: Conclusion">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Conclusion
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+        <script src="../template_assets/js/labConfig.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
