@@ -10,7 +10,9 @@ import threading
 from pathlib import Path
 from datetime import datetime
 
-DOCS_DIR = Path(__file__).parent / "docs"
+SCRIPT_DIR = Path(__file__).parent
+DOCS_DIR = SCRIPT_DIR / "docs"
+VENV_MKDOCS = SCRIPT_DIR / "venv" / "bin" / "mkdocs"
 LAST_MOD_TIMES = {}
 CHECK_INTERVAL = 2  # Check every 2 seconds (more reliable on macOS)
 server_process = None
@@ -44,11 +46,12 @@ def restart_server():
         except:
             server_process.kill()
     
-    # Start new server
+    # Start new server (use mkdocs from venv)
     try:
+        mkdocs_cmd = str(VENV_MKDOCS) if VENV_MKDOCS.exists() else "mkdocs"
         server_process = subprocess.Popen(
-            ["mkdocs", "serve", "--dev-addr", "127.0.0.1:8000"],
-            cwd=Path(__file__).parent,
+            [mkdocs_cmd, "serve", "--dev-addr", "127.0.0.1:8000"],
+            cwd=SCRIPT_DIR,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
         )
