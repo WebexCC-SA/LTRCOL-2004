@@ -1,6 +1,4 @@
-![](./media/image1.png)
-
-![](./media/image2.png)
+![](./media/image331.png)
 
 # Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
 
