@@ -531,4 +531,11 @@ in your eXpo dCloud Session for the subsequent sections.
 
       End the meeting for all.
    
-This concludes the module on Webex End-to-End Encryption and Zero Trust Meetings.
+**\*\*\* END of MODULE 2 \*\***
+
+Continue with either Module 1 or Module 3:
+
+- [Module 1: Webex Identity](module1_identity.md)
+- [Module 2: Zero Trust Encryption](module2_zero_trust_encryption.md) *(current)*
+- [Module 3: Webex Compliance](module3_compliance.md)
+- [Conclusion](conclusion.md)

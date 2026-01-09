@@ -1,6 +1,9 @@
 ![](./media/image331.png)
 
 # Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+<!-- Commented out for testing - config box moved to bottom of intro
+<div id="lab-config-container"></div>
+-->
 
 This lab explores Webex security and educates attendees on the practical
 steps required to enable and manage security features and functions
@@ -23,69 +26,38 @@ available with Webex deployments, including:
 
 **Table of Contents**
 
-[About This Lab](#about-this-lab)
-
-[Requirements](#requirements)
-
-[Lab Details](#lab-details)
-
-[Topology](#topology)
-
-[Getting Started](#getting-started)
-
-[Module 1: Webex Identity and Authentication/Authorization with Duo](module1_identity.md#module-1-webex-identity-and-authenticationauthorization-with-duo)
-
-[Sync Users from Active Directory to Duo](module1_identity.md#sync-users-from-active-directory-to-duo)
-
-[Sync Users from Duo to Webex](module1_identity.md#sync-users-from-duo-to-webex)
-
-[Webex Licensing and Settings Templates](module1_identity.md#webex-licensing-and-settings-templates)
-
-[Configuring Duo to Use Active Directory for User Authentication](module1_identity.md#configuring-duo-to-use-active-directory-for-user-authentication)
-
-[Single Sign-On with Webex and Duo (SAML and OIDC)](module1_identity.md#single-sign-on-with-webex-and-duo-saml-and-oidc)
-
-[Duo SSO Setup (SAML)](module1_identity.md#duo-sso-setup-saml)
-
-[Duo SSO Setup (OIDC)](module1_identity.md#duo-sso-setup-oidc)
-
-[OpenID Connect -- Proof Key for Code Exchange (PKCE)](module1_identity.md#openid-connect-proof-key-for-code-exchange-pkce)
-
-[Multiple Identity Providers with Webex](module1_identity.md#multiple-identity-providers-with-webex)
-
-[Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
-
-[Generating User Data for Compliance in Meetings](module2_zero_trust_encryption.md#generating-user-data-for-compliance-in-meetings)
-
-[Provision users and enable recording for Webex Calling for data compliance.](module2_zero_trust_encryption.md#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
-
-[Explore Compliance Options for Webex Meetings in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-meetings-in-theta-lake)
-
-[Explore Compliance Options for Webex Calling in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-calling-in-theta-lake)
-
-[Schedule an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#schedule-an-end-to-end-encrypted-meeting)
-
-[Features in an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#features-in-an-end-to-end-encrypted-meeting)
-
-[Audio and Visual Watermarking and Watermark Analysis](module2_zero_trust_encryption.md#audio-and-visual-watermarking-and-watermark-analysis)
-
-[Enable Multi-Factor Authentication (MFA) using Duo](module1_identity.md#enable-multi-factor-authentication-mfa-using-duo)
-
-[Module 3: Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
-
-[Webex Compliance and Preparing for Compliance Platform Integration](module3_compliance.md#webex-compliance-and-preparing-for-compliance-platform-integration)
-
-[Integrate Webex with Cloudlock and Configure DLP Policies](module3_compliance.md#integrate-webex-with-cloudlock-and-configure-dlp-policies)
-
-[Generate user data via Webex App and Observe DLP Operation](module3_compliance.md#generate-user-data-via-webex-app-and-observe-dlp-operation)
-
-[Explore Theta Lake eDiscovery and Legal Hold](module3_compliance.md#explore-theta-lake-ediscovery-and-legal-hold)
-
-[Observe Webex Anti-Malware Protection (AMP)](module3_compliance.md#observe-webex-anti-malware-protection-amp)
-
-[Appendix](appendix.md#appendix)
-
-[Explore Webex eDiscovery Search and Extraction Portal](appendix.md#explore-webex-ediscovery-search-and-extraction-portal)
+- [About This Lab](#about-this-lab)
+- [Requirements](#requirements)
+- [Lab Details](#lab-details)
+- [Topology](#topology)
+- [Getting Started](#getting-started)
+- [Module 1: Webex Identity and Authentication/Authorization with Duo](module1_identity.md#module-1-webex-identity-and-authenticationauthorization-with-duo)
+    - [Sync Users from Active Directory to Duo](module1_identity.md#sync-users-from-active-directory-to-duo)
+    - [Sync Users from Duo to Webex](module1_identity.md#sync-users-from-duo-to-webex)
+    - [Webex Licensing and Settings Templates](module1_identity.md#webex-licensing-and-settings-templates)
+    - [Configuring Duo to Use Active Directory for User Authentication](module1_identity.md#configuring-duo-to-use-active-directory-for-user-authentication)
+    - [Single Sign-On with Webex and Duo (SAML and OIDC)](module1_identity.md#single-sign-on-with-webex-and-duo-saml-and-oidc)
+        - [Duo SSO Setup (SAML)](module1_identity.md#duo-sso-setup-saml)
+        - [Duo SSO Setup (OIDC)](module1_identity.md#duo-sso-setup-oidc)
+    - [OpenID Connect -- Proof Key for Code Exchange (PKCE)](module1_identity.md#openid-connect-proof-key-for-code-exchange-pkce)
+    - [Multiple Identity Providers with Webex](module1_identity.md#multiple-identity-providers-with-webex)
+    - [Enable Multi-Factor Authentication (MFA) using Duo](module1_identity.md#enable-multi-factor-authentication-mfa-using-duo)
+- [Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+    - [Generating User Data for Compliance in Meetings](module2_zero_trust_encryption.md#generating-user-data-for-compliance-in-meetings)
+    - [Provision users and enable recording for Webex Calling for data compliance](module2_zero_trust_encryption.md#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
+    - [Explore Compliance Options for Webex Meetings in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-meetings-in-theta-lake)
+    - [Explore Compliance Options for Webex Calling in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-calling-in-theta-lake)
+    - [Schedule an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#schedule-an-end-to-end-encrypted-meeting)
+    - [Features in an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#features-in-an-end-to-end-encrypted-meeting)
+    - [Audio and Visual Watermarking and Watermark Analysis](module2_zero_trust_encryption.md#audio-and-visual-watermarking-and-watermark-analysis)
+- [Module 3: Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
+    - [Webex Compliance and Preparing for Compliance Platform Integration](module3_compliance.md#webex-compliance-and-preparing-for-compliance-platform-integration)
+    - [Integrate Webex with Cloudlock and Configure DLP Policies](module3_compliance.md#integrate-webex-with-cloudlock-and-configure-dlp-policies)
+    - [Generate user data via Webex App and Observe DLP Operation](module3_compliance.md#generate-user-data-via-webex-app-and-observe-dlp-operation)
+    - [Explore Theta Lake eDiscovery and Legal Hold](module3_compliance.md#explore-theta-lake-ediscovery-and-legal-hold)
+    - [Observe Webex Anti-Malware Protection (AMP)](module3_compliance.md#observe-webex-anti-malware-protection-amp)
+- [Appendix](appendix.md#appendix)
+    - [Explore Webex eDiscovery Search and Extraction Portal](appendix.md#explore-webex-ediscovery-search-and-extraction-portal)
 
 ---
 
@@ -101,7 +73,7 @@ available with Webex deployments, including:
 ---
 
 # About This Lab
-Cisco Webex provides customers with a comprehensive set of security and
+Webex provides customers with a comprehensive set of security and
 compliance capabilities across the Webex suite. This includes:
 
 - On-premises or cloud corporate directory integration capabilities for
@@ -253,15 +225,15 @@ Module 1.
 
 1. From your workstation, navigate to the eXpo URL in Chrome.
 
-      Link to eXpo: https://expo.ciscodcloud.com/cq1rgx82s4q2slxqiim1f760e
-
-      Click **Explore**, enter your email address and accept the disclaimer.
-      On the eXpo page, you will see two important tabs, **Network** and
-      **Details**. To connect to your VMs, you will navigate to the
-      **Network** tab and click the **Remote Desktop** link for the VM that
-      the lab guide instructs you to access.
-
-      ![](./media/image5.png)
+    Link to eXpo: <https://expo.ciscodcloud.com/cq1rgx82s4q2slxqiim1f760e>
+    
+    Click **Explore**, enter your email address and accept the disclaimer.
+    On the eXpo page, you will see two important tabs, **Network** and
+    **Details**. To connect to your VMs, you will navigate to the
+    **Network** tab and click the **Remote Desktop** link for the VM that
+    the lab guide instructs you to access.
+    
+    ![](./media/image5.png)
 
 1. You can find the last 4 digits of your unique **Session ID** on the
     eXpo page. This is needed when authenticating to Webex prior to
@@ -282,3 +254,11 @@ In this lab, you will primarily utilize the following VMs:
 - Workstation 1: wkst1.dcloud.cisco.com
 - Workstation 2: wkst2.dcloud.cisco.com
 - Workstation 3: wkst3.dcloud.cisco.com
+
+---
+
+## Configure Your Lab Values
+
+Now that you have your eXpo page open and can see your unique pod values, enter them below. This will automatically replace the placeholders (cbXXX, dc-YY.com, dCloudZZZZ!) throughout the entire lab guide.
+
+<div id="lab-config-container"></div>

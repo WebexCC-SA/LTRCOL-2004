@@ -42,6 +42,7 @@ extra_css:
 extra_javascript:
   - template_assets/js/newLoad.js
   - template_assets/js/setInfo.js
+  - template_assets/js/labConfig.js
 plugins:
   - search
   - macros
@@ -62,6 +63,17 @@ plugins:
       - custom-skip-class-name
       auto_caption: true
       caption_position: top
+  # print-site must be at the bottom of plugins list
+  - print-site:
+      add_to_navigation: true
+      print_page_title: 'Print Lab Guide'
+      add_print_site_banner: false
+      add_table_of_contents: false
+      add_cover_page: false
+      enumerate_headings: false
+      exclude:
+        - index.md
+        - lab_setup.md
 markdown_extensions:
   - md_in_html
   - abbr
@@ -86,20 +98,19 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
-  - Lab:
-      - Introduction: introduction.md
-      - Module 1 - Webex Identity: module1_identity.md
-      - Module 2 - Webex Zero Trust Encryption: module2_zero_trust_encryption.md
-      - Module 3 - Webex Compliance: module3_compliance.md
-      - Conclusion: conclusion.md
-      - Appendix: appendix.md
-  - How to use this guide:
-      - Setting up and using the tool:
-        - Initial Setup: howToUse/initialSetup.md
-        - Using the tool after the initial setup: howToUse/postInitial.md
-        - Publishing your changes: howToUse/syncChanges.md
-      - Styling and Advanced Features:
-        - Markdown and Other References: howToUse/references.md
-        - Custom Features: howToUse/customFeatures.md
-        - Custom Admonitions: howToUse/admonition.md
- 
+  - Lab Setup: lab_setup.md
+  - Introduction: introduction.md
+  - Module 1 - Webex Identity: module1_identity.md
+  - Module 2 - Webex Zero Trust Encryption: module2_zero_trust_encryption.md
+  - Module 3 - Webex Compliance: module3_compliance.md
+  - Conclusion: conclusion.md
+  - Appendix: appendix.md
+  # - How to use this guide&nbsp<i class="fa-solid fa-house" style="color:#B197FC;"></i>:
+  #     - Setting up and using the tool:
+  #       - Initial Setup: howToUse/initialSetup.md
+  #       - Using the tool after the initial setup: howToUse/postInitial.md
+  #       - Publishing your changes: howToUse/syncChanges.md
+  #     - Styling and Advanced Features:
+  #       - Markdown and Other References: howToUse/references.md
+  #       - Custom Features: howToUse/customFeatures.md
+  #       - Custom Admonitions: howToUse/admonition.md

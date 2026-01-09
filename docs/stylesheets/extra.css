@@ -52,3 +52,34 @@ form#info button{
 form#info button:hover{
     background-color:rgb(195, 193, 201);
 }
+
+/* Fix for print page - ensure links are visible */
+@media print {
+    a, a:link, a:visited {
+        color: #3a7fff !important;
+        text-decoration: underline !important;
+    }
+}
+
+/* Print page specific fixes */
+.print-site a {
+    color: #3a7fff !important;
+}
+
+/* Hide section divider pages on print page */
+#print-site-page section.print-page > h1:only-child {
+    display: none !important;
+}
+
+/* Hide empty section pages (like "Lab") */
+section.print-page:has(> h1:only-child) {
+    display: none !important;
+    page-break-before: avoid !important;
+    page-break-after: avoid !important;
+}
+
+@media print {
+    section.print-page:has(> h1:only-child) {
+        display: none !important;
+    }
+}

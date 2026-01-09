@@ -26,13 +26,11 @@ At the end of this section, you will have synchronized on-premises AD users into
 
 1. Connect to the Active Directory server (**ad1**) via **Remote Desktop**.**\**
 
-      ![](./media/image7.png)
+      ![](./media/image7.png){ width="200" }
 
 1. Open the **DUO** folder on desktop, then open the **Duo-URL.txt** document.
 
       ![](./media/image8.png)
-
-1. asdfasdfasdf
 
 1. Copy and paste the URL in this document into the browser.
 
@@ -1125,6 +1123,11 @@ This section demonstrates that even when SSO is enabled, the collaboration admin
 
 This concludes the module on Webex Identity. Before proceeding to the next module, close your remote session to AD1 since modules 2 and 3 both require usage of Workstations 1-3.
 
-Proceed to the next module.
+**\*\*\* END of MODULE 1 \*\***
 
-**\*\*\* END of MODULE #1 \*\***
+Continue with either Module 2 or Module 3:
+
+- [Module 1: Webex Identity](module1_identity.md) *(current)*
+- [Module 2: Zero Trust Encryption](module2_zero_trust_encryption.md)
+- [Module 3: Webex Compliance](module3_compliance.md)
+- [Conclusion](conclusion.md)
