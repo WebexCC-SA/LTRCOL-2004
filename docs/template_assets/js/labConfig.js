@@ -539,11 +539,13 @@
                 max-height: 90vh;
                 overflow-y: auto;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-                transform: scale(0.9);
-                transition: transform 0.3s;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: opacity 0.3s, transform 0.3s;
             }
             .lab-config-modal-overlay.active .lab-config-modal {
-                transform: scale(1);
+                opacity: 1;
+                transform: translateY(0);
             }
             .lab-config-modal-close {
                 position: absolute;
