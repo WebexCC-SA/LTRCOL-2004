@@ -9,7 +9,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
-    - navigation.instant
+    # navigation.instant disabled - conflicts with custom home template
     - navigation.top
     - navigation.footer
     - search.suggest
