@@ -225,7 +225,7 @@ Module 1.
 
 1. From your workstation, navigate to the eXpo URL in Chrome.
 
-    Link to eXpo: <https://expo.ciscodcloud.com/cq1rgx82s4q2slxqiim1f760e>
+    Link to eXpo: <https://expo.ciscodcloud.com/cr0ngam62v4rg3x7mljrz0tb3>
     
     Click **Explore**, enter your email address and accept the disclaimer.
     On the eXpo page, you will see two important tabs, **Network** and
