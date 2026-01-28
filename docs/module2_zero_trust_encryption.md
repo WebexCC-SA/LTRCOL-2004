@@ -619,6 +619,7 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
       ![](./media/image332.png)
 
 6. You should your violation right up on top, however before we go there lets review the one which has id "GR-1". You will see it has not only detected a Face Swap but also a known threat actor in terms of Fake IT worker. Expand on both the options to learn more on the violation by clicking "Full Details". 
+Also you will see that there is a video recording of the interaction in GR-1. Move the time stamp to 9-10 minutes into the conversation to how the user faked into a known threat actor.
 
       ![](./media/image351.png)
 
@@ -626,6 +627,13 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
 7. Perform the same analysis for your recent violation.
 8. Once completed logout of GetReal portal. 
 9. Since this is a shared account, please do not make any changes on this account.
+
+## Provision users and configure Zero Trust End-to-End Encrypted Calling
+
+## Zero Trust End-to-End Encrypted Calling 
+
+
+
 
 This concludes Module 2
 
