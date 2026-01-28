@@ -1,28 +1,29 @@
-# Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust
-In this module, you will learn about Zero-Trust End-to-End Encryption.
-We will walk you through the process of verifying compliance policies
-for your standard meetings, scheduling an end-to-end encrypted meeting,
-verifying that meeting indeed is end-to-end encrypted, verifying
-participants' identity, and finally setting up compliance policies for
-your end-to-end encrypted meetings.
+# Module 2: Zero Trust End-to-End Encrypted Calling and Meetings, Media Watermarking, and Deepfake Detection.
+In this module, you will learn about Zero-Trust End-to-End Encrypted calling and meetings, learn how you can use watermarking for preventing media leakage. Finally we will walkthrough the process of deepfake detection in a meeting.
 
 There are 7 sections in this module:
 
-i. [Generating User Data for Compliance in Meetings](#generating-user-data-for-compliance-in-meetings)
-THis is is a test line
-ii. [Provision users and enable recording for Webex Calling for data compliance](#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
+##i. [Generating User Data for Compliance in Meetings](#generating-user-data-for-compliance-in-meetings)
 
-iii. [Explore Compliance Options for Webex Meetings in Theta Lake](#explore-compliance-options-for-webex-meetings-in-theta-lake)
+##ii. [Provision users and enable recording for Webex Calling for data compliance](#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
 
-iv. [Explore Compliance Options for Webex Calling in Theta Lake](#explore-compliance-options-for-webex-calling-in-theta-lake)
+##iii. [Explore Compliance Options for Webex Meetings in Theta Lake](#explore-compliance-options-for-webex-meetings-in-theta-lake)
 
-v. [Schedule an End-to-End Encrypted Meeting](#schedule-an-end-to-end-encrypted-meeting)
+##iv. [Explore Compliance Options for Webex Calling in Theta Lake](#explore-compliance-options-for-webex-calling-in-theta-lake)
 
-vi. [Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
+1. [Schedule an End-to-End Encrypted Meeting](#schedule-an-end-to-end-encrypted-meeting)
 
-vii. [Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
+2. [Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
+
+3. [Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
+4. Deepfake Detection (GetReal) 
+
+5. Provision users and configure Zero Trust End-to-End Encrypted Calling 
+
+6. Zero Trust End-to-End Encrypted Calling
 
 ## Generating User Data for Compliance in Meetings
+
 **Step 1:**
 
 1. In this section, you will learn how to configure Compliance and Supervision for Webex Meetings. Theta Lake provides AI-based archiving, eDiscovery, and supervision for Webex Meetings with automated detection of compliance risks in audio and visual content. Open a remote desktop session to WKST1, navigate to https://admin.webex.com and click **Sign in.** Enter the credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, refer to last 4 digits of the Session ID on eXpo dCloud Session View page for the non-SSO password).
@@ -406,9 +407,7 @@ Feature details:
 - Visual watermarks superimpose a watermark image over the meeting video and shared content. Each meeting participant sees a watermark image with their own email address. If a meeting participant isn\'t signed in to Webex, the watermark includes their display name and email address. Users can adjust the watermark opacity, so the pattern is visible but doesn\'t cause too much distraction.
 - Local recordings are disabled when audio watermarks are turned on.
 
-Let's look at enabling and testing these features: We have already
-enabled the Control Hub Toggles for these features at the beginning of
-the module.
+Let's look at enabling and testing these features: <span style="color: green;"><strong>We have already enabled the Control Hub Toggles for these features at the beginning of the module.</strong></span>
 
 **Step 1: Audio Watermarking**
 
@@ -530,6 +529,107 @@ in your eXpo dCloud Session for the subsequent sections.
       ![](./media/image310.png)
 
       End the meeting for all.
+
+
+## Deepfake Detection with GetReal Labs and Webex.
+
+GetReal Labs has partnered with Cisco to integrate advanced deepfake detection capabilities directly into the Webex collaboration platform, addressing the growing security threat of AI-generated synthetic media in enterprise communications.
+
+Cisco Webex has integrated GetReal Labs' AI-powered authentication technology to provide real-time verification of meeting participants, protecting organizations from sophisticated impersonation attacks and synthetic media manipulation. This integration is part of Webex's comprehensive Zero Trust security architecture, which includes end-to-end encryption, identity verification, and content protection.
+
+In this module we shall leverage GetReal labs and Webex for Deepfake detection. Realtime deepfake protection for meetings by integrating deepfake protection into your Cisco Webex environment enhances the security of your meetings by detecting and notifying you of impersonation attacks in real time.
+
+**Step 1: Logging into Webex App.**
+
+1.  In this module we will be logging into the Webex App on the actual PC and not on any of the workstations. 
+2. <span style="color: green;"><strong>When you are ready to begin this module reach out to your lab proctor for a specific accounts that you will leverage just for this section.</strong></span>
+3. <span style="color: red;"><strong>Stop</strong></span> , confirm that you are logging into the host system and not on wkst1.
+4. Start a webex meeting. 
+      ![](./media/image350.png)
+
+5. Go to the Apps Panel and search for GetReal Trust Advisor.
+      ![](./media/image349.png)
+
+6. Click on Open. 
+ 
+**Step 2: Logging into GetReal Labs and inviting participants.**
+
+1. Once you click on Open for GetReal Trust Advisor, you will be prompted to sign in.
+      ![](./media/image348.png)
+
+2. Sign in with the credentials that were provided to you by the proctor during the beginning of this module.
+
+3. Once signed in , the next screen would be " Add GetReal Trust Advisor to the Call". Click on it and add the trust advisor to the call.
+
+      ![](./media/image347.png)
+
+4.If you see any popups from GetReal Trust Advisor for any permissions, click on Accept
+      ![](./media/image339.png)
+     
+
+
+
+
+5. This process does take a couple of minutes , once its ready you will get a notification on the meeting window to "Let In" the trust advisor. 
+
+      ![](./media/image337.png)
+
+
+6. At this point you should have two participants on the call, the person you are logged in with and the GetReal Trust Advisor.
+
+      ![](./media/image345.png)
+
+7. Invite a few participants like Charles Holland and Anita Perez from your actual lab pod and let them into the meeting. 
+
+8. You will add one of the lab proctors to this meeting now. Feel free to reach out to one of the proctors and we will join your meeting.
+      ![](./media/image344.png)
+      
+
+
+**Step 3: Monitoring and detection of participants.**
+
+1. At this point you shall have the two participants from your workstations , GetReal Trust Advisor and one of the lab proctors on the meeting bridge.
+      ![](./media/image343.png)
+
+2. GetReal should automatically start monitoring the participants. Incase if it doesnt for the participants that are on the call click on the elipsis symbol "..." and then click on start monitoring .
+
+
+3. In a minute or two you will the real participants will have a  <span style="color: green;"><strong>"Green Check" next to their name and for the participants where GetReal has detected impersonation you shall see  <span style="color: Red;"> <strong> "Impersonation Detected".</span></strong>
+      ![](./media/image341.png)
+
+4. Click on the red "X" on the webex meeting window from your source workstation to end the meeting for all.
+
+5. Since this is shared account please do not change the password or perform changes on the account that you logged into the source workstation. 
+
+
+
+**Step 4: Preview the violations on GetReal Portal.**
+
+1. So we have created a test case where we have GetReal Trust Advisor flagging the participant as an impersonator.
+2. Let's have a quick look into how those violations are captured on GetReal.
+
+3. Browse to url https://app.getreallabs.com/ , click on "Continue with Webex".
+
+4. Login with kmelby@cb311.dc-01.com and password dCloud0831! 
+
+5. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 30 days.
+
+      ![](./media/image355.png)
+
+      ![](./media/image332.png)
+
+6. You should your violation right up on top, however before we go there lets review the one which has id "GR-1". You will see it has not only detected a Face Swap but also a known threat actor in terms of Fake IT worker. Expand on both the options to learn more on the violation by clicking "Full Details". 
+
+      ![](./media/image351.png)
+
+
+7. Perform the same analysis for your recent violation.
+8. Once completed logout of GetReal portal. 
+9. Since this is a shared account, please do not make any changes on this account.
+
+This concludes Module 2
+
+
    
 **\*\*\* END of MODULE 2 \*\***
 
