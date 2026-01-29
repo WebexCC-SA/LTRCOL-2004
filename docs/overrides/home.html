@@ -15,6 +15,14 @@
         background: var(--md-primary-fg-color)
     }
 
+    html, body {
+        overflow: hidden;
+    }
+
+    .md-footer {
+        display: none;
+    }
+
     .md-main__inner {
         display: flex;
         height: 100%;
@@ -22,7 +30,12 @@
 
     .tx-container {
         padding-top: .0rem;
-        background: var(--md-primary-fg-color)
+        background: var(--md-primary-fg-color);
+        height: calc(100vh - 96px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
     }
 
     .tx-hero {
@@ -55,10 +68,16 @@
     }
 
     .tx-hero__image {
-        width: 850px;
+        max-width: 850px;
         padding-left: 2.5rem;
         display: flex;
         align-items: center;
+    }
+
+    .tx-hero__image img {
+        max-height: calc(100vh - 200px);
+        width: auto;
+        object-fit: contain;
     }
 
     .tx-hero__content {

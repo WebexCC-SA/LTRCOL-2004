@@ -52,4 +52,8 @@ After entering and saving your values:
 
 ## Ready to Start?
 
-Once you've configured your lab values above, proceed to **[Module 1: Webex Identity](module1_identity.md)** to begin the lab!
+Once you've configured your lab values above, proceed to one of the modules to begin the lab:
+
+**[Module 1: Webex Identity and Authentication/Authorization with Duo](module1_identity.md)**
+**[Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust](module2_zero_trust_encryption.md)**
+**[Module 3: Webex Compliance with Cisco Cloudlock and Theta Lake](module3_compliance.md)**
