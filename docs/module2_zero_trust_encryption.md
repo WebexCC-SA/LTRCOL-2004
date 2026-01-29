@@ -16,7 +16,7 @@ There are 7 sections in this module:
 2. [Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
 
 3. [Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
-4. Deepfake Detection (GetReal) 
+4. [Deepfake Detection with GetReal Labs and Webex](#deepfake-detection-with-getreal-labs-and-webex)
 
 5. Provision users and configure Zero Trust End-to-End Encrypted Calling 
 
