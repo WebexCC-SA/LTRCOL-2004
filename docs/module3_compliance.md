@@ -1,17 +1,19 @@
 # Module 3: Webex Compliance with Cisco Cloudlock and Theta Lake
 In this module, you will examine Webex compliance features and capabilities for messaging and meetings including integration to cloud-based data loss prevention (DLP) and archiving systems. You will also explore eDiscovery and Legal Hold capabilities as well as anti-malware protection (AMP)
 
-There are 5 sections in this module:
+There are 3 sections in this module:
 
 i. [Webex Compliance and Preparing for Compliance Platform Integration](#webex-compliance-and-preparing-for-compliance-platform-integration)
 
-ii. [Integrate Webex with Cloudlock and Configure DLP Policies](#integrate-webex-with-cloudlock-and-configure-dlp-policies)
+ii. [Explore eDiscovery for Webex Meetings in Theta Lake](#explore-ediscovery-for-webex-meetings-in-theta-lake)
+<!--[Integrate Webex with Cloudlock and Configure DLP Policies](#integrate-webex-with-cloudlock-and-configure-dlp-policies)-->
 
-iii. [Generate user data via Webex App and Observe DLP Operation](#generate-user-data-via-webex-app-and-observe-dlp-operation)
+iii. [Explore eDiscovery for Webex Calling in Theta Lake](#explore-ediscovery-for-webex-calling-in-theta-lake)
+<!--[Generate user data via Webex App and Observe DLP Operation](#generate-user-data-via-webex-app-and-observe-dlp-operation)-->
 
-iv. [Explore Theta Lake eDiscovery and Legal Hold](#explore-theta-lake-ediscovery-and-legal-hold)
+<!--iv. [Explore Theta Lake eDiscovery and Legal Hold](#explore-theta-lake-ediscovery-and-legal-hold)
 
-v. [Observe Webex Anti-Malware Protection (AMP)](#observe-webex-anti-malware-protection-amp)
+v. [Observe Webex Anti-Malware Protection (AMP)](#observe-webex-anti-malware-protection-amp)-->
 
 Compliance integrations are critical for protecting an organization's private data from leakage and ensuring that it complies with appropriate rules and laws related to maintaining business and communication records.
 
@@ -25,66 +27,68 @@ In this module you will examine the following product-specific capabilities:
 
 - Webex built-in compliance capabilities including:
       - Archiving with flexible data retention.
-      - External communication controls, and message and meeting specific collaboration restrictions.
+      - External communication controls, and message, calling, and meeting specific collaboration restrictions.
 
 - Other compliance products:
       - Cisco Cloudlock -- Data Loss Prevention
       - Theta Lake -- Archiving, eDiscovery, Legal Hold
 
-Figure 2 below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. Webex Events API for Compliance Platform Integration
+The figure below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. 
+
+**Webex Events API for Compliance Platform Integration**
 
 ![](./media/image152.png)
 
-Webex has also introduced Webhooks capability enabling proactive notification of messaging events (e.g., messages with file attachments) to a configured Webhook (web URL). This proactive notification provides a framework for delivering real-time file DLP -- scanning files for compliance policy violations before allowing them to be sent/received via messaging.
+<!-- Webex has also introduced Webhooks capability enabling proactive notification of messaging events (e.g., messages with file attachments) to a configured Webhook (web URL). This proactive notification provides a framework for delivering real-time file DLP -- scanning files for compliance policy violations before allowing them to be sent/received via messaging.
 
-As shown in Figure 3, once notification via the Webhook is received at the
+As shown in the figure below, once notification via the Webhook is received at the
 compliance platform web service (step 1), the DLP retrieves the file
 (step 2) and can then take action (e.g., scan file) and notify Webex via
-API whether to allow or block the file (step 3). Webex Webhooks for Real-time File DLP
+API whether to allow or block the file (step 3). 
+
+**Webex Webhooks for Real-time File DLP**
 
 ![](./media/image153.png)
 
-Unlike the Webex Events API method for compliance where the compliance platform must periodically poll Webex for communications events (space creation, space membership, messages, file attachments, meetings, etc.) and then take action, Webhooks enable real-time notification of events without having to wait for the next polling interval, so the compliance platform DLP service can take immediate action. Cisco Cloudlock supports real-time file DLP for Webex with Webhooks.
+Unlike the Webex Events API method for compliance where the compliance platform must periodically poll Webex for communications events (space creation, space membership, messages, file attachments, meetings, etc.) and then take action, Webhooks enable real-time notification of events without having to wait for the next polling interval, so the compliance platform DLP service can take immediate action. Cisco Cloudlock supports real-time file DLP for Webex with Webhooks.-->
 
-Webex Webhooks and Webex Events APIs as well as remediation APIs require administrators to have the Compliance Officer role to enable and authorize these operations.
+Webex Events APIs as well as remediation APIs require administrators to have the Compliance Officer role to enable and authorize these operations.
 
-For more information for Webex compliance with Webhooks and Webex APIs, please refer to the Webex for Developers site for documentation including:
+For more information for Webex compliance with Webex APIs, please refer to the Webex for Developers site for documentation including:
 
 - Compliance and Events: <https://developer.webex.com/compliance/docs/compliance>
 - Webex Events API: <https://developer.webex.com/admin/docs/api/v1/events>
 - Webex Messages API: <https://developer.webex.com/messaging/docs/api/v1/messages>
 - Webex Meetings API: <https://developer.webex.com/docs/api/v1/meetings>
-- Webex Real-time File DLP Guide: <https://developer.webex.com/admin/docs/api/guides/webex-real-time-file-dlp-basics>
-- Webhooks documentation and API reference: <https://developer.webex.com/messaging/docs/api/v1/webhooks>
-This lab guide contains coverage for two external compliance platforms: Cisco Cloudlock and Theta Lake.
+- Webex Calling API: <https://developer.webex.com/calling/docs/webex-calling-overview>
+
+This lab guide contains coverage for external compliance platform Theta Lake.
 
 **Table 2: Compliance Platform Options, Capabilities, and Applicable sections of this Module**
 
 | Compliance Platform | Capabilities Explored | Module Sections |
 |---------------------|----------------------|-----------------|
 | **Webex (built-in)** | - Data retention<br>- External communications<br>- Collaboration restrictions | [Webex Compliance and Preparing for Compliance Platform Integration](#webex-compliance-and-preparing-for-compliance-platform-integration) |
-| **Cisco Cloudlock** | - Near real-time message & file DLP<br>- Real-time file DLP | [Integrate Webex with Cloudlock and Configure DLP Policies](#integrate-webex-with-cloudlock-and-configure-dlp-policies)<br><br>[Generate user data via Webex App and Observe DLP Operation](#generate-user-data-via-webex-app-and-observe-dlp-operation) |
-| **Theta Lake** | - eDiscovery & Legal Hold<br>- Archival | [Explore Theta Lake eDiscovery and Legal Hold](#explore-theta-lake-ediscovery-and-legal-hold) |
-| **Webex built-in Anti-Malware Protection** | - Anti-malware protection (AMP) | [Observe Webex Anti-Malware Protection (AMP)](#observe-webex-anti-malware-protection-amp) |
+| **Theta Lake** | - eDiscovery & Legal Hold<br>- Archival | [Explore eDiscovery for Webex Meetings in Theta Lake](#explore-ediscovery-for-webex-meetings-in-theta-lake)<br><br> [Explore eDiscovery for Webex Calling in Theta Lake](#explore-ediscovery-for-webex-calling-in-theta-lake) |
 
 ## Webex Compliance and Preparing for Compliance Platform Integration
 1. Enable compliance officer role for user Anita Perez.
 
       To integrate compliance platforms with Webex, a full administrator with Compliance Officer privileges is required. This role gives the user permissions for DLP integrations, eDiscovery/Legal Hold, and retention and archival integrations. In this step you are assigning the organization Compliance Officer role to Anita Perez.
 
-      Any full administrator can assign the compliance officer role to any person within their organization. However, full administrators cannot assign the Compliance Officer role to themselves, another full administrator must assign the role to them.
+      Any full administrator can assign the compliance officer role to any person within their organization. However, full administrators <u>cannot</u> assign the Compliance Officer role to themselves, another full administrator must assign the role to them.
 
       To begin, connect to WKST1. Login will be as Charles Holland (dcloud\\**cholland** // **dCloud123!**).
 
       a. Open the Chrome browser on WKST1 (wkst1.dcloud.cisco.com) and navigate to Webex Control Hub at <http://admin.webex.com>.
 
-      b. Login as full administrator, Charles Holland by entering: cholland@cbXXX.dc-YY.com (refer to the eXpo dCloud Session View Info page to find your DNS domain). Click **Sign In**.
+      b. Login as full administrator, Charles Holland by entering: cholland@cb**XXX**.dc-**YY**.com (refer to the eXpo dCloud Session View Info page to find your DNS domain). Click **Sign In**.
 
       ![](./media/image154.png)
    
-      (Replace XXX and YYY with the values for your eXpo dCloud pod)
+     <!-- (Replace XXX and YYY with the values for your eXpo dCloud pod)-->
 
-      c. Enter password: **dCloud123!** (if you did not complete Module 1 and enable SSO, then the password will be **dCloudZZZZ!** replacing 'ZZZZ' with the last four digits of the dCloud session ID, refer to the eXpo dCloud Session View Info page for your session ID).
+      c. Enter password: **dCloud123!** (if you did not complete Module 1 and enable SSO, then the password will be dCloud**ZZZZ**! replacing 'ZZZZ' with the last four digits of the dCloud session ID, refer to the eXpo dCloud Session View Info page for your session ID).
 
       ![](./media/image155.png)
 
@@ -98,7 +102,7 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       ![](./media/image157.png)
 
-1. Review retention settings for Webex Meetings and Messaging.
+1. Review retention settings for Webex Messaging, Meeting, and Calling.
 
       One of the first compliance considerations is data retention. How long should data be retained before it is deleted? It's important for the compliance officer to understand the retention policies of the organization and to configure Webex to match these policies.
 
@@ -106,13 +110,13 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       a. Open the Chrome browser on WKST2 (wkst1.dcloud.cisco.com) and navigate to Control Hub at <https://admin.webex.com>.
 
-      b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cbXXX.dc-YY.com (refer to eXpo dCloud session info page for the DNS domain). Click **Sign In**.
+      b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cb**XXX**.dc-**YY**.com <!--(refer to eXpo dCloud session info page for the DNS domain).--> Click **Sign In**.
 
-      c. Enter password: **dCloud123!** (non-SSO password is **dCloudZZZZ!** - refer to eXpo dCloud session info page for the session ID and use the last 4 digits to replace 'ZZZZ').
+      c. Enter password: **dCloud123!** (non-SSO password is dCloud**ZZZZ**! - refer to eXpo dCloud session info page for the session ID and use the last 4 digits to replace 'ZZZZ').
 
-      d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&A, whiteboards, polls, etc.), and Webex Calling (business texting).
+      d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&A, whiteboards, polls, etc.), and Webex Calling (recordings).
 
-      ![](./media/image158.png)
+      ![](./media/image332.png)
 
       e. Click **Settings** under Webex App Messaging Retention Policy to review current messaging retention settings.
 
@@ -128,13 +132,15 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       By default, the retention period is set to 360 days. Note that recording retention can be set to purge in 30 days, but by default the recordings follow the meetings retention policy. For the purposes of this lab, there is no reason to change the meeting retention policy, so just click **Cancel** to close the Webex Meetings Retention Policy window.
 
+      g. Click **Settings** under Webex Calling Retention Policy to review current calling retention settings.
+
+      ![](./media/image333.png)
+
+      By default, the retention period for call recordings is set to 360 days. Notice that deleted recordings can be set to match the recording rentention period, but by default deleted recordings are set to purge immediately. Note that call details records (CDRs) retention is non-configurable. Again, for the purposes of this lab, there is no reason to change the calling retention policy, so just click **Cancel** to close the Webex Calling Retention Policy window.
+
       **Note:** Keep in mind that retention policies in Control Hub apply to data retention for data archived or stored on the Webex platform. When relying on a 3rd party archival system (e.g., Theta Lake), the retention setting of that platform will determine how long organization data is retained. Always ensure that the retention period configured in Control Hub and/or the 3rd party platform matches your organization's retention policy for data.
 
-1. Review external communication messaging settings.
-
-      Webex has a set of built-in data leakage control features which provide some data loss protections without an integration to a 3rd party DLP compliance platform.
-
-      By default, users in a Webex organization can communicate with users in any other Webex organization. However, you can block messaging communication between your users and users in other Webex organizations or allow messaging with only a subset of external Webex organization users.
+<!--> organization can communicate with users in any other Webex organization. However, you can block messaging communication between your users and users in other Webex organizations or allow messaging with only a subset of external Webex organization users.
 
       Let's review the external communication configuration for messaging.
 
@@ -148,11 +154,11 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       For the purposes of this lab, leave this setting at the default value ('Allow all external messaging').
 
-      **Note:** External messaging restrictions with allow or block domain lists also apply to 1:1 Webex calls between Webex Apps ('Call on Webex').
+      **Note:** External messaging restrictions with allow or block domain lists also apply to 1:1 Webex calls between Webex Apps ('Call on Webex').-->
 
-1. Review messaging and meeting collaboration restrictions.
+1. Review meeting controls and restrictions.
 
-      Another built-in Webex data loss protection setting is available for restricting messaging file sharing activities. Let's review the collaboration restrictions configuration for messaging.
+ <!--     Another built-in Webex data loss protection setting is available for restricting messaging file sharing activities. Let's review the collaboration restrictions configuration for messaging.
 
       On the Chrome browser on WKST2 (wkst2.dcloud.cisco.com) in Webex Control Hub, navigate to **Messaging** and review the Collaboration Restrictions configuration settings (at the top of the page).
 
@@ -162,9 +168,9 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       For the purposes of this lab, leave external file sharing, file preview/upload/ download, and file type and size restrictions at their default values (e.g., no restrictions).
 
-      Now, let's review the communication restriction configuration for meetings.
+      Now, let's review the communication restriction configuration for meetings.-->
 
-1. On Control Hub navigate to **Meeting**, click **Settings**, and review the data and communication restriction controls available for meetings.
+      On Control Hub navigate to **Meeting**, click **Settings**, and review the data and communication restriction controls available for meetings.
 
       The internal and external meeting configuration options allow you to control which external users can join your organization's meetings (Internal Webex meetings) and which external organization's meetings (External Webex meeting sites) your users can join. This type of restriction control allows an organization to mitigate potential data loss by disallowing certain attendees and/or meeting sites and may sufficiently address organizational requirements regarding data loss.
 
@@ -182,8 +188,176 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       For the purposes of this lab, please leave the default values (e.g., no restrictions).
 
-      Now that you've confirmed the Compliance Officer role for user Anita Perez and reviewed Webex's built-in data restrictions capabilities, it's time to move on to the Webex integration to external compliance platforms.
+1. Review Webex Calling controls and restrictions
+      On Control Hub navigate to **Calling**, click **Settings**, and review the data and communication restriction controls available for calling.
 
+      The calling feature settings enable the administrator to restrict..... and may sufficiently address organizational requirements regarding data loss.
+
+      ![](./media/)
+
+      By default, users are allowed to.... For the purposes of this lab, you can leave the default values (e.g., no restrictions).
+      you can restrict specific calling features for.
+
+      Scroll down and review the various calling features that can be disabled for calling. For example, you could disable ??. This type of calling data restriction control allows an organization to mitigate and reduce potential data loss by disallowing certain ? (e.g., etc.).
+
+      ![](./media/)
+
+      ![](./media/)
+
+      For the purposes of this lab, please leave the default values (e.g., no restrictions).
+
+Now that you've confirmed the Compliance Officer role for user Anita Perez and reviewed Webex's built-in data retention and restrictions capabilities, it's time to move on and explore Webex integration to an external compliance platform.
+
+## Explore eDiscovery for Webex Meetings in Theta Lake
+
+eDiscovery is the mechanism for searching through and retrieving data from the retained user-generated data archive of an organization. This ensures that the compliance officer has full access to all retained user data as needed for compliance management and enforcement. Because **eDiscovery** enables search and retrieval of data, this is often discussed together with **Archiving** capabilities which pertains with how and where the data that is being searched is stored.
+
+Webex has built-in eDiscovery/Legal Hold and archiving or data storage capabilities which may be sufficient for some organizations. The built-in Webex eDiscovery Search and Extraction portal provides Webex organizations the ability to access Webex stored and retained user-generated data. And as discussed earlier, there are retention settings in Control Hub which determine how long user-generated data is stored on the Webex platform. Note that exploring the Webex eDiscovery Search and Extraction portal is not part of this lab. However, for your reference, the Appendix of this lab guide has a module that covers the built-in Webex eDiscovery tool. If you are interested in this module, please complete the rest of the lab before exploring.
+
+For advanced implementations of eDiscovery and Archiving, a third-party compliance platform integration is generally preferred.
+
+Theta Lake has a full set of compliance capabilities including eDiscovery and Archiving for collaboration platform data. In this module you'll explore the archiving and eDiscovery capabilities of the Theta Lake platform.
+
+### Archiving
+
+1. Login to Theta Lake management portal with read-only admin login.
+
+      As you examine Theta Lake eDiscovery capabilities, it helps to have some historical user data (something beyond just data you might generate today) so you can search and review data over a period days and weeks. In this section you'll use a read-only administrator account for a Theta Lake organization which contains months of user-generated message, meeting, and calling data.
+
+      From the Chrome browser on Anita Perez's workstation (WKST2), navigate to the Theta Lake management portal at <https://useast.thetalake.ai/>.
+
+      Login using the read-only administrator account credentials (email / password): **co.read.only@gmail.com** / **dCloud123!**
+
+      Once logged in navigate to the Policies page by clicking '**Policies**' in the navigation menu at the top of the page.
+
+1. Review the Retention Library page.
+
+      The retention library or archive is the final resting place for the data coming from the Webex platform, so it's important to understand where and how your data is archived before even thinking about eDiscovery.
+
+      On the Theta Lake platform archiving is managed under the Policies sub-section '**Content Destination**'. Retention libraries are managed here.
+
+      Navigate to the Archive retention libraries page by clicking 'Content Destination' in the left-hand navigation menu to expand, and then click 'Retention Libraries'.
+
+      ![](./media/image210.png)
+
+      By default. Theta Lake automatically configures a retention library called 'Default' when the Theta Lake org is created.
+
+      ![](./media/image211.png)
+
+      Notice that the default retention period for the default retention library is 'Forever', meaning that user data for your org will be archived and maintained indefinitely. Data records have been created and archived to this retention library (Record Count = *nnn*).
+
+      ***Note:** You will see a second retention library called 'Delete Storage'. This retention library is for lab operational purposes. We use this library to clear data records from the Theta Lake tenant after the lab has been completed.*
+
+      Theta Lake allows for the creation of multiple retention libraries within an organization enabling you to segment data archiving to accommodate variable retention periods and storage requirements.
+
+      Given this is a read-only account, you won't be able to edit the retention library and see details. Below is what the retention library edit dialog [would look like if you were to edit or create a new retention library.
+
+      ![](./media/image212.png)
+
+      Notice that there is a setting to enable specialized storage to meet certain archival compliance requirements for data retention and storage. Specifically, Theta Lake optionally provides SEC Rule 17a-4 compliant storage. Rule 17a-4 requires maintenance and preservation of electronic records exclusively in a non-rewriteable, non-erasable storage format -- referred to as WORM (write once, read many). We don't need WORM storage for the purposes of this lab, so this is not enabled.
+
+      As mentioned earlier, this default library currently has no retention period set so data will be maintained indefinitely. If the compliance officer or administrator wanted to adjust the retention period, they simply enable the retention period and then specify the retention period in days.
+
+### eDiscovery
+1. Navigate to Theta Lake eDiscvoery.
+
+      Click 'Search' from the navigation menu for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting and calling recordings. All available records are retrieved by default.
+
+      ![](./media/image213.png)
+
+      Note that this Theta Lake org has many Webex Messaging, Meeting, and Calling data records and lots of filters that can be applied to search easily through the records.
+
+
+### eDiscovery for Webex Meetings
+Please spend some time reviewing some of the compliance options for Webex meetings available with Theta Lake.
+
+Theta Lake can process data from in-meeting chat, polls, Q&A, shared files, and other meeting content (like the data you just generated). Theta Lake can also detect content from users' audio/video streams such as, files shared visually or verbally during the meeting (e.g., an attendee holding a paper with sensitive information written on it or
+verbally mentioning credit card numbers/SSN/DOB). You will learn how Theta Lake can help us flag these violations as well.
+
+1. Review Webex Meeting data 
+
+      You will find pre-populated data that demonstrates some of the violations and types of data that Theta Lake can process. Once logged in click the **Search** tab, enter the search term **Poll**, and click the green **Search** button. 
+      
+      Note: the screenshot below is using the **Table** viewing format. This can be found on the right side of the screen near the **Sort by** option.
+
+      ![](./media/image264.png)
+
+      Explore and review few records that have Meeting Poll
+      
+      Repeat the search process with **Q&A** as the search term and click the green **Search** button.
+
+      ![](./media/image265.png)
+
+      ![](./media/image266.png)
+
+      Close the Poll Search by clicking on the "x" next to search.
+
+      ![](./media/image267.png)
+
+1. Search for and review records with specific built-in policy violations.
+
+      In the left-hand navigation menu, under the **FAVORITES** section, click **Policy Hits**. In the resulting dialog box, scroll through the drop-down menu and select the following built-in detection rules then click **Apply**:
+
+      **Credit Card Number (CC#) -- Audio, Chat, Attachment, and EmailsCryptoCurrency Discussions -- Video, Audio, Chat, Attachment and Emails** **Social Security Numbers(SSN) -- Audio, Chat, Attachment and Emails**
+
+      ![](./media/image268.png)
+
+1. Refine search to include specifc media types.
+
+      Scroll down to the **Media** category in the left-hand navigation menu and click to expand the filter. Click **Media Type** and tick the boxes for **Audio** and **Video** then click **Apply**.
+
+      ![](./media/image269.png)
+
+1. Review a specific meeting data record. 
+
+      Select any meeting, you will observe a recording of the meeting and flags where the users have violated policies. You can use **Record ID** 576714780 as an example.
+
+      ![](./media/image270.png)
+
+      If you are reviewing record 576714780, scroll to approximately 7 minutes and 06 seconds into the meeting and you will see that Theta Lake has the ability to flag documents held up to the screen containing PII and confidential data.
+
+      Feel free to take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities.Once you have completed reviewing the options, clear out all the filters that you have selected by clicking "Clear All" on the top left of the screen.
+
+      ![](./media/image271.png)
+
+## Explore eDiscovery for Webex Calling in Theta Lake
+
+Please spend some time reviewing some of the compliance options for Webex Calling available in Theta Lake.
+
+Theta Lake provides archiving, eDiscovery, and supervision for Webex Calling with automated detection of compliance risks in audio content with comprehensive support for Webex Calling, including recordings, call detail records (CDRs), and business texting (SMS). 
+
+In this section you will review Webex Calling data records in Theta Lake. 
+
+1. Search for Webex Calling data records.
+
+      Navigate to eDicovery by clicking **Search**. You will find pre-populated data that demonstrates some of the violations and types of data that Theta Lake can process. 
+      
+      Click **Webex Calling** to add a platform filter and then add a Media Type filter for **Audio**. Note: the screenshot below is using the **Table** viewing format. This can be found on the right side of the screen near the **Sort by** option.
+
+      ![](./media/image272.png)
+
+      ![](./media/image273.png)
+
+1. Explore and review a CDR recrod.
+
+      ![](./media/image274.png)
+
+      Traditionally, call records are in pairs. Let's review example records: 576727299 and 576727182. 
+      
+      57627182 is the call detail record (CDR) that includes detailed information about the call. Click on the record and then select **Content Review** and **Attributes**. You will see that this record has CDR information and other call attributes.
+
+      ![](./media/image275.png)
+
+1. Explore and review a call recording record
+
+      Now let's look at record 576727299. This record includes a recording of the audio call with flags for user policy violations.
+
+      ![](./media/image276.png)
+      
+      Take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities. This concludes Theta Lake compliance sections, before you move to the next section ensure that you have cleared any filters and log out of Theta Lake.
+
+
+<!--
 ## Integrate Webex with Cloudlock and Configure DLP Policies
 In this section you will integrate Webex with Cloudlock and explore DLP policy configuration on the platform.
 
@@ -567,13 +741,13 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 ### eDiscovery / Legal Hold
 1. Return to the Theta Lake portal with read-only admin login.
 
-      As you examine Theta Lake eDiscovery capabilities, it helps to have some historical user data (something beyond just today) so you can search and review data over a period days and weeks. You'll continue to use the read-only administrator account for the Theta Lake organization which contains several months of user-generated message and meeting data.
+      As you examine Theta Lake eDiscovery capabilities, it helps to have some historical user data (something beyond just today) so you can search and review data over a period days and weeks. You'll continue to use the read-only administrator account for the Theta Lake organization which contains several months of user-generated message, meeting, and calling data.
 
       Once logged in, click 'Search' from the navigation menu for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting recordings. All available records are retrieved by default.
 
       ![](./media/image213.png)
 
-      Note that this Theta Lake org has many Webex Messaging and Webex Meeting data records and lots of filters that can be applied to search easily through the records.
+      Note that this Theta Lake org has many Webex Messaging, Meeting, and Calling data records and lots of filters that can be applied to search easily through the records.
 
 1. eDiscovery search for user Charles Holland's Webex Messaging data.
 
@@ -799,6 +973,7 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
       **Note:** To see more details about the threat(s) you can also download and view an AMP report via the **Download CSV** link.
 
       ![](./media/image241.png)
+-->
 
 **\*\*\* END of MODULE 3 \*\***
 
