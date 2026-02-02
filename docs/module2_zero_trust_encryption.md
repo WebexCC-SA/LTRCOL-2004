@@ -1,15 +1,7 @@
 # Module 2: Zero Trust End-to-End Encrypted Calling and Meetings, Media Watermarking, and Deepfake Detection.
 In this module, you will learn about Zero-Trust End-to-End Encrypted calling and meetings, learn how you can use watermarking for preventing media leakage. Finally we will walkthrough the process of deepfake detection in a meeting.
 
-There are 7 sections in this module:
-
-##i. [Generating User Data for Compliance in Meetings](#generating-user-data-for-compliance-in-meetings)
-
-##ii. [Provision users and enable recording for Webex Calling for data compliance](#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
-
-##iii. [Explore Compliance Options for Webex Meetings in Theta Lake](#explore-compliance-options-for-webex-meetings-in-theta-lake)
-
-##iv. [Explore Compliance Options for Webex Calling in Theta Lake](#explore-compliance-options-for-webex-calling-in-theta-lake)
+There are 6 sections in this module:
 
 1. [Schedule an End-to-End Encrypted Meeting](#schedule-an-end-to-end-encrypted-meeting)
 
@@ -21,220 +13,6 @@ There are 7 sections in this module:
 5. Provision users and configure Zero Trust End-to-End Encrypted Calling 
 
 6. Zero Trust End-to-End Encrypted Calling
-
-## Generating User Data for Compliance in Meetings
-
-**Step 1:**
-
-1. In this section, you will learn how to configure Compliance and Supervision for Webex Meetings. Theta Lake provides AI-based archiving, eDiscovery, and supervision for Webex Meetings with automated detection of compliance risks in audio and visual content. Open a remote desktop session to WKST1, navigate to https://admin.webex.com and click **Sign in.** Enter the credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, refer to last 4 digits of the Session ID on eXpo dCloud Session View page for the non-SSO password).
-
-1. Go to Services \> Meeting and copy the site name.
-
-      ![](./media/image242.png)
-
-1. Open an instance of Chrome browser and navigate to the sitename e.g., cb46001.webex.com and log in with credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).
-
-1. Click **Schedule** and then **Schedule a meeting**
-
-      ![](./media/image243.png)
-
-1. Set your meeting type as **Webex Meetings Pro Meeting** and set a meeting topic. Invite Anita Perez and Kellie Melby.
-
-      ![](./media/image244.png)
-
-      Click **Schedule** (or **Start**).
-
-1. On WKST1, start the meeting from the Webex App. Click **OK** to the **Microphone Not Available** prompt and click on Start Meeting.
-
-      ![](./media/image245.png)
-
-1. Click OK on the subsequent microphone warning once the meeting is launched.
-
-      ![](./media/image246.png)
-
-1. Log in to **WKST2** and **WKST3** with Anita (aperez@cbXXX.dc-YY.com) and Kellie (kmelby@cbXXX.dc-YY.com) respectively and launch the Webex App. Click the green Join button to join the meeting.
-
-      ![](./media/image247.png)
-
-1. On WKST1, click **Record the meeting** and save to the cloud option. Once Charles, Anita, and Kellie are in the meeting, open the in-meeting chat from any of the workstations and populate the chat with fake confidential or PII like date of birth, SSNs, credit card numbers, or keywords like Top Secret or Confidential.
-
-      ![](./media/image248.png)
-
-      Example:
-
-      ![](./media/image249.png)
-
-1. On **WKST1**, click the bottom-right ellipsis next to the chat button, then select **Slido (polling and Q&A)** and click **Open** to launch Slido.
-
-      ![](./media/image250.png)
-
-1. Click **Open**
-
-      ![](./media/image251.png)
-
-1. Click on **Create Slido**, click on **Add** and select **Audience Q&A**
-
-      ![](./media/image252.png)
-
-      ![](./media/image253.png)
-
-1. Navigate to WKST2 (Anita) and WKST3 (Kellie), launch Slido (if it's not already launched) and ask questions that contain sensitive data.e.g. from Anita's WKST2, you can this question "Charles, I am sharing my Credit Card Details here. It is 5678-0987-1234-0987 - is this what you wanted?"
-
-      ![](./media/image254.png)
-
-1. From Kellie's WKST3 ask the following question as e.g. "Here is my data, Charles. Date of Birth == 12th Jan 1984 SSN == 123-25-6078, is this fine?"
-
-      ![](./media/image255.png)
-
-1. Now that we have provided Input on Q&A, lets launch a poll and share sensitive data.
-
-1. Navigate to WKST1 and click on home in the Slido panel and then Add and Select Survey. Slido offers multiple poll options like Word Cloud, Multiple Choice, Quizzes, Ranking, Ratings and Surveys along with Open Text. For the lab select **Survey**. Then, select any option, and populate it with sensitive data.
-
-      ![](./media/image256.png)
-
-1. Add a couple of questions to the survey and click **Launch** to start the survey.
-
-      ![](./media/image257.png)
-
-1. Go to WKST2 and WKST3 and provide fake sensitive data for the questions asked like "Mothers Maiden Name" and "Credit Card Numbers". Once you have provided the inputs, from WKST1, click on Deactivate Survey and close the Slido App Panel.
-
-      ![](./media/image258.png)
-
-1. The poll has confidential and sensitive information like a mother's maiden name, and credit card number. This simulates end users sharing confidential or proprietary information and demonstrates how compliance platforms like Theta Lake effectively identify and act on the offense. End the meeting from WKST1 by clicking on Red "X" and Select "End Meeting for all".
-
-## Provision users and enable recording for Webex Calling for data compliance.
-In this section, we shall setup the users with Webex calling, enable the native recording capability now available with Webex.
-
-1. RDP to WKST1, navigate to admin.webex.com and click on Sign in with credentials for cholland, <cholland@cbXXX.dc-YY.com> and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).
-
-1. Navigate to Services > Calling > Service Settings
-
-      ![](./media/image259.png)
-
-1. Scroll to call recording and select Provider as Webex, Storage region as United States along with Call recording failure settings to Proceed with the call with announcement, select the compliance announcements to Play Announcements for inbound as well as outbound PSTN calls.
-
-      ![](./media/image260.png)
-
-      Click **Save** to save these settings.
-
-1. Now let's allocate Webex calling Professional licenses for two users Ricardo Filice and Eric Steele.
-
-1. Navigate to Management tab on the left and the Users option. Search for
-Eric Steele and under the Summary tab, navigate to Licenses and select
-Edit Licenses.
-
-      ![](./media/image261.png)
-
-1. Select Edit Licenses on the next screen, go to calling and uncheck Call on Webex (1:1 call, non-PSTN) to Webex Calling option at the bottom and select Webex Calling Professional. For the purposes of this lab, you don't need to select Attendant Console and click Save.
-
-      ![](./media/image262.png)
-
-1. Let's assign a calling number to Eric, in the Location Drop-down select DCloud, Phone Number leave as is and in extension provide an extension number to Eric e.g. in the screenshot, I have provided 5001 and hit Save.
-
-      ![](./media/image263.png)
-
-1. Perform the same steps for Ricardo Filice (rfilice) and assign him
-extension 5002.
-
-For this lab, we are not setting up PSTN either via Local GW or Cisco
-Calling plans, the aim of this module is to showcase the built-in call
-recording capability now available for our calling platform in addition
-to meetings.
-
-Next, you'll use the login credentials of the **read-only compliance
-officer account** to see sample data that we have compiled in a Theta
-Lake tenant over the last year, including data that matches the test
-meeting you just scheduled and attended.
-
-In the subsequent two modules we shall cover with examples how Theta
-Lake can flag compliance issues in Meetings, Calling, Slido Polling and
-Q&A.
-
-## Explore Compliance Options for Webex Meetings in Theta Lake
-
-We want you to spend some time reviewing some of the compliance options for Webex meetings available via Theta Lake.
-
-Theta Lake can process data from in-meeting chat, polls, Q&A, shared
-files, and other meeting content (like the data you just generated).
-Theta Lake can also detect content from users' audio/video streams such
-as, files shared visually or verbally during the meeting (e.g., an
-attendee holding a paper with sensitive information written on it or
-verbally mentioning credit card numbers/SSN/DOB). You will learn how Theta Lake can help us flag these violations as well.
-
-**Step 1:**
-
-1. Navigate to <https://useast.thetalake.ai/#/users/login> on WKST1. Log in with read-only Compliance Officer credentials (**co.read.only@gmail.com** // **dCloud123!)**. You will find pre-populated data that demonstrates some of the violations and types of data that Theta Lake can process. Once logged in click the **Search** tab, enter the search term **Poll**, and click the green **Search** button. Note: the screenshot below is using the **Table** viewing format. This can be found on the right side of the screen near the **Sort by** option.
-
-      ![](./media/image264.png)
-
-1. Explore and review few records that have Meeting Poll and repeat the process by changing Poll to "Q&A".
-
-      ![](./media/image265.png)
-
-      ![](./media/image266.png)
-
-1. Close the Poll Search by clicking on the "x" next to search.
-
-      ![](./media/image267.png)
-
-      In the left-hand navigation menu, under the **FAVORITES** section, click **Policy Hits**. In the resulting dialog box, scroll through the drop-down menu and select the following built-in detection rules then click **Apply**:
-
-      **Credit Card Number (CC#) -- Audio, Chat, Attachment, and EmailsCryptoCurrency Discussions -- Video, Audio, Chat, Attachment and Emails** **Social Security Numbers(SSN) -- Audio, Chat, Attachment and Emails**
-
-      ![](./media/image268.png)
-
-1. Scroll down to the **Media** category in the left-hand navigation menu and click to expand the filter. Click **Media Type** and tick the boxes for **Audio** and **Video** then click **Apply**.
-
-      ![](./media/image269.png)
-
-1. Select any meeting, you will observe a recording of the meeting and flags where the users have violated policies. You can use **Record ID** 576714780 as an example.
-
-      ![](./media/image270.png)
-
-      If you are reviewing record 576714780, scroll to approximately 7 minutes and 06 seconds into the meeting and you will see that Theta Lake has the ability to flag documents held up to the screen containing PII and confidential data.
-
-      Feel free to take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities.Once you have completed reviewing the options, clear out all the filters that you have selected by clicking "Clear All" on the top left of the screen.
-
-      ![](./media/image271.png)
-
-We want you to spend some time reviewing some of the compliance options
-for Webex Calling available in Theta Lake.
-
-## Explore Compliance Options for Webex Calling in Theta Lake
-
-Theta lake offers Compliance and Security for Webex Cloud Calling &
-Customer Assist. Theta Lake's turn-key archiving, compliance,
-surveillance, and data security products natively integrate with the
-Webex Suite, with comprehensive support for Webex Calling, including
-Webex Cloud Calling, Business Texting (SMS), Voice Recordings, and Call
-Detail Records (CDRs).
-
-In this section you will learn how to configure Compliance and
-Supervision for Webex Calling using Theta Lake. Theta Lake provides
-AI-based archiving, eDiscovery, and supervision for Webex Calling with
-automated detection of compliance risks in audio content.
-
-**Step 1:**
-
-1. Navigate to <https://useast.thetalake.ai/#/users/login> on WKST1. Log in with read-only Compliance Officer credentials (**co.read.only@gmail.com** // **dCloud123!)**. You will find pre-populated data that demonstrates some of the violations and types of data that Theta Lake can process. Once logged in, navigate to Search. Click on Webex Calling option and click on the Media Type option and select Audio and select Apply. Next, click Webex Calling to add a platform filter. Note: the screenshot below is using the **Table** viewing format. This can be found on the right side of the screen near the **Sort by** option.
-
-      ![](./media/image272.png)
-
-      ![](./media/image273.png)
-
-1. Explore and review few records that have been filtered.
-
-      ![](./media/image274.png)
-
-1. I have 4 records here, traditionally these records are pairs, let's take an example record 576727299 and record 576727182, where one of is the CDR record / call details and the second one being capture of the actual call and flagged for compliance violations.Looking at record 576727182, click on the record > Content Review and Attributes. You will see that this record has CDR information and other call attributes.
-
-      ![](./media/image275.png)
-
-1. Now let's look at record 576727299, you will observe a recording of the audio call and flags where the users have violated policies.
-
-      ![](./media/image276.png)
-
-1. Feel free to take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities.This concludes the compliance for Webex calling module, before you move to the next section ensure that you have cleared any filters and log out of Theta Lake.
 
 ## Schedule an End-to-End Encrypted Meeting
 
@@ -374,13 +152,15 @@ In this section, you will learn some features that are made available in an End-
 
       ![](./media/image297.png)
 
-1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.
+1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.Once completed "Stop Sharing"
 
       ![](./media/image298.png)
 
       ![](./media/image299.png)
 
-1. Stop Sharing and finally the end the meeting for All.
+1. Click on the ellipsis icon "..." next to reactions and explore other features available in an end to end encrypted meetings like "whiteboards" and "Enable Sign Language Interpretation" and designate Anita as the interpreter.
+
+1. Finally the end the meeting for All.
 
 ## Audio and Visual Watermarking and Watermark Analysis
 In this section, you will learn how watermarking can help with data
