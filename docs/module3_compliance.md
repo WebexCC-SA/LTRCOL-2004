@@ -1,5 +1,5 @@
-# Module 3: Webex Compliance with Cisco Cloudlock and Theta Lake
-In this module, you will examine Webex compliance features and capabilities for messaging and meetings including integration to cloud-based data loss prevention (DLP) and archiving systems. You will also explore eDiscovery and Legal Hold capabilities as well as anti-malware protection (AMP)
+# Module 3: Webex Compliance with Webex and Theta Lake
+In this module, you will examine Webex compliance features and capabilities for meetings and calling including eDiscovery and Archiving on an external compliance platform. You will also explore eDiscovery
 
 There are 3 sections in this module:
 
@@ -27,10 +27,9 @@ In this module you will examine the following product-specific capabilities:
 
 - Webex built-in compliance capabilities including:
       - Archiving with flexible data retention.
-      - External communication controls, and message, calling, and meeting specific collaboration restrictions.
+      - External communication controls, and calling and meeting specific collaboration restrictions.
 
 - Other compliance products:
-      - Cisco Cloudlock -- Data Loss Prevention
       - Theta Lake -- Archiving, eDiscovery, Legal Hold
 
 The figure below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. 
