@@ -30,7 +30,7 @@ In this module you will examine the following product-specific capabilities:
       - External communication controls, and calling and meeting specific collaboration restrictions.
 
 - Other compliance products:
-      - Theta Lake -- Archiving, eDiscovery, Legal Hold
+      - Theta Lake -- Archiving, eDiscovery
 
 The figure below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. 
 
