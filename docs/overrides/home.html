@@ -15,6 +15,14 @@
         background: var(--md-primary-fg-color)
     }
 
+    html, body {
+        overflow: hidden;
+    }
+
+    .md-footer {
+        display: none;
+    }
+
     .md-main__inner {
         display: flex;
         height: 100%;
@@ -22,7 +30,12 @@
 
     .tx-container {
         padding-top: .0rem;
-        background: var(--md-primary-fg-color)
+        background: var(--md-primary-fg-color);
+        height: calc(100vh - 96px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
     }
 
     .tx-hero {
@@ -55,10 +68,20 @@
     }
 
     .tx-hero__image {
-        width: 850px;
-        height: 1050px;
+        max-width: 850px;
+        padding-left: 2.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .tx-hero__image img {
+        max-height: calc(100vh - 200px);
+        width: auto;
+        object-fit: contain;
+    }
+
+    .tx-hero__content {
         order: 1;
-        padding-right: 2.5rem;
     }
 
     .tx-hero .md-button {
@@ -148,8 +171,8 @@
             max-width: 22rem;
             margin-top: 3.5rem;
             margin-bottom: 3.5rem;
-            margin-left: 1.0rem;
-            margin-right: 4.0rem;
+            margin-left: 4.0rem;
+            margin-right: 1.0rem;
             align-items: center;
         }
     }
@@ -240,7 +263,7 @@
     <div class="md-grid md-typeset">
         <div class="tx-hero">
             <div class="tx-hero__image">
-                <img src="template_assets/CLAMER2025_Static_Midnight_Generic.png" draggable="false">
+                <img src="template_assets/HomePage_Event_logo.png" draggable="false">
             </div>
             <div class="tx-hero__content">
                 <div class="tx-hero__logo">
