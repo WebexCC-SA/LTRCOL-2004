@@ -102,11 +102,11 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       ![](./media/image157.png)
 
-1. Review retention settings for Webex Messaging, Meeting, and Calling.
+1. Review retention settings for Webex Messaging, Meetings, and Calling.
 
       One of the first compliance considerations is data retention. How long should data be retained before it is deleted? It's important for the compliance officer to understand the retention policies of the organization and to configure Webex to match these policies.
 
-      Before proceeding, move to WKST2 (wkst2.dcloud.cisco.com). If not already connected, connect to WKST2. Login will be as Anita Prerez (dcloud\\**aperez** // **dCloud123!**).
+      Before proceeding, **move to WKST2** (wkst2.dcloud.cisco.com). If not already connected, connect to WKST2. Login will be as Anita Prerez (dcloud\\**aperez** // **dCloud123!**).
 
       a. Open the Chrome browser on WKST2 (wkst1.dcloud.cisco.com) and navigate to Control Hub at <https://admin.webex.com>.
 
@@ -116,7 +116,7 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&A, whiteboards, polls, etc.), and Webex Calling (recordings).
 
-      ![](./media/image332.png)
+      ![](./media/image_m3_332.png)
 
       e. Click **Settings** under Webex App Messaging Retention Policy to review current messaging retention settings.
 
@@ -134,41 +134,15 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       g. Click **Settings** under Webex Calling Retention Policy to review current calling retention settings.
 
-      ![](./media/image333.png)
+      ![](./media/image_m3_333.png)
 
       By default, the retention period for call recordings is set to 360 days. Notice that deleted recordings can be set to match the recording rentention period, but by default deleted recordings are set to purge immediately. Note that call details records (CDRs) retention is non-configurable. Again, for the purposes of this lab, there is no reason to change the calling retention policy, so just click **Cancel** to close the Webex Calling Retention Policy window.
 
       **Note:** Keep in mind that retention policies in Control Hub apply to data retention for data archived or stored on the Webex platform. When relying on a 3rd party archival system (e.g., Theta Lake), the retention setting of that platform will determine how long organization data is retained. Always ensure that the retention period configured in Control Hub and/or the 3rd party platform matches your organization's retention policy for data.
 
-<!--> organization can communicate with users in any other Webex organization. However, you can block messaging communication between your users and users in other Webex organizations or allow messaging with only a subset of external Webex organization users.
 
-      Let's review the external communication configuration for messaging.
+1. Review Webex Meeting controls and restrictions.
 
-      Return to the Chrome browser on WKST2 and on Control Hub navigate to Organization Settings. Scroll to 'External Communication' to locate the external communications settings.
-
-      ![](./media/image161.png)
-
-      By default, messaging to external organization users is allowed ('Allow all external messaging' is selected). As such, your user's will be able to join external Webex spaces and invite external contacts to your organization's Webex spaces.
-
-      Webex provides setting options that enable an organization to control which external organizations its users can exchange messages with. An administrator can configure block ('Allow all domains except the blocked domains') or allowed ('Allow selected domains only') domain list(s).
-
-      For the purposes of this lab, leave this setting at the default value ('Allow all external messaging').
-
-      **Note:** External messaging restrictions with allow or block domain lists also apply to 1:1 Webex calls between Webex Apps ('Call on Webex').-->
-
-1. Review meeting controls and restrictions.
-
- <!--     Another built-in Webex data loss protection setting is available for restricting messaging file sharing activities. Let's review the collaboration restrictions configuration for messaging.
-
-      On the Chrome browser on WKST2 (wkst2.dcloud.cisco.com) in Webex Control Hub, navigate to **Messaging** and review the Collaboration Restrictions configuration settings (at the top of the page).
-
-      ![](./media/image162.png)
-
-      By default, no messaging Collaboration Restrictions are configured, however with this functionality, an administrator has granular control over all aspects of file sharing including the ability to restrict file sharing to the corporate network and/or to specific file types or sizes. Likewise, the administrator can restrict file preview and file upload/download. These types of restrictions may sufficiently address organizational concerns or requirements regarding data loss.
-
-      For the purposes of this lab, leave external file sharing, file preview/upload/ download, and file type and size restrictions at their default values (e.g., no restrictions).
-
-      Now, let's review the communication restriction configuration for meetings.-->
 
       On Control Hub navigate to **Meeting**, click **Settings**, and review the data and communication restriction controls available for meetings.
 
@@ -189,24 +163,16 @@ This lab guide contains coverage for external compliance platform Theta Lake.
       For the purposes of this lab, please leave the default values (e.g., no restrictions).
 
 1. Review Webex Calling controls and restrictions
-      On Control Hub navigate to **Calling**, click **Settings**, and review the data and communication restriction controls available for calling.
 
-      The calling feature settings enable the administrator to restrict..... and may sufficiently address organizational requirements regarding data loss.
+      On Control Hub navigate to **Calling**, click **Settings**, then select **Webex App**, and scroll down to 'In-call feature access'. Review the available in-call features that can be disabled.
 
-      ![](./media/)
+      An administrator can eliminate potential data leakage vectors to disable. For example, an adminstrator could prevent users from sharing content during a call (toggle off **Screen Sharing**) or sharing video on the call (toggle off **Video on desktop**/**Video on mobile**). Likewise, the administrator can prevent escalation of a call to a meeting (toggle off **Move call to meetings on desktop app**). These restrictions may sufficiently address organizational requirements regarding callingdata loss.
 
-      By default, users are allowed to.... For the purposes of this lab, you can leave the default values (e.g., no restrictions).
-      you can restrict specific calling features for.
+      ![](./media/image_m3_image334.png)
 
-      Scroll down and review the various calling features that can be disabled for calling. For example, you could disable ??. This type of calling data restriction control allows an organization to mitigate and reduce potential data loss by disallowing certain ? (e.g., etc.).
+      Note that by default, there are no restrictions for in-call features. For the purposes of this lab, please leave the default values (e.g., no restrictions).
 
-      ![](./media/)
-
-      ![](./media/)
-
-      For the purposes of this lab, please leave the default values (e.g., no restrictions).
-
-Now that you've confirmed the Compliance Officer role for user Anita Perez and reviewed Webex's built-in data retention and restrictions capabilities, it's time to move on and explore Webex integration to an external compliance platform.
+Now that you've enabled the Compliance Officer role for user Anita Perez and reviewed Webex's built-in data retention and restrictions capabilities, it's time to move on and explore Webex integration to an external compliance platform.
 
 ## Explore eDiscovery for Webex Meetings in Theta Lake
 
@@ -218,7 +184,7 @@ For advanced implementations of eDiscovery and Archiving, a third-party complian
 
 Theta Lake has a full set of compliance capabilities including eDiscovery and Archiving for collaboration platform data. In this module you'll explore the archiving and eDiscovery capabilities of the Theta Lake platform.
 
-### Archiving
+### Theta Lake Archiving
 
 1. Login to Theta Lake management portal with read-only admin login.
 
@@ -258,7 +224,7 @@ Theta Lake has a full set of compliance capabilities including eDiscovery and Ar
 
       As mentioned earlier, this default library currently has no retention period set so data will be maintained indefinitely. If the compliance officer or administrator wanted to adjust the retention period, they simply enable the retention period and then specify the retention period in days.
 
-### eDiscovery
+### Theta Lake eDiscovery
 1. Navigate to Theta Lake eDiscvoery.
 
       Click 'Search' from the navigation menu for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting and calling recordings. All available records are retrieved by default.
@@ -332,29 +298,92 @@ In this section you will review Webex Calling data records in Theta Lake.
 
       Navigate to eDicovery by clicking **Search**. You will find pre-populated data that demonstrates some of the violations and types of data that Theta Lake can process. 
       
-      Click **Webex Calling** to add a platform filter and then add a Media Type filter for **Audio**. Note: the screenshot below is using the **Table** viewing format. This can be found on the right side of the screen near the **Sort by** option.
-
-      ![](./media/image272.png)
-
-      ![](./media/image273.png)
-
-1. Explore and review a CDR recrod.
-
-      ![](./media/image274.png)
-
-      Traditionally, call records are in pairs. Let's review example records: 576727299 and 576727182. 
+      Click **Webex Calling** to add a platform filter. 
       
-      57627182 is the call detail record (CDR) that includes detailed information about the call. Click on the record and then select **Content Review** and **Attributes**. You will see that this record has CDR information and other call attributes.
+      Note: the screenshots below show the **Table** view. This can be found on the right side of the screen near the **Sort by** option.
 
-      ![](./media/image275.png)
+      ![](./media/image_m3_335.png)
 
-1. Explore and review a call recording record
+     <!-- ![](./media/image273.png) -->
 
-      Now let's look at record 576727299. This record includes a recording of the audio call with flags for user policy violations.
+1. Review list of records.
 
-      ![](./media/image276.png)
+      You will find two types of Webex Calling records here:
+      - Call detail records (CDRs)
+            These records have a <u>Record Title</u> that starts with **'Call between...'**.  
+      - Call recordings - These records have a <u>Record Title</u> that starts with **'Call with...'** and ending with a numeric sequence corresponding to the calling number and call timestamp.
+
+      **CDRs**
+
+      If the call is internal (**SIP_ENTERPRISE**) you will see a pair of CDRs for each call - one for each call leg: originating, terminating.
       
-      Take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities. This concludes Theta Lake compliance sections, before you move to the next section ensure that you have cleared any filters and log out of Theta Lake.
+      If the call is external (**SIP_NATIONAL** - to PSTN, or **SIP_INBOUND** - from PSTN) you will see a single CDR for each call - the internal call leg: originating or terminating.
+
+      **Call Recordings**
+
+      In addition to the CDRs described above, if the call is recorded, you will also find a corresponding recording record.  
+
+      ![](./media/image_m3_336.png)
+
+      Note: CDR data records will be the same for both standard and zero-trust end-to-end encrypted (E2EE) Webex calls. However, as discussed in Module 2, zero-trust E2EE calls do not support call recording (or other features like closed captioning). So if a call has a corresponding audio recording, then it was not a zero-trust E2EE call. On the oher hand, for any unrecorded call it would be impossible to tell the difference between a standard encrypted call and a zero-trust E2EE call.
+
+ 1. Review CDR data record details
+      
+      Begin to review data records for Webex Calling. Start with an internal call.
+
+      Scroll down and locate the set of call records: 75052**6890**, 75052**6883**. These should be listed sequentially and correspond to the terminating and originating legs of an internal call.
+
+      To review a record, click the record. Select the **Attributes** record to see the call detail information.
+
+      ![](./media/image_m3_337.png)
+
+      First, note the CallType for each record is **SIP_ENTERPRISE** indicating this is an internal call.
+      
+      Next, look at the **CorrelationId** attribute and notice that it is the same for both records (3d8bafcd-519b-4ec9-86cd-c68aa4565870). This indicates that these two records are part of the same call. Later you will see that the call recording data record has the same CorrelationId.
+
+      Notice one of the records (75052**6883**) is the originating leg: **CallDirection=ORIGINATING**. And the other record (75052**6890**)is the terminating leg: **CallDirection=TERMINATING**.
+
+      Additional detailed call information is displayed including call duration (CallDurationSeconds), times (CallAnswerTime, CallStartTime), numbers (CalledNumber, CallingNumber), and caller ID (CalledLineId, CallingLineId).
+
+      ![](./media/image_m3_338.png)
+
+1. Review a call recording record
+
+      Now let's look at record 75052**7005**. This should be listed sequentially above the terminating and originating CDRs reviewed above. This record includes an audio recording of the call.
+
+      ![](./media/image_m3_339.png)
+
+      First, review the Attributes of the record. Observe that the **CorrleationId** (3d8bafcd-519b-4ec9-86cd-c68aa4565870) matches the two CDRs we reviewed above indicating this is the corresponding recording of that call. Also notice that the **CallDirection** parameter is 'ORIGINATING' indicating the call recording was started on the originator's leg of the call  
+      
+      Next, select **Content Review** to display the analysis of the recording made by the Theta Lake platform AI Compliance Advisor. This automated analysis indicates locations during the call recording where potential violations of compliance policy occurred. For example, the Compliance Advisor flagged multiple cases where **'cryptopcurrency'** is mentioned during the call which is a violation of the built-in 'CryptoCurrency Discussions' policy. Likewise, the Compliance Advisor flagged instances of social security numbers, credit card numbers, material nonpublic information (insider trading), and sensitive documents being discussed on the call. This analysis is a great starting place for the Compliance Officer when reviewing data records on the Theta Lake platform.
+      
+      ![](./media/image_m3_340.png) 
+
+      Review the details of this analysis noting the policies that were violated. Using the timestamps in the Content Review analysis see if you can locate one of the potential violations in the audio recording.
+      
+      Next, review the transcript of the recording. Select **Transcript** to display the transcript of the audio reocrding generated by the Theta Lake platform AI Compliance Advisor. This transcript along with the automated analysis by the AI Compliance Advisor keeps the Compliance Officer from having to review the audio recording saving a lot of time.
+
+      ![](./media/image_m3_341.png)      
+
+      Finally, try translating the transcript into another language. Click **Translate**, select the language to translate to from the dropdown (e.g., Dutch) and then, click **Translate** again. Notice the transcipt has been translated into the language selected. This can be very useful if the call audio is in a language that the Compliance Officer is unable to understand.
+
+      ![](./media/image_m3_342.png)
+      
+1. Review other Webex Calling data records
+      
+      Take a few minutes to review some other records to see other types of calls and other possible compliance policy violations.
+
+      For example, look at the records for a PSTN call with a single CDR data record and the corresponding audio recording data record. Scroll down and locate data recordings: 7312**5943** and 7312**5955** which are the respective CDR and audio recording for a PSTN call. (Hint: To find these records faster, use the side panel to select a 'Create Date' filter with a custom data range of January 19, 2026 12:00AM - January 19, 2026 11:00PM. This filter will return just these two data records).
+
+      Note that under Attributes for both of these records, the **CorrelationId** (060b2e06-b871-435e-8a60-33c6be7862db) is the same indicating they are from the same call. The <u>CallType</u> attribute of the CDR is **SIP_NATIONAL** which indicates this is a PSTN call. This is an outbound call (<u>CallDirection</u> = **ORGINATING**) to the PSTN and as mentioned previously, this is the only call leg CDR available since the system has no visibility to the PSTN side of the call. 
+      
+      (Note: If this were an inbound PSTN call, then the <u>CallType</u> would be **SIP_INBOUND** and the <u>CallDirection</u> would be **TERMINATING**)
+
+      Feel free to review the Content Review and Transcript details for the audio recording data record.
+
+      Once you are done exploring other Webex Calling data records, before you proceed, ensure that you have cleared any filters and logged out of Theta Lake. 
+      
+      This concludes Theta Lake compliance sections.
 
 
 <!--
