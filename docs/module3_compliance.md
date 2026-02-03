@@ -324,7 +324,7 @@ In this section you will review Webex Calling data records in Theta Lake.
 
       ![](./media/image_m3_336.png)
 
-      Note: CDR data records will be the same for both standard and zero-trust end-to-end encrypted (E2EE) Webex calls. However, as discussed in Module 2, zero-trust E2EE calls do not support call recording (or other features like closed captioning). So if a call has a corresponding audio recording, then it was not a zero-trust E2EE call. On the oher hand, for any unrecorded call it would be impossible to tell the difference between a standard encrypted call and a zero-trust E2EE call.
+      Note: CDR data records will be the same for both standard and zero trust end-to-end encrypted (E2EE) Webex calls. However, as discussed in Module 2, zero trust E2EE calls do not support call recording (or other features like closed captioning). So if a call has a corresponding audio recording, then it was not a zero trust E2EE call. On the oher hand, for any unrecorded call it would be impossible to tell the difference between a standard encrypted call and a zero trust E2EE call.
 
  1. Review CDR data record details
       
@@ -1011,3 +1011,124 @@ Continue with either Module 1 or Module 2:
 - [Module 2: Zero Trust Encryption](module2_zero_trust_encryption.md)
 - [Module 3: Webex Compliance](module3_compliance.md) *(current)*
 - [Conclusion](conclusion.md)
+
+
+**MODULE 2 CONTENT**
+
+## Provision Users and Configure Zero Trust End-to-End Encrypted Webex Calling
+
+**Note: Before proceeding, please be sure to sign out user Charles Holland from the Webex App on the lab PC and Anita Perez form the Webex App on Workstation 2 (WKST2).**
+
+First, it is important to understand the implementation of zero trust E2EE calling works. As with zero trust E2EE meetings, calling data can only be accessed by authorized parties. The calling media encryption key is derived by the calling party and propagated to the called party via MLS key package. As such encrypted call media **cannot** be decrypted by Webex cloud services, because Webex **DOES NOT** have access to the media encryption key - Zero Trust.
+
+Unlike the zero trust E2EE meetings, zero trust E2EE calling will downgrade to standard encryption (where Webex services have access to the media encryption key) if one of the called party's device or features does not support zero trust E2EE (non-SIP, PSTN calls). Downgrades to standard encryption from zero trust E2EE also occur when Webex services are enabled that require access to the media encryption keys - for example, when the call is recorded or when closed captioning is enabled on the call. Note that calls can also upgrade to zero trust E2EE when Webex services are removed.
+
+To begin, you will need to provision two of Webex org users for Webex Calling including assign licenses and phone numbers.
+
+Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP lines (not 'Call on Webex') - this is why a number is configured here to enable SIP line calling.
+
+1. Provision users for Webex Calling 
+
+      Return to WKST1 and from the Chrome browser there, if required navigate to Webex Contol Hub (https://admin.webex.com). If login is required login with: cholland@cb**XXX**.dc-**YY**.com // dCloud123! (or if you did not enable SSO in Module 1, use the default password: dCloud**ZZZZ**!).
+      
+      Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
+
+      ![](./media/image_m2_wxc001.png)
+
+      Scroll down to the licensing section and click **'Edit licenses'**
+
+      ![](./media/image_m2_wxc002.png)
+
+      On the subsequent screen, click **'Edit licenses** again. Next, click on the 'Calling' selection and tick the box next to **Webex Calling**. Ensure that the **Professional** box is also ticked.
+
+      ![](./media/image_m2_wxc003.png)
+
+      Click **Save**.
+
+      On the next screen, select the location **CL EMEA** from the 'Location' dropdown. This will assign the user to this location.
+      
+      Next, select the 'Phone Number' dropdown and select one of the available numbers - for example, '+31 20 555 4191'. Then, configure the extension with the last 4-digits of the phone number - for example '4191'. (Note: These are just <u>examples</u>. The phone numbers and extensions available in your pod <u>will be different</u>).
+
+      ![](./media/image_m2_wxc004.png)
+     
+      Click **Save** to assign the Webex Calling license and phone number to the user. The user now has a SIP line and phone number. Click **Close**.
+
+      Click the **Calling** tab to review the directory number and confirm it was properly allocated.
+
+      ![](./media/image_m2_wxc005.png) 
+
+      Repeat the process above to assign Webex Calling license and phone number to user **Anita Perez**. In this case, user the other available phone number (for example, +31 20 555 4192 / extension 4192). (Note: The available phone number in your pod will be different)
+		
+1. Enable call recording for a user.
+
+      Enable call recording for one of the users just licensed for Webex Calling and provisioned for phone number. 
+
+      Navigate back to user Charles Holland (or Anita Perez) and click the **Calling** tab. Scroll down to the 'User calling experience' section and set Call recording to **'On'**. Then toggle on **Record incoming and outgoing calls...** and tick **On Demand**. This ensures the user can start/stop call recording. Finally, tick <u>both</u> **'Play recording start/stop announcement for...'** boxes. The rest of the settings can be left at default. Click **Save**.
+
+      ![](./media/image_m2_wxc006.png)
+
+
+## Zero Trust End-to-End Encrypted Calling
+
+Now that some users have been provisioned for Webex Calling and SIP lines, it is time to enable zero trust E2EE calling and confirm it is operating for Webex calls.
+
+1.  Turn on zero trust E2EE calling
+
+      The zero trust E2EE calling feature needs to be turned on explicitly for the organization.
+
+      Click **Calling** (under Services in the left-hand navigation menu)
+      
+      Select **Settings** and then, click the **Webex App**. Scroll down to the 'Security' section.
+
+      Enable zero trust E2EE calling by toggling on **'Enable end-to-end encryption when making calls'**.
+      
+      ![](./media/image_m2_wxc007.png)
+      
+		
+1. Make a Zero Trust E2EE Webex Call
+
+      On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+
+      On the remote PC Workstation 3 (WKST3), log back into the Webex App with Anita Perez's account (aperez@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+
+      Once the users are logged into the Webex App, make a call between the two users. 
+      
+      Using Charles Holland's Webex App on the local PC, click the Calling tab (1) and search for 'Anita Perez' (2). Right click on the phone icon (3) and select Audio Call (4) > Work <Work_Number> (e.g., +31 20 555 4192) (5) to place the call via the user's SIP line. Note: Do **not** select 'Call on Webex'.
+
+      ![](./media/image_m2_wxc008.png)
+
+      On the remote WKST3, answer the incoming call from Charles on Anita Perez's Webex App.
+      
+      ![](./media/image_m2_wxc009.png)
+
+      Once the call is connected, observe the **blue shield** call info icon in the upper left-hand side of the call window. Observe as this icon transitions to a **blue shield with a lock**. (Note: It may a few seconds for this to happen). The message "End-to-end encryption is active" will also be displayed.
+
+      ![](./media/image_m2_wxc010.png)
+
+      Click the blue shield call info icon and review the security information. Note that the call audio (and any screen/application share) is 'Zero Trust end-to-end encrypted'. It's worth noting that chat and whiteboards if present are just standard Webex end-to-end encryption (and not zero trust E2EE).
+
+      ![](./media/image_m2_wxc011.png)
+
+1. Downgrade call security from zero trust E2EE to standard encryption.
+
+	As the call continues, on the local PC Webex App (Charles) click the record icon on the menu bar and then the **Record** button to start recording. 
+
+      ![](./media/image_m2_wxc012.png)
+
+      Observe that the call media is immediately downgraded to standard encryption. The blue shield with a lock call info icon reverts to the blue shield icon and a message appears indicating call has been moved to standard encryption ('Standard encryption is active').
+
+      ![](./media/image_m2_wxc013.png)
+      
+      Again, click the blue shield icon to see security details for the call and note that call audio media (and screen/application sharing) is now downgraded to standard encryption.
+
+      ![](./media/image_m2_wxc014.png)
+
+1. Upgrade call security from standard encryption back to zero trust E2EE.
+	
+      Return to Charle's Webex App on the local PC and click the recording button and then the **Stop** button. Note that the call immediately upgrades security back to zero trust E2EE - the blue shield icon reverts back to shield with lock, and the 'End-to-end encryption is active' message is again displayed.
+
+      ![](./media/image_m2_wxc015.png)
+
+      Click the 'X' button to hang up the zero trust E2EE Webex call.
+
+This concludes the zero trust end-to-end encyrpted calling section.
