@@ -40,8 +40,8 @@ available with Webex deployments, including:
 - [Module 2: Zero Trust End-to-End Encrypted Calling and Meetings, Media Watermarking, and Deepfake Detection](module2_zero_trust_encryption.md#module-2-zero-trust-end-to-end-encrypted-calling-and-meetings-media-watermarking-and-deepfake-detection)
     - [Schedule an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#schedule-an-end-to-end-encrypted-meeting)
     - [Features in an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#features-in-an-end-to-end-encrypted-meeting)
-    - [Audio and Visual Watermarking and Watermark Analysis](module2_zero_trust_encryption#audio-and-visual-watermarking-and-watermark-analysis)
-    - [Deepfake Detection with GetReal Labs and Webex](module2_zero_trust_encryption#deepfake-detection-with-getreal-labs-and-webex)
+    - [Audio and Visual Watermarking and Watermark Analysis](module2_zero_trust_encryption.md#audio-and-visual-watermarking-and-watermark-analysis)
+    - [Deepfake Detection with GetReal Labs and Webex](module2_zero_trust_encryption.md#deepfake-detection-with-getreal-labs-and-webex)
     - [Provision Users and Configure Zero Trust End-to-End Encrypted Calling](module2_zero_trust_encryption.md#provision-users-and-configure-zero-trust-end-to-end-encrypted-calling)
     - [Zero Trust End-to-End Encrypted Calling](module2_zero_trust_encryption.md#zero-trust-end-to-end-encrypted-calling)
 
