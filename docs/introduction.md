@@ -14,15 +14,10 @@ available with Webex deployments, including:
   licensing templates, enable multi-factor authentication, and configure
   single sign-on (SSO) using SAML and OpenID Connect.
 
-- End-to-End (E2E) Encryption: Examine Webex Zero Trust End-to-End
-  encrypted meetings, DLP compliance, and digital watermarking
-  capabilities in Webex Meetings.
+- End-to-End (E2E) Encryption: Examine Webex zero trust end-to-end encrypted meetings and calling, along with media watermarking, and deepfake integration with Webex.
 
-- Compliance: Investigate Webex data control including data loss
-  prevention (DLP), eDiscovery, anti-malware protection, and data
-  retention with built-in Webex capabilities and integrations to
-  external compliance platforms. Cisco Cloudlock, and Theta Lake will be
-  used to explore DLP and other compliance operations for Webex.
+- Compliance: Investigate compliance for Webex meetings and calling including eDiscovery with Theta Lake.
+
 
 **Table of Contents**
 
@@ -42,20 +37,19 @@ available with Webex deployments, including:
     - [OpenID Connect -- Proof Key for Code Exchange (PKCE)](module1_identity.md#openid-connect-proof-key-for-code-exchange-pkce)
     - [Multiple Identity Providers with Webex](module1_identity.md#multiple-identity-providers-with-webex)
     - [Enable Multi-Factor Authentication (MFA) using Duo](module1_identity.md#enable-multi-factor-authentication-mfa-using-duo)
-- [Module 2: Webex Meetings, Calling, and Slido Compliance and End-to-End Encrypted Meetings with Zero Trust](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
-    - [Generating User Data for Compliance in Meetings](module2_zero_trust_encryption.md#generating-user-data-for-compliance-in-meetings)
-    - [Provision users and enable recording for Webex Calling for data compliance](module2_zero_trust_encryption.md#provision-users-and-enable-recording-for-webex-calling-for-data-compliance)
-    - [Explore Compliance Options for Webex Meetings in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-meetings-in-theta-lake)
-    - [Explore Compliance Options for Webex Calling in Theta Lake](module2_zero_trust_encryption.md#explore-compliance-options-for-webex-calling-in-theta-lake)
+- [Module 2: Zero Trust End-to-End Encrypted Calling and Meetings, Media Watermarking, and Deepfake Detection](module2_zero_trust_encryption.md#module-2-zero-trust-end-to-end-encrypted-calling-and-meetings-media-watermarking-and-deepfake-detection)
     - [Schedule an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#schedule-an-end-to-end-encrypted-meeting)
     - [Features in an End-to-End Encrypted Meeting](module2_zero_trust_encryption.md#features-in-an-end-to-end-encrypted-meeting)
-    - [Audio and Visual Watermarking and Watermark Analysis](module2_zero_trust_encryption.md#audio-and-visual-watermarking-and-watermark-analysis)
-- [Module 3: Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
+    - [Audio and Visual Watermarking and Watermark Analysis](module2_zero_trust_encryption#audio-and-visual-watermarking-and-watermark-analysis)
+    - [Deepfake Detection with GetReal Labs and Webex](module2_zero_trust_encryption#deepfake-detection-with-getreal-labs-and-webex)
+    - [Provision Users and Configure Zero Trust End-to-End Encrypted Calling](module2_zero_trust_encryption.md#provision-users-and-configure-zero-trust-end-to-end-encrypted-calling)
+    - [Zero Trust End-to-End Encrypted Calling](module2_zero_trust_encryption.md#zero-trust-end-to-end-encrypted-calling)
+
+- [Module 3: Webex Compliance with Webex and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-webex-and-theta-lake)
     - [Webex Compliance and Preparing for Compliance Platform Integration](module3_compliance.md#webex-compliance-and-preparing-for-compliance-platform-integration)
-    - [Integrate Webex with Cloudlock and Configure DLP Policies](module3_compliance.md#integrate-webex-with-cloudlock-and-configure-dlp-policies)
-    - [Generate user data via Webex App and Observe DLP Operation](module3_compliance.md#generate-user-data-via-webex-app-and-observe-dlp-operation)
-    - [Explore Theta Lake eDiscovery and Legal Hold](module3_compliance.md#explore-theta-lake-ediscovery-and-legal-hold)
-    - [Observe Webex Anti-Malware Protection (AMP)](module3_compliance.md#observe-webex-anti-malware-protection-amp)
+    - [Explore eDiscovery for Webex Meetings in Theta Lake](module3_compliance.md#explore-ediscovery-for-webex-meetings-in-theta-lake)
+    - [Explore eDiscovery for Webex Calling in Theta Lake](module3_compliance.md#explore-ediscovery-for-webex-calling-in-theta-lake)
+
 - [Appendix](appendix.md#appendix)
     - [Explore Webex eDiscovery Search and Extraction Portal](appendix.md#explore-webex-ediscovery-search-and-extraction-portal)
 
@@ -66,8 +60,8 @@ available with Webex deployments, including:
 - **Topology** → [Lab Topology](#topology)  
 - **Getting Started** → [Getting Started](#getting-started)
 - **Module 1** → [Webex Identity and Authentication/Authorization with Duo](module1_identity.md#module-1-webex-identity-and-authenticationauthorization-with-duo)
-- **Module 2** → [Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
-- **Module 3** → [Webex End-to-End Encryption and Zero Trust Meetings with Verified Identity](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+- **Module 2** → [Zero Trust End-to-End Encrypted Calling and Meetings, Media Watermarking, and Deepfake Detection](module2_zero_trust_encryption.md#module-2-zero-trust-end-to-end-encrypted-calling-and-meetings-media-watermarking-and-deepfake-detection)
+- **Module 3** → [Webex Compliance with Webex and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-webex-and-theta-lake)
 - **Appendix** → [Explore Webex eDiscovery Search and Extraction Portal](appendix.md#appendix)
 
 ---
@@ -107,21 +101,14 @@ This lab contains 3 modules:
      Providers (IdP) in one organization.
      (Components: Active Directory, Webex Control Hub, Duo)
 
-- [Module 2: Webex Compliance with Webex and Cisco Cloudlock and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-cisco-cloudlock-and-theta-lake)
-  
-     This module examines Webex compliance for messaging including
-     integration to cloud-based DLP and archiving systems. It also examines
-     eDiscovery and Legal Hold capabilities as well as anti-malware
-     protection (AMP).\
-     (Components: Webex Control Hub, eDiscovery Search and Extraction,
-     Cisco Cloudlock, Theta Lake)
+- [Module 2: Zero Trust End-to-End Encrypted Calling and Meetings, Media Watermarking, and Deepfake Detection](module2_zero_trust_encryption.md#module-2-zero-trust-end-to-end-encrypted-calling-and-meetings-media-watermarking-and-deepfake-detection)  
+     This module exampines Webex zero trust end-to-end encrypted meetings and calling, along with media watermarking, and deepfake integration with Webex.
+     (Components: Webex Control Hub, Webex App, GetReal Labs)
 
-- [Module 3: Webex End-to-End Encryption and Zero Trust Meetings with Verified Identity](module2_zero_trust_encryption.md#module-2-webex-meetings-calling-and-slido-compliance-and-end-to-end-encrypted-meetings-with-zero-trust)
+- [Module 3: Webex Compliance with Webex and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-webex-and-theta-lake)
   
-     This module investigates zero trust Webex Meetings with end-to-end
-     encryption (E2EE) and verified identity. It also explores, meeting
-     compliance with Theta Lake.\
-     (Components: Webex Control Hub, Theta Lake)
+     This module investigates compliance for Webex meetings and calling including eDiscovery with Theta Lake. 
+     (Components: Webex Control Hub, Webex App, Theta Lake)
 
 Upon completion of all modules, participants will gain a good working
 knowledge of the latest Webex security capabilities including identity

@@ -384,6 +384,16 @@ In this section you will review Webex Calling data records in Theta Lake.
       
       This concludes Theta Lake compliance sections.
 
+**\*\*\* END of MODULE 3 \*\***
+
+Continue with either Module 1 or Module 2:
+
+- [Module 1: Webex Identity](module1_identity.md)
+- [Module 2: Zero Trust Encryption](module2_zero_trust_encryption.md)
+- [Module 3: Webex Compliance](module3_compliance.md) *(current)*
+- [Conclusion](conclusion.md)
+
+
 
 <!--
 ## Integrate Webex with Cloudlock and Configure DLP Policies
@@ -1003,16 +1013,7 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
       ![](./media/image241.png)
 -->
 
-**\*\*\* END of MODULE 3 \*\***
-
-Continue with either Module 1 or Module 2:
-
-- [Module 1: Webex Identity](module1_identity.md)
-- [Module 2: Zero Trust Encryption](module2_zero_trust_encryption.md)
-- [Module 3: Webex Compliance](module3_compliance.md) *(current)*
-- [Conclusion](conclusion.md)
-
-
+<!--
 **MODULE 2 CONTENT**
 
 ## Provision Users and Configure Zero Trust End-to-End Encrypted Webex Calling
@@ -1131,4 +1132,4 @@ Now that some users have been provisioned for Webex Calling and SIP lines, it is
 
       Click the 'X' button to hang up the zero trust E2EE Webex call.
 
-This concludes the zero trust end-to-end encyrpted calling section.
+This concludes the zero trust end-to-end encyrpted calling section. -->

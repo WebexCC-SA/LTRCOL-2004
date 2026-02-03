@@ -8,11 +8,12 @@ There are 6 sections in this module:
 2. [Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
 
 3. [Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
+
 4. [Deepfake Detection with GetReal Labs and Webex](#deepfake-detection-with-getreal-labs-and-webex)
 
-5. Provision users and configure Zero Trust End-to-End Encrypted Calling 
+5. [Provision Users and Configure Zero Trust End-to-End Encrypted Calling](#provision-users-and-configure-zero-trust-end-to-end-encrypted-calling) 
 
-6. Zero Trust End-to-End Encrypted Calling
+6. [Zero Trust End-to-End Encrypted Calling](#zero-trust-end-to-end-encrypted-calling)
 
 ## Schedule an End-to-End Encrypted Meeting
 
@@ -374,7 +375,7 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
 2. GetReal should automatically start monitoring the participants. Incase if it doesnt for the participants that are on the call click on the elipsis symbol "..." and then click on start monitoring .
 
 
-3. In a minute or two you will the real participants will have a  <span style="color: green;"><strong>"Green Check" next to their name and for the participants where GetReal has detected impersonation you shall see  <span style="color: Red;"> <strong> "Impersonation Detected".</span></strong>
+3. In a minute or two you will the real participants will have a  <span style="color: green;"><strong>"Green Check" next to their name and for the participants where GetReal has detected impersonation you shall see  <span style="color: Red;"> <strong> "Impersonation Detected".</span></strong></strong>
       ![](./media/image341.png)
 
 4. Click on the red "X" on the webex meeting window from your source workstation to end the meeting for all.
@@ -410,13 +411,125 @@ Also you will see that there is a video recording of the interaction in GR-1. Mo
 
 ## Provision users and configure Zero Trust End-to-End Encrypted Calling
 
+**Note: Before proceeding, please be sure to sign out of any Webex Apps on the lab PC and any of the remote workstations.**
+
+First, it is important to understand the implementation of zero trust E2EE calling works. As with zero trust E2EE meetings, calling data can only be accessed by authorized parties. The calling media encryption key is derived by the calling party and propagated to the called party via MLS key package. As such encrypted call media **cannot** be decrypted by Webex cloud services, because Webex **DOES NOT** have access to the media encryption key - Zero Trust.
+
+Unlike the zero trust E2EE meetings, zero trust E2EE calling will downgrade to standard encryption (where Webex services have access to the media encryption key) if one of the called party's device or features does not support zero trust E2EE (non-SIP, PSTN calls). Downgrades to standard encryption from zero trust E2EE also occur when Webex services are enabled that require access to the media encryption keys - for example, when the call is recorded or when closed captioning is enabled on the call. Note that calls can also upgrade to zero trust E2EE when Webex services are removed.
+
+To begin, you will need to enable the zero trust end-to-end encryption feature. Then, you'll provision two Webex org users for Webex Calling including assign licenses and phone numbers.
+
+1. Turn on zero trust E2EE calling
+
+      The zero trust E2EE calling feature needs to be turned on explicitly for the organization.
+
+      a. Click **Calling** (under Services in the left-hand navigation menu)
+      
+      b. Select **Settings** and then, click the **Webex App**. Scroll down to the 'Security' section.
+
+      c. Enable zero trust E2EE calling by toggling on **'Enable end-to-end encryption when making calls'**.
+      
+      ![](./media/image_m2_wxc007.png)
+      
+      
+1. Provision users for Webex Calling 
+
+      **Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP lines (<u>NOT</u> 'Call on Webex') - this is why a number is configured here to enable SIP line calling.**
+
+      Return to WKST1 and from the Chrome browser there, if required navigate to Webex Contol Hub (https://admin.webex.com). If login is required login with: cholland@cb**XXX**.dc-**YY**.com // dCloud123! (or if you did not enable SSO in Module 1, use the default password: dCloud**ZZZZ**!).
+      
+      a. Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
+
+      ![](./media/image_m2_wxc001.png)
+
+      b. Scroll down to the licensing section and click **'Edit licenses'**
+
+      ![](./media/image_m2_wxc002.png)
+
+      c. On the subsequent screen, click **'Edit licenses** again. Next, click on the 'Calling' selection and tick the box next to **Webex Calling**. Ensure that the **Professional** box is also ticked.
+
+      ![](./media/image_m2_wxc003.png)
+
+      d. Click **Save**.
+
+      e. On the next screen, select the location **CL EMEA** from the 'Location' dropdown. This will assign the user to this location.
+      
+      f. Next, select the 'Phone Number' dropdown and select one of the available numbers - for example, '+31 20 555 4191'. Then, configure the extension with the last 4-digits of the phone number - for example '4191'. (Note: These are just <u>examples</u>. The phone numbers and extensions available in your pod <u>will be different</u>).
+
+      ![](./media/image_m2_wxc004.png)
+     
+      g. Click **Save** to assign the Webex Calling license and phone number to the user. The user now has a SIP line and phone number. Click **Close**.
+
+      h. Click the **Calling** tab to review the directory number and confirm it was properly allocated.
+
+      ![](./media/image_m2_wxc005.png) 
+
+      i. Repeat the process above to assign Webex Calling license and phone number to user **Anita Perez**. In this case, user the other available phone number (for example, +31 20 555 4192 / extension 4192). (Note: The available phone number in your pod will be different).
+		
+1. Enable call recording for a user.
+
+      Enable call recording for one of the users just licensed for Webex Calling and provisioned for phone number. 
+
+      a. Navigate back to user Charles Holland (or Anita Perez) and click the **Calling** tab. 
+      b. Scroll down to the 'User calling experience' section and set Call recording to **'On'**. 
+      c. Then, toggle on **Record incoming and outgoing calls...** and tick **On Demand**. This ensures the user can start/stop call recording. 
+      d. Finally, tick <u>both</u> **'Play recording start/stop announcement for...'** boxes. 
+      e. The rest of the settings can be left at default. Click **Save**.
+
+      ![](./media/image_m2_wxc006.png)
+
 ## Zero Trust End-to-End Encrypted Calling 
 
+Now that two users have been provisioned for Webex Calling and SIP lines, it is time to confirm that zero trust end-to-end encrypted (E2EE) is operating for Webex calls.   
+		
+1. Make a Zero Trust E2EE Webex Call
 
+      a. On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+
+      b. On the remote PC Workstation 3 (WKST3), log back into the Webex App with Anita Perez's account (aperez@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+
+      Once the users are logged into the Webex App, make a call between the two users. 
+      
+      c. Using Charles Holland's Webex App on the local PC, click the Calling tab (1) and search for 'Anita Perez' (2). Right click on the phone icon (3) and select Audio Call (4) > Work <Work_Number> (e.g., +31 20 555 4192) (5) to place the call via the user's SIP line. Note: Do **not** select 'Call on Webex'.
+
+      ![](./media/image_m2_wxc008.png)
+
+      d. On the remote WKST3, answer the incoming call from Charles on Anita Perez's Webex App.
+      
+      ![](./media/image_m2_wxc009.png)
+
+      e. Once the call is connected, observe the **blue shield** call info icon in the upper left-hand side of the call window. Observe as this icon transitions to a **blue shield with a lock**. (Note: It may take a few seconds for this transition). The message "End-to-end encryption is active" will also be displayed.
+
+      ![](./media/image_m2_wxc010.png)
+
+      f. Click the blue shield call info icon and review the security information. Note that the call audio (and any screen/application share) is 'Zero Trust end-to-end encrypted'. It's worth noting that chat and whiteboards if present are just standard Webex end-to-end encryption (and not zero trust E2EE).
+
+      ![](./media/image_m2_wxc011.png)
+
+1. Downgrade call security from zero trust E2EE to standard encryption.
+
+	a. As the call continues, on the local PC Webex App (Charles) click the record icon on the menu bar and then the **Record** button to start recording. 
+
+      ![](./media/image_m2_wxc012.png)
+
+      b. Observe that the call media is immediately **downgraded to standard encryption**. The blue shield with a lock call info icon reverts to the blue shield icon and a message appears indicating call has been moved to standard encryption ('Standard encryption is active').
+
+      ![](./media/image_m2_wxc013.png)
+      
+      c. Again, click the blue shield icon to see security details for the call and note that call audio media (and screen/application sharing) is now **downgraded to standard encryption**.
+
+      ![](./media/image_m2_wxc014.png)
+
+1. Upgrade call security from standard encryption back to zero trust E2EE.
+	
+     a. Return to Charle's Webex App on the local PC and click the recording button and then the **Stop** button. Note that the call immediately **upgrades security back to zero trust E2EE** - the blue shield icon reverts back to shield with lock, and the 'End-to-end encryption is active' message is again displayed.
+
+      ![](./media/image_m2_wxc015.png)
+
+      b. Click the 'X' button to hang up the zero trust E2EE Webex call.
 
 
 This concludes Module 2
-
 
    
 **\*\*\* END of MODULE 2 \*\***
