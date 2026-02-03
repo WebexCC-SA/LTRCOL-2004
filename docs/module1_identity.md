@@ -377,18 +377,18 @@ This is an effective way to automate license management while ensuring that over
 
     a.  Tick **Advanced Messaging** in the **Messaging** section.
 
-       ![](./media/image62.png)
+    ![](./media/image62.png)
 
     b.  Select **Calling** and untick **Call on Webex**.
 
     c.  Ensure **Existing users** and **Preserve licenses for existing
         users** are both ticked, then click Save at the bottom of the page.
 
-       ![](./media/image63.png)
+    ![](./media/image63.png)
 
 1. You'll automatically return to **Messaging \> Assignments** where you can see your license template assigned to the group.
 
-       ![](./media/image64.png)
+    ![](./media/image64.png)
 
 1. Click **Groups** in the side panel and click **Create a group**.
 
@@ -396,11 +396,11 @@ This is an effective way to automate license management while ensuring that over
 
 1. Click **Add manually**.
 
-       ![](./media/image65.png)
+    ![](./media/image65.png)
 
 1. Type cholland and select [**cholland@cbXXX.dc-YY.com**](mailto:cholland@cbXXX.dc-YY.com). Type aperez and select **<aperez@cbXXX.dc-YY.com>** (see your eXpo page for the \'XXX\' and \'YY\' values):
 
-       ![](./media/image66.png)
+    ![](./media/image66.png)
 
 1. Click **Save**.
 
@@ -408,7 +408,7 @@ This is an effective way to automate license management while ensuring that over
 
 1. Click **Set up** in the **Licenses** section.
 
-       ![](./media/image67.png)
+    ![](./media/image67.png)
 
 1. Here you will configure all licenses that should be assigned to members of this group.
 
