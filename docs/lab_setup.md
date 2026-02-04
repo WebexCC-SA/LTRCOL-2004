@@ -43,10 +43,7 @@ After entering and saving your values:
 4. ✅ You can return to this page anytime to update your values if needed
 
 !!! tip "Values Persist Across Sessions"
-    Your configuration is saved in your browser's local storage. You only need to enter these values once, and they'll be remembered even if you close your browser and come back later.
-
-!!! warning "Browser-Specific"
-    These values are stored in your browser only. If you switch to a different browser or device, you'll need to enter your values again.
+    Your configuration is saved in your chosen browser's local storage. You only need to enter these values once, and they'll be remembered even if you close your browser and come back later. If you switch to a different browser or device, you'll need to enter your values again.
 
 ---
 
