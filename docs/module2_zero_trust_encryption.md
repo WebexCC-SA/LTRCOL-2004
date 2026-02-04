@@ -45,7 +45,11 @@ Webex devices with up to 1000 participants.
 
 Before you start this section, lets enable watermarking capabilities in Control Hub, you will need it for the next section.
 
-1. Ensure that you are logged into Control Hub i.e. https://admin.webex.com with Charles Holland's credentials from WKST1. In **Control Hub**, navigate to **Organization Settings** and scroll down to the option for 'Add an audio watermark' and 'Show visual watermarks' and enable them. Enable all the three options below 'Show visual watermarks'. Click **Save**.
+1. RDP to WKST1, ensure that you are logged into the Webex app with Charles's credentials , cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).. 
+
+1. Navigate to admin.webex.com and click on **Sign in** with credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).
+
+1. In **Control Hub**, navigate to **Organization Settings** and scroll down to the option for 'Add an audio watermark' and 'Show visual watermarks' and enable them. Enable all the three options below 'Show visual watermarks'. Click **Save**.
 
       ![](./media/image278.png)
 
@@ -53,11 +57,9 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
       You will now schedule an end-to-end encrypted meeting.
 
-1. RDP to WKST1, ensure that you are logged into the Webex app with Charles's credentials , cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).. 
 
-1. Navigate to admin.webex.com and click on **Sign in** with credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).
 
-      Go to Services\--\>Meeting and copy the site name.
+1. Once we have enabled watermarks, now lets the meeting site for us to setup the end to end encrypted meeting. Go to Services\--\>Meeting and copy the site name.
 
       ![](./media/image279.png)
 
