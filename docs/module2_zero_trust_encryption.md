@@ -63,7 +63,7 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
       ![](./media/image279.png)
 
-1. Open an instance of Chrome browser and navigate to the sitename e.g. cb46001.webex.com and sign in with credentials for cholland, cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). Click Schedule \> Schedule a meeting, set the meeting type to **Webex Meetings Pro-End to End Encryption_VOIPonly**.
+1. Open an instance of Chrome browser on the workstation 1 and navigate to the sitename e.g. cb46001.webex.com and sign in with credentials for cholland, cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). Click Schedule \> Schedule a meeting, set the meeting type to **Webex Meetings Pro-End to End Encryption_VOIPonly**.
 
       ![](./media/image280.png)
 
