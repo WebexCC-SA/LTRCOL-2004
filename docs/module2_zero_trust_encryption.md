@@ -124,7 +124,7 @@ In this section, you will learn some features that are made available in an End-
 
 1. Record the Meeting: Navigate to WKST1 and open the meeting that is still in progress. Click the record button. The only option that is made available is 'Save to my computer'. There is no cloud recording option available because Webex does not have access to the media encryption keys needed to decrypt the media:
 
-      ![](./media/image401.png)
+      ![](./media/image406.png)
 
       Note the message that displays when you hover over the Record button indicating that AI summaries are only available for cloud-based recordings. Since the only option here is to record to the local computer, AI meeting summaries won't be available.This is important point to remember about end-to-end encrypted meetings.
 
@@ -158,9 +158,9 @@ In this section, you will learn some features that are made available in an End-
 
 1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.Once completed "Stop Sharing"
 
-      ![](./media/image400.png)
+      ![](./media/image405.png)
 
-      ![](./media/image404.png)
+      ![](./media/image407.png)
 
 1. Click on the ellipsis icon "..." next to reactions and explore other features available in an end to end encrypted meetings like "whiteboards" and "Enable Sign Language Interpretation" and designate Anita as the interpreter.
 
