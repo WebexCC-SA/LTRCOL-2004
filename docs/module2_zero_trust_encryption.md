@@ -45,7 +45,7 @@ Webex devices with up to 1000 participants.
 
 Before you start this section, lets enable watermarking capabilities in Control Hub, you will need it for the next section.
 
-1. Log in to **WKST1** as **dCloud\\cholland** and **dCloud123!**. Open an instance of Chrome and navigate to <https://admin.webex.com/>. Login with Charles Holland's Webex credentials (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password. In **Control Hub**, navigate to **Organization Settings** and scroll down to the option for 'Add an audio watermark' and 'Show visual watermarks' and enable them. Enable all the three options below 'Show visual watermarks'. Click **Save**.
+1. Ensure that you are logged into Control Hub i.e. https://admin.webex.com with Charles Holland's credentials from WKST1. In **Control Hub**, navigate to **Organization Settings** and scroll down to the option for 'Add an audio watermark' and 'Show visual watermarks' and enable them. Enable all the three options below 'Show visual watermarks'. Click **Save**.
 
       ![](./media/image278.png)
 
@@ -53,7 +53,9 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
       You will now schedule an end-to-end encrypted meeting.
 
-1. RDP to WKST1, navigate to admin.webex.com and click on **Sign in** with credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).
+1. RDP to WKST1, ensure that you are logged into the Webex app with Charles's credentials , cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).. 
+
+1. Navigate to admin.webex.com and click on **Sign in** with credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).
 
       Go to Services\--\>Meeting and copy the site name.
 
@@ -89,13 +91,14 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
 1. Now login to **WKST2** with **dcloud\\aperez** (password **dCloud123!**). Launch the Webex App and login with [**aperez@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). You will see the Join meeting notification:
 
-      ![](./media/image287.png)
+      ![](./media/image403.png)
 
 1. Click on **Join**, click **OK** in the **No microphone found** prompt. Click Join Meeting to enter the meeting.
 
       Click on **Meeting Info** then select **Security** and observe the security code. It has changed now that a new attendee has joined. Feel free to verify the certificate for Anita.
 
-      Login to **WKST3** with **dcloud\\kmelby** (password provided in the pod sheet). aunch the Webex App and login with kmelby[**\@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). You will see the Join meeting notification, join the meeting by clicking on the green **Join** button.
+
+1. Login to **WKST3** with **dcloud\\kmelby** (password provided in the pod sheet). Launch the Webex App and login with [**kmelby@cbXXX.dc-YY.com**](mailto:kmelby@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). You will see the Join meeting notification, join the meeting by clicking on the green **Join** button.
 
       Click on **Meeting Info \> Security** and verify that the security code has changed again. Feel free to verify the certificate for Kellie.
 
@@ -121,7 +124,7 @@ In this section, you will learn some features that are made available in an End-
 
 1. Record the Meeting: Navigate to WKST1 and open the meeting that is still in progress. Click the record button. The only option that is made available is 'Save to my computer'. There is no cloud recording option available because Webex does not have access to the media encryption keys needed to decrypt the media:
 
-      ![](./media/image289.png)
+      ![](./media/image401.png)
 
       Note the message that displays when you hover over the Record button indicating that AI summaries are only available for cloud-based recordings. Since the only option here is to record to the local computer, AI meeting summaries won't be available.This is important point to remember about end-to-end encrypted meetings.
 
@@ -155,9 +158,9 @@ In this section, you will learn some features that are made available in an End-
 
 1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.Once completed "Stop Sharing"
 
-      ![](./media/image298.png)
+      ![](./media/image400.png)
 
-      ![](./media/image299.png)
+      ![](./media/image404.png)
 
 1. Click on the ellipsis icon "..." next to reactions and explore other features available in an end to end encrypted meetings like "whiteboards" and "Enable Sign Language Interpretation" and designate Anita as the interpreter.
 
@@ -325,7 +328,7 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
 1.  In this module we will be logging into the Webex App on the actual PC and not on any of the workstations. 
 2. <span style="color: green;"><strong>When you are ready to begin this module reach out to your lab proctor for a specific accounts that you will leverage just for this section.</strong></span>
 3. <span style="color: red;"><strong>Stop</strong></span> , confirm that you are logging into the host system and not on wkst1.
-4. Start a webex meeting. 
+4. Start a webex meeting. Log into the Webex App from the host PC with the credentials provided by the proctor, Click the meetings tab and then click "Start a Webex Meeting" and then click on start meeting.
       ![](./media/image350.png)
 
 5. Go to the Apps Panel and search for GetReal Trust Advisor.
@@ -344,11 +347,12 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
 
       ![](./media/image347.png)
 
-4.If you see any popups from GetReal Trust Advisor for any permissions, click on Accept
+4. If you see any popups from GetReal Trust Advisor for any permissions, click on Accept
       ![](./media/image339.png)
+
+
+**If you dont see the option of "Add GetReal Trust Advisor to the Call" , click on the refresh icon at top of the app window.**
      
-
-
 
 
 5. This process does take a couple of minutes , once its ready you will get a notification on the meeting window to "Let In" the trust advisor. 
@@ -369,7 +373,7 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
 
 **Step 3: Monitoring and detection of participants.**
 
-1. At this point you shall have the two participants from your workstations , GetReal Trust Advisor and one of the lab proctors on the meeting bridge.
+1. At this point besides yourself (logged in on the local PC), you shall have the two participants from your remote workstations , GetReal Trust Advisor and one of the lab proctors on the meeting bridge.
       ![](./media/image343.png)
 
 2. GetReal should automatically start monitoring the participants. Incase if it doesnt for the participants that are on the call click on the elipsis symbol "..." and then click on start monitoring .
@@ -389,13 +393,13 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
 1. So we have created a test case where we have GetReal Trust Advisor flagging the participant as an impersonator.
 2. Let's have a quick look into how those violations are captured on GetReal.
 
-3. Browse to url https://app.getreallabs.com/ , click on "Continue with Webex".
+3. On your local PC or any of the lab workstations , open an incognito instance of Chrome browser and Browse to url https://app.getreallabs.com/ , click on "Continue with Webex".
 
 4. Login with kmelby@cb311.dc-01.com and password dCloud0831! 
 
 5. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 30 days.
 
-      ![](./media/image355.png)
+      ![](./media/image402.png)
 
       ![](./media/image332.png)
 
@@ -406,7 +410,7 @@ Also you will see that there is a video recording of the interaction in GR-1. Mo
 
 
 7. Perform the same analysis for your recent violation.
-8. Once completed logout of GetReal portal. 
+8. Once completed logout of GetReal portal and ensure you are signed out of the webex app from your Local PC. 
 9. Since this is a shared account, please do not make any changes on this account.
 
 ## Provision users and configure Zero Trust End-to-End Encrypted Calling
