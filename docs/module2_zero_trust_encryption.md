@@ -425,6 +425,7 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
 
 1. Turn on zero trust E2EE calling
 
+      Return to WKST1 and using the Chrome browser navigate (if required) to Webex Contol Hub (https://admin.webex.com). If login is required login with: cholland@cbXXX.dc-YY.com // dCloud123! (or if you did not enable SSO in Module 1, use the default password: dCloudZZZZ!).
       The zero trust E2EE calling feature needs to be turned on explicitly for the organization.
 
       a. Click **Calling** (under Services in the left-hand navigation menu)
@@ -439,9 +440,7 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
 1. Provision users for Webex Calling 
 
       **Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP lines (<u>NOT</u> 'Call on Webex') - this is why a number is configured here to enable SIP line calling.**
-
-      Return to WKST1 and from the Chrome browser there, if required navigate to Webex Contol Hub (https://admin.webex.com). If login is required login with: cholland@cb**XXX**.dc-**YY**.com // dCloud123! (or if you did not enable SSO in Module 1, use the default password: dCloud**ZZZZ**!).
-      
+    
       a. Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
 
       ![](./media/image_m2_wxc001.png)
@@ -488,9 +487,9 @@ Now that two users have been provisioned for Webex Calling and SIP lines, it is 
 		
 1. Make a Zero Trust E2EE Webex Call
 
-      a. On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+      a. On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cbXXX.dc-YY.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
 
-      b. On the remote PC Workstation 3 (WKST3), log back into the Webex App with Anita Perez's account (aperez@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+      b. On the remote PC Workstation 2 (WKST2), log back into the Webex App with Anita Perez's account (aperez@cbXXX.dc-YY.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
 
       Once the users are logged into the Webex App, make a call between the two users. 
       
