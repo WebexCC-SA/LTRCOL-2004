@@ -474,9 +474,13 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
       Enable call recording for one of the users just licensed for Webex Calling and provisioned for phone number. 
 
       a. Navigate back to user Charles Holland (or Anita Perez) and click the **Calling** tab. 
+
       b. Scroll down to the 'User calling experience' section and set Call recording to **'On'**. 
+   
       c. Then, toggle on **Record incoming and outgoing calls...** and tick **On Demand**. This ensures the user can start/stop call recording. 
+  
       d. Finally, tick <u>both</u> **'Play recording start/stop announcement for...'** boxes. 
+ 
       e. The rest of the settings can be left at default. Click **Save**.
 
       ![](./media/image_m2_wxc006.png)
