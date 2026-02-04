@@ -59,7 +59,7 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
 
 
-1. Once you have enabled watermarks, now lets get the meeting site . Go to Services\--\>Meeting and copy the site name.
+      Go to Services\--\>Meeting and copy the site name.
 
       ![](./media/image279.png)
 
