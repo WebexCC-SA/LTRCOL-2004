@@ -33,7 +33,7 @@ In this module you will examine the following product-specific capabilities:
 
 Figure 2 below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss prevention (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. Webex Events API for Compliance Platform Integration
 
-![](./media/image152.png)
+![](./media/image152.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 Webex has also introduced Webhooks capability enabling proactive notification of messaging events (e.g., messages with file attachments) to a configured Webhook (web URL). This proactive notification provides a framework for delivering real-time file DLP -- scanning files for compliance policy violations before allowing them to be sent/received via messaging.
 
@@ -42,7 +42,7 @@ compliance platform web service (step 1), the DLP retrieves the file
 (step 2) and can then take action (e.g., scan file) and notify Webex via
 API whether to allow or block the file (step 3). Webex Webhooks for Real-time File DLP
 
-![](./media/image153.png)
+![](./media/image153.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 Unlike the Webex Events API method for compliance where the compliance platform must periodically poll Webex for communications events (space creation, space membership, messages, file attachments, meetings, etc.) and then take action, Webhooks enable real-time notification of events without having to wait for the next polling interval, so the compliance platform DLP service can take immediate action. Cisco Cloudlock supports real-time file DLP for Webex with Webhooks.
 
@@ -80,23 +80,23 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       b. Login as full administrator, Charles Holland by entering: cholland@cbXXX.dc-YY.com (refer to the eXpo dCloud Session View Info page to find your DNS domain). Click **Sign In**.
 
-      ![](./media/image154.png)
+      ![](./media/image154.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
       (Replace XXX and YYY with the values for your eXpo dCloud pod)
 
       c. Enter password: **dCloud123!** (if you did not complete Module 1 and enable SSO, then the password will be **dCloudZZZZ!** replacing 'ZZZZ' with the last four digits of the dCloud session ID, refer to the eXpo dCloud Session View Info page for your session ID).
 
-      ![](./media/image155.png)
+      ![](./media/image155.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
        d. Once logged in, navigate to **Users** and select Anita Perez.
 
-      ![](./media/image156.png)
+      ![](./media/image156.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       e. Scroll down and click Administrator roles.
 
       f. Promote Anita Perez to Compliance Officer for the organization by ticking the box next to 'Compliance officer'. Click **Save**.
 
-      ![](./media/image157.png)
+      ![](./media/image157.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Review retention settings for Webex Meetings and Messaging.
 
@@ -112,11 +112,11 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&A, whiteboards, polls, etc.), and Webex Calling (business texting).
 
-      ![](./media/image158.png)
+      ![](./media/image158.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       e. Click **Settings** under Webex App Messaging Retention Policy to review current messaging retention settings.
 
-      ![](./media/image159.png)
+      ![](./media/image159.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, the retention period is set to 360 days. Notice that separate retention periods can be set for 1:1 chat and group chat.
 
@@ -124,7 +124,7 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       f. Click **Settings** under Webex Meetings Retention Policy to review current meeting retention settings.
 
-      ![](./media/image160.png)
+      ![](./media/image160.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, the retention period is set to 360 days. Note that recording retention can be set to purge in 30 days, but by default the recordings follow the meetings retention policy. For the purposes of this lab, there is no reason to change the meeting retention policy, so just click **Cancel** to close the Webex Meetings Retention Policy window.
 
@@ -140,7 +140,7 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       Return to the Chrome browser on WKST2 and on Control Hub navigate to Organization Settings. Scroll to 'External Communication' to locate the external communications settings.
 
-      ![](./media/image161.png)
+      ![](./media/image161.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, messaging to external organization users is allowed ('Allow all external messaging' is selected). As such, your user's will be able to join external Webex spaces and invite external contacts to your organization's Webex spaces.
 
@@ -156,7 +156,7 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       On the Chrome browser on WKST2 (wkst2.dcloud.cisco.com) in Webex Control Hub, navigate to **Messaging** and review the Collaboration Restrictions configuration settings (at the top of the page).
 
-      ![](./media/image162.png)
+      ![](./media/image162.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, no messaging Collaboration Restrictions are configured, however with this functionality, an administrator has granular control over all aspects of file sharing including the ability to restrict file sharing to the corporate network and/or to specific file types or sizes. Likewise, the administrator can restrict file preview and file upload/download. These types of restrictions may sufficiently address organizational concerns or requirements regarding data loss.
 
@@ -168,7 +168,7 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       The internal and external meeting configuration options allow you to control which external users can join your organization's meetings (Internal Webex meetings) and which external organization's meetings (External Webex meeting sites) your users can join. This type of restriction control allows an organization to mitigate potential data loss by disallowing certain attendees and/or meeting sites and may sufficiently address organizational requirements regarding data loss.
 
-      ![](./media/image163.png)
+      ![](./media/image163.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, external users are allowed to attend your organization's meetings, and your users can attend external meeting sites. For the purposes of this lab, you can leave the default values (e.g., no restrictions).
 
@@ -176,9 +176,9 @@ This lab guide contains coverage for two external compliance platforms: Cisco Cl
 
       Scroll down and review the various meeting capabilities that can be disabled for internal or external meetings. For example, you could disable in-meeting tools like polling, Q&A, chat, and recording. This type of meeting data restriction control allows an organization to mitigate and reduce potential data loss by disallowing certain channels of communication (e.g., Q&A, chat, polling, etc.).
 
-      ![](./media/image164.png)
+      ![](./media/image164.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image165.png)
+      ![](./media/image165.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       For the purposes of this lab, please leave the default values (e.g., no restrictions).
 
@@ -195,13 +195,13 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       a. From the Chrome browser on Anita Perez's workstation (WKST2), navigate to the Cloudlock portal at <https://demo.cloudlockng.com/>. Select **Webex** from the 'Sign in with' dropdown menu and click the **LOG IN** button.
 
-      ![](./media/image166.png)
+      ![](./media/image166.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       b. Login with the compliance officer's (Anita Perez's) Webex account.
 
       At the Webex login prompt, enter **aperez@cbXXX.dc-YY.com** (see the eXpo dCloud Session View for domain / 'XXX' and 'YY' values) and the password **dCloud123!** then click the **Sign In** button. Refer to eXpo dCloud Session View for the Webex password if you did not complete module 1.
 
-      ![](./media/image167.png)
+      ![](./media/image167.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       (Note: If SSO is enabled, you may not receive a password prompt since you recently authenticated)
 
@@ -209,7 +209,7 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       Since this is the first time the compliance officer has logged into the platform, the Cloudlock terms of service is presented. Click **ACCEPT** to continue.
 
-      ![](./media/image168.png)
+      ![](./media/image168.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       You will be taken to the Cloudlock Dashboard page. (Note: If necessary, reload/refresh the page (F5) to get the page to finish loading)
 
@@ -219,7 +219,7 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       a. Navigate to the Settings page on the Cloudlock portal. Click **Settings** in the left-hand navigation menu to load the Settings page.
 
-      ![](./media/image169.png)
+      ![](./media/image169.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       On the 'Platforms' tab you'll notice that Webex platform integration needs authorization in the Cloudlock tenant.
 
@@ -229,23 +229,23 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       d. Click the **AUTHORIZE** button again.
 
-      ![](./media/image170.png)
+      ![](./media/image170.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       e. Login to Webex with compliance officer account credentials (aperez@cbXXX.dc-YY.com) to complete the authorization.
 
-      ![](./media/image167.png)
+      ![](./media/image167.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       (Note: Because SSO is enabled, you may not receive a password prompt since you recently authenticated)
 
       f. Grant Webex permissions to Cloudlock to complete the authorization process.
 
-      ![](./media/image171.png)
+      ![](./media/image171.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       g. Confirm platform authorization for Webex.
 
       Ensure the platform shows 'Authorized'
 
-      ![](./media/image172.png)
+      ![](./media/image172.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Once the platform is authorized, Cloudlock will begin actively collecting data from the Webex org for both messaging and meetings.
 
@@ -253,7 +253,7 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       Since you will be exploring DLP including real-time DLP for files, enable webhooks. Return to Control Hub in the Chrome browser and navigate to **Messaging** and scroll down to the setting **Real-time data loss prevention for files** and toggle on.
 
-      ![](./media/image173.png)
+      ![](./media/image173.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       This will enable webhooks for your Webex org so that compliance platform integrations can use webhooks for monitoring Webex data.
 
@@ -263,7 +263,7 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       a. Navigate to the Policies page to begin reviewing and configuring compliance policies. Click **Policies** in the left-hand navigation menu to load the Policies page. All compliance policies for the Cloudlock platform are managed here.
 
-      ![](./media/image174.png)
+      ![](./media/image174.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       You will notice that there are several active compliance policies already configured in your Cloudlock tenant.
 
@@ -271,11 +271,11 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       b. Review the pre-defined policy list. Before looking at policies that have already been configured, let's review the built-in or pre-defined policies available on Cloudlock. Click the **ADD A POLICY** button and select '**Add Predefined Policy**'.
 
-      ![](./media/image175.png)
+      ![](./media/image175.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       In the Add Predefined Policy window under Predefined Policies click the '**Select policy**' dropdown and wait for the list of predefined policies to load. Scroll down to review the numerous built-in compliance policies including 'Credit Card Number' and 'US Social Security Number'. Click any of the policy names to load and review the full policy name and the description of the policy.
 
-      ![](./media/image176.png)
+      ![](./media/image176.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       You'll add a new policy in the next step, so click the **Cancel** button to exit without creating a policy.
 
@@ -289,23 +289,23 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       Click the '**Edit**' link in the Detection Criteria column for the Social Security Number policy.
 
-      ![](./media/image177.png)
+      ![](./media/image177.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       First, note the Social Security Number policy is based upon the built-in predefined policy 'US Social Security Number'.
 
       Click '**Tolerance**' to configure the sensitivity of the policy. The purpose of this setting is to balance the matching of the policy against user generated data between false matches/more incidents ('Lenient') and fewer positive matches/less incidents ('Strict') where violating content may be missed.
 
-      ![](./media/image178.png)
+      ![](./media/image178.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Tick the '**Moderate**' radio button to have the policy be a bit more sensitive to possible matches. This will ensure the content (messages) you generate later will violate this policy. In a production deployment you would tune the tolerance level of each policy based on the organization's policy requirements and end-user behaviors.
 
-      ![](./media/image179.png)
+      ![](./media/image179.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click '**Realtime**' to load the configuration option.
 
       Under Specific Platforms, tick the **Webex** box. This enables real-time policy detection (for files) on Webex using webhooks.
 
-      ![](./media/image180.png)
+      ![](./media/image180.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Feel free to explore the other sensitivity content settings (Threshold and Proximity) as well as the context settings (under the 'Context' tab), but do not make any additional changes. When you are through reviewing the other settings, click the **SAVE ALL CHANGES** button.
 
@@ -315,13 +315,13 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       Returning to the Policy page, configure the actions the platform will take in response to a policy violation. Click the '**Create**' link in the Response Actions column of the Social Security Number policy.
 
-      ![](./media/image181.png)
+      ![](./media/image181.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       The response action sequence builder page is displayed. To build a sequence of actions in response to a policy detection, the compliance officer drags actions from the left-hand action list to the first available action box. In some cases, the action requires configuration.
 
       To begin, assume that the first action you want to happen when there is a violation of the policy is that the violating message or file gets removed. To set the platform to remove a message or file on a violation select the '**Webex Teams: Delete Message and/or File**' action and drag to the open action box.
 
-      ![](./media/image182.png)
+      ![](./media/image182.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       In addition to removing the message/file, it probably makes sense to notify an administrator of the Cloudlock platform that a violation has occurred. Drag the '**Webex Teams: Notify Admin via Message**' action to the next available action box.
 
@@ -333,23 +333,23 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       You can customize the message that is sent to the compliance officer/administrator. Add the following message (or something similar) to the message box: *{{user}} has violated the Webex security and compliance policy regarding **SSN***. Click the **SAVE** button to save the action configuration.
 
-      ![](./media/image183.png)
+      ![](./media/image183.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       In the interest of transparency, it makes sense to also notify the user who has committed the violation. To do that, drag the '**Webex Teams: Notify User via Message**' action to the next available action box. (Note: Be sure to drag '**Webex Teams**: Notify User...' action and NOT the '**Webex Meeting**: Notify **Host**...' action).
 
       There is also configuration for this action. Add the message: *You have violated the company's Webex security and compliance policy for **SSN**. The offending message/file has been deleted. The incident has been logged and reported to the compliance officer.* Now, the platform will notify any user by Webex message whenever they violate the policy. Click the **SAVE** button to save this action configuration.
 
-      ![](./media/image184.png)
+      ![](./media/image184.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Finally, be sure to click the **SAVE** button at the bottom of the page to save the response action sequence for this policy.
 
-      ![](./media/image185.png)
+      ![](./media/image185.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       To return to the Policies page, either click the '**Go back to Policy List**' link at the top of the sequence builder window or click **Policies** in the left-hand navigation window.
 
       You've successfully updated the configuration of both the detection criteria and the response actions for the policy. This completes the review and configuration of a compliance policy based on one of the Cloudlock platform's built-in predefined policies (Social Security Number).
 
-      ![](./media/image186.png)
+      ![](./media/image186.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Create a new custom compliance policy on the Cloudlock tenant.
 
@@ -357,7 +357,7 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       On the Policies page, click the **ADD A POLICY** button and select '**Build your own**'.
 
-      ![](./media/image187.png)
+      ![](./media/image187.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       After the 'Create New Policy' window loads, configure the following value:
 
@@ -368,17 +368,17 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       Click the **CONFIGURE POLICY** button to continue.
 
-      ![](./media/image188.png)
+      ![](./media/image188.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Next, for Regex configure a regular expression to match the first letter of your first/given name and your last name/surname. In addition, ensure that the expression is case insensitive for the first two letters. For example, if your first name is *Bob* and your last name is *Smith*, you would enter: *\[Bb\]\[Ss\]mith.*
 
-      ![](./media/image189.png)
+      ![](./media/image189.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       You don't need to configure any other detection criteria (sensitivity, context) settings for this policy, so click the **SAVE ALL CHANGES** button to save the policy.
 
       Next, configure the response actions for this policy when violated. On the Policies page, click the '**Create**' link in the Response Actions column for the 'My Name/User ID' policy.
 
-      ![](./media/image190.png)
+      ![](./media/image190.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Create the same response actions sequence as you did for the Social Security Number policy with the following configuration settings:
 
@@ -391,7 +391,7 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
         - Configuration -- Message: *You have violated the company's Webex security and compliance policy for my name/userID. The offending message/file has been deleted. The incident has been logged and reported to the compliance officer.*
         - (Click **SAVE**)
 
-      ![](./media/image191.png)
+      ![](./media/image191.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       **Note**: Make sure 'Webex Teams...' actions are selected and not 'Webex Meeting...'
 
@@ -399,7 +399,7 @@ In this section you will integrate Webex with Cloudlock and explore DLP policy c
 
       You've successfully updated the configuration of both the detection criteria and the response actions for the new policy. This completes configuration of the new regex-based build your own compliance policy.
 
-      ![](./media/image192.png)
+      ![](./media/image192.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       The Cloudlock tenant has now been fully integrated with the Webex org and compliance configuration is complete. It's now time to see the compliance platform DLP in action.
 
@@ -414,7 +414,7 @@ In this section you will generate user data using the Webex App. This data will 
 
       Once connected to WKST1, launch the Webex App. Login with Charles Holland's account username / password: **cholland@cbXXX.dc-YY.com** / **dCloud123!** (see eXpo dCloud Session View for 'XXX' and 'YY' values and the non-SSO password if you didn't complete Module 1).
 
-      ![](./media/image193.png)
+      ![](./media/image193.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       For any application tour prompts, click **Got it**.
 
@@ -426,11 +426,11 @@ In this section you will generate user data using the Webex App. This data will 
 
       c. Return to Charles' Webex App on WKST1, create a 1:1 space with user Kellie Melby (kmelby) and send messages and a file to verify real-time file DLP. Click ![](./media/image194.png) and select '**Send a message**'. Type '**Kellie Melby**' in the search window and click the name when found to start a 1:1 space with Kellie.
 
-      ![](./media/image195.png)
+      ![](./media/image195.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Before proceeding, open Notepad++ by clicking the program icon on the task bar. Create a new notepad file (File \> New or click the add new icon ![](./media/image196.png)). Type your social security number on the first line of the file or use the following number: *405-09-7413*. Save the file to the Desktop as a text file named **dlp_test_file_ssn.txt**.
 
-      ![](./media/image197.png)
+      ![](./media/image197.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Now, send a message, followed by a file with a social security number. For example:
 
@@ -438,7 +438,7 @@ In this section you will generate user data using the Webex App. This data will 
 
       Notice that the message is successfully sent. Now, upload the file you just created (**dlp_test_file_ssn.txt**) from the Desktop of WKST1 to the 1:1 space.
 
-      ![](./media/image198.png)
+      ![](./media/image198.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Once attached, press enter to send the file.
 
@@ -446,19 +446,19 @@ In this section you will generate user data using the Webex App. This data will 
 
       Once the file is sent, you will see the file being processed and almost immediately you see the file is blocked and then the blocked file is deleted. Notice that the file is deleted by Anita Perez, the organization's compliance office. This deletion was triggered by the Cloudlock platform once the file was scanned and blocked in real-time by the platform. This is the 'delete message or file' policy response action you configured for the Social Security Number policy.
 
-      ![](./media/image199.png)
+      ![](./media/image199.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that Charles also receives a message from a Security Center bot. Click the Security Center space to review the message. This message should look familiar to you as it's the message you configured to send to the user with the 'notify user via message' policy response action.
 
-      ![](./media/image200.png)
+      ![](./media/image200.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       **Note:** If you missed the file block message/indication, you can return to the Cloudlock portal (return to Chrome browser on WKST2) and remove the 'Webex Teams: Delete Message or File' response action from the **Social Security Number** policy and save the policy again.
 
-      ![](./media/image201.png)
+      ![](./media/image201.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Now, repeat the test by sending the same file. This time the file will again be blocked, but the blocked file will not be deleted.
 
-      ![](./media/image202.png)
+      ![](./media/image202.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       You will also see a second notification from the Security Center bot for this second violation to the user (cholland). You'll also see a second notification from the bot to the compliance officer/admin (aperez) in a later step.
 
@@ -471,17 +471,17 @@ In this section you will generate user data using the Webex App. This data will 
 
       Notice that the messages are successfully sent and received including the message that violates your custom regex policy.
 
-      ![](./media/image203.png)
+      ![](./media/image203.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       f. Observe Cloud near real-time message DLP in action.
 
       After a short period of time, you will see the second message (e.g., FLast) get deleted by the compliance officer. This near-real time message deletion is triggered by the Cloudlock platform. The message contains a pattern that matches the custom regex detection criteria defined earlier. The deletion again occurs because of the 'delete message or file' policy response action configured for the 'My Name/User ID' custom regex policy.
 
-      ![](./media/image204.png)
+      ![](./media/image204.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that Charles again receives a message from the Security Center bot in the Security Center space to review the message. This message should look familiar to you as it's the custom message you configured to send to the user with the 'notify user via message' policy response action for the policy.
 
-      ![](./media/image205.png)
+      ![](./media/image205.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       g. Review the admin / compliance officer message notification from the Security Center bot.
 
@@ -493,7 +493,7 @@ In this section you will generate user data using the Webex App. This data will 
 
       Notice there are new messages in the Security Center space notifying Anita about Cloudlock DLP compliance policy violations. The messages match the 'notify admin via message' policy response action message you configured earlier for both of the policies.
 
-      ![](./media/image206.png)
+      ![](./media/image206.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Review the compliance violation incident management on the Cloudlock compliance platform.
 
@@ -501,11 +501,11 @@ In this section you will generate user data using the Webex App. This data will 
 
       Once the page loads scroll down to see a list of the most recent compliance violation incidents. You should see an incident for each of the policy violations you generated with the user content you sent via Webex App. One incident is related to violation of the 'My Name/User ID' policy (custom regex policy) and the other for violation of the 'Social Security Number' policy (predefined policy).
 
-      ![](./media/image207.png)
+      ![](./media/image207.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click each incident to see a summary of the incident details including the platform, the owner/violator, and the policy that was violated. In addition, the incident summary includes detailed excerpts of the violating message or file.
 
-      ![](./media/image208.png)
+      ![](./media/image208.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click the 'Incident History' tab to get details on the on the response actions taken by the platform for the policy violation. You should see an event for each of the three policy response actions you configured for the policies:
 
@@ -513,7 +513,7 @@ In this section you will generate user data using the Webex App. This data will 
       ii. Notify the compliance officer/admin -- 'Webex Teams: Notify Admin'.
       iii. Notify the compliance officer/admin -- 'Webex Teams: Notify User'.
 
-      ![](./media/image209.png)
+      ![](./media/image209.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 ## Explore Theta Lake eDiscovery and Legal Hold
 eDiscovery is the mechanism for searching through and retrieving data from the retained user-generated data archive of an organization. This ensures that the compliance officer has full access to all retained user data as needed for compliance management and enforcement. Because **eDiscovery** enables search and retrieval of data, this is often discussed together with **Archiving** capabilities which pertains with how and where the data that is being searched is stored.
@@ -544,11 +544,11 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Navigate to the Archive retention libraries page by clicking 'Content Destination' in the left-hand navigation menu to expand, and then click 'Retention Libraries'.
 
-      ![](./media/image210.png)
+      ![](./media/image210.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default. Theta Lake automatically configures a retention library called 'Default' when the Theta Lake org is created.
 
-      ![](./media/image211.png)
+      ![](./media/image211.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that the default retention period for the default retention library is 'Forever', meaning that user data for your org will be archived and maintained indefinitely. Data records have been created and archived to this retention library (Record Count = *nnn*).
 
@@ -558,7 +558,7 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Given this is a read-only account, you won't be able to edit the retention library and see details. Below is what the retention library edit dialog [would look like if you were to edit or create a new retention library.
 
-      ![](./media/image212.png)
+      ![](./media/image212.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that there is a setting to enable specialized storage to meet certain archival compliance requirements for data retention and storage. Specifically, Theta Lake optionally provides SEC Rule 17a-4 compliant storage. Rule 17a-4 requires maintenance and preservation of electronic records exclusively in a non-rewriteable, non-erasable storage format -- referred to as WORM (write once, read many). We don't need WORM storage for the purposes of this lab, so this is not enabled.
 
@@ -571,7 +571,7 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Once logged in, click 'Search' from the navigation menu for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting recordings. All available records are retrieved by default.
 
-      ![](./media/image213.png)
+      ![](./media/image213.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Note that this Theta Lake org has many Webex Messaging and Webex Meeting data records and lots of filters that can be applied to search easily through the records.
 
@@ -583,7 +583,7 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       For example, the compliance officer can filter by collaboration platform integration by clicking the 'Platform' filter button and selecting an integration -- e.g., Webex Messaging, Webex Meetings, Zoom, etc. Likewise, they could filter by content type by clicking the 'Content' filter button and selecting a specific content format -- e.g., Adobe PDF, Microsoft PowerPoint, etc. You do **not** need to configure these search filters. These are just examples. You'll configure a set of search filters in the next step.
 
-      ![](./media/image214.png)
+      ![](./media/image214.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Carefully review the left-hand navigation menu and the various search and filter categories. Click to expand categories to see the full list of search criteria in each category.
 
@@ -601,7 +601,7 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Finally, locate t­he 'PLATFORM' category in the left-hand navigation menu and click to expand the filter list. Click '**Platform**' and select 'Webex Messaging' from the drop-down menu. Click **Apply** to add this third and final search filter.
 
-      ![](./media/image215.png)
+      ![](./media/image215.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Review Charles Holland Webex Messaging data search results.
 
@@ -611,13 +611,13 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       The resulting list of data records are sorted from newest to oldest by default. Included in the will be records with the title 'Stock Price' (corresponding to an activity in the 'Stock Price' message space).
 
-      ![](./media/image216.png)
+      ![](./media/image216.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       b. Select the 'Stock Price' message space data record from the search results.
 
       Click the 'Stock Price' data record to expand. In the expanded record view, you'll notice that the message conversation flow for the 'Stock Price' space is displayed on the left-hand side of the record, while the Theta Lake system content analysis log is displayed on the right-hand side of the record.
 
-      ![](./media/image217.png)
+      ![](./media/image217.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       View message window to read messages exchanged and captured in this record and the resulting system analysis. Hover over the numbered circles next to a message to review details about the system management of the data record including flagging of possible violations for review and automatic message redaction for specific detection rule triggers.
 
@@ -625,15 +625,15 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Close the current record and move to a record with plenty of text. Click the **Translate** button to translate the messages in the record to a different language
 
-      ![](./media/image218.png)
+      ![](./media/image218.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       In the 'Translate to' drop down choose a language to translate the messages to -- e.g., Portuguese. Then, click **Translate** to translate.
 
-      ![](./media/image219.png)
+      ![](./media/image219.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that the messages have been translated to the selected language.
 
-      ![](./media/image220.png)
+      ![](./media/image220.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click **Show Original** to revert to the original language.
 
@@ -643,7 +643,7 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Click the '**View Chat Timeline**' button at the bottom (or top) of the expanded data record to load a complete view of the conversation chat history for this message space.
 
-      ![](./media/image221.png)
+      ![](./media/image221.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       The historical conversation view provides the complete message history for the space. A scrolling conversation history timeline is provided on the left side of the window with possible compliance violations flagged along the timeline. The message conversation is displayed in the middle of the screen. And a complete set of content data analysis callouts across the message history is provided on the right side of the window.
 
@@ -653,25 +653,25 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       In the 'Search the conversation' field at the top right of the screen, type in some key words to perform a search against the full conversation. For example, search for 'confidential', 'credit', and/or 'security' or similar combinations. For each search term or phrase, Theta Lake highlights all instances of the word in the message conversation flow and provides a color-coded indication on the conversation timeline for each instance of the searched term.
 
-      ![](./media/image222.png)
+      ![](./media/image222.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       f. Summarize the conversation to get analysis of the message history over a period of time.
 
       Click the 3 dots in the upper right corner and select 'Summarize Conversation' from the dropdown menu.
 
-      ![](./media/image223.png)
+      ![](./media/image223.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click **Acknowledge** to acknowledge the warning. Then, specify the date range of 1 year (e.g., June 10, 2024 -- June 10, 2025). Finally, click the **Summarize** button to begin summary generation.
 
-      ![](./media/image224.png)
+      ![](./media/image224.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       After a few minutes, a notification will be received. Click the bell icon in the upper right corner to load the notification pane. Click the notification 'Your summary of the conversation in "Stock Price" is ready to view to load the conversation summary.
 
-      ![](./media/image225.png)
+      ![](./media/image225.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Review the conversation history summary (scroll to see the full summary).
 
-      ![](./media/image226.png)
+      ![](./media/image226.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Clearly, Charles has a long history of compliance policy violations. It might be time for his manager to have a serious conversation with him about his future at the company.
 
@@ -683,7 +683,7 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       On the Theta Lake Portal click 'Cases' on the top navigation menu to reach the Legal Hold page.
 
-      ![](./media/image227.png)
+      ![](./media/image227.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       b. Review existing Legal Hold case.
 
@@ -691,7 +691,7 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Let's review the existing Legal Hold case.
 
-      ![](./media/image228.png)
+      ![](./media/image228.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice this existing open case has over 60 user data records already associated to it which will be maintained beyond the current retention period as long as the case remains open.
 
@@ -701,11 +701,11 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       A Legal Hold case log is maintained and displayed on the right hand-side of the page providing details about this case.
 
-      ![](./media/image230.png)
+      ![](./media/image230.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Finally, click the '**View Case Content**' button in the upper left-hand corner to return to the eDiscovery search page and the associated set of data records for this case.
 
-      ![](./media/image231.png)
+      ![](./media/image231.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       c. Review workflow for adding records to a Legal Hold case.
 
@@ -719,15 +719,15 @@ Theta Lake has a full set of compliance capabilities including near real-time fi
 
       Compliance officer fills in the case details including case number, name, and start date before clicking the **Create** button to generate the legal hold (see Step 2).
 
-      ![](./media/image232.png)
+      ![](./media/image232.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       After the case was created, the compliance officer would associate user data records by searching for them via eDiscovery, selecting them, and then choosing '**Add to Legal Hold Case**' (step 3).
 
-      ![](./media/image233.png)
+      ![](./media/image233.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Finally, the compliance officer selects the Legal Hold case number from the drop-down and clicks **Add** (step 4) to associate the user data records to the case.
 
-      ![](./media/image234.png)
+      ![](./media/image234.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       **\*\* END OF REFERENCE ONLY -- Proceed with the next section. \*\***
 
@@ -744,7 +744,7 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
 
       d. Once logged in, navigate to **Messaging** and scroll down to the Anti-Malware File Scanning section. Click to turn Virus and Malware Protection on.
 
-      ![](./media/image235.png)
+      ![](./media/image235.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       e. Check Scan History to confirm that currently '0' threats have been found.
 
@@ -756,7 +756,7 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
 
       Confirm that the '**Threat Found**' number is '**0**', indicating that no virus or malware has been detected in any files scanned in the last 2 days.
 
-      ![](./media/image236.png)
+      ![](./media/image236.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       f. Open and sign-in to the Webex App on WKST1 (wkst1.dcloud.cisco.com) -- if required.
 
@@ -766,13 +766,13 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
 
       The **test_malware.com** file is located on the desktop of Workstation 1. You may have to scroll down to find the file.
 
-      ![](./media/image237.png)
+      ![](./media/image237.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       h. Observe AMP operation.
 
       Once uploaded and scanned by Webex, you will notice that the shared file has been marked as suspicious by Webex. Webex immediately blocks the file from being downloaded.
 
-      ![](./media/image238.png)
+      ![](./media/image238.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       All users in the space will see the attached file as blocked and will not be able to download the file. Validate this with the Webex App on WKST2 (wkst2.dcloud.cisco.com).
 
@@ -780,7 +780,7 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
 
       Once signed in, navigate to the 1:1 space with Charles Holland and note that the **test_malware.com** file cannot be downloaded.
 
-      ![](./media/image239.png)
+      ![](./media/image239.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       i. Check the Scan History again to confirm that AMP has logged the threat.
 
@@ -794,11 +794,11 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
 
       Confirm that the '**Threat Found**' number is now '1', indicating that a virus or malware file has been detected in a file scanned in the last 2 days.
 
-      ![](./media/image240.png)
+      ![](./media/image240.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       **Note:** To see more details about the threat(s) you can also download and view an AMP report via the **Download CSV** link.
 
-      ![](./media/image241.png)
+      ![](./media/image241.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 **\*\*\* END of MODULE 3 \*\***
 

@@ -67,6 +67,10 @@ At the end of this section, you will have synchronized on-premises AD users into
       ![](./media/image16.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       ![](./media/image17.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
+1. Disable **Always require a Verified Duo Push**.
+
+      ![](./media/module1_image1.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+
 1. Scroll down and set the **Absolute Session Length** to **10 hours**.
 
       ![](./media/image18.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
@@ -128,7 +132,7 @@ At the end of this section, you will have synchronized on-premises AD users into
       ![](./media/image25.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       ![](./media/image26.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. With the Auth proxy configured and the service running on AD1, go back to the Duo Admin portal. If you were logged out, log back in with your admin account (<cholland@cbXXX.dc-YY.com> // dCloudZZZZ!) and select **Users** \> **External Directories** \> **AD Sync** \> **Edit connection**.
+1. With the Auth proxy configured and the service running on AD1, go back to the Duo Admin portal. If you were logged out, log back in with your admin account (<cholland@cbXXX.dc-YY.com> // dCloud12345!) and select **Users** \> **External Directories** \> **AD Sync** \> **Edit connection**.
 
       ![](./media/image27.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
