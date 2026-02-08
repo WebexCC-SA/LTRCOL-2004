@@ -28,7 +28,7 @@ participants. Webex cloud services DO NOT have access to content
 encryption key. Without the encryption key, Webex cannot decrypt any of
 the meeting content, so features like meeting chat transcripts, files, whiteboards, annotations, and recordings are not available when the meeting ends.
 
-![](./media/image277.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+![](./media/image277.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
 Features that can be provided by processing information locally device are available in End-to-End encrypted meetings:
 

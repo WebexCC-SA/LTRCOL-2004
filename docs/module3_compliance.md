@@ -36,7 +36,7 @@ The figure below summarizes the Webex Events API method for compliance platform 
 
 **Webex Events API for Compliance Platform Integration**
 
-![](./media/image152.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+![](./media/image152.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
 <!-- Webex has also introduced Webhooks capability enabling proactive notification of messaging events (e.g., messages with file attachments) to a configured Webhook (web URL). This proactive notification provides a framework for delivering real-time file DLP -- scanning files for compliance policy violations before allowing them to be sent/received via messaging.
 
