@@ -142,6 +142,12 @@
     function replacePlaceholders(text, values) {
         let result = text;
         
+        // Combined pattern: cbXXXYY.webex.com (must run before individual replacements)
+        if (values.XXX && values.YY) {
+            result = result.replace(/cbXXXYY\.webex\.com/g, 
+                'cb' + values.XXX + values.YY + '.webex.com');
+        }
+        
         if (values.XXX) {
             result = result.replace(PLACEHOLDERS.XXX.pattern, 
                 PLACEHOLDERS.XXX.prefix + values.XXX + PLACEHOLDERS.XXX.suffix);

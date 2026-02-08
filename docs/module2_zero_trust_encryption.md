@@ -58,12 +58,13 @@ Before you start this section, lets enable watermarking capabilities in Control 
       You will now schedule an end-to-end encrypted meeting.
 
 
-
-1. Once we have enabled watermarks, now lets the meeting site for us to setup the end to end encrypted meeting. Go to Services\--\>Meeting and copy the site name.
+1. Once you have enabled watermarks, configure the meeting site for end-to-end encrypted meetings. Go to Services\--\>Meeting and copy the site name.
 
       ![](./media/image279.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Open an instance of Chrome browser on the workstation 1 and navigate to the sitename e.g. cb46001.webex.com and sign in with credentials for cholland, cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). Click Schedule \> Schedule a meeting, set the meeting type to **Webex Meetings Pro-End to End Encryption_VOIPonly**.
+1. Open an instance of Chrome browser on the workstation 1 and navigate to the sitename e.g. cbXXXYY.webex.com and sign in with credentials for cholland, cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, the password will be dCloudZZZZ!). 
+
+1. Click Schedule \> Schedule a meeting, set the meeting type to **Webex Meetings Pro-End to End Encryption_VOIPonly**.
 
       ![](./media/image280.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -77,7 +78,11 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
       ![](./media/image283.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. To start, let Charles be the only participant in the meeting. Click OK on the **No Microphone found** prompt and Click on Start Meeting.Click OK on the "No Microphone found" after starting the meeting. Observe the blue shield icon at the top left of the meeting window, the padlock indicates that this is an E2EE meeting.
+1. To start, let Charles be the only participant in the meeting. 
+
+    - Click OK on the **No Microphone found** prompt.
+    - Click on Start Meeting.Click OK on the "No Microphone found" after starting the meeting. 
+    - Observe the blue shield icon at the top left of the meeting window, the padlock indicates that this is an E2EE meeting.
 
       ![](./media/image284.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -91,7 +96,7 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
       ![](./media/image286.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Now login to **WKST2** with **dcloud\\aperez** (password **dCloud123!**). Launch the Webex App and login with [**aperez@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). You will see the Join meeting notification:
+1. Now login to **WKST2** with **dcloud\\aperez** (password **dCloud123!**). Launch the Webex App and login with [**aperez@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!). You will see the Join meeting notification:
 
       ![](./media/image403.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -100,11 +105,12 @@ Before you start this section, lets enable watermarking capabilities in Control 
       Click on **Meeting Info** then select **Security** and observe the security code. It has changed now that a new attendee has joined. Feel free to verify the certificate for Anita.
 
 
-1. Login to **WKST3** with **dcloud\\kmelby** (password provided in the pod sheet). Launch the Webex App and login with [**kmelby@cbXXX.dc-YY.com**](mailto:kmelby@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password). You will see the Join meeting notification, join the meeting by clicking on the green **Join** button.
+1. Login to **WKST3** with **dcloud\\kmelby** (password provided in the pod sheet). Launch the Webex App and login with [**kmelby@cbXXX.dc-YY.com**](mailto:kmelby@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!). You will see the Join meeting notification, join the meeting by clicking on the green **Join** button.
 
       Click on **Meeting Info \> Security** and verify that the security code has changed again. Feel free to verify the certificate for Kellie.
 
-      **Note: Message Layer Security (MLS)** uses key packages to identify users and to generate new meeting encryption keys as participants join the meeting. Note that, like the meeting security code, the meeting encryption key changes every time a new participant joins the end-to-end encrypted meeting.
+!!! important 
+    **Message Layer Security (MLS)** uses key packages to identify users and to generate new meeting encryption keys as participants join the meeting. Note that, like the meeting security code, the meeting encryption key changes every time a new participant joins the end-to-end encrypted meeting.
 
 Each MLS key package contains:
 
@@ -113,7 +119,8 @@ Each MLS key package contains:
 - An identifier for the current version of the meeting encryption key.
 - A new meeting encryption key is created when participants join or leave the meeting.
 
-**Note: Secure Frames:** Secure Media Frames provide an extra layer of authenticated encryption for media.
+!!!important
+    **Secure Frames:** Secure Media Frames provide an extra layer of authenticated encryption for media.
 
 The whole media frame is encrypted before being placed into individual SRTP payloads. SFrames use MLS to provide the encryption keys that each meeting participant needs to decrypt media.
 
@@ -286,7 +293,7 @@ in your eXpo dCloud Session for the subsequent sections.
 
 **Step 3: Visual Watermarking**
 
-1. If not already logged in, log in to **WKST1** as **dCloud\\cholland** and **dCloud123!** (if you didn't complete module 1, refer to last 4-digits of Session ID on eXpo dCloud Session View page for the non-SSO password).
+1. If not already logged in, log in to **WKST1** as **dCloud\\cholland** and **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!).
 
 1. If required, launch the Webex App and go to Meetings. Click on Schedule a Meeting and invite Anita and Kelly to the meeting. Ensure that the meeting link is set to "Generate a one-time meeting link"
 
