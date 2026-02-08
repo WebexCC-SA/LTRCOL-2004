@@ -1,4 +1,4 @@
-![](./media/image331.png)
+![](./media/image331.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 # Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
 <!-- Commented out for testing - config box moved to bottom of intro
@@ -134,7 +134,7 @@ topology consists of:
   Cisco Cloudlock, Theta Lake).
 
 ![Figure 1. Webex Security Lab
-Topology](./media/image4.png)
+Topology](./media/image4.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 This lab includes pre-configured users and components to facilitate the
 lab scenarios covering the features and capabilities of Webex security.
@@ -220,7 +220,7 @@ Module 1.
     **Network** tab and click the **Remote Desktop** link for the VM that
     the lab guide instructs you to access.
     
-    ![](./media/image5.png)
+    ![](./media/image5.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. You can find the last 4 digits of your unique **Session ID** on the
     eXpo page. This is needed when authenticating to Webex prior to
@@ -228,7 +228,7 @@ Module 1.
     dCloud session. This can be found by clicking **Details** \> **DNS
     Address** on your eXpo page.
 
-      ![](./media/image6.png)
+      ![](./media/image6.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. In addition to connecting to the AD server and workstations via web
     RDP for endpoint operations, you will use a web browser and other
