@@ -3,17 +3,17 @@ In this module, you will learn about Zero-Trust End-to-End Encrypted calling and
 
 There are 6 sections in this module:
 
-1. [Schedule an End-to-End Encrypted Meeting](#schedule-an-end-to-end-encrypted-meeting)
+i. [Schedule an End-to-End Encrypted Meeting](#schedule-an-end-to-end-encrypted-meeting)
 
-2. [Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
+ii. [Features in an End-to-End Encrypted Meeting](#features-in-an-end-to-end-encrypted-meeting)
 
-3. [Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
+iii. [Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
 
-4. [Deepfake Detection with GetReal and Webex](#deepfake-detection-with-getreal-labs-and-webex)
+iv. [Deepfake Detection with GetReal and Webex](#deepfake-detection-with-getreal-labs-and-webex)
 
-5. [Provision Users and Configure Zero Trust End-to-End Encrypted Calling](#provision-users-and-configure-zero-trust-end-to-end-encrypted-calling) 
+v. [Provision Users and Configure Zero Trust End-to-End Encrypted Calling](#provision-users-and-configure-zero-trust-end-to-end-encrypted-calling) 
 
-6. [Zero Trust End-to-End Encrypted Calling](#zero-trust-end-to-end-encrypted-calling)
+vi. [Zero Trust End-to-End Encrypted Calling](#zero-trust-end-to-end-encrypted-calling)
 
 ## Schedule an End-to-End Encrypted Meeting
 
