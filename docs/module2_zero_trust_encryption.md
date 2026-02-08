@@ -9,7 +9,7 @@ There are 6 sections in this module:
 
 3. [Audio and Visual Watermarking and Watermark Analysis](#audio-and-visual-watermarking-and-watermark-analysis)
 
-4. [Deepfake Detection with GetReal Labs and Webex](#deepfake-detection-with-getreal-labs-and-webex)
+4. [Deepfake Detection with GetReal and Webex](#deepfake-detection-with-getreal-labs-and-webex)
 
 5. [Provision Users and Configure Zero Trust End-to-End Encrypted Calling](#provision-users-and-configure-zero-trust-end-to-end-encrypted-calling) 
 
@@ -317,13 +317,13 @@ in your eXpo dCloud Session for the subsequent sections.
       End the meeting for all.
 
 
-## Deepfake Detection with GetReal Labs and Webex.
+## Deepfake Detection with GetReal Security and Webex.
 
-GetReal Labs has partnered with Cisco to integrate advanced deepfake detection capabilities directly into the Webex collaboration platform, addressing the growing security threat of AI-generated synthetic media in enterprise communications.
+GetReal Security has partnered with Cisco to integrate advanced deepfake detection capabilities directly into the Webex collaboration platform, addressing the growing security threat of AI-generated synthetic media in enterprise communications.
 
-Cisco Webex has integrated GetReal Labs' AI-powered authentication technology to provide real-time verification of meeting participants, protecting organizations from sophisticated impersonation attacks and synthetic media manipulation. This integration is part of Webex's comprehensive Zero Trust security architecture, which includes end-to-end encryption, identity verification, and content protection.
+Cisco Webex has integrated GetReal Security' AI-powered authentication technology to provide real-time verification of meeting participants, protecting organizations from sophisticated impersonation attacks and synthetic media manipulation. This integration is part of Webex's comprehensive Zero Trust security architecture, which includes end-to-end encryption, identity verification, and content protection.
 
-In this module we shall leverage GetReal labs and Webex for Deepfake detection. Realtime deepfake protection for meetings by integrating deepfake protection into your Cisco Webex environment enhances the security of your meetings by detecting and notifying you of impersonation attacks in real time.
+In this module we shall leverage GetReal Security and Webex for Deepfake detection. Realtime deepfake protection for meetings by integrating deepfake protection into your Cisco Webex environment enhances the security of your meetings by detecting and notifying you of impersonation attacks in real time.
 
 **Step 1: Logging into Webex App.**
 
@@ -393,13 +393,13 @@ In this module we shall leverage GetReal labs and Webex for Deepfake detection. 
 **Step 4: Preview the violations on GetReal Portal.**
 
 1. So we have created a test case where we have GetReal Trust Advisor flagging the participant as an impersonator.
-2. Let's have a quick look into how those violations are captured on GetReal.
+2. Let's have a quick look into how those violations are captured on GetReal portal.
 
 3. On your local PC or any of the lab workstations , open an incognito instance of Chrome browser and Browse to url https://app.getreallabs.com/ , click on "Continue with Webex".
 
 4. Login with kmelby@cb311.dc-01.com and password dCloud0831! 
 
-5. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 30 days.
+5. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 180 days.
 
       ![](./media/image402.png)
 
