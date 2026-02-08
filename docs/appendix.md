@@ -10,7 +10,7 @@ Webex includes a built-in eDiscovery tool which provides access to up to 90 days
     
     Once logged in, click **Troubleshooting** in the left-hand navigation window. Then, click **Status**. Finally, in the Tools tile, click the **View eDiscovery** button to navigate to the eDiscovery portal. 
    
-      ![](./media/image311.png)
+      ![](./media/image311.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
     Once connected to the eDiscovery Search and Extraction portal, you'll see the main search page for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting transcripts.
       ![](./media/image312.png) 
@@ -90,7 +90,7 @@ Webex includes a built-in eDiscovery tool which provides access to up to 90 days
    
     Return to the File Explorer window and double click into the zip file of the full report to navigate and browse through the folders of .eml files corresponding to each space.
    
-      ![](./media/image322.png)
+      ![](./media/image322.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
     You can view individual email messages (.eml files), by double clicking them. When opening the first .eml file, Outlook will prompt you to create a mail profile. Enter any word (e.g., 'Anita', 'Webex', etc.) as the profile name and click to proceed with Outlook application to open and display the .eml file.
    
@@ -108,7 +108,7 @@ Webex includes a built-in eDiscovery tool which provides access to up to 90 days
    
     Shared files
    
-      ![](./media/image325.png)
+      ![](./media/image325.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
     
     While user data is certainly available and discoverable through the Webex eDiscovery Search and Extraction tool, reviewing the data in the reports and locating specific pieces of data can be tedious, particularly when the reports contain large numbers of users or spaces. 
@@ -123,7 +123,7 @@ Webex includes a built-in eDiscovery tool which provides access to up to 90 days
    
     To create and manage Legal Hold cases, navigate to the 'Legal matters' page by selecting '**Legal matters**' from the left-hand navigation menu. Note that currently no Legal Holds have been created.
    
-      ![](./media/image326.png)
+      ![](./media/image326.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
     Create a Legal matter (Legal Hold) for user/custodian Kellie Melby.
    
@@ -132,7 +132,7 @@ Webex includes a built-in eDiscovery tool which provides access to up to 90 days
     Enter the following values in the 'Create Matter' dialog:
 
     Name: **LH-M001001**Description: **Legal hold LH-M001001 on user Kellie Melby**
-      ![](./media/image327.png)
+      ![](./media/image327.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
     Click 'Download CSV Template' to download the custodian import template. We'll use this template to add a user (custodian) to a Legal Hold/Legal matter.
    
@@ -142,17 +142,17 @@ Webex includes a built-in eDiscovery tool which provides access to up to 90 days
    
     Click **Yes** to maintain the custodian file in CSV format.
    
-      ![](./media/image328.png)
+      ![](./media/image328.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
     Return to the Create Matter dialog and click **Browse**. Locate the CustodianImportTemplate.csv file you just edited and select. Click **Open**.
    
     Click **Save** to finish creating the legal matter. Keep an eye on the 'Create Matter' process and ensure that the legal matter setup completes. Click **Close** to acknowledge once the matter is created.
    
-      ![](./media/image329.png)
+      ![](./media/image329.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
     Returning to the Legal matters page, you will see that there is now an active legal matter. Click the matter name to load the legal matter details. Notice there are options to add/remove user/custodians as well as to 'Release' (or close) a matter.
    
-      ![](./media/image330.png)
+      ![](./media/image330.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
     At this point there is nothing left to do for this legal matter. Note that all users/custodians associated to a legal matter / Legal Hold will have all their available data retained beyond the configured retention period.
    

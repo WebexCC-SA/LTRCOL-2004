@@ -126,7 +126,7 @@ In this section, you will learn some features that are made available in an End-
 
 1. Record the Meeting: Navigate to WKST1 and open the meeting that is still in progress. Click the record button. The only option that is made available is 'Save to my computer'. There is no cloud recording option available because Webex does not have access to the media encryption keys needed to decrypt the media:
 
-      ![](./media/image406.png)
+      ![](./media/image406.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Note the message that displays when you hover over the Record button indicating that AI summaries are only available for cloud-based recordings. Since the only option here is to record to the local computer, AI meeting summaries won't be available.This is important point to remember about end-to-end encrypted meetings.
 
@@ -156,13 +156,13 @@ In this section, you will learn some features that are made available in an End-
 
 1. On WKST1, navigate to the desktop, there is PowerPoint presentation called presentation.pptx, launch the presentation.
 
-      ![](./media/image297.png)
+      ![](./media/image297.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.Once completed "Stop Sharing"
 
-      ![](./media/image405.png)
+      ![](./media/image405.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image407.png)
+      ![](./media/image407.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Click on the ellipsis icon "..." next to reactions and explore other features available in an end to end encrypted meetings like "whiteboards" and "Enable Sign Language Interpretation" and designate Anita as the interpreter.
 
@@ -331,26 +331,26 @@ In this module we shall leverage GetReal Security and Webex for Deepfake detecti
 2. <span style="color: green;"><strong>When you are ready to begin this module reach out to your lab proctor for a specific accounts that you will leverage just for this section.</strong></span>
 3. <span style="color: red;"><strong>Stop</strong></span> , confirm that you are logging into the host system and not on wkst1.
 4. Start a webex meeting. Log into the Webex App from the host PC with the credentials provided by the proctor, Click the meetings tab and then click "Start a Webex Meeting" and then click on start meeting.
-      ![](./media/image350.png)
+      ![](./media/image350.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 5. Go to the Apps Panel and search for GetReal Trust Advisor.
-      ![](./media/image349.png)
+      ![](./media/image349.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 6. Click on Open. 
  
 **Step 2: Logging into GetReal Labs and inviting participants.**
 
 1. Once you click on Open for GetReal Trust Advisor, you will be prompted to sign in.
-      ![](./media/image348.png)
+      ![](./media/image348.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 2. Sign in with the credentials that were provided to you by the proctor during the beginning of this module.
 
 3. Once signed in , the next screen would be " Add GetReal Trust Advisor to the Call". Click on it and add the trust advisor to the call.
 
-      ![](./media/image347.png)
+      ![](./media/image347.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 4. If you see any popups from GetReal Trust Advisor for any permissions, click on Accept
-      ![](./media/image339.png)
+      ![](./media/image339.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 
 **If you dont see the option of "Add GetReal Trust Advisor to the Call" , click on the refresh icon at top of the app window.**
@@ -359,30 +359,30 @@ In this module we shall leverage GetReal Security and Webex for Deepfake detecti
 
 5. This process does take a couple of minutes , once its ready you will get a notification on the meeting window to "Let In" the trust advisor. 
 
-      ![](./media/image337.png)
+      ![](./media/image337.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 
 6. At this point you should have two participants on the call, the person you are logged in with and the GetReal Trust Advisor.
 
-      ![](./media/image345.png)
+      ![](./media/image345.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 7. Invite a few participants like Charles Holland and Anita Perez from your actual lab pod and let them into the meeting. 
 
 8. You will add one of the lab proctors to this meeting now. Feel free to reach out to one of the proctors and we will join your meeting.
-      ![](./media/image344.png)
+      ![](./media/image344.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
 
 
 **Step 3: Monitoring and detection of participants.**
 
 1. At this point besides yourself (logged in on the local PC), you shall have the two participants from your remote workstations , GetReal Trust Advisor and one of the lab proctors on the meeting bridge.
-      ![](./media/image343.png)
+      ![](./media/image343.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 2. GetReal should automatically start monitoring the participants. Incase if it doesnt for the participants that are on the call click on the elipsis symbol "..." and then click on start monitoring .
 
 
 3. In a minute or two you will the real participants will have a  <span style="color: green;"><strong>"Green Check" next to their name and for the participants where GetReal has detected impersonation you shall see  <span style="color: Red;"> <strong> "Impersonation Detected".</span></strong></strong>
-      ![](./media/image341.png)
+      ![](./media/image341.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 4. Click on the red "X" on the webex meeting window from your source workstation to end the meeting for all.
 
@@ -401,14 +401,14 @@ In this module we shall leverage GetReal Security and Webex for Deepfake detecti
 
 5. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 180 days.
 
-      ![](./media/image402.png)
+      ![](./media/image402.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image332.png)
+      ![](./media/image332.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 6. You should your violation right up on top, however before we go there lets review the one which has id "GR-1". You will see it has not only detected a Face Swap but also a known threat actor in terms of Fake IT worker. Expand on both the options to learn more on the violation by clicking "Full Details". 
 Also you will see that there is a video recording of the interaction in GR-1. Move the time stamp to 9-10 minutes into the conversation to how the user faked into a known threat actor.
 
-      ![](./media/image351.png)
+      ![](./media/image351.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 
 7. Perform the same analysis for your recent violation.
@@ -436,7 +436,7 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
 
       c. Enable zero trust E2EE calling by toggling on **'Enable end-to-end encryption when making calls'**.
       
-      ![](./media/image_m2_wxc007.png)
+      ![](./media/image_m2_wxc007.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
       
 1. Provision users for Webex Calling 
@@ -445,15 +445,15 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
     
       a. Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
 
-      ![](./media/image_m2_wxc001.png)
+      ![](./media/image_m2_wxc001.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       b. Scroll down to the licensing section and click **'Edit licenses'**
 
-      ![](./media/image_m2_wxc002.png)
+      ![](./media/image_m2_wxc002.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       c. On the subsequent screen, click **'Edit licenses** again. Next, click on the 'Calling' selection and tick the box next to **Webex Calling**. Ensure that the **Professional** box is also ticked.
 
-      ![](./media/image_m2_wxc003.png)
+      ![](./media/image_m2_wxc003.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       d. Click **Save**.
 
@@ -461,7 +461,7 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
       
       f. Next, select the 'Phone Number' dropdown and select one of the available numbers - for example, '+31 20 555 4191'. Then, configure the extension with the last 4-digits of the phone number - for example '4191'. (Note: These are just <u>examples</u>. The phone numbers and extensions available in your pod <u>will be different</u>).
 
-      ![](./media/image_m2_wxc004.png)
+      ![](./media/image_m2_wxc004.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
      
       g. Click **Save** to assign the Webex Calling license and phone number to the user. The user now has a SIP line and phone number. Click **Close**.
 
@@ -485,7 +485,7 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
  
       e. The rest of the settings can be left at default. Click **Save**.
 
-      ![](./media/image_m2_wxc006.png)
+      ![](./media/image_m2_wxc006.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 ## Zero Trust End-to-End Encrypted Calling 
 
@@ -501,39 +501,39 @@ Now that two users have been provisioned for Webex Calling and SIP lines, it is 
       
       c. Using Charles Holland's Webex App on the local PC, click the Calling tab (1) and search for 'Anita Perez' (2). Right click on the phone icon (3) and select Audio Call (4) > Work <Work_Number> (e.g., +31 20 555 4192) (5) to place the call via the user's SIP line. Note: Do **not** select 'Call on Webex'.
 
-      ![](./media/image_m2_wxc008.png)
+      ![](./media/image_m2_wxc008.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       d. On the remote WKST3, answer the incoming call from Charles on Anita Perez's Webex App.
       
-      ![](./media/image_m2_wxc009.png)
+      ![](./media/image_m2_wxc009.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       e. Once the call is connected, observe the **blue shield** call info icon in the upper left-hand side of the call window. Observe as this icon transitions to a **blue shield with a lock**. (Note: It may take a few seconds for this transition). The message "End-to-end encryption is active" will also be displayed.
 
-      ![](./media/image_m2_wxc010.png)
+      ![](./media/image_m2_wxc010.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       f. Click the blue shield call info icon and review the security information. Note that the call audio (and any screen/application share) is 'Zero Trust end-to-end encrypted'. It's worth noting that chat and whiteboards if present are just standard Webex end-to-end encryption (and not zero trust E2EE).
 
-      ![](./media/image_m2_wxc011.png)
+      ![](./media/image_m2_wxc011.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Downgrade call security from zero trust E2EE to standard encryption.
 
 	a. As the call continues, on the local PC Webex App (Charles) click the record icon on the menu bar and then the **Record** button to start recording. 
 
-      ![](./media/image_m2_wxc012.png)
+      ![](./media/image_m2_wxc012.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       b. Observe that the call media is immediately **downgraded to standard encryption**. The blue shield with a lock call info icon reverts to the blue shield icon and a message appears indicating call has been moved to standard encryption ('Standard encryption is active').
 
-      ![](./media/image_m2_wxc013.png)
+      ![](./media/image_m2_wxc013.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
       c. Again, click the blue shield icon to see security details for the call and note that call audio media (and screen/application sharing) is now **downgraded to standard encryption**.
 
-      ![](./media/image_m2_wxc014.png)
+      ![](./media/image_m2_wxc014.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Upgrade call security from standard encryption back to zero trust E2EE.
 	
      a. Return to Charle's Webex App on the local PC and click the recording button and then the **Stop** button. Note that the call immediately **upgrades security back to zero trust E2EE** - the blue shield icon reverts back to shield with lock, and the 'End-to-end encryption is active' message is again displayed.
 
-      ![](./media/image_m2_wxc015.png)
+      ![](./media/image_m2_wxc015.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       b. Click the 'X' button to hang up the zero trust E2EE Webex call.
 

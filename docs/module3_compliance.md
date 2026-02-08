@@ -36,7 +36,7 @@ The figure below summarizes the Webex Events API method for compliance platform 
 
 **Webex Events API for Compliance Platform Integration**
 
-![](./media/image152.png)
+![](./media/image152.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 <!-- Webex has also introduced Webhooks capability enabling proactive notification of messaging events (e.g., messages with file attachments) to a configured Webhook (web URL). This proactive notification provides a framework for delivering real-time file DLP -- scanning files for compliance policy violations before allowing them to be sent/received via messaging.
 
@@ -47,7 +47,7 @@ API whether to allow or block the file (step 3).
 
 **Webex Webhooks for Real-time File DLP**
 
-![](./media/image153.png)
+![](./media/image153.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 Unlike the Webex Events API method for compliance where the compliance platform must periodically poll Webex for communications events (space creation, space membership, messages, file attachments, meetings, etc.) and then take action, Webhooks enable real-time notification of events without having to wait for the next polling interval, so the compliance platform DLP service can take immediate action. Cisco Cloudlock supports real-time file DLP for Webex with Webhooks.-->
 
@@ -115,7 +115,7 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&A, whiteboards, polls, etc.), and Webex Calling (recordings).
 
-      ![](./media/image_m3_332.png)
+      ![](./media/image_m3_332.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       e. Click **Settings** under Webex App Messaging Retention Policy to review current messaging retention settings.
 
@@ -133,7 +133,7 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       g. Click **Settings** under Webex Calling Retention Policy to review current calling retention settings.
 
-      ![](./media/image_m3_333.png)
+      ![](./media/image_m3_333.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, the retention period for call recordings is set to 360 days. Notice that deleted recordings can be set to match the recording rentention period, but by default deleted recordings are set to purge immediately. Note that call details records (CDRs) retention is non-configurable. Again, for the purposes of this lab, there is no reason to change the calling retention policy, so just click **Cancel** to close the Webex Calling Retention Policy window.
 
@@ -147,7 +147,7 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       The internal and external meeting configuration options allow you to control which external users can join your organization's meetings (Internal Webex meetings) and which external organization's meetings (External Webex meeting sites) your users can join. This type of restriction control allows an organization to mitigate potential data loss by disallowing certain attendees and/or meeting sites and may sufficiently address organizational requirements regarding data loss.
 
-      ![](./media/image163.png)
+      ![](./media/image163.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, external users are allowed to attend your organization's meetings, and your users can attend external meeting sites. For the purposes of this lab, you can leave the default values (e.g., no restrictions).
 
@@ -155,9 +155,9 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       Scroll down and review the various meeting capabilities that can be disabled for internal or external meetings. For example, you could disable in-meeting tools like polling, Q&A, chat, and recording. This type of meeting data restriction control allows an organization to mitigate and reduce potential data loss by disallowing certain channels of communication (e.g., Q&A, chat, polling, etc.).
 
-      ![](./media/image164.png)
+      ![](./media/image164.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image165.png)
+      ![](./media/image165.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       For the purposes of this lab, please leave the default values (e.g., no restrictions).
 
@@ -167,7 +167,7 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       An administrator can eliminate potential data leakage vectors to disable. For example, an adminstrator could prevent users from sharing content during a call (toggle off **Screen Sharing**) or sharing video on the call (toggle off **Video on desktop**/**Video on mobile**). Likewise, the administrator can prevent escalation of a call to a meeting (toggle off **Move call to meetings on desktop app**). These restrictions may sufficiently address organizational requirements regarding callingdata loss.
 
-      ![](./media/image_m3_image334.png)
+      ![](./media/image_m3_image334.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Note that by default, there are no restrictions for in-call features. For the purposes of this lab, please leave the default values (e.g., no restrictions).
 
@@ -203,11 +203,11 @@ Theta Lake has a full set of compliance capabilities including eDiscovery and Ar
 
       Navigate to the Archive retention libraries page by clicking 'Content Destination' in the left-hand navigation menu to expand, and then click 'Retention Libraries'.
 
-      ![](./media/image210.png)
+      ![](./media/image210.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default. Theta Lake automatically configures a retention library called 'Default' when the Theta Lake org is created.
 
-      ![](./media/image211.png)
+      ![](./media/image211.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that the default retention period for the default retention library is 'Forever', meaning that user data for your org will be archived and maintained indefinitely. Data records have been created and archived to this retention library (Record Count = *nnn*).
 
@@ -217,7 +217,7 @@ Theta Lake has a full set of compliance capabilities including eDiscovery and Ar
 
       Given this is a read-only account, you won't be able to edit the retention library and see details. Below is what the retention library edit dialog [would look like if you were to edit or create a new retention library.
 
-      ![](./media/image212.png)
+      ![](./media/image212.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that there is a setting to enable specialized storage to meet certain archival compliance requirements for data retention and storage. Specifically, Theta Lake optionally provides SEC Rule 17a-4 compliant storage. Rule 17a-4 requires maintenance and preservation of electronic records exclusively in a non-rewriteable, non-erasable storage format -- referred to as WORM (write once, read many). We don't need WORM storage for the purposes of this lab, so this is not enabled.
 
@@ -228,7 +228,7 @@ Theta Lake has a full set of compliance capabilities including eDiscovery and Ar
 
       Click 'Search' from the navigation menu for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting and calling recordings. All available records are retrieved by default.
 
-      ![](./media/image213.png)
+      ![](./media/image213.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Note that this Theta Lake org has many Webex Messaging, Meeting, and Calling data records and lots of filters that can be applied to search easily through the records.
 
@@ -245,19 +245,19 @@ verbally mentioning credit card numbers/SSN/DOB). You will learn how Theta Lake 
       
       Note: the screenshot below is using the **Table** viewing format. This can be found on the right side of the screen near the **Sort by** option.
 
-      ![](./media/image264.png)
+      ![](./media/image264.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Explore and review few records that have Meeting Poll
       
       Repeat the search process with **Q&A** as the search term and click the green **Search** button.
 
-      ![](./media/image265.png)
+      ![](./media/image265.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image266.png)
+      ![](./media/image266.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Close the Poll Search by clicking on the "x" next to search.
 
-      ![](./media/image267.png)
+      ![](./media/image267.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Search for and review records with specific built-in policy violations.
 
@@ -265,25 +265,25 @@ verbally mentioning credit card numbers/SSN/DOB). You will learn how Theta Lake 
 
       **Credit Card Number (CC#) -- Audio, Chat, Attachment, and EmailsCryptoCurrency Discussions -- Video, Audio, Chat, Attachment and Emails** **Social Security Numbers(SSN) -- Audio, Chat, Attachment and Emails**
 
-      ![](./media/image268.png)
+      ![](./media/image268.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Refine search to include specifc media types.
 
       Scroll down to the **Media** category in the left-hand navigation menu and click to expand the filter. Click **Media Type** and tick the boxes for **Audio** and **Video** then click **Apply**.
 
-      ![](./media/image269.png)
+      ![](./media/image269.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Review a specific meeting data record. 
 
       Select any meeting, you will observe a recording of the meeting and flags where the users have violated policies. You can use **Record ID** 576714780 as an example.
 
-      ![](./media/image270.png)
+      ![](./media/image270.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       If you are reviewing record 576714780, scroll to approximately 7 minutes and 06 seconds into the meeting and you will see that Theta Lake has the ability to flag documents held up to the screen containing PII and confidential data.
 
       Feel free to take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Theta Lakes detection capabilities.Once you have completed reviewing the options, clear out all the filters that you have selected by clicking "Clear All" on the top left of the screen.
 
-      ![](./media/image271.png)
+      ![](./media/image271.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 ## Explore eDiscovery for Webex Calling in Theta Lake
 
@@ -301,7 +301,7 @@ In this section you will review Webex Calling data records in Theta Lake.
       
       Note: the screenshots below show the **Table** view. This can be found on the right side of the screen near the **Sort by** option.
 
-      ![](./media/image_m3_335.png)
+      ![](./media/image_m3_335.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
      <!-- ![](./media/image273.png) -->
 
@@ -322,7 +322,7 @@ In this section you will review Webex Calling data records in Theta Lake.
 
       In addition to the CDRs described above, if the call is recorded, you will also find a corresponding recording record.  
 
-      ![](./media/image_m3_336.png)
+      ![](./media/image_m3_336.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Note: CDR data records will be the same for both standard and zero trust end-to-end encrypted (E2EE) Webex calls. However, as discussed in Module 2, zero trust E2EE calls do not support call recording (or other features like closed captioning). So if a call has a corresponding audio recording, then it was not a zero trust E2EE call. On the oher hand, for any unrecorded call it would be impossible to tell the difference between a standard encrypted call and a zero trust E2EE call.
 
@@ -334,7 +334,7 @@ In this section you will review Webex Calling data records in Theta Lake.
 
       To review a record, click the record. Select the **Attributes** record to see the call detail information.
 
-      ![](./media/image_m3_337.png)
+      ![](./media/image_m3_337.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       First, note the CallType for each record is **SIP_ENTERPRISE** indicating this is an internal call.
       
@@ -344,13 +344,13 @@ In this section you will review Webex Calling data records in Theta Lake.
 
       Additional detailed call information is displayed including call duration (CallDurationSeconds), times (CallAnswerTime, CallStartTime), numbers (CalledNumber, CallingNumber), and caller ID (CalledLineId, CallingLineId).
 
-      ![](./media/image_m3_338.png)
+      ![](./media/image_m3_338.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Review a call recording record
 
       Now let's look at record 75052**7005**. This should be listed sequentially above the terminating and originating CDRs reviewed above. This record includes an audio recording of the call.
 
-      ![](./media/image_m3_339.png)
+      ![](./media/image_m3_339.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       First, review the Attributes of the record. Observe that the **CorrleationId** (3d8bafcd-519b-4ec9-86cd-c68aa4565870) matches the two CDRs we reviewed above indicating this is the corresponding recording of that call. Also notice that the **CallDirection** parameter is 'ORIGINATING' indicating the call recording was started on the originator's leg of the call  
       
@@ -366,7 +366,7 @@ In this section you will review Webex Calling data records in Theta Lake.
 
       Finally, try translating the transcript into another language. Click **Translate**, select the language to translate to from the dropdown (e.g., Dutch) and then, click **Translate** again. Notice the transcipt has been translated into the language selected. This can be very useful if the call audio is in a language that the Compliance Officer is unable to understand.
 
-      ![](./media/image_m3_342.png)
+      ![](./media/image_m3_342.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
 1. Review other Webex Calling data records
       
@@ -1010,7 +1010,7 @@ Anti-Malware protection (AMP) comes with the Webex Control Hub Extended Security
 
       **Note:** To see more details about the threat(s) you can also download and view an AMP report via the **Download CSV** link.
 
-      ![](./media/image241.png)
+      ![](./media/image241.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 -->
 
 <!--
@@ -1034,15 +1034,15 @@ Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP li
       
       Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
 
-      ![](./media/image_m2_wxc001.png)
+      ![](./media/image_m2_wxc001.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Scroll down to the licensing section and click **'Edit licenses'**
 
-      ![](./media/image_m2_wxc002.png)
+      ![](./media/image_m2_wxc002.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       On the subsequent screen, click **'Edit licenses** again. Next, click on the 'Calling' selection and tick the box next to **Webex Calling**. Ensure that the **Professional** box is also ticked.
 
-      ![](./media/image_m2_wxc003.png)
+      ![](./media/image_m2_wxc003.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click **Save**.
 
@@ -1050,7 +1050,7 @@ Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP li
       
       Next, select the 'Phone Number' dropdown and select one of the available numbers - for example, '+31 20 555 4191'. Then, configure the extension with the last 4-digits of the phone number - for example '4191'. (Note: These are just <u>examples</u>. The phone numbers and extensions available in your pod <u>will be different</u>).
 
-      ![](./media/image_m2_wxc004.png)
+      ![](./media/image_m2_wxc004.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
      
       Click **Save** to assign the Webex Calling license and phone number to the user. The user now has a SIP line and phone number. Click **Close**.
 
@@ -1066,7 +1066,7 @@ Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP li
 
       Navigate back to user Charles Holland (or Anita Perez) and click the **Calling** tab. Scroll down to the 'User calling experience' section and set Call recording to **'On'**. Then toggle on **Record incoming and outgoing calls...** and tick **On Demand**. This ensures the user can start/stop call recording. Finally, tick <u>both</u> **'Play recording start/stop announcement for...'** boxes. The rest of the settings can be left at default. Click **Save**.
 
-      ![](./media/image_m2_wxc006.png)
+      ![](./media/image_m2_wxc006.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 
 ## Zero Trust End-to-End Encrypted Calling
@@ -1083,7 +1083,7 @@ Now that some users have been provisioned for Webex Calling and SIP lines, it is
 
       Enable zero trust E2EE calling by toggling on **'Enable end-to-end encryption when making calls'**.
       
-      ![](./media/image_m2_wxc007.png)
+      ![](./media/image_m2_wxc007.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
 		
 1. Make a Zero Trust E2EE Webex Call
@@ -1096,39 +1096,39 @@ Now that some users have been provisioned for Webex Calling and SIP lines, it is
       
       Using Charles Holland's Webex App on the local PC, click the Calling tab (1) and search for 'Anita Perez' (2). Right click on the phone icon (3) and select Audio Call (4) > Work <Work_Number> (e.g., +31 20 555 4192) (5) to place the call via the user's SIP line. Note: Do **not** select 'Call on Webex'.
 
-      ![](./media/image_m2_wxc008.png)
+      ![](./media/image_m2_wxc008.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       On the remote WKST3, answer the incoming call from Charles on Anita Perez's Webex App.
       
-      ![](./media/image_m2_wxc009.png)
+      ![](./media/image_m2_wxc009.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Once the call is connected, observe the **blue shield** call info icon in the upper left-hand side of the call window. Observe as this icon transitions to a **blue shield with a lock**. (Note: It may a few seconds for this to happen). The message "End-to-end encryption is active" will also be displayed.
 
-      ![](./media/image_m2_wxc010.png)
+      ![](./media/image_m2_wxc010.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click the blue shield call info icon and review the security information. Note that the call audio (and any screen/application share) is 'Zero Trust end-to-end encrypted'. It's worth noting that chat and whiteboards if present are just standard Webex end-to-end encryption (and not zero trust E2EE).
 
-      ![](./media/image_m2_wxc011.png)
+      ![](./media/image_m2_wxc011.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Downgrade call security from zero trust E2EE to standard encryption.
 
 	As the call continues, on the local PC Webex App (Charles) click the record icon on the menu bar and then the **Record** button to start recording. 
 
-      ![](./media/image_m2_wxc012.png)
+      ![](./media/image_m2_wxc012.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Observe that the call media is immediately downgraded to standard encryption. The blue shield with a lock call info icon reverts to the blue shield icon and a message appears indicating call has been moved to standard encryption ('Standard encryption is active').
 
-      ![](./media/image_m2_wxc013.png)
+      ![](./media/image_m2_wxc013.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
       Again, click the blue shield icon to see security details for the call and note that call audio media (and screen/application sharing) is now downgraded to standard encryption.
 
-      ![](./media/image_m2_wxc014.png)
+      ![](./media/image_m2_wxc014.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Upgrade call security from standard encryption back to zero trust E2EE.
 	
       Return to Charle's Webex App on the local PC and click the recording button and then the **Stop** button. Note that the call immediately upgrades security back to zero trust E2EE - the blue shield icon reverts back to shield with lock, and the 'End-to-end encryption is active' message is again displayed.
 
-      ![](./media/image_m2_wxc015.png)
+      ![](./media/image_m2_wxc015.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Click the 'X' button to hang up the zero trust E2EE Webex call.
 
