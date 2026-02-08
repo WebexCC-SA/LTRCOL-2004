@@ -326,101 +326,107 @@ in your eXpo dCloud Session for the subsequent sections.
 
 ## Deepfake Detection with GetReal Security and Webex.
 
-GetReal Security has partnered with Cisco to integrate advanced deepfake detection capabilities directly into the Webex collaboration platform, addressing the growing security threat of AI-generated synthetic media in enterprise communications.
+Cisco has partnered with GetReal Security to integrate advanced deepfake detection capabilities directly into the Webex platform, addressing the growing security threat of AI-generated synthetic media in enterprise communications.
 
 Cisco Webex has integrated GetReal Security' AI-powered authentication technology to provide real-time verification of meeting participants, protecting organizations from sophisticated impersonation attacks and synthetic media manipulation. This integration is part of Webex's comprehensive Zero Trust security architecture, which includes end-to-end encryption, identity verification, and content protection.
 
-In this module we shall leverage GetReal Security and Webex for Deepfake detection. Realtime deepfake protection for meetings by integrating deepfake protection into your Cisco Webex environment enhances the security of your meetings by detecting and notifying you of impersonation attacks in real time.
+In this module we shall leverage GetReal Security and Webex for Deepfake detection. Real-time deepfake protection for meetings by integrating deepfake protection into your Cisco Webex environment enhances the security of your meetings by detecting and notifying you of impersonation attacks in real time.
 
 **Step 1: Logging into Webex App.**
 
-1.  In this module we will be logging into the Webex App on the actual PC and not on any of the workstations. 
-2. <span style="color: green;"><strong>When you are ready to begin this module reach out to your lab proctor for a specific accounts that you will leverage just for this section.</strong></span>
-3. <span style="color: red;"><strong>Stop</strong></span> , confirm that you are logging into the host system and not on wkst1.
-4. Start a webex meeting. Log into the Webex App from the host PC with the credentials provided by the proctor, Click the meetings tab and then click "Start a Webex Meeting" and then click on start meeting.
+1.  In this module we will be logging into the Webex App on the physical PC and not on any of the virtual workstations. 
+1. <span style="color: green;"><strong>When you are ready to begin this module reach out to your lab proctor for a specific accounts that you will leverage just for this section.</strong></span>
+1. <span style="color: red;"><strong>Stop</strong></span>, confirm that you are logging into the host system and not on a dCloud workstation.
+1. Start a Webex meeting. Log into the Webex App from the host PC with the credentials provided by the proctor, Click the meetings tab and then click "Start a Webex Meeting" and then click on start meeting.
+
       ![](./media/image350.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-5. Go to the Apps Panel and search for GetReal Trust Advisor.
+1. Go to the Apps Panel and search for GetReal Trust Advisor.
+
       ![](./media/image349.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-6. Click on Open. 
+1. Click on Open. 
  
 **Step 2: Logging into GetReal Labs and inviting participants.**
 
 1. Once you click on Open for GetReal Trust Advisor, you will be prompted to sign in.
+      
       ![](./media/image348.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-2. Sign in with the credentials that were provided to you by the proctor during the beginning of this module.
+1. Sign in with the credentials that were provided to you by the proctor during the beginning of this module.
 
-3. Once signed in , the next screen would be " Add GetReal Trust Advisor to the Call". Click on it and add the trust advisor to the call.
+1. Once signed in , the next screen would be " Add GetReal Trust Advisor to the Call". Click on it and add the trust advisor to the call.
 
       ![](./media/image347.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-4. If you see any popups from GetReal Trust Advisor for any permissions, click on Accept
+1. If you see any popups from GetReal Trust Advisor for any permissions, click on Accept
+      
       ![](./media/image339.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 
-**If you dont see the option of "Add GetReal Trust Advisor to the Call" , click on the refresh icon at top of the app window.**
+    **If you dont see the option of "Add GetReal Trust Advisor to the Call" , click on the refresh icon at top of the app window.**
      
 
 
-5. This process does take a couple of minutes , once its ready you will get a notification on the meeting window to "Let In" the trust advisor. 
+1. This process does take a couple of minutes , once its ready you will get a notification on the meeting window to "Let In" the trust advisor. 
 
       ![](./media/image337.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 
-6. At this point you should have two participants on the call, the person you are logged in with and the GetReal Trust Advisor.
+1. At this point you should have two participants on the call, the person you are logged in with and the GetReal Trust Advisor.
 
       ![](./media/image345.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-7. Invite a few participants like Charles Holland and Anita Perez from your actual lab pod and let them into the meeting. 
+1. Invite a few participants like Charles Holland cholland@cbXXX.dc-YY.com and Anita Perez aperez@cbXXX.dc-YY.com and let them into the meeting. 
 
-8. You will add one of the lab proctors to this meeting now. Feel free to reach out to one of the proctors and we will join your meeting.
+1. Finally, you'll need to add one of the lab proctors to your meeting. Feel free to raise your hand and we will come assist.
+      
       ![](./media/image344.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
-
 
 **Step 3: Monitoring and detection of participants.**
 
 1. At this point besides yourself (logged in on the local PC), you shall have the two participants from your remote workstations , GetReal Trust Advisor and one of the lab proctors on the meeting bridge.
+      
       ![](./media/image343.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-2. GetReal should automatically start monitoring the participants. Incase if it doesnt for the participants that are on the call click on the elipsis symbol "..." and then click on start monitoring .
+1. GetReal should automatically start monitoring the participants. Incase if it doesnt for the participants that are on the call click on the elipsis symbol "..." and then click on start monitoring .
 
 
-3. In a minute or two you will the real participants will have a  <span style="color: green;"><strong>"Green Check" next to their name and for the participants where GetReal has detected impersonation you shall see  <span style="color: Red;"> <strong> "Impersonation Detected".</span></strong></strong>
+1. In a minute or two you will the real participants will have a  <span style="color: green;"><strong>"Green Check" next to their name and for the participants where GetReal has detected impersonation you shall see  <span style="color: Red;"> <strong> "Impersonation Detected".</span></strong></strong>
+      
       ![](./media/image341.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-4. Click on the red "X" on the webex meeting window from your source workstation to end the meeting for all.
+1. Click on the red "X" on the webex meeting window from your source workstation to end the meeting for all.
 
-5. Since this is shared account please do not change the password or perform changes on the account that you logged into the source workstation. 
+1. Since this is shared account please do not change the password or perform changes on the account that you logged into the source workstation. 
 
 
 
 **Step 4: Preview the violations on GetReal Portal.**
 
 1. So we have created a test case where we have GetReal Trust Advisor flagging the participant as an impersonator.
-2. Let's have a quick look into how those violations are captured on GetReal portal.
+1. Let's have a quick look into how those violations are captured on GetReal portal.
 
-3. On your local PC or any of the lab workstations , open an incognito instance of Chrome browser and Browse to url https://app.getreallabs.com/ , click on "Continue with Webex".
+1. On your local PC or any of the lab workstations , open an incognito instance of Chrome browser and Browse to url https://app.getreallabs.com/ , click on "Continue with Webex".
 
-4. Login with kmelby@cb311.dc-01.com and password dCloud0831! 
+1. Login with kmelby@cb311.dc-01.com and password dCloud0831! 
 
-5. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 180 days.
+1. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 180 days.
 
       ![](./media/image402.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       ![](./media/image332.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-6. You should your violation right up on top, however before we go there lets review the one which has id "GR-1". You will see it has not only detected a Face Swap but also a known threat actor in terms of Fake IT worker. Expand on both the options to learn more on the violation by clicking "Full Details". 
+1. You should your violation right up on top, however before we go there lets review the one which has id "GR-1". You will see it has not only detected a Face Swap but also a known threat actor in terms of Fake IT worker. Expand on both the options to learn more on the violation by clicking "Full Details". 
 Also you will see that there is a video recording of the interaction in GR-1. Move the time stamp to 9-10 minutes into the conversation to how the user faked into a known threat actor.
 
       ![](./media/image351.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 
-7. Perform the same analysis for your recent violation.
-8. Once completed logout of GetReal portal and ensure you are signed out of the webex app from your Local PC. 
-9. Since this is a shared account, please do not make any changes on this account.
+1. Perform the same analysis for your recent violation.
+1. Once completed logout of GetReal portal and ensure you are signed out of the webex app from your Local PC. 
+1. Since this is a shared account, please do not make any changes on this account.
 
 ## Provision users and configure Zero Trust End-to-End Encrypted Calling
 
