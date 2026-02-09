@@ -450,12 +450,13 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
       c. Enable zero trust E2EE calling by toggling on **'Enable end-to-end encryption when making calls'**.
       
       ![](./media/image_m2_wxc007.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-      
+
+      <div class="admonition tip">
+      <p class="admonition-title">Tip</p>
+      <p>Today, zero trust E2EE calling is only supported with Webex Calling SIP lines (<u>NOT</u> 'Call on Webex') - this is why a number is configured here to enable SIP line calling.**</p>
+      </div>
       
 1. Provision users for Webex Calling 
-
-!!!tip
-    Today, zero trust E2EE calling is only supported with Webex Calling SIP lines (<u>NOT</u> 'Call on Webex') - this is why a number is configured here to enable SIP line calling.**
     
       a. Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
 
