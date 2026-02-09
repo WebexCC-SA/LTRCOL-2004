@@ -71,7 +71,7 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 | **Theta Lake** | - eDiscovery & Legal Hold<br>- Archival | [Explore eDiscovery for Webex Meetings in Theta Lake](#explore-ediscovery-for-webex-meetings-in-theta-lake)<br><br> [Explore eDiscovery for Webex Calling in Theta Lake](#explore-ediscovery-for-webex-calling-in-theta-lake) |
 
 ## Webex Compliance and Preparing for Compliance Platform Integration
-1. Enable compliance officer role for user Anita Perez.
+1. Enable the compliance officer role for user Anita Perez.
 
       To integrate compliance platforms with Webex, a full administrator with Compliance Officer privileges is required. This role gives the user permissions for DLP integrations, eDiscovery/Legal Hold, and retention and archival integrations. In this step you are assigning the organization Compliance Officer role to Anita Perez.
 
@@ -81,13 +81,13 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       a. Open the Chrome browser on WKST1 (wkst1.dcloud.cisco.com) and navigate to Webex Control Hub at <http://admin.webex.com>.
 
-      b. Login as full administrator, Charles Holland by entering: cholland@cb**XXX**.dc-**YY**.com (refer to the eXpo dCloud Session View Info page to find your DNS domain). Click **Sign In**.
+      b. Login as full administrator, Charles Holland by entering: cholland@cbXXX.dc-YY.com (refer to the eXpo dCloud Session View Info page to find your DNS domain). Click **Sign In**.
 
       ![](./media/image154.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
      <!-- (Replace XXX and YYY with the values for your eXpo dCloud pod)-->
 
-      c. Enter password: **dCloud123!** (if you did not complete Module 1 and enable SSO, then the password will be dCloud**ZZZZ**! replacing 'ZZZZ' with the last four digits of the dCloud session ID, refer to the eXpo dCloud Session View Info page for your session ID).
+      c. Enter password: **dCloud123!** (if you did not complete Module 1 and enable SSO, then the password will be dCloudZZZZ!)
 
       ![](./media/image155.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -109,9 +109,9 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       a. Open the Chrome browser on WKST2 (wkst1.dcloud.cisco.com) and navigate to Control Hub at <https://admin.webex.com>.
 
-      b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cb**XXX**.dc-**YY**.com <!--(refer to eXpo dCloud session info page for the DNS domain).--> Click **Sign In**.
+      b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cbXXX.dc-YY.com <!--(refer to eXpo dCloud session info page for the DNS domain).--> Click **Sign In**.
 
-      c. Enter password: **dCloud123!** (non-SSO password is dCloud**ZZZZ**! - refer to eXpo dCloud session info page for the session ID and use the last 4 digits to replace 'ZZZZ').
+      c. Enter password: **dCloud123!** (non-SSO password is dCloudZZZZ! - refer to eXpo dCloud session info page for the session ID and use the last 4 digits to replace 'ZZZZ').
 
       d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&A, whiteboards, polls, etc.), and Webex Calling (recordings).
 
@@ -1030,7 +1030,7 @@ Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP li
 
 1. Provision users for Webex Calling 
 
-      Return to WKST1 and from the Chrome browser there, if required navigate to Webex Contol Hub (https://admin.webex.com). If login is required login with: cholland@cb**XXX**.dc-**YY**.com // dCloud123! (or if you did not enable SSO in Module 1, use the default password: dCloud**ZZZZ**!).
+      Return to WKST1 and from the Chrome browser there, if required navigate to Webex Contol Hub (https://admin.webex.com). If login is required login with: cholland@cbXXX.dc-YY.com // dCloud123! (or if you did not enable SSO in Module 1, use the default password: dCloudZZZZ!).
       
       Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
 
@@ -1088,9 +1088,9 @@ Now that some users have been provisioned for Webex Calling and SIP lines, it is
 		
 1. Make a Zero Trust E2EE Webex Call
 
-      On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+      On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cbXXX.dc-YY.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
 
-      On the remote PC Workstation 3 (WKST3), log back into the Webex App with Anita Perez's account (aperez@cb**XXX**.dc-**YY**.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloud**ZZZZ**!).
+      On the remote PC Workstation 3 (WKST3), log back into the Webex App with Anita Perez's account (aperez@cbXXX.dc-YY.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
 
       Once the users are logged into the Webex App, make a call between the two users. 
       

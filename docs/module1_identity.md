@@ -120,8 +120,9 @@ At the end of this section, you will have synchronized on-premises AD users into
 1. Once you have filled in the config, click **Validate** in the **Duo Authentication Proxy Manager** and verify that there are no errors in the **Output.** If you see additional text in the config, you may not have cleared the text that is entered by default. Please repeat step 16 so that your configuration looks like the below screenshot.
 
       ![](./media/image23.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-      
-      >Note: If you see any red or yellow text, verify that there is nothing missing in the configuration.
+
+!!!tip      
+      If you see any red or yellow text, verify that there is nothing missing in the configuration.
 
 1. Once your configuration validates successfully, click **Save.**
 
@@ -361,7 +362,8 @@ This is an effective way to automate license management while ensuring that over
 
       ![](./media/image58.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
-      Note that this may take a minute to apply to all users so wait a minute and refresh the page if you still see additional licenses. Moving forward, you will assign premium features to users in specific groups.
+!!!tip
+      It may take a minute to apply to all users so wait a minute and refresh the page if you still see additional licenses. Moving forward, you will assign premium features to users in specific groups.
 
 1. Navigate to **Users \> Licenses** and click **Manage** in the **Group-based licenses** section.
 
@@ -441,7 +443,9 @@ This is an effective way to automate license management while ensuring that over
 1. Click **Remove license preservation** to continue.
 
       ![](./media/image71.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-> **Note:** Any license(s) manually applied to a user independent of a group membership change (such as via API or Control Hub) would also be removed when a user's group membership changes.
+
+!!!important
+      Any license(s) manually applied to a user independent of a group membership change (such as via API or Control Hub) would also be removed when a user's group membership changes.
 
 Here are some of the key takeaways regarding Webex licensing:
 
@@ -572,9 +576,9 @@ locally. This will not work as none of the users have credentials in Duo. To wor
 
 1. Click **Validate**, ensure there are no errors, and then click **Save**.
 
+!!!important
       Note: If you attempt to do the Validate/Save before running the
       command above, you will see this error:
-
       ![](./media/image91.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Finally, as the program instructs \-- click **Restart Service**.
@@ -762,6 +766,7 @@ At this point in the lab guide, you have configured the **Duo Authentication Pro
 
 1. Click **Next**.
 
+!!!tip
       Note that you have the option to enable Just-In-Time (JIT) provisioning at this point to allow Webex to create users if they have a valid assertion from your IdP, but they do not exist in Webex. You will not be configuring Just-In-Time user provisioning in this lab but feel free to click **Show optional attributes** to see which attributes are available, then click **Next.**
       
       ![](./media/image115.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
@@ -874,18 +879,15 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
       ![](./media/image130.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      Note that you have the option of allowing built-in MFA within Webex
-      for any user authenticating through this IdP. This can be a great
-      option to increase security for Webex logins without needing to make
-      changes on the IdP. For now, leave the option on **Keep the current
-      MFA status** which will use the global config in **Organization
-      Settings.**
+!!!tip
+      You have the option of allowing MFA in Webex for any user authenticating through this IdP. This can be a great option to increase security for Webex logins without needing to make changes on the IdP. For now, leave the option on **Keep the current MFA status** which will use the global config in **Organization Settings.**
 
 1. Back on the **Single sign-on & multiple identity providers** page, you'll see your SAML IdP and your new OIDC IdP. In this lab, both are using the same Duo tenant, however, that is just for demonstration purposes. You can have different Duo tenants, or completely different identity platforms configured for SSO.
 
       ![](./media/image131.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      > **Note**: If at any point you become locked out of your org, you can access <https://admin.webex.com/manage-sso> using **cholland@cbXXX.dc-YY.com** to disable SSO. You will need to open Outlook on WKST1 to get a code that will be emailed to cholland.
+!!!important 
+      If at any point you become locked out of your org, you can access <https://admin.webex.com/manage-sso> using **cholland@cbXXX.dc-YY.com** to disable SSO. You will need to open Outlook on WKST1 to get a code that will be emailed to cholland.
 
 ### OpenID Connect -- Proof Key for Code Exchange (PKCE)
 When enabling SSO with OIDC, you enabled the option to allow PKCE:

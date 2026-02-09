@@ -432,9 +432,9 @@ Also you will see that there is a video recording of the interaction in GR-1. Mo
 
 **Note: Before proceeding, please be sure to sign out of any Webex Apps on the lab PC and any of the remote workstations.**
 
-First, it is important to understand the implementation of zero trust E2EE calling works. As with zero trust E2EE meetings, calling data can only be accessed by authorized parties. The calling media encryption key is derived by the calling party and propagated to the called party via MLS key package. As such encrypted call media **cannot** be decrypted by Webex cloud services, because Webex **DOES NOT** have access to the media encryption key - Zero Trust.
+First, it is important to understand how the implementation of zero trust E2EE calling works. As with zero trust E2EE meetings, calling data can only be accessed by authorized parties. The calling media encryption key is derived by the **calling** party and propagated to the **called** party via MLS key package. As such, encrypted call media **cannot** be decrypted by Webex cloud services, because Webex **DOES NOT** have access to the media encryption key - Zero Trust.
 
-Unlike the zero trust E2EE meetings, zero trust E2EE calling will downgrade to standard encryption (where Webex services have access to the media encryption key) if one of the called party's device or features does not support zero trust E2EE (non-SIP, PSTN calls). Downgrades to standard encryption from zero trust E2EE also occur when Webex services are enabled that require access to the media encryption keys - for example, when the call is recorded or when closed captioning is enabled on the call. Note that calls can also upgrade to zero trust E2EE when Webex services are removed.
+Unlike the zero trust E2EE meetings, zero trust E2EE calling will downgrade to standard encryption (where Webex services have access to the media encryption key) if one of the called party's devices does not support zero trust E2EE (non-SIP, PSTN calls). Downgrades from zero trust E2EE to standard encryption will also occur when Webex services are enabled that require access to the media encryption keys - for example, when the call is recorded or when closed captioning is enabled on the call. In the same way that a call can downgrade to standard encryption, calls can also upgrade to zero trust E2EE in real-time after Webex services are removed.
 
 To begin, you will need to enable the zero trust end-to-end encryption feature. Then, you'll provision two Webex org users for Webex Calling including assign licenses and phone numbers.
 
@@ -454,7 +454,8 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
       
 1. Provision users for Webex Calling 
 
-      **Note: Today, zero trust E2EE calling is only supported with Webex Calling SIP lines (<u>NOT</u> 'Call on Webex') - this is why a number is configured here to enable SIP line calling.**
+!!!tip
+    Today, zero trust E2EE calling is only supported with Webex Calling SIP lines (<u>NOT</u> 'Call on Webex') - this is why a number is configured here to enable SIP line calling.**
     
       a. Select **Users** from the navigation window to load the Users page and then select user **Charles Holland**
 
