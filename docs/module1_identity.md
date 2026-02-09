@@ -87,19 +87,24 @@ At the end of this section, you will have synchronized on-premises AD users into
 
       ![](./media/image21.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Minimize the browser and launch the **Duo Authentication Proxy Manager** from Desktop. Once the application is open, **delete all text from the configuration**, then can paste the below config into your auth proxy:
+1. Minimize the browser and launch the **Duo Authentication Proxy Manager** from Desktop. Once the application is open, **delete all text from the configuration**, then can paste the text from the example below into your auth proxy:
 
-      >**[cloud]**<br>
-      >**ikey=**<br>
-      >**skey=**<br>
-      >api_host=api-demodemo.duosecurity.com<br>
-      >**[ad_client]**<br>
-      >host=ad1.dcloud.cisco.com<br>
-      >service_account_username=administrator<br>
-      >service_account_password=dCloud123!<br>
-      >search_dn=DC=dcloud,DC=cisco,DC=com
+      <div class="admonition example">
+      <p class="admonition-title">Example</p>
+      <p>**[cloud]**<br>
+      **ikey=**<br>
+      **skey=**<br>
+      api_host=api-demodemo.duosecurity.com<br>
+      **[ad_client]**<br>
+      host=ad1.dcloud.cisco.com<br>
+      service_account_username=administrator<br>
+      service_account_password=dCloud123!<br>
+      search_dn=DC=dcloud,DC=cisco,DC=com</p>
+      </div>
    
-      You will need to pull the **ikey** and **skey** from your Duo admin
+      <div class="admonition important">
+      <p class="admonition-title">Important</p>
+      <p>You will need to pull the **ikey** and **skey** from your Duo admin
       portal:
    
       ![](./media/image22.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
@@ -114,15 +119,17 @@ At the end of this section, you will have synchronized on-premises AD users into
       environment, it is strongly recommended to do so. Information on how
       to do that can be found here:
    
-      <https://duo.com/docs/adsync#encrypting-passwords>.
-
+      <https://duo.com/docs/adsync#encrypting-passwords>.</p>
+      </div>
 
 1. Once you have filled in the config, click **Validate** in the **Duo Authentication Proxy Manager** and verify that there are no errors in the **Output.** If you see additional text in the config, you may not have cleared the text that is entered by default. Please repeat step 16 so that your configuration looks like the below screenshot.
 
       ![](./media/image23.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-!!!tip      
-      If you see any red or yellow text, verify that there is nothing missing in the configuration.
+      <div class="admonition tip">
+      <p class="admonition-title">Tip</p>
+      <p>If you see any red or yellow text, verify that there is nothing missing in the configuration.</p>
+      </div>
 
 1. Once your configuration validates successfully, click **Save.**
 
@@ -149,11 +156,14 @@ At the end of this section, you will have synchronized on-premises AD users into
 
 1. Scroll down and fill out the **Directory Configuration** section with the following information:
 
-      > Domain controller Hostname: **ad1.dcloud.cisco.com**<br>
-      > Port: **389**<br>
-      > Base DN: **DC=dcloud,DC=cisco,DC=com**<br>
-      > Authentication type: **Integrated**<br>
-      > Transport type: **Clear**<br>
+      <div class="admonition example">
+      <p class="admonition-title">Directory Configuration</p>
+      <p>Domain controller Hostname: **ad1.dcloud.cisco.com**<br>
+      Port: **389**<br>
+      Base DN: **DC=dcloud,DC=cisco,DC=com**<br>
+      Authentication type: **Integrated**<br>
+      Transport type: **Clear**<br></p>
+      </div>
 
       ![](./media/image31.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -362,8 +372,10 @@ This is an effective way to automate license management while ensuring that over
 
       ![](./media/image58.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
    
-!!!tip
-      It may take a minute to apply to all users so wait a minute and refresh the page if you still see additional licenses. Moving forward, you will assign premium features to users in specific groups.
+      <div class="admonition tip">
+      <p class="admonition-title">Tip</p>
+      <p>It may take a minute to apply to all users so wait a minute and refresh the page if you still see additional licenses. Moving forward, you will assign premium features to users in specific groups.</p>
+      </div>
 
 1. Navigate to **Users \> Licenses** and click **Manage** in the **Group-based licenses** section.
 
@@ -444,9 +456,11 @@ This is an effective way to automate license management while ensuring that over
 
       ![](./media/image71.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-!!!important
-      Any license(s) manually applied to a user independent of a group membership change (such as via API or Control Hub) would also be removed when a user's group membership changes.
-
+      <div class="admonition important">
+      <p class="admonition-title">Important</p>
+      <p>Any license(s) manually applied to a user independent of a group membership change (such as via API or Control Hub) would also be removed when a user's group membership changes.</p>
+      </div>
+      
 Here are some of the key takeaways regarding Webex licensing:
 
 - Webex uses a combination of Organization-based licensing and
@@ -576,10 +590,12 @@ locally. This will not work as none of the users have credentials in Duo. To wor
 
 1. Click **Validate**, ensure there are no errors, and then click **Save**.
 
-!!!important
-      Note: If you attempt to do the Validate/Save before running the
+      <div class="admonition important">
+      <p class="admonition-title">Important</p>
+      <p>Note: If you attempt to do the Validate/Save before running the
       command above, you will see this error:
-      ![](./media/image91.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image91.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }</p>
+      </div>
 
 1. Finally, as the program instructs \-- click **Restart Service**.
 
@@ -766,8 +782,10 @@ At this point in the lab guide, you have configured the **Duo Authentication Pro
 
 1. Click **Next**.
 
-!!!tip
-      Note that you have the option to enable Just-In-Time (JIT) provisioning at this point to allow Webex to create users if they have a valid assertion from your IdP, but they do not exist in Webex. You will not be configuring Just-In-Time user provisioning in this lab but feel free to click **Show optional attributes** to see which attributes are available, then click **Next.**
+      <div class="admonition tip">
+      <p class="admonition-title">Tip</p>
+      <p>Note that you have the option to enable Just-In-Time (JIT) provisioning at this point to allow Webex to create users if they have a valid assertion from your IdP, but they do not exist in Webex. You will not be configuring Just-In-Time user provisioning in this lab but feel free to click **Show optional attributes** to see which attributes are available, then click **Next.**</p>
+      </div>
       
       ![](./media/image115.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -879,15 +897,19 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
       ![](./media/image130.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-!!!tip
-      You have the option of allowing MFA in Webex for any user authenticating through this IdP. This can be a great option to increase security for Webex logins without needing to make changes on the IdP. For now, leave the option on **Keep the current MFA status** which will use the global config in **Organization Settings.**
+      <div class="admonition tip">
+      <p class="admonition-title">Tip</p>
+      <p>You have the option of allowing MFA in Webex for any user authenticating through this IdP. This can be a great option to increase security for Webex logins without needing to make changes on the IdP. For now, leave the option on **Keep the current MFA status** which will use the global config in **Organization Settings.**</p>
+      </div>
 
 1. Back on the **Single sign-on & multiple identity providers** page, you'll see your SAML IdP and your new OIDC IdP. In this lab, both are using the same Duo tenant, however, that is just for demonstration purposes. You can have different Duo tenants, or completely different identity platforms configured for SSO.
 
       ![](./media/image131.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-!!!important 
-      If at any point you become locked out of your org, you can access <https://admin.webex.com/manage-sso> using **cholland@cbXXX.dc-YY.com** to disable SSO. You will need to open Outlook on WKST1 to get a code that will be emailed to cholland.
+      <div class="admonition important">
+      <p class="admonition-title">Important</p>
+      <p>If at any point you become locked out of your org, you can access <https://admin.webex.com/manage-sso> using **cholland@cbXXX.dc-YY.com** to disable SSO. You will need to open Outlook on WKST1 to get a code that will be emailed to cholland.</p>
+      </div>
 
 ### OpenID Connect -- Proof Key for Code Exchange (PKCE)
 When enabling SSO with OIDC, you enabled the option to allow PKCE:
