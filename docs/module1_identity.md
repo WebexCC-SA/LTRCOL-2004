@@ -1043,7 +1043,7 @@ In the next section, you will configure local Webex authentication for a group o
         soon as they match a rule -- they will not be checked against
         lower priority rules.
 
-1. Open a new incognito or private window in your browser and navigate to <https://web.webex.com>. Click **Sign in** and enter tbard@cbXXX.dc-YY.com (refer to your eXpo page for **XXX** and **YY** values). and click next. You should be routed to Webex rather than Duo for authentication. This means that your rule is working as expected -- **no need to log in**.
+1. Open a new incognito or private window in your browser and navigate to <https://web.webex.com>. Click **Sign in** and enter tbard@cbXXX.dc-YY.com. and click next. You should be routed to Webex rather than Duo for authentication. This means that your rule is working as expected -- **no need to log in**.
 
       ![](./media/image145.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
