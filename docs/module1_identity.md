@@ -60,7 +60,7 @@ At the end of this section, you will have synchronized on-premises AD users into
 
       ![](./media/image15.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Log in with the account you just created ([**cholland@cbXXX.dc-YY.com**](mailto:cholland@cbXXX.dc-YY.com) // **dCloud12345!**). If you do not see a password prompt, navigate to [**https://admin-demodemo.duosecurity.com**](https://admin-demodemo.duosecurity.com) to log in.
+1. Log in with cholland@cbXXX.dc-YY.com. If you do not see a password prompt, navigate to [**https://admin-demodemo.duosecurity.com**](https://admin-demodemo.duosecurity.com) to log in.
 
 1. After authenticating, navigate to **Users** \> **Administrators** \> **Admin Login Settings**.
 
@@ -140,7 +140,7 @@ At the end of this section, you will have synchronized on-premises AD users into
       ![](./media/image25.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       ![](./media/image26.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. With the Auth proxy configured and the service running on AD1, go back to the Duo Admin portal. If you were logged out, log back in with your admin account (<cholland@cbXXX.dc-YY.com> // dCloud12345!) and select **Users** \> **External Directories** \> **AD Sync** \> **Edit connection**.
+1. With the Auth proxy configured and the service running on AD1, go back to the Duo Admin portal. If you were logged out, log back in with your admin account (cholland@cbXXX.dc-YY.com // dCloud12345!) and select **Users** \> **External Directories** \> **AD Sync** \> **Edit connection**.
 
       ![](./media/image27.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -288,7 +288,7 @@ To facilitate user provisioning to Webex, you will utilize the SCIM 2.0 API endp
       attribute set to **Email Address** in Duo. This attribute needs to be
       adjusted so that you are syncing the user's Duo Username to Webex.
 
-1. Once you have validated that there are no provisioning errors, navigate to Control Hub (<https://admin.webex.com>) and log in with your admin account ([cholland@cbXXX.dc-YY.com](mailto:cholland@cbXXX.dc-YY.com)).
+1. Once you have validated that there are no provisioning errors, navigate to Control Hub (<https://admin.webex.com>) and log in with your admin account cholland@cbXXX.dc-YY.com.
 
 1. Select **Organization Settings** and change **Control Hub's idle timeout** to **No timeout** then click **Save**.
 
@@ -416,7 +416,7 @@ This is an effective way to automate license management while ensuring that over
 
     ![](./media/image65.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Type cholland and select [**cholland@cbXXX.dc-YY.com**](mailto:cholland@cbXXX.dc-YY.com). Type aperez and select **<aperez@cbXXX.dc-YY.com>** (see your eXpo page for the \'XXX\' and \'YY\' values):
+1. Type cholland and select cholland@cbXXX.dc-YY.com. Type aperez and select aperez@cbXXX.dc-YY.com:
 
     ![](./media/image66.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -446,7 +446,7 @@ This is an effective way to automate license management while ensuring that over
 
       ![](./media/image69.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. To verify that your licenses were successfully applied to Charles Holland and Anita Perez (due to their group membership), click the **Members** tab and click on [**cholland@cbXXX.dc-YY.com**](mailto:cholland@cbXXX.dc-YY.com) or [**aperez@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com). On the **Summary** tab, you should see **Advanced Messaging** and the **Meetings Suite** licenses applied due to their membership in the Messaging and Meetings groups. You will also see licensing for the basic Webex features due to the **Organization licensing** configuration.
+1. To verify that your licenses were successfully applied to Charles Holland and Anita Perez (due to their group membership), click the **Members** tab and click on cholland@cbXXX.dc-YY.com or aperez@cbXXX.dc-YY.com. On the **Summary** tab, you should see **Advanced Messaging** and the **Meetings Suite** licenses applied due to their membership in the Messaging and Meetings groups. You will also see licensing for the basic Webex features due to the **Organization licensing** configuration.
 
       ![](./media/image70.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -547,8 +547,7 @@ locally. This will not work as none of the users have credentials in Duo. To wor
 
 1. Open your tab to the Duo admin portal or navigate to
     <https://admin-demodemo.duosecurity.com> and log in with your admin
-    account
-    [cholland@cbXXX.dc-YY.com](mailto:cholland@cbXXX.dc-YY.com)
+    account, cholland@cbXXX.dc-YY.com
 
 1. Click **Applications \> SSO Settings**
 
@@ -629,16 +628,14 @@ locally. This will not work as none of the users have credentials in Duo. To wor
 
 1. After saving, you will be taken back to the **External Authentication Sources** tab where the Active Directory source you just configured will be **Enabled**. You will also see a notification that you must configure a permitted domain to allow for authentication via AD.
 
-      To provide some clarity on the current state of the environment --
-      previously you configured the Duo Authentication Proxy to sync users
-      from the on-prem AD server to Duo. You have now configured the proxy
-      to receive authentication requests from Duo when users attempt to log
-      in, validate their credentials with AD, and send the result back to
-      Duo.
+      <div class="admonition tip">
+      <p class="admonition-title">Tip</p>
+      <p>To provide some clarity on the current state of the environment -- previously you configured the Duo Authentication Proxy to sync users from the on-prem AD server to Duo. You have now configured the proxy to receive authentication requests from Duo when users attempt to log in, validate their credentials with AD, and send the result back to Duo.
       
-      At this stage, Duo will not leverage the proxy for authentication
-      because it authenticates users locally, by default. Before you can use the proxy, you must verify your dCloud domain in Duo so that you can route authentication to the proxy.
-<br>
+      At this stage, Duo will not leverage the proxy for authentication because it authenticates users locally, by default. Before you can use the proxy, you must verify your dCloud domain in Duo so that you can route authentication to the proxy.</p>
+      </div>
+
+
 
 1. To proceed, click **Add permitted domains.**
 
@@ -702,7 +699,7 @@ In this section, you will learn how to configure SSO for Webex using Duo as the 
 
 At this point in the lab guide, you have configured the **Duo Authentication Proxy** to synchronize users from AD to Duo and to authenticate user credentials for Duo. Now you can proceed with configuring SSO on Webex.
 
-1. Log in to Control Hub (<https://admin.webex.com>) using [**cholland@cbXXX.dc-YY.com**](mailto:cholland@cbXXX.dc-YY.com).
+1. Log in to Control Hub (<https://admin.webex.com>) using cholland@cbXXX.dc-YY.com
 
 1. Navigate to **Security & Privacy** and select the **Authentication** tab then click **Activate SSO**.
 
@@ -722,8 +719,7 @@ At this point in the lab guide, you have configured the **Duo Authentication Pro
 
 1. Next, open your Duo Admin panel tab or navigate to
     <https://admin-demodemo.duosecurity.com> and log in with your admin
-    account
-    ([cholland@cbXXX.dc-YY.com](mailto:cholland@cbXXX.dc-YY.com)).
+    account, cholland@cbXXX.dc-YY.com
 
 1. Navigate to **Applications \> Applications** and select **Cisco Webex (with Control Hub) - Single Sign-On**.
 
@@ -751,23 +747,13 @@ At this point in the lab guide, you have configured the **Duo Authentication Pro
 
 1. After you save the changes, scroll down and select **Edit Global Policy**.
 
-    a.  If you see a frame inside of your existing tab after clicking
-        **Edit Global Policy** proceed to step 10.
+1. Click **Dismiss if you receive the popup regarding the new policy editor.
 
-    b.  If after clicking **Edit Global Policy**, you are taken to a new
-        tab, this is because Duo is auto enrolling some tenants in a
-        beta view for Policies. You can click the **Switch to Legacy
-        Editor** link to get back to the window that we are using in
-        this guide. After you switch to the Legacy editor and make the
-        changes below, you'll need to go back to **Applications \>
-        Applications \>** Select **Cisco Webex (with Control Hub) -
-        SAML+SCIM.**
+      ![](./media/m1-policyeditor.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image112.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+1. Click **Authenication policy** and select **Skip MFA** then click **Save**.
 
-1. Enable **Bypass 2FA** in the **Authentication policy** section and click **Save Policy**.
-
-      ![](./media/image113.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/m1-skipmfa.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Go back to your Control Hub tab and on **Step 3: Configure IdP metadata**:
 
@@ -793,7 +779,7 @@ At this point in the lab guide, you have configured the **Duo Authentication Pro
 
       ![](./media/image116.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Paste the URL in the private window and you will be prompted to sign in to Duo. You can use the same [**cholland@cbXXX.dc-YY.com**](mailto:cholland@cbXXX.dc-YY.com) you've used up to this point -- account info is in eXpo.
+1. Paste the URL in the private window and you will be prompted to sign in to Duo. You can use cholland@cbXXX.dc-YY.com.
 
 1. When prompted for the password, you will need to use the password stored in AD (**dCloud123!**).
 
@@ -879,7 +865,7 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
       ![](./media/image128.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Paste the URL in the private window and you will be prompted to sign in to Duo. You can use the same [cholland@cb**XXX**.dc-**YY**.com](mailto:cholland@cbXXX.dc-YY.com) you've been using -- account info is on your eXpo page.
+1. Paste the URL in the private window and you will be prompted to sign in to Duo. You can use cholland@cbXXX.dc-YY.com.
 
 1. Once you see **Single Sign-on succeeded**, you can close the incognito tab and click **Next.**
 
@@ -908,7 +894,7 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
       <div class="admonition important">
       <p class="admonition-title">Important</p>
-      <p>If at any point you become locked out of your org, you can access <https://admin.webex.com/manage-sso> using **cholland@cbXXX.dc-YY.com** to disable SSO. You will need to open Outlook on WKST1 to get a code that will be emailed to cholland.</p>
+      <p>If at any point you become locked out of your org, you can access <https://admin.webex.com/manage-sso> using cholland@cbXXX.dc-YY.com to disable SSO. You will need to open Outlook on WKST1 to retrieve a code that will be emailed to cholland.</p>
       </div>
 
 ### OpenID Connect -- Proof Key for Code Exchange (PKCE)
@@ -1057,13 +1043,13 @@ In the next section, you will configure local Webex authentication for a group o
         soon as they match a rule -- they will not be checked against
         lower priority rules.
 
-1. Open a new incognito or private window in your browser and navigate to <https://web.webex.com>. Click **Sign in** and enter [**tbard@cbXXX.dc-YY.com**](mailto:tbard@cbXXX.dc-YY.com) (refer to your eXpo page for **XXX** and **YY** values). and click next. You should be routed to Webex rather than Duo for authentication. This means that your rule is working as expected -- **no need to log in**.
+1. Open a new incognito or private window in your browser and navigate to <https://web.webex.com>. Click **Sign in** and enter tbard@cbXXX.dc-YY.com (refer to your eXpo page for **XXX** and **YY** values). and click next. You should be routed to Webex rather than Duo for authentication. This means that your rule is working as expected -- **no need to log in**.
 
       ![](./media/image145.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Next, close your private/incognito window to clear any cached information, then open a new private/incognito window.
 
-1. Navigate to <https://web.webex.com> and enter [**aperez@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com) (ensuring that you update the XXX and YY with your session #s).
+1. Navigate to <https://web.webex.com> and enter aperez@cbXXX.dc-YY.com (ensuring that you update the XXX and YY with your session #s).
 
     a.  This user's group membership will be checked to see if she
         matches the criteria for the **WxLocalAuthRule.** Since Anita
@@ -1077,12 +1063,11 @@ In the next section, you will configure local Webex authentication for a group o
     c.  In a few steps, you will check the Authentication log in Duo to
         verify that users are being routed to the SAML and OIDC
         integrations as expected so be sure to complete a successful
-        login with
-        [aperez@cbXXX.dc-YY.com](mailto:aperez@cbXXX.dc-YY.com).
+        login with aperez@cbXXX.dc-YY.com.
 
 1. Finally, close your private/incognito window to clear any cached information, then open a new private/incognito window.
 
-1. Navigate to <https://web.webex.com> and log in with [jdock@cbXXX.dc-YY.com](mailto:jdock@cbXXX.dc-YY.com) (ensuring that you update the XXX and YY with your session #s)jdock@cbXXX.dc-YY.com.
+1. Navigate to <https://web.webex.com> and log in with jdock@cbXXX.dc-YY.com.
 
 1. Now that you've successfully authenticated to both the OIDC application (**aperez**) and SAML application (**jdock**), open the Duo admin portal (<https://admin-demodemo.duosecurity.com>).
 
@@ -1113,7 +1098,7 @@ Webex has native support for MFA using the Duo Authenticator. Administrators are
 
 For this lab, you will enable MFA for anyone accessing Control Hub.
 
-1. Navigate to <https://admin.webex.com> and log in as Charles Holland ([cholland@cbXXX.dc-YY.com](mailto:cholland@cbXXX.dc-YY.com)).
+1. Navigate to <https://admin.webex.com> and log in with cholland@cbXXX.dc-YY.com.
 
 1. Select **Organization Settings** and search for **Multi-factor Authentication**.
 
@@ -1125,7 +1110,7 @@ For this lab, you will enable MFA for anyone accessing Control Hub.
 
 1. Next, open an incognito or private window in your browser. **Ensure that there are no other incognito windows open because any Webex sessions from those window(s) can cause issues.**
 
-1. Navigate to <https://admin.webex.com> and log in as Charles Holland ([cholland@cb**XXX**.dc-**YY**.com](mailto:cholland@cbXXX.dc-YY.com)).
+1. Navigate to <https://admin.webex.com> and log in with cholland@cbXXX.dc-YY.com.
 
 1. You will go through the SSO login flow with Duo but since you are now forcing MFA on Webex, you will be prompted to set up Duo Authenticator after you authenticate:
 
