@@ -1,0 +1,2103 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance">
+      
+      
+        <meta name="author" content="Scott Kiewert">
+      
+      
+      
+        <link rel="prev" href="../introduction/">
+      
+      
+        <link rel="next" href="../module2_zero_trust_encryption/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/cisco_logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Module 1 - Webex Identity - LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-1-webex-identity-and-authenticationauthorization-with-duo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-header__button md-logo" aria-label="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/cisco_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 1 - Webex Identity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab_setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab Setup
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 1 - Webex Identity
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module2_zero_trust_encryption/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 2 - Webex Zero Trust Encryption
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module3_compliance/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 3 - Webex Compliance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conclusion/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusion
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../appendix/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Appendix
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../print_page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Print Lab Guide
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-nav__button md-logo" aria-label="LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/cisco_logo.png" alt="logo">
+
+    </a>
+    LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Webex Identity
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Webex Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sync-users-from-active-directory-to-duo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Users from Active Directory to Duo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync-users-from-duo-to-webex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync Users from Duo to Webex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webex-licensing-and-settings-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex Licensing and Settings Templates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-duo-to-use-active-directory-for-user-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Duo to Use Active Directory for User Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-sign-on-with-webex-and-duo-saml-and-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Single Sign-On with Webex and Duo (SAML and OIDC)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Sign-On with Webex and Duo (SAML and OIDC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#duo-sso-setup-saml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duo SSO Setup (SAML)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duo-sso-setup-oidc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Duo SSO Setup (OIDC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openid-connect-proof-key-for-code-exchange-pkce" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenID Connect -- Proof Key for Code Exchange (PKCE)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-identity-providers-with-webex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Identity Providers with Webex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-multi-factor-authentication-mfa-using-duo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Multi-Factor Authentication (MFA) using Duo
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2_zero_trust_encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Webex Zero Trust Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3_compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Webex Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print Lab Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-1-webex-identity-and-authenticationauthorization-with-duo">Module 1: Webex Identity and Authentication/Authorization with Duo</h1>
+<p>In this module, you will start by integrating an on-premises Active Directory (AD) with a Duo tenant. From there, you will set up an integration between Duo and Webex for user provisioning via SCIM 2.0. This is designed to simulate a common scenario where an organization needs to migrate away from an on-premises AD deployment to a cloud platform for identity. Once the migration from AD to Duo has been completed, there will be a brief section covering licensing information so you can ensure that you are properly licensing your users. Next, you will configure Single Sign-On (SSO) with Duo using SAML and OpenID Connect (OIDC). During the process you will learn the configuration differences along with some of the advantages and disadvantages of SAML and OIDC. Finally, you will explore enabling built-in Multi-Factor Authentication for Webex.</p>
+<p>There are 6 sections in this module:</p>
+<p>i.  <a href="#sync-users-from-active-directory-to-duo">Sync Users from Active Directory to Duo</a></p>
+<p>ii. <a href="#sync-users-from-duo-to-webex">Sync Users from Duo to Webex</a></p>
+<p>iii. <a href="#webex-licensing-and-settings-templates">Webex Licensing and Settings Templates</a></p>
+<p>iv. <a href="#configuring-duo-to-use-active-directory-for-user-authentication">Configuring Duo To Use Active Directory for User Authentication</a></p>
+<p>v.  <a href="#single-sign-on-with-webex-and-duo-saml-and-oidc">Single Sign-On with Webex and Duo (SAML and OIDC)</a></p>
+<p>vi. <a href="#multiple-identity-providers-with-webex">Multiple Identity Providers with Webex</a></p>
+<p>vii. <a href="#enable-multi-factor-authentication-mfa-using-duo">Enable Multi-Factor Authentication (MFA) using Duo</a></p>
+<h2 id="sync-users-from-active-directory-to-duo">Sync Users from Active Directory to Duo</h2>
+<p>The <a href="https://duo.com/docs/authproxy-reference">Duo Authentication Proxy</a> is a tool that allows administrators to connect their on-premises identity infrastructure to Duo. In this section of the lab, you will use Duo Authentication Proxy to add the on-premises AD users to your Duo tenant. Integrating your on-premises directories with Duo reduces friction for users during authentication by providing a common identity for accessing both cloud and on-premises resources.</p>
+<p>At the end of this section, you will have synchronized on-premises AD users into Duo.</p>
+<ol>
+<li>
+<p>First, you need to access your Duo tenant so you can set up a connection between Duo Authentication Proxy and your AD server.</p>
+</li>
+<li>
+<p>Connect to the Active Directory server (<strong>ad1</strong>) via <strong>Remote Desktop</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image7.png" data-desc-position="top"><img alt="" src="../media/image7.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Open the <strong>DUO</strong> folder on desktop, then open the <strong>Duo-URL.txt</strong> document.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image8.png" data-desc-position="top"><img alt="" src="../media/image8.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Copy and paste the URL in this document into the browser.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image9.png" data-desc-position="top"><img alt="" src="../media/image9.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>This page will provide you with your Duo admin email address. Note that the password here is a suggestion -- not a requirement. Click <strong>Activate Account</strong> &gt; <strong>Get started</strong> to begin setting up your admin account.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image10.png" data-desc-position="top"><img alt="" src="../media/image10.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image11.png" data-desc-position="top"><img alt="" src="../media/image11.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>When prompted for a password, use <strong>dCloud12345!</strong></p>
+</li>
+<li>
+<p>Next, you need to add your second factor, so click <strong>Continue.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image12.png" data-desc-position="top"><img alt="" src="../media/image12.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>You will not be using a Passkey, so click <strong>Skip for now</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image13.png" data-desc-position="top"><img alt="" src="../media/image13.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scan the QR code with your mobile device or raise your hand for a proctor to scan with a lab device and then click Continue.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image14.png" data-desc-position="top"><img alt="" src="../media/image14.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Continue to Duo Admin Panel Login</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image15.png" data-desc-position="top"><img alt="" src="../media/image15.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Log in with cholland@cbXXX.dc-YY.com. If you do not see a password prompt, navigate to <a href="https://admin-demodemo.duosecurity.com"><strong>https://admin-demodemo.duosecurity.com</strong></a> to log in.</p>
+</li>
+<li>
+<p>After authenticating, navigate to <strong>Users</strong> &gt; <strong>Administrators</strong> &gt; <strong>Admin Login Settings</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image16.png" data-desc-position="top"><img alt="" src="../media/image16.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image17.png" data-desc-position="top"><img alt="" src="../media/image17.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Disable <strong>Always require a Verified Duo Push</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/module1_image1.png" data-desc-position="top"><img alt="" src="../media/module1_image1.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll down and set the <strong>Absolute Session Length</strong> to <strong>10 hours</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image18.png" data-desc-position="top"><img alt="" src="../media/image18.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Next, navigate to <strong>Users &gt; External Directories</strong>:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image19.png" data-desc-position="top"><img alt="" src="../media/image19.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Add External Directory &gt; Active Directory:</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image20.png" data-desc-position="top"><img alt="" src="../media/image20.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>Add new connection &gt; Continue</strong>:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image21.png" data-desc-position="top"><img alt="" src="../media/image21.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Minimize the browser and launch the <strong>Duo Authentication Proxy Manager</strong> from Desktop. Once the application is open, <strong>delete all text from the configuration</strong>, then can paste the text from the example below into your auth proxy:</p>
+<p></p><div class="admonition example">
+  <p class="admonition-title">Example</p>
+  <p><strong>[cloud]</strong><br>
+  <strong>ikey=</strong><br>
+  <strong>skey=</strong><br>
+  api_host=api-demodemo.duosecurity.com<br>
+  <strong>[ad_client]</strong><br>
+  host=ad1.dcloud.cisco.com<br>
+  service_account_username=administrator<br>
+  service_account_password=dCloud123!<br>
+  search_dn=DC=dcloud,DC=cisco,DC=com</p>
+  </div><p></p>
+<p></p><div class="admonition important">
+  <p class="admonition-title">Important</p>
+  <p>You will need to pull the <strong>ikey</strong> and <strong>skey</strong> from your Duo admin
+  portal:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image22.png" data-desc-position="top"><img alt="" src="../media/image22.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>The <strong>[cloud]</strong> section of the authproxy.cfg provides a means by
+  which the auth proxy can connect to your Duo tenant.</p>
+<p>The <strong>[ad_client]</strong> section provides credentials allowing the auth
+  proxy to search and authenticate users from AD.</p>
+<p>In this lab, we are not encrypting the password but in a production
+  environment, it is strongly recommended to do so. Information on how
+  to do that can be found here:</p>
+<p><a href="https://duo.com/docs/adsync#encrypting-passwords">https://duo.com/docs/adsync#encrypting-passwords</a>.</p>
+  </div><p></p>
+</li>
+<li>
+<p>Once you have filled in the config, click <strong>Validate</strong> in the <strong>Duo Authentication Proxy Manager</strong> and verify that there are no errors in the <strong>Output.</strong> If you see additional text in the config, you may not have cleared the text that is entered by default. Please repeat step 16 so that your configuration looks like the below screenshot.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image23.png" data-desc-position="top"><img alt="" src="../media/image23.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p></p><div class="admonition tip">
+  <p class="admonition-title">Tip</p>
+  <p>If you see any red or yellow text, verify that there is nothing missing in the configuration.</p>
+  </div><p></p>
+</li>
+<li>
+<p>Once your configuration validates successfully, click <strong>Save.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image24.png" data-desc-position="top"><img alt="" src="../media/image24.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Finally, click <strong>Start Service</strong>, wait a few seconds, and verify that the service starts successfully.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image25.png" data-desc-position="top"><img alt="" src="../media/image25.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image26.png" data-desc-position="top"><img alt="" src="../media/image26.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>With the Auth proxy configured and the service running on AD1, go back to the Duo Admin portal. If you were logged out, log back in with your admin account (cholland@cbXXX.dc-YY.com // dCloud12345!) and select <strong>Users</strong> &gt; <strong>External Directories</strong> &gt; <strong>AD Sync</strong> &gt; <strong>Edit connection</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image27.png" data-desc-position="top"><img alt="" src="../media/image27.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image28.png" data-desc-position="top"><img alt="" src="../media/image28.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Once you're on the <strong>AD Sync Connection</strong> page, click <strong>Test Connection</strong> (step 5).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image29.png" data-desc-position="top"><img alt="" src="../media/image29.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>The <strong>Status</strong> section should still reflect that the Auth Proxy is <strong>Not Connected</strong> but you should see a check next to <strong>Add Authentication Proxy</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image30.png" data-desc-position="top"><img alt="" src="../media/image30.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll down and fill out the <strong>Directory Configuration</strong> section with the following information:</p>
+<p></p><div class="admonition example">
+  <p class="admonition-title">Directory Configuration</p>
+  <p>Domain controller Hostname: <strong>ad1.dcloud.cisco.com</strong><br>
+  Port: <strong>389</strong><br>
+  Base DN: <strong>DC=dcloud,DC=cisco,DC=com</strong><br>
+  Authentication type: <strong>Integrated</strong><br>
+  Transport type: <strong>Clear</strong><br></p>
+  </div><p></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image31.png" data-desc-position="top"><img alt="" src="../media/image31.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Save</strong> and verify that the Status changes to <strong>Connected.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image32.png" data-desc-position="top"><img alt="" src="../media/image32.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Back to AD Sync</strong> at the top of the page and you will now see the <strong>AD Connection</strong> is <strong>Connected to Duo.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image33.png" data-desc-position="top"><img alt="" src="../media/image33.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Add the <strong>Lab Users</strong> group to the <strong>Groups</strong> field (scroll down to find the group, list is alphabetical).</p>
+</li>
+<li>
+<p>In the <strong>Synced Attributes</strong> section make a few changes:</p>
+<p>a.  Change <strong>Username</strong> to <strong>userprincipalname</strong><br>
+b.  Change Email Adress to <strong>userprincipalname</strong><br>
+c.  <strong>Add Attribute</strong> &gt; <strong>First Name</strong><br>
+d.  <strong>Add Attribute &gt; Last Name</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image34.png" data-desc-position="top"><img alt="" src="../media/image34.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Complete Setup</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image35.png" data-desc-position="top"><img alt="" src="../media/image35.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>The page will refresh, and you can now configure the sync schedule or select specific users that you want to sync. For now, click <strong>Enable high frequency syncing for this directory</strong> and click <strong>Sync Now.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image36.png" data-desc-position="top"><img alt="" src="../media/image36.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>You should see 31 users and 1 group synced. If not, investigate this
+  before proceeding.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image37.png" data-desc-position="top"><img alt="" src="../media/image37.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Navigate to <strong>Users</strong> &gt; <strong>Users</strong> and verify that you have 31 users listed and that their username and email address match:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image38.png" data-desc-position="top"><img alt="" src="../media/image38.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<p>At this point, all the demo users have been synced from the on-prem AD into Duo. Next, you will provision these users from Duo to Webex. Some of these users already exist on Webex as they were provisioned through some other process. Integrating Duo with Webex for provisioning will allow future changes for these existing users to be reflected on Webex. Also, any new users added to the <strong>Lab Users</strong> group will be automatically provisioned to Webex.</p>
+<h2 id="sync-users-from-duo-to-webex">Sync Users from Duo to Webex</h2>
+<p>To facilitate user provisioning to Webex, you will utilize the SCIM 2.0 API endpoints available in Webex. With other connectors, this required pulling an API token with the appropriate scopes. However, Duo has a connector that is much easier to configure.</p>
+<ol>
+<li>
+<p>On the Duo Admin portal, navigate to <strong>Applications</strong> &gt; <strong>Applications</strong></p>
+</li>
+<li>
+<p>Click <strong>Add application</strong> and then click <strong>+ Add</strong> for <strong>Cisco Webex (with Control Hub)</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image39.png" data-desc-position="top"><img alt="" src="../media/image39.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image40.png" data-desc-position="top"><img alt="" src="../media/image40.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>We will not be configuring Single Sign-On yet, so click the <strong>Provisioning</strong> tab. Select the <strong>Cloud Connection</strong> authentication mode, then select <strong>Add new connection &gt; Continue</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image41.png" data-desc-position="top"><img alt="" src="../media/image41.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>A new tab will open requiring you to log into Webex with your
+  administrator account. The URL used for this tab allows Duo to acquire
+  an OAuth access token with the necessary scopes for user provisioning
+  to Webex. A refresh token is also provided so that the integration
+  should never need reauthorization (unless it is paused for an extended
+  period).</p>
+</li>
+<li>
+<p>Authenticate with cholland@cbXXX.dc-YY.com // dCloudZZZZ!</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image42.png" data-desc-position="top"><img alt="" src="../media/image42.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>After authenticating, you will be advised of the scopes that Duo is requesting.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image43.png" data-desc-position="top"><img alt="" src="../media/image43.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Accept</strong> and you will be redirected back to Duo with an indication that the connection from Duo to Webex has been established:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image44.png" data-desc-position="top"><img alt="" src="../media/image44.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Notice that you can see the org name here (in case you have multiple
+  Webex applications in your Duo org. You are also given the name of the
+  administrator that authorized the connection.</p>
+<p>Finally, notice that there is a <strong>Reauthorize</strong> button. This would be
+  necessary if Duo's access and refresh tokens expire, which would only
+  happen if the integration were paused for an extended period. If this
+  occurs, clicking <strong>Reauthorize</strong> would walk you through the same flow
+  you just completed so Duo could acquire new tokens.</p>
+</li>
+<li>
+<p>The default configuration maps the Duo email address to the username in Webex. This is the only required field but not ideal. To add a few commonly used values, click the <strong>Edit Mappings</strong> button and select:</p>
+<p><strong>displayName</strong><br>
+  <strong>name.familyName</strong><br>
+  <strong>name.givenName</strong><br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image45.png" data-desc-position="top"><img alt="" src="../media/image45.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Save Mapping.</strong></p>
+</li>
+<li>
+<p>Next change the <strong>Email Address</strong> attribute to <strong>Username</strong> and notice that the default Duo mappings to the newly selected attributes is correct:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image46.png" data-desc-position="top"><img alt="" src="../media/image46.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Finally, to select the users you want to sync, scroll down to the <strong>Groups</strong> section and select the <strong>Lab Users</strong> group.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image47.png" data-desc-position="top"><img alt="" src="../media/image47.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>By default, Duo will sync the members of the <strong>Lab Users</strong> group and
+  create a Lab Users group on Webex. Any members of this group on Duo
+  will also be members of the newly created Webex group. This is great
+  for automating license and settings assignment on groups of users,
+  however, if you prefer not to sync group objects, you can tick the
+  <strong>Exclude group information</strong> box.</p>
+<p><strong>For this lab, leave the box unticked so the group object is included
+  in the sync.</strong></p>
+</li>
+<li>
+<p>Click <strong>Save and enable</strong> and wait about 5-10 seconds, then click the refresh button in the <strong>Recent logs</strong> section:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image48.png" data-desc-position="top"><img alt="" src="../media/image48.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Scroll down and you should see successful user and group provisioning.
+  If you see any errors here, they need to be corrected before
+  proceeding. A common failure point is leaving the Webex username
+  attribute set to <strong>Email Address</strong> in Duo. This attribute needs to be
+  adjusted so that you are syncing the user's Duo Username to Webex.</p>
+</li>
+<li>
+<p>Once you have validated that there are no provisioning errors, navigate to Control Hub (<a href="https://admin.webex.com">https://admin.webex.com</a>) and log in with your admin account cholland@cbXXX.dc-YY.com.</p>
+</li>
+<li>
+<p>Select <strong>Organization Settings</strong> and change <strong>Control Hub's idle timeout</strong> to <strong>No timeout</strong> then click <strong>Save</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image49.png" data-desc-position="top"><img alt="" src="../media/image49.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>Groups</strong> and you should see your <strong>Lab Users</strong> group in the <strong>Webex groups</strong> section.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image50.png" data-desc-position="top"><img alt="" src="../media/image50.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Create a group</strong> and name the group <strong>Messaging</strong> and click <strong>Next</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image51.png" data-desc-position="top"><img alt="" src="../media/image51.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Add manually</strong>, add the following users, then click <strong>Save</strong> &gt; <strong>Done</strong>:</p>
+<p>Anita Perez<br>
+  Charles Holland<br>
+  Eric Steele<br>
+  Kellie Melby<br>
+  Ricardo Filice<br>
+  Taylor Bard<br></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image52.png" data-desc-position="top"><img alt="" src="../media/image52.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>The <strong>Members</strong> tab for the group should reflect the 6 new members.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image53.png" data-desc-position="top"><img alt="" src="../media/image53.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<p>You have now configured user/group provisioning from Duo to Webex. Any new users added to the Lab Users group on AD would be automatically provisioned to Webex.</p>
+<h2 id="webex-licensing-and-settings-templates">Webex Licensing and Settings Templates</h2>
+<p>Now that you're synchronizing users and groups into Webex, you can use these groups to manage <a href="https://help.webex.com/en-us/article/n3ijtao/Set-up-automatic-license-assignments-in-Control-Hub">licensing</a> and <a href="https://help.webex.com/en-us/article/n5uf91x/Configure-settings-templates">settings</a> for your users. Automated license and settings template assignment can be done on a group no matter how it was created (synchronized, locally created in Control Hub, or created via the <a href="https://developer.webex.com/docs/api/v1/groups">Groups API</a> or the <a href="https://developer.webex.com/admin/docs/api/v1/scim-2-groups/create-a-group">SCIM 2.0 Groups API endpoint</a>). This automation can be configured before syncing users into Webex, but the more common scenario is an organization where the users are already synced, and the licensing or settings configuration needs to be modified
+-- that's what you will do in this section.</p>
+<p>Webex uses a combination of Organization-based licensing and Group-based licensing:</p>
+<p><strong>Organization-based licensing →</strong> All users that are synchronized
+   into the organization will be granted these licenses. Typically, this
+   is used to grant all users access to basic features like basic
+   messaging and meetings.</p>
+<p><strong>Group-based licensing →</strong> Each group can be assigned specific
+   licenses and users who are members of those groups will receive those
+   licenses automatically. Users can be members of multiple groups so
+   each premium feature can be tied to a different group for granular
+   control over license distribution.</p>
+<p>When these two features are combined with disabling license preservation, the following will occur:</p>
+<ul>
+<li>
+<p>All users synced to the org will have access to basic features.</p>
+</li>
+<li>
+<p>As users are added to specific groups, they can be assigned licenses
+  for premium features.</p>
+</li>
+<li>
+<p>If the user is subsequently removed from a group, any license granted
+  by being a member of that group will be removed.</p>
+</li>
+</ul>
+<p>This is an effective way to automate license management while ensuring that oversubscription does not occur. While this is very powerful, this is not a universal solution. In some scenarios, a subset of users in a specific directory group(s) will need different licenses than other users in those group(s). In these scenarios, license management can be handled by using local Webex groups either manually via Control Hub or programmatically via API.</p>
+<ol>
+<li>
+<p>Click <strong>Users</strong> &gt; <strong>Licenses</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Set up</strong> under the <strong>Organization-based licenses</strong> section.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image54.png" data-desc-position="top"><img alt="" src="../media/image54.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>In the Messaging section, you should find that <strong>Basic Messaging</strong> is already assigned. If it is not, tick the box to select it:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image55.png" data-desc-position="top"><img alt="" src="../media/image55.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>Calling</strong> and ensure that <strong>Call on Webex (1:1 call, non-PSTN)</strong> is ticked.</p>
+</li>
+<li>
+<p>To ensure that these licenses are assigned to all your users, tick the <strong>Existing users</strong> box and untick <strong>Preserve licenses for existing users</strong>. This will ensure that users are only granted licenses for the basic features unless they are granted premium licenses by being a member of specific groups.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image56.png" data-desc-position="top"><img alt="" src="../media/image56.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Take some time to read the prompt so that you understand how disabling <strong>Preserve licenses for existing users</strong> works. When you are ready, tick the box and click <strong>Ok</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image57.png" data-desc-position="top"><img alt="" src="../media/image57.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Save</strong>. At this point in the lab, users only have access to <strong>basic messaging, basic meetings,</strong> and <strong>Call on Webex</strong>. You can verify this by going to the <strong>Users</strong> page and selecting any user, you should see the following:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image58.png" data-desc-position="top"><img alt="" src="../media/image58.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p></p><div class="admonition tip">
+  <p class="admonition-title">Tip</p>
+  <p>It may take a minute to apply to all users so wait a minute and refresh the page if you still see additional licenses. Moving forward, you will assign premium features to users in specific groups.</p>
+  </div><p></p>
+</li>
+<li>
+<p>Navigate to <strong>Users &gt; Licenses</strong> and click <strong>Manage</strong> in the <strong>Group-based licenses</strong> section.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image59.png" data-desc-position="top"><img alt="" src="../media/image59.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select the <strong>Messaging</strong> group in the <strong>Webex groups</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Assignments &gt; Set up</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image60.png" data-desc-position="top"><img alt="" src="../media/image60.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>You may be unable to click the <strong>Set up</strong> button if licenses are still being adjusted from your previous change. If you see this message, you can just wait until the <strong>Background tasks running...</strong> banner disappears and then refresh the page.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image61.png" data-desc-position="top"><img alt="" src="../media/image61.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Next, you will configure all licenses that should be assigned to members of this group.</p>
+<p>a.  Tick <strong>Advanced Messaging</strong> in the <strong>Messaging</strong> section.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image62.png" data-desc-position="top"><img alt="" src="../media/image62.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>b.  Select <strong>Calling</strong> and untick <strong>Call on Webex</strong>.</p>
+<p>c.  Ensure <strong>Existing users</strong> and <strong>Preserve licenses for existing
+    users</strong> are both ticked, then click Save at the bottom of the page.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image63.png" data-desc-position="top"><img alt="" src="../media/image63.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>You'll automatically return to <strong>Messaging &gt; Assignments</strong> where you can see your license template assigned to the group.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image64.png" data-desc-position="top"><img alt="" src="../media/image64.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Groups</strong> in the side panel and click <strong>Create a group</strong>.</p>
+</li>
+<li>
+<p>Enter <strong>Meetings</strong> as the group name and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add manually</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image65.png" data-desc-position="top"><img alt="" src="../media/image65.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Type cholland and select cholland@cbXXX.dc-YY.com. Type aperez and select aperez@cbXXX.dc-YY.com:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image66.png" data-desc-position="top"><img alt="" src="../media/image66.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Assign group resources</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Set up</strong> in the <strong>Licenses</strong> section.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image67.png" data-desc-position="top"><img alt="" src="../media/image67.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Here you will configure all licenses that should be assigned to members of this group.</p>
+<p>a.  Disable all <strong>Messaging</strong> and <strong>Calling</strong> licenses and select
+    <strong>Webex Meetings Suite</strong> in the <strong>Meeting</strong> section.</p>
+<p>b.  Tick <strong>Existing users</strong> to ensure that these licenses are
+    applied to the two existing members of this group, not just
+    newly added members. Untick <strong>Preserve licenses for existing
+    users</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image68.png" data-desc-position="top"><img alt="" src="../media/image68.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>You'll automatically return to the <strong>Meetings &gt; Assignments</strong> where you can see your licenses template assigned to the group.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image69.png" data-desc-position="top"><img alt="" src="../media/image69.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>To verify that your licenses were successfully applied to Charles Holland and Anita Perez (due to their group membership), click the <strong>Members</strong> tab and click on cholland@cbXXX.dc-YY.com or aperez@cbXXX.dc-YY.com. On the <strong>Summary</strong> tab, you should see <strong>Advanced Messaging</strong> and the <strong>Meetings Suite</strong> licenses applied due to their membership in the Messaging and Meetings groups. You will also see licensing for the basic Webex features due to the <strong>Organization licensing</strong> configuration.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image70.png" data-desc-position="top"><img alt="" src="../media/image70.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Lastly, go back to the <strong>Users &gt; Licenses</strong> page and toggle the <strong>Preserve licenses for users joining another group</strong> option off. Disabling this option forces Webex to check a user's group membership(s) any time they are added to or removed from any group. Any licenses they should be granted (or no longer have access to) will be adjusted accordingly.</p>
+</li>
+<li>
+<p>Click <strong>Remove license preservation</strong> to continue.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image71.png" data-desc-position="top"><img alt="" src="../media/image71.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p></p><div class="admonition important">
+  <p class="admonition-title">Important</p>
+  <p>Any license(s) manually applied to a user independent of a group membership change (such as via API or Control Hub) would also be removed when a user's group membership changes.</p>
+  </div><p></p>
+</li>
+</ol>
+<p>Here are some of the key takeaways regarding Webex licensing:</p>
+<ul>
+<li>
+<p>Webex uses a combination of Organization-based licensing and
+  Group-based licensing depending on the organization's configuration.</p>
+</li>
+<li>
+<p>If <strong>Preserve licenses for users joining another group</strong> is enabled,
+  removing a user from a group will not remove the licenses they
+  received when joining that group, so it <strong>will not</strong> help prevent
+  oversubscription.</p>
+</li>
+<li>
+<p>Service licenses are assigned to users regardless of their status. For
+  example, an inactive user still consumes a license. You should remove
+  licenses from any user if they don\'t need the services anymore.</p>
+</li>
+<li>
+<p>More information about license management in Control Hub can be found
+  <a href="https://help.webex.com/en-us/article/n3ijtao/Set-up-automatic-license-assignments-in-Control-Hub#Cisco_Concept.dita_cd9293ee-1611-44f3-85c1-94fc2f08acbc">here</a>.</p>
+</li>
+</ul>
+<p>Next, you will explore settings templates.</p>
+<ol>
+<li>
+<p>Navigate to <strong>Services &gt; Messaging &gt; Templates &gt; Create template</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image72.png" data-desc-position="top"><img alt="" src="../media/image72.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>Use a predefined template &gt; Teachers &gt; Next</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image73.png" data-desc-position="top"><img alt="" src="../media/image73.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>No changes need to be made so set the template name to <strong>No Restrictions</strong> and click <strong>Create template and next</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image74.png" data-desc-position="top"><img alt="" src="../media/image74.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click the search box and enter <strong>Messaging</strong>, then select the <strong>Messaging</strong> group, and click <strong>Done</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image75.png" data-desc-position="top"><img alt="" src="../media/image75.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>You will be taken back to the <strong>Messaging &gt; Templates</strong> page for <strong>Messaging</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create template</strong> &gt; <strong>Use a predefined template &gt; Students &gt; Next</strong>.</p>
+</li>
+<li>
+<p>Leave the template name as <strong>Students</strong>, disable all of the toggles, and click <strong>Create template and next.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image76.png" data-desc-position="top"><img alt="" src="../media/image76.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Search for and select the <strong>Meetings</strong> group, then click <strong>Done.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image77.png" data-desc-position="top"><img alt="" src="../media/image77.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>You will be taken back to the settings template page for <strong>Messaging.</strong> Notice that there are now two templates and the rank for these templates can be modified by clicking <strong>Rank</strong>.</p>
+<p>Settings templates allow you to configure settings for a large group of users very quickly. These templates allow application of pre-defined settings to users and they can must be given a rank.</p>
+<p>If a user is a member of two groups and both groups have different settings templates for the same product (Messaging, Meetings, or Calling), then the template with the higher rank is applied to the user. For reference, the highest rank is <strong>1</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image78.png" data-desc-position="top"><img alt="" src="../media/image78.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>Groups &gt; Messaging &gt; Assignments</strong> and notice that the <strong>No Restrictions</strong> settings template has been applied to the group.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image79.png" data-desc-position="top"><img alt="" src="../media/image79.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>Users &gt; Charles Holland</strong> and notice that he is a member of three groups -- two of which have a messaging settings template applied.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image80.png" data-desc-position="top"><img alt="" src="../media/image80.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click the <strong>Messaging</strong> tab and notice that Charles' messaging settings are coming from the <strong>No Restrictions</strong> template with all toggles enabled. Because the <strong>No Restrictions</strong> template has a higher rank than the <strong>Students</strong> template, it was applied to Charles Holland.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image81.png" data-desc-position="top"><img alt="" src="../media/image81.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a>
+<br> Using groups to automatically apply settings and licenses to users when they are provisioned is a powerful feature that greatly reduces administrative overhead in large environments.</p>
+</li>
+</ol>
+<h2 id="configuring-duo-to-use-active-directory-for-user-authentication">Configuring Duo to Use Active Directory for User Authentication</h2>
+<p>To summarize your progress thus far:</p>
+<ul>
+<li>
+<p>You've synced your on-prem AD users and groups to Duo.</p>
+</li>
+<li>
+<p>Any changes made to these users and groups on AD will sync to Duo.</p>
+</li>
+<li>
+<p>The Duo catalog application is provisioning the selected users and
+  groups to Webex via SCIM 2.</p>
+</li>
+<li>
+<p>You've learned the basics of license and settings templates to help
+  minimize administrative overhead after provisioning users.</p>
+</li>
+</ul>
+<p>As Duo is configured right now, it will attempt to authenticate users
+locally. This will not work as none of the users have credentials in Duo. To work around this, you will configure Duo to authenticate users via the <strong>Duo Authentication Proxy</strong>. This allows AD to be leveraged for authentication so all users can log in with their existing credentials.</p>
+<ol>
+<li>
+<p>Open your tab to the Duo admin portal or navigate to
+    <a href="https://admin-demodemo.duosecurity.com">https://admin-demodemo.duosecurity.com</a> and log in with your admin
+    account, cholland@cbXXX.dc-YY.com</p>
+</li>
+<li>
+<p>Click <strong>Applications &gt; SSO Settings</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image82.png" data-desc-position="top"><img alt="" src="../media/image82.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>External Authentication Sources</strong> &gt; <strong>Add Source</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image83.png" data-desc-position="top"><img alt="" src="../media/image83.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Add Active Directory</strong>, tick the box regarding the privacy statement, then click <strong>Configure Active Directory.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image84.png" data-desc-position="top"><img alt="" src="../media/image84.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Add Authentication Proxy</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image85.png" data-desc-position="top"><img alt="" src="../media/image85.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll down and ensure that you have Windows selected and copy the [<strong>sso]</strong> section in <strong>Step 1.2</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image86.png" data-desc-position="top"><img alt="" src="../media/image86.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Step 1.1 in Duo provides the location of the authproxy.cfg file where this section needs to be added, however, the <strong>Duo Authentication Proxy Manager</strong> should still be running and in your taskbar so open the window and paste the <strong>[sso]</strong> section at the end of your config.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image87.png" data-desc-position="top"><img alt="" src="../media/image87.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Once you have added this section to your config, click the Windows button, enter <strong>cmd</strong> and launch <strong>Command Prompt.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image88.png" data-desc-position="top"><img alt="" src="../media/image88.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Back in the Duo admin portal, copy the text in <strong>step 2.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image89.png" data-desc-position="top"><img alt="" src="../media/image89.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Paste this text into the command prompt and ensure that the proxy service is restarted successfully.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image90.png" data-desc-position="top"><img alt="" src="../media/image90.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Your auth proxy is now connected to the cloud. Open the <strong>Duo Authentication Proxy Manager</strong> window.</p>
+</li>
+<li>
+<p>Click <strong>Validate</strong>, ensure there are no errors, and then click <strong>Save</strong>.</p>
+<p></p><div class="admonition important">
+  <p class="admonition-title">Important</p>
+  <p>Note: If you attempt to do the Validate/Save before running the
+  command above, you will see this error:
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image91.png" data-desc-position="top"><img alt="" src="../media/image91.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+  </div><p></p>
+</li>
+<li>
+<p>Finally, as the program instructs -- click <strong>Restart Service</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image92.png" data-desc-position="top"><img alt="" src="../media/image92.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Back in the Duo Admin panel, click the <strong>Run test</strong> button and verify that the status changes to <strong>Connected to Duo</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image93.png" data-desc-position="top"><img alt="" src="../media/image93.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll back to the top of this page and click <strong>Active Directory Configuration</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image94.png" data-desc-position="top"><img alt="" src="../media/image94.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll down and update the <strong>Active Directory server configuration</strong> section:</p>
+<blockquote>
+<p>Domain controller(s): <strong>ad1.dcloud.cisco.com</strong><br>
+Port: <strong>389</strong><br>
+Base DNs: <strong>DC=dcloud,DC=cisco,DC=com</strong><br>
+Authentication type: <strong>Integrated</strong><br>
+Transport Type: <strong>Clear - unencrypted</strong></p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image95.png" data-desc-position="top"><img alt="" src="../media/image95.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Set the <strong>Email</strong> and <strong>Duo username attribute</strong> to <strong>userprincipalname</strong> and set <strong>Username normalization</strong> to <strong>None</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image96.png" data-desc-position="top"><img alt="" src="../media/image96.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll down and click Save and enable.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image97.png" data-desc-position="top"><img alt="" src="../media/image97.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>After saving, you will be taken back to the <strong>External Authentication Sources</strong> tab where the Active Directory source you just configured will be <strong>Enabled</strong>. You will also see a notification that you must configure a permitted domain to allow for authentication via AD.</p>
+<p></p><div class="admonition tip">
+  <p class="admonition-title">Tip</p>
+  <p>To provide some clarity on the current state of the environment -- previously you configured the Duo Authentication Proxy to sync users from the on-prem AD server to Duo. You have now configured the proxy to receive authentication requests from Duo when users attempt to log in, validate their credentials with AD, and send the result back to Duo.</p>
+<p>At this stage, Duo will not leverage the proxy for authentication because it authenticates users locally, by default. Before you can use the proxy, you must verify your dCloud domain in Duo so that you can route authentication to the proxy.</p>
+  </div><p></p>
+</li>
+<li>
+<p>To proceed, click <strong>Add permitted domains.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image97.png" data-desc-position="top"><img alt="" src="../media/image97.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll down and click <strong>Add email domain</strong> in the <strong>Permitted Domains</strong> section.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image98.png" data-desc-position="top"><img alt="" src="../media/image98.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Enter your pod domain on this page (cbXXX.dc-YY.com) and click <strong>Add</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image99.png" data-desc-position="top"><img alt="" src="../media/image99.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>After adding the domain, note the <strong>Status</strong> column. If the status is <strong>Verified</strong>, skip to step 28. If the status is <strong>Unverified</strong>, you will need to verify it manually, so click <strong>Copy</strong> next to the verification code.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image100.png" data-desc-position="top"><img alt="" src="../media/image100.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Next, open the home page in your browser and select <strong>Identity and Misc. Links</strong> &gt; <strong>DNS Verification</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image101.png" data-desc-position="top"><img alt="" src="../media/image101.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Load session.xml</strong> and navigate to <strong>C:\dcloud</strong> to find the <strong>session.xml</strong> file, then click <strong>Open</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image102.png" data-desc-position="top"><img alt="" src="../media/image102.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Notice that the boxes will be filled in from the XML file. Paste the verification code copied in previous step into the Value field Click <strong>Submit</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image103.png" data-desc-position="top"><img alt="" src="../media/image103.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Back on the Duo Admin panel, click <strong>Verify.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image104.png" data-desc-position="top"><img alt="" src="../media/image104.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>If you receive an <strong>Unable to verify</strong> error, the TXT record is not present on the DNS server yet -- wait another minute and try again.</p>
+<p>Do not proceed until the domain is <strong>Verified</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image105.png" data-desc-position="top"><img alt="" src="../media/image105.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>After verifying the domain, scroll up and click the <strong>Routing Rules</strong> tab and change the Default rule to the <strong>Active Directory</strong> authentication source then click <strong>Save</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image106.png" data-desc-position="top"><img alt="" src="../media/image106.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<p>Now, any user that Duo attempts to log in to an application protected by Duo will be authenticated in the background by Active Directory via the authentication proxy. Administrators can configure SSO routing rules in Duo to authenticate users via different sources based on specific criteria:</p>
+<ul>
+<li>
+<p>Duo application being accessed</p>
+</li>
+<li>
+<p>Domain of user's email address</p>
+</li>
+<li>
+<p>User's network (individual address, address range, or CIDR block)</p>
+</li>
+</ul>
+<p>Routing rules are not needed for this lab.</p>
+<h2 id="single-sign-on-with-webex-and-duo-saml-and-oidc">Single Sign-On with Webex and Duo (SAML and OIDC)</h2>
+<p>The next section walks you through enabling SSO and explains some of the differences between SAML and OpenID Connect. Duo supports both SAML and OIDC, so that will allow you to configure two separate IdPs on Webex using the same Duo tenant. Webex supports the use of multiple IdPs which allows you to route users to a specific identity provider based on the domain of their email address or their group membership in Webex. You will configure two separate applications in Duo (one SAML, and one OIDC) both authenticating users for the same Webex org to simulate two different identity providers.</p>
+<p><strong>The next section will require multiple logins to test various aspects of SSO on Webex. If you receive an error at any point during your testing, try using a new browser or closing ALL private/incognito windows to ensure you're using a fresh session with no cached logins.</strong></p>
+<h3 id="duo-sso-setup-saml">Duo SSO Setup (SAML)</h3>
+<p>In this section, you will learn how to configure SSO for Webex using Duo as the Identity Provider (IdP). This integration will utilize SAML.</p>
+<p>At this point in the lab guide, you have configured the <strong>Duo Authentication Proxy</strong> to synchronize users from AD to Duo and to authenticate user credentials for Duo. Now you can proceed with configuring SSO on Webex.</p>
+<ol>
+<li>
+<p>Log in to Control Hub (<a href="https://admin.webex.com">https://admin.webex.com</a>) using cholland@cbXXX.dc-YY.com</p>
+</li>
+<li>
+<p>Navigate to <strong>Security &amp; Privacy</strong> and select the <strong>Authentication</strong> tab then click <strong>Activate SSO</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image107.png" data-desc-position="top"><img alt="" src="../media/image107.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>SAML</strong> and click <strong>Next</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image108.png" data-desc-position="top"><img alt="" src="../media/image108.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select the <strong>Self-signed by Cisco</strong> certificate option and click <strong>Download metadata</strong> and click <strong>Next</strong>.</p>
+<p>a.  Leave this tab open on <strong>Step 3: Configure IdP metadata</strong> -- you
+    will come back to this page after performing some changes in
+    Duo.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image109.png" data-desc-position="top"><img alt="" src="../media/image109.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Next, open your Duo Admin panel tab or navigate to
+    <a href="https://admin-demodemo.duosecurity.com">https://admin-demodemo.duosecurity.com</a> and log in with your admin
+    account, cholland@cbXXX.dc-YY.com</p>
+</li>
+<li>
+<p>Navigate to <strong>Applications &gt; Applications</strong> and select <strong>Cisco Webex (with Control Hub) - Single Sign-On</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image110.png" data-desc-position="top"><img alt="" src="../media/image110.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>On the <strong>Single Sign-On</strong> tab:</p>
+<p>a.  Rename the application <strong>Cisco Webex (with Control Hub) --
+    SAML+SCIM</strong>.</p>
+<p>b.  In the <strong>User access</strong> section, select <strong>Enable for all users.</strong></p>
+<p>c.  Click <strong>Download XML</strong> to get a copy of the Duo metadata.</p>
+<p>d.  In the Service Provider section, click browse and select the
+    <strong>idb-meta-...-SP.xml</strong> file that you downloaded from Webex in
+    step 4.</p>
+<p>e.  Tick the <strong>Custom Attribute</strong> box and enter <strong>userprincipalname
+    to ensure the correct value is returned from AD to Duo.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image111.png" data-desc-position="top"><img alt="" src="../media/image111.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Scroll to the bottom of the page and click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>After you save the changes, scroll down and select <strong>Edit Global Policy</strong>.</p>
+</li>
+<li>
+<p>Click **Dismiss if you receive the popup regarding the new policy editor.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/m1-policyeditor.png" data-desc-position="top"><img alt="" src="../media/m1-policyeditor.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Authenication policy</strong> and select <strong>Skip MFA</strong> then click <strong>Save</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/m1-skipmfa.png" data-desc-position="top"><img alt="" src="../media/m1-skipmfa.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Go back to your Control Hub tab and on <strong>Step 3: Configure IdP metadata</strong>:</p>
+<p>a.  Select <strong>Upload your IdP's metadata</strong></p>
+<p>b.  Select <strong>Less secure</strong></p>
+<p>c.  Click <strong>Browse</strong> and select the metadata file you downloaded
+    from Duo.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image114.png" data-desc-position="top"><img alt="" src="../media/image114.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+<p></p><div class="admonition tip">
+  <p class="admonition-title">Tip</p>
+  <p>Note that you have the option to enable Just-In-Time (JIT) provisioning at this point to allow Webex to create users if they have a valid assertion from your IdP, but they do not exist in Webex. You will not be configuring Just-In-Time user provisioning in this lab but feel free to click <strong>Show optional attributes</strong> to see which attributes are available, then click <strong>Next.</strong></p>
+  </div><p></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image115.png" data-desc-position="top"><img alt="" src="../media/image115.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Copy URL to clipboard</strong> and open a new incognito tab in Chrome (Ctrl+Shift+N) or Firefox (Ctrl+Shift+P).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image116.png" data-desc-position="top"><img alt="" src="../media/image116.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Paste the URL in the private window and you will be prompted to sign in to Duo. You can use cholland@cbXXX.dc-YY.com.</p>
+</li>
+<li>
+<p>When prompted for the password, you will need to use the password stored in AD (<strong>dCloud123!</strong>).</p>
+</li>
+<li>
+<p>You should see a <strong>Single Sign-on succeeded</strong> message.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image117.png" data-desc-position="top"><img alt="" src="../media/image117.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>At this point, you can close the private window and go back to SSO test page. Click <strong>Next</strong> and select <strong>Successful test</strong>, then click <strong>Activate.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image118.png" data-desc-position="top"><img alt="" src="../media/image118.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<p>You now have a working SSO configuration with Duo using SAML. The next step is creating a second SSO integration with Duo that uses OpenID Connect so that you can see the configuration differences.</p>
+<h3 id="duo-sso-setup-oidc">Duo SSO Setup (OIDC)</h3>
+<p>OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the advantages of OIDC compared to SAML is that certificates are no longer needed to establish a trust relationship between the client and IdP. OIDC utilizes a client ID and client secret generated during setup to establish trust between the two entities. This translates into less administrative overhead from an initial configuration perspective (no metadata file exchange) along with lower risk of user impact (such as logins failing because the SP or IdP certificate was renewed or expired, and metadata was not properly re-exchanged).</p>
+<ol>
+<li>
+<p>Start by navigating to <a href="https://admin-demodemo.duosecurity.com">https://admin-demodemo.duosecurity.com</a>.</p>
+</li>
+<li>
+<p>Navigate to <strong>Applications &gt; Application Catalog</strong> and search for Generic OIDC Relying Party then click <strong>Add</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image119.png" data-desc-position="top"><img alt="" src="../media/image119.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Update the configuration:</p>
+<blockquote>
+<p>Name: <strong>Webex OIDC</strong><br>
+User Access: <strong>Enable for all users</strong><br>
+Allow PKCE only authentication: <strong>Enabled</strong><br>
+Refresh Tokens: <strong>Enabled</strong><br>
+Sign-In Redirect URLs: <strong>https://idbroker-b-us.webex.com/idb/Consumer/oidc/sp</strong><br>
+Scopes: Enable <strong>profile</strong> and <strong>email</strong></p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image120.png" data-desc-position="top"><img alt="" src="../media/image120.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image121.png" data-desc-position="top"><img alt="" src="../media/image121.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image122.png" data-desc-position="top"><img alt="" src="../media/image122.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Since you have already modified the global policy to disable the 2FA requirement, scroll to the bottom of the page and click <strong>Save.</strong></p>
+</li>
+<li>
+<p>Leave this tab open and switch to your <a href="https://admin.webex.com">https://admin.webex.com</a> tab and log back in if needed.</p>
+</li>
+<li>
+<p>Navigate to <strong>Security</strong> &gt; <strong>Authentication</strong> &gt; <strong>Add an IdP.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image123.png" data-desc-position="top"><img alt="" src="../media/image123.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Select <strong>OpenID Connect</strong> and click <strong>Next</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image124.png" data-desc-position="top"><img alt="" src="../media/image124.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>You will need to fill in a few required boxes:</p>
+<p>a.  <strong>Name</strong> → Duo_OIDC</p>
+<p>b.  <strong>Client ID and Client Secret</strong> → You can find these in the <strong>Metadata</strong> section in Duo - Click the <strong>Copy</strong> buttons and paste this information into Webex.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image125.png" data-desc-position="top"><img alt="" src="../media/image125.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>When pasting the Client ID and secret into Webex, notice that the Webex redirect URL is provided here. This is the same for all Webex orgs and matches what you pasted into Duo in step 3.</p>
+<p>c.  <strong>Scopes</strong></p>
+<ul>
+<li>
+<p>This lets you define what optional information the Relying party can request. The <strong>email</strong> scope is required since that's how users are identified in Webex and <strong>openid</strong> is required because it indicates that Webex will request an OIDC ID token.</p>
+</li>
+<li>
+<p>Disable <strong>address</strong>, <strong>phone</strong>, and <strong>profile</strong> as you do not need them for this lab.</p>
+</li>
+</ul>
+<p>d.  <strong>Allow Proof Key for Code Exchange (PKCE) Configuration</strong></p>
+<ul>
+<li>Toggle this on to improve the security of your authentication process. More detail will be provided about how PKCE works and its purpose after you've finished configuring the OIDC IdP.</li>
+</ul>
+<p>e.  <strong>Discovery URL</strong></p>
+<ul>
+<li>
+<p>This allows the relying party to request the capabilities and endpoint URLs from the OpenID Provider (IdP).</p>
+</li>
+<li>
+<p>This will be specific to your Duo tenant and can be found on your Webex OIDC application page in Duo. Copy and paste this value into Webex.</p>
+</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image126.png" data-desc-position="top"><img alt="" src="../media/image126.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Verify that you have filled in all the information before proceeding:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image127.png" data-desc-position="top"><img alt="" src="../media/image127.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Notice that you can enable JIT provisioning/update with OpenID Connect as you could with SAML. You will not be using it in this lab, but it is an option for your production environment.</p>
+</li>
+<li>
+<p>Once you have provided the required information, click <strong>Next</strong>. You need to perform another SSO test to verify that your configuration is correct. Click Copy URL to clipboard and open a new incognito tab in Chrome (Ctrl+Shift+N) or Firefox (Ctrl+Shift+P).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image128.png" data-desc-position="top"><img alt="" src="../media/image128.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Paste the URL in the private window and you will be prompted to sign in to Duo. You can use cholland@cbXXX.dc-YY.com.</p>
+</li>
+<li>
+<p>Once you see <strong>Single Sign-on succeeded</strong>, you can close the incognito tab and click <strong>Next.</strong></p>
+<p>a.  If you receive <strong>Single Sign On Failed</strong> when performing your
+    SSO test, a configuration error has occurred. A common issue is
+    pasting a URL, client ID, or client secret with a space appended
+    to the end. Be sure to check all your values to make sure there
+    is no trailing space.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image129.png" data-desc-position="top"><img alt="" src="../media/image129.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Since this is your second IdP, you will be prompted to configure a routing rule. This allows Webex to have criteria that dictate to which IdP a user will be routed during authentication.</p>
+</li>
+<li>
+<p>On the <strong>Set up a routing rule</strong> page, enter a rule name of <strong>GroupRule</strong>, select a routing type of <strong>groups</strong>, and search for and select the <strong>Meetings</strong> group, then click <strong>Add</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image130.png" data-desc-position="top"><img alt="" src="../media/image130.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p></p><div class="admonition tip">
+  <p class="admonition-title">Tip</p>
+  <p>You have the option of allowing MFA in Webex for any user authenticating through this IdP. This can be a great option to increase security for Webex logins without needing to make changes on the IdP. For now, leave the option on <strong>Keep the current MFA status</strong> which will use the global config in <strong>Organization Settings.</strong></p>
+  </div><p></p>
+</li>
+<li>
+<p>Back on the <strong>Single sign-on &amp; multiple identity providers</strong> page, you'll see your SAML IdP and your new OIDC IdP. In this lab, both are using the same Duo tenant, however, that is just for demonstration purposes. You can have different Duo tenants, or completely different identity platforms configured for SSO.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image131.png" data-desc-position="top"><img alt="" src="../media/image131.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p></p><div class="admonition important">
+  <p class="admonition-title">Important</p>
+  <p>If at any point you become locked out of your org, you can access <a href="https://admin.webex.com/manage-sso">https://admin.webex.com/manage-sso</a> using cholland@cbXXX.dc-YY.com to disable SSO. You will need to open Outlook on WKST1 to retrieve a code that will be emailed to cholland.</p>
+  </div><p></p>
+</li>
+</ol>
+<h3 id="openid-connect-proof-key-for-code-exchange-pkce">OpenID Connect -- Proof Key for Code Exchange (PKCE)</h3>
+<p>When enabling SSO with OIDC, you enabled the option to allow PKCE:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image132.png" data-desc-position="top"><img alt="" src="../media/image132.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Unlike SAML, OIDC has different login flows which make it very flexible and suitable for many deployment types. The most common OAuth flows are listed below, in order of least secure to most secure:</p>
+<ol>
+<li>
+<p>Implicit Flow (deprecated in OAuth 2.1 -- included here for awareness)</p>
+</li>
+<li>
+<p>Device Authorization Flow</p>
+</li>
+<li>
+<p>Authorization Code Flow</p>
+</li>
+<li>
+<p>Authorization Code Flow with PKCE</p>
+</li>
+</ol>
+<p>By default, the Webex application uses Authorization Code Flow when authenticating users. In this model, the user never directly sees access or refresh tokens. Instead, the Identity Provider (IdP) issues a short-lived authorization code, which the Webex application forwards to the Webex cloud. Webex then exchanges that code for access, refresh, and ID tokens over a secure backchannel using its client credentials. This ensures that tokens are never exposed in the browser or during redirects, reducing the risk of interception.</p>
+<p><strong>Authorization Code Flow with PKCE</strong> is an enhancement designed for public clients like the Webex desktop and mobile apps, which cannot safely store a client secret. Instead of a static secret, the app generates a one-time <strong>code verifier</strong> and sends a hashed version of it (the <strong>code challenge</strong>) during the initial request. When redeeming the authorization code, the app must present the original verifier. If an attacker were to intercept the authorization code, they would not be able to exchange it for tokens without also having the verifier.</p>
+<p>This is why PKCE is recommended for any deployment where the client is not a secure backend server that can be trusted to store sensitive secrets --- such as the Webex application. Refer to the diagram below for a visualization of the login process when PKCE is enabled.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image133.png" data-desc-position="top"><img alt="" src="../media/image133.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>For more technical information, refer to the RFC for Auth Code Flow w/ PKCE: <a href="https://datatracker.ietf.org/doc/html/rfc7636">https://datatracker.ietf.org/doc/html/rfc7636</a></p>
+<h2 id="multiple-identity-providers-with-webex">Multiple Identity Providers with Webex</h2>
+<p>Multiple IdPs is a powerful tool that allows administrators to route users to a different IdP depending on either their group or their
+domain. This feature also allows you to use Webex Common Identity (CI) as an IdP which means users will use local Webex authentication rather than being routed to a third-party IdP. Some common use-cases for this feature include:</p>
+<ul>
+<li>
+<p>Mergers and acquisitions</p>
+</li>
+<li>
+<p>Education or government institutions</p>
+</li>
+<li>
+<p>Partners using Webex as a consumer service</p>
+</li>
+<li>
+<p>Global enterprises with separate IT organizations</p>
+</li>
+</ul>
+<p>While powerful, this feature should only be used as a last resort. A rogue administrator could configure Webex to route users to an IdP that may not be monitored by an organization's security admins. If this IdP looked identical to the one with which users were accustomed to authenticating, users may not be aware that they are giving their credentials to a bad actor. In a different scenario, an IdP could be configured with a less strict password policy than is required by the security team.</p>
+<p>Due to the inherent risk of a feature like this, new alerts have been created to notify administrators when key changes are made. These alerts can be found at <strong>Security &amp; Privacy &gt; Audit &gt; Admin activities</strong>:</p>
+<ul>
+<li>When IdP is added to Webex, an alert is generated.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image134.png" data-desc-position="top"><img alt="" src="../media/image134.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<ul>
+<li>When an IdP is deleted, an alert is generated.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image135.png" data-desc-position="top"><img alt="" src="../media/image135.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<ul>
+<li>When a routing rule is created, an alert is generated.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image136.png" data-desc-position="top"><img alt="" src="../media/image136.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<ul>
+<li>When the routing rule order is modified, an alert is generated.</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image137.png" data-desc-position="top"><img alt="" src="../media/image137.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>These alerts provide notice if an administrator makes changes to the SSO
+configuration. In addition, you can also enable logging of authentication events by navigating to <strong>Security</strong> &gt; <strong>Audit</strong> &gt; <strong>Authentication Activities &gt; Generate Access</strong> and enable <strong>Allow user authentication data</strong>. Refer to the screenshot below for sample data with this toggle enabled.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image138.png" data-desc-position="top"><img alt="" src="../media/image138.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>If there is an issue with SSO at any point, a full administrator can use <a href="https://admin.webex.com/manage-sso">https://admin.webex.com/manage-sso</a> to disable SSO or update the IdP
+metadata.</p>
+<p>At this point in the lab, you have already configured two IdPs, Duo (SAML) and Duo (OIDC). Since you configured the SAML integration first, it is configured as your default IdP. This means that any users not matching the GroupRule routing rule you created will be sent to your SAML integration. Note that in this lab, we're using the same Duo tenant for both IdPs but in a production environment, these can be separate Duo tenants, or separate providers such as Entra ID, PingFederate, AD FS, ForgeRock, Shibboleth, etc.</p>
+<p>In the next section, you will configure local Webex authentication for a group of users and set up appropriate routing rules so that users are authenticated locally with Webex rather than routed to an external IdP.</p>
+<ol>
+<li>
+<p>Return to Control Hub and navigate to the <strong>Groups</strong> page in the <strong>Management</strong> section of the side panel.</p>
+</li>
+<li>
+<p>In the <strong>Webex groups</strong> section, click the <strong>Create a group</strong> button:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image139.png" data-desc-position="top"><img alt="" src="../media/image139.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Enter <strong>WxLocalAuth</strong> as the group name and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Add manually</strong>, then search for <strong>chall</strong> and <strong>tbard</strong> and select both users to add them to the group.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image140.png" data-desc-position="top"><img alt="" src="../media/image140.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Save</strong> then <strong>Done</strong>.</p>
+</li>
+<li>
+<p>Navigate to <strong>Security &amp; Privacy</strong> &gt; <strong>Authentication</strong> &gt; <strong>Identity Provider</strong> &gt; <strong>Add an IdP</strong></p>
+</li>
+<li>
+<p>Select <strong>Webex</strong>, then click <strong>Next</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image141.png" data-desc-position="top"><img alt="" src="../media/image141.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Take a minute to read the disclaimer providing more information about utilizing local Webex authentication.</p>
+</li>
+<li>
+<p>Tick the box for <strong>I've read and understood how Webex IdP works</strong>. And click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Set up a routing rule</strong> page, add the following rule:</p>
+<p>a.  Rule Name: <strong>WxLocalAuthRule</strong></p>
+<p>b.  Routing Type: <strong>groups</strong></p>
+<p>c.  Selected groups: <strong>WxLocalAuth</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image142.png" data-desc-position="top"><img alt="" src="../media/image142.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Add</strong> and you will be sent back to the <strong>Identity Provider</strong> tab with a new <strong>Webex</strong> entry:
+    <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image143.png" data-desc-position="top"><img alt="" src="../media/image143.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click the <strong>Routing Rules</strong> tab and move the <strong>WxLocalAuthRule</strong> to the top of the list by clicking the handle on the left side of the box and dragging the rule up.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image144.png" data-desc-position="top"><img alt="" src="../media/image144.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>A few key notes about routing rules:</p>
+<p>a.  Any time a user logs in to an account in this organization,
+    Webex will check their uid (email address) against these rules.
+    These rules are checked in order of priority and the user will
+    be routed based on the first rule they match.</p>
+<p>b.  Due to this logic, rules should be placed in a <strong>most specific
+    &gt; least specific</strong> order.</p>
+<p>c.  Domain rules require that the domain(s) be verified or claimed,
+    or you will not be able to add them to the rule.</p>
+<p>d.  Domain rules can consist of multiple domains.</p>
+<p>e.  Group rules can specify either locally created Webex groups or
+    synchronized groups.</p>
+<p>f.  Groups rules can consist of multiple groups.</p>
+<p>g.  In this scenario, the two users that you added to the
+    WxLocalAuth group (<strong>chall</strong> and <strong>tbard</strong>) will match Rule #1
+    and they will route to the Webex Identity Broker for
+    authentication. No other users will match that rule, so they
+    would then be checked against Rule #2. If they don't match that
+    rule, they would match the Default Rule, so they would be
+    redirected to Duo for authentication via the SAML application.</p>
+<p>h.  The default rule does not have a filter so it will match all
+    users. It is likely that some users will match multiple rules
+    (for example, they may match two different group rules or a
+    group and domain rule). Remember, however, that Webex checks the
+    user against rules <strong>in order</strong> and the user will be routed as
+    soon as they match a rule -- they will not be checked against
+    lower priority rules.</p>
+</li>
+<li>
+<p>Open a new incognito or private window in your browser and navigate to <a href="https://web.webex.com">https://web.webex.com</a>. Click <strong>Sign in</strong> and enter tbard@cbXXX.dc-YY.com. and click next. You should be routed to Webex rather than Duo for authentication. This means that your rule is working as expected -- <strong>no need to log in</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image145.png" data-desc-position="top"><img alt="" src="../media/image145.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Next, close your private/incognito window to clear any cached information, then open a new private/incognito window.</p>
+</li>
+<li>
+<p>Navigate to <a href="https://web.webex.com">https://web.webex.com</a> and enter aperez@cbXXX.dc-YY.com (ensuring that you update the XXX and YY with your session #s).</p>
+<p>a.  This user's group membership will be checked to see if she
+    matches the criteria for the <strong>WxLocalAuthRule.</strong> Since Anita
+    Perez is not in the <strong>WxLocalAuth</strong> group, she will not match
+    the rule.</p>
+<p>b.  Next, her group membership will be checked against
+    <strong>GroupRule</strong>. She is in the selected group, so you should be
+    routed to <strong>Duo_OIDC</strong> for authentication.</p>
+<p>c.  In a few steps, you will check the Authentication log in Duo to
+    verify that users are being routed to the SAML and OIDC
+    integrations as expected so be sure to complete a successful
+    login with aperez@cbXXX.dc-YY.com.</p>
+</li>
+<li>
+<p>Finally, close your private/incognito window to clear any cached information, then open a new private/incognito window.</p>
+</li>
+<li>
+<p>Navigate to <a href="https://web.webex.com">https://web.webex.com</a> and log in with jdock@cbXXX.dc-YY.com.</p>
+</li>
+<li>
+<p>Now that you've successfully authenticated to both the OIDC application (<strong>aperez</strong>) and SAML application (<strong>jdock</strong>), open the Duo admin portal (<a href="https://admin-demodemo.duosecurity.com">https://admin-demodemo.duosecurity.com</a>).</p>
+</li>
+<li>
+<p>Navigate to <strong>Reports</strong> &gt; <strong>Authentication Log</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image146.png" data-desc-position="top"><img alt="" src="../media/image146.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Verify that <strong>jdock</strong> and <strong>aperez</strong> authenticated to the correct applications:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image147.png" data-desc-position="top"><img alt="" src="../media/image147.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<p>It is very common to attempt this test in a browser that has a cached login for a different user (such as jdock or aperez). <strong>If you receive an error during testing, try using a new browser or try to close ALL private/incognito windows to ensure you're using a fresh session with no cached logins.</strong></p>
+<p>You now have a working multiple IdP configuration. This configuration can be much more complex -- this scenario was designed to provide a high-level introduction and overview of the feature.</p>
+<h2 id="enable-multi-factor-authentication-mfa-using-duo">Enable Multi-Factor Authentication (MFA) using Duo</h2>
+<p>NOTE: Enabling MFA on Webex through Control Hub requires <strong>Duo Authenticator</strong>. This can only be installed on Android or iOS. If you want to proceed with this section but you do not want to install the Authenticator on your mobile device, please raise your hand and let a proctor know and we can use one of our lab devices for you. If you'd rather not go through this section, feel free to skip to the next module as the rest of the guide is not contingent on this feature.</p>
+<p>Webex has native support for MFA using the Duo Authenticator. Administrators are given 3 different options when enabling this feature in Control Hub:</p>
+<ul>
+<li>
+<p>Allow MFA per user (users in the org have the <strong>option</strong> to enable
+  MFA)</p>
+</li>
+<li>
+<p>Mandatory MFA when accessing Control Hub</p>
+</li>
+<li>
+<p>Mandatory MFA for the organization (MFA required when accessing any
+  Webex service).</p>
+</li>
+</ul>
+<p>For this lab, you will enable MFA for anyone accessing Control Hub.</p>
+<ol>
+<li>
+<p>Navigate to <a href="https://admin.webex.com">https://admin.webex.com</a> and log in with cholland@cbXXX.dc-YY.com.</p>
+</li>
+<li>
+<p>Select <strong>Organization Settings</strong> and search for <strong>Multi-factor Authentication</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Allow Multi-Factor Authentication</strong> &gt; <strong>Require mandatory MFA for selected applications</strong> &gt; <strong>Allow MFA</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image148.png" data-desc-position="top"><img alt="" src="../media/image148.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Next, open an incognito or private window in your browser. <strong>Ensure that there are no other incognito windows open because any Webex sessions from those window(s) can cause issues.</strong></p>
+</li>
+<li>
+<p>Navigate to <a href="https://admin.webex.com">https://admin.webex.com</a> and log in with cholland@cbXXX.dc-YY.com.</p>
+</li>
+<li>
+<p>You will go through the SSO login flow with Duo but since you are now forcing MFA on Webex, you will be prompted to set up Duo Authenticator after you authenticate:</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image149.png" data-desc-position="top"><img alt="" src="../media/image149.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Click <strong>Next.</strong></p>
+</li>
+<li>
+<p>You will be presented with a QR code. Launch the Duo Authenticator on your mobile device and tap <strong>Add</strong> (or raise your hand and request to use a proctor's device).</p>
+</li>
+<li>
+<p>Once the code has been scanned into the Duo Authenticator app, click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>You will be asked to enter the 6-digit Time-based One-Time Password (TOTP) after which you will be redirected to Control Hub.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image150.png" data-desc-position="top"><img alt="" src="../media/image150.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>After the code is successfully confirmed, close the incognito/private window and you should still be logged into Control Hub in your other browser session.</p>
+</li>
+<li>
+<p>Toggle <strong>Allow Multi-Factor Authentication</strong> off and click <strong>Save.</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image151.png" data-desc-position="top"><img alt="" src="../media/image151.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<p>This section demonstrates that even when SSO is enabled, the collaboration administrator can still force an increased level of security for Webex. This may seem unnecessary if the IdP already requires MFA, but some organizations don't force MFA and collaboration administrators can still choose to utilize this feature to increase security on the Webex platform.</p>
+<p>This concludes the module on Webex Identity. Before proceeding to the next module, close your remote session to AD1 since modules 2 and 3 both require usage of Workstations 1-3.</p>
+<p><strong>END of MODULE 1</strong></p>
+<p>Continue with either Module 2 or Module 3:</p>
+<ul>
+<li><a href="./">Module 1: Webex Identity</a> <em>(current)</em></li>
+<li><a href="../module2_zero_trust_encryption/">Module 2: Zero Trust Encryption</a></li>
+<li><a href="../module3_compliance/">Module 3: Webex Compliance</a></li>
+<li><a href="../conclusion/">Conclusion</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../module2_zero_trust_encryption/" class="md-footer__link md-footer__link--next" aria-label="Next: Module 2 - Webex Zero Trust Encryption">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Module 2 - Webex Zero Trust Encryption
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+        <script src="../template_assets/js/labConfig.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
