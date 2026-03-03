@@ -865,7 +865,7 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
       ![](./media/image128.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Paste the URL in the private window and you will be prompted to sign in to Duo. You can use cholland@cbXXX.dc-YY.com.
+1. Paste the URL in the private window and you will be prompted to sign in to Duo. You can use cholland@cbXXX.dc-YY.com // dCloud123!.
 
 1. Once you see **Single Sign-on succeeded**, you can close the incognito tab and click **Next.**
 

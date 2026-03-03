@@ -111,7 +111,7 @@ This lab guide contains coverage for external compliance platform Theta Lake.
 
       b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cbXXX.dc-YY.com <!--(refer to eXpo dCloud session info page for the DNS domain).--> Click **Sign In**.
 
-      c. Enter password: **dCloud123!** (non-SSO password is dCloudZZZZ! - refer to eXpo dCloud session info page for the session ID and use the last 4 digits to replace 'ZZZZ').
+      c. Enter password: **dCloud123!** (non-SSO password is dCloudZZZZ!)
 
       d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&A, whiteboards, polls, etc.), and Webex Calling (recordings).
 
