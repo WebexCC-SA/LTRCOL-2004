@@ -241,7 +241,7 @@ To facilitate user provisioning to Webex, you will utilize the SCIM 2.0 API endp
       ![](./media/image44.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Notice that you can see the org name here (in case you have multiple
-      Webex applications in your Duo org. You are also given the name of the
+      Webex applications in your Duo org). You are also given the name of the
       administrator that authorized the connection.
       
       Finally, notice that there is a **Reauthorize** button. This would be
@@ -260,7 +260,7 @@ To facilitate user provisioning to Webex, you will utilize the SCIM 2.0 API endp
 
 1. Click **Save Mapping.**
 
-1. Next change the **Email Address** attribute to **Username** and notice that the default Duo mappings to the newly selected attributes is correct:
+1. Next change the **Email Address** attribute to **Username** and notice that the default Duo mappings to the newly selected attributes are correct:
 
       ![](./media/image46.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -293,6 +293,8 @@ To facilitate user provisioning to Webex, you will utilize the SCIM 2.0 API endp
 1. Select **Organization Settings** and change **Control Hub's idle timeout** to **No timeout** then click **Save**.
 
       ![](./media/image49.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+
+1. Enable logging of authentication events by navigating to **Security** \> **Audit** \> **Authentication Activities \> Generate Access** and enable **Allow user authentication data**. 
 
 1. Select **Groups** and you should see your **Lab Users** group in the **Webex groups** section.
 
@@ -635,8 +637,6 @@ locally. This will not work as none of the users have credentials in Duo. To wor
       At this stage, Duo will not leverage the proxy for authentication because it authenticates users locally, by default. Before you can use the proxy, you must verify your dCloud domain in Duo so that you can route authentication to the proxy.</p>
       </div>
 
-
-
 1. To proceed, click **Add permitted domains.**
 
       ![](./media/image97.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
@@ -761,7 +761,7 @@ At this point in the lab guide, you have configured the **Duo Authentication Pro
 
     b.  Select **Less secure**
 
-    c.  Click **Browse** and select the metadata file you downloaded
+    c.  Click **Choose a File** and select the metadata file you downloaded
         from Duo.
 
       ![](./media/image114.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
@@ -802,18 +802,21 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
       ![](./media/image119.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Update the configuration:
+1. Update the configuration in each of the underlined sections below:
 
+      > <u>Metadata</u>  
       > Name: **Webex OIDC**<br>
       > User Access: **Enable for all users**<br>
+      > <u>General</u>  
       > Allow PKCE only authentication: **Enabled**<br>
       > Refresh Tokens: **Enabled**<br>
       > Sign-In Redirect URLs: **https://idbroker-b-us.webex.com/idb/Consumer/oidc/sp**<br>
+      > <u>Scopes</u>  
       > Scopes: Enable **profile** and **email**
 
-      ![](./media/image120.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-      ![](./media/image121.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-      ![](./media/image122.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/m1-duo001.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/m1-duo002.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/m1-duo003.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Since you have already modified the global policy to disable the 2FA requirement, scroll to the bottom of the page and click **Save.**
 
@@ -829,7 +832,7 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
 1. You will need to fill in a few required boxes:
 
-    a.  **Name** → Duo_OIDC
+    a.  **Name** → Webex OIDC
 
     b.  **Client ID and Client Secret** → You can find these in the **Metadata** section in Duo - Click the **Copy** buttons and paste this information into Webex.
 
@@ -916,7 +919,7 @@ By default, the Webex application uses Authorization Code Flow when authenticati
 
 **Authorization Code Flow with PKCE** is an enhancement designed for public clients like the Webex desktop and mobile apps, which cannot safely store a client secret. Instead of a static secret, the app generates a one-time **code verifier** and sends a hashed version of it (the **code challenge**) during the initial request. When redeeming the authorization code, the app must present the original verifier. If an attacker were to intercept the authorization code, they would not be able to exchange it for tokens without also having the verifier.
 
-This is why PKCE is recommended for any deployment where the client is not a secure backend server that can be trusted to store sensitive secrets --- such as the Webex application. Refer to the diagram below for a visualization of the login process when PKCE is enabled.
+This is why PKCE is recommended for any deployment where the client is not a secure backend server that can be trusted to store sensitive secrets --- such as the Webex application. Refer to the diagram below for a visualization of the login process when PKCE is enabled.  
 
 ![](./media/image133.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -936,7 +939,11 @@ domain. This feature also allows you to use Webex Common Identity (CI) as an IdP
 
 While powerful, this feature should only be used as a last resort. A rogue administrator could configure Webex to route users to an IdP that may not be monitored by an organization's security admins. If this IdP looked identical to the one with which users were accustomed to authenticating, users may not be aware that they are giving their credentials to a bad actor. In a different scenario, an IdP could be configured with a less strict password policy than is required by the security team.
 
-Due to the inherent risk of a feature like this, new alerts have been created to notify administrators when key changes are made. These alerts can be found at **Security & Privacy \> Audit \> Admin activities**:
+You enabled authentication logging earlier, so you can see authentication events at from your testing at **Security & Privacy** \> **Audit**. Refer to the screenshot below for sample data with this toggle enabled.
+
+![](./media/image138.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+
+Due to the inherent risk of a feature like this, alerts are generated to notify administrators when key changes are made. These alerts can be found at **Security & Privacy \> Audit \> Admin activities**:
 
 - When IdP is added to Webex, an alert is generated.
 
@@ -954,13 +961,9 @@ Due to the inherent risk of a feature like this, new alerts have been created to
 
    ![](./media/image137.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-These alerts provide notice if an administrator makes changes to the SSO
-configuration. In addition, you can also enable logging of authentication events by navigating to **Security** \> **Audit** \> **Authentication Activities \> Generate Access** and enable **Allow user authentication data**. Refer to the screenshot below for sample data with this toggle enabled.
+These alerts provide notice if an administrator makes changes to the SSO configuration.
 
-   ![](./media/image138.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-
-If there is an issue with SSO at any point, a full administrator can use <https://admin.webex.com/manage-sso> to disable SSO or update the IdP
-metadata.
+If there is an issue with SSO at any point, a full administrator can use <https://admin.webex.com/manage-sso> to disable SSO or update the IdP metadata.
 
 At this point in the lab, you have already configured two IdPs, Duo (SAML) and Duo (OIDC). Since you configured the SAML integration first, it is configured as your default IdP. This means that any users not matching the GroupRule routing rule you created will be sent to your SAML integration. Note that in this lab, we're using the same Duo tenant for both IdPs but in a production environment, these can be separate Duo tenants, or separate providers such as Entra ID, PingFederate, AD FS, ForgeRock, Shibboleth, etc.
 
@@ -1001,6 +1004,7 @@ In the next section, you will configure local Webex authentication for a group o
       ![](./media/image142.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Click **Add** and you will be sent back to the **Identity Provider** tab with a new **Webex** entry:
+
     ![](./media/image143.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Click the **Routing Rules** tab and move the **WxLocalAuthRule** to the top of the list by clicking the handle on the left side of the box and dragging the rule up.
@@ -1122,7 +1126,7 @@ For this lab, you will enable MFA for anyone accessing Control Hub.
 
 1. Once the code has been scanned into the Duo Authenticator app, click **Next**.
 
-1. You will be asked to enter the 6-digit Time-based One-Time Password (TOTP) after which you will be redirected to Control Hub.
+1. You will be asked to enter the 6-digit Time-based One-Time Password (TOTP) after which you will be redirected to Control Hub.  
 
       ![](./media/image150.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 

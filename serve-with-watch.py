@@ -12,7 +12,7 @@ from datetime import datetime
 
 SCRIPT_DIR = Path(__file__).parent
 DOCS_DIR = SCRIPT_DIR / "docs"
-VENV_MKDOCS = SCRIPT_DIR / "venv" / "bin" / "mkdocs"
+VENV_PYTHON = SCRIPT_DIR / "venv" / "bin" / "python3"
 LAST_MOD_TIMES = {}
 CHECK_INTERVAL = 2  # Check every 2 seconds (more reliable on macOS)
 server_process = None
@@ -46,11 +46,15 @@ def restart_server():
         except:
             server_process.kill()
     
-    # Start new server (use mkdocs from venv)
+    # Start new server: use `python -m mkdocs` so repo moves don't break console
+    # script shebangs (venv/bin/mkdocs often still points at the old absolute path).
     try:
-        mkdocs_cmd = str(VENV_MKDOCS) if VENV_MKDOCS.exists() else "mkdocs"
+        if VENV_PYTHON.exists():
+            mkdocs_argv = [str(VENV_PYTHON), "-m", "mkdocs", "serve", "--dev-addr", "127.0.0.1:8000"]
+        else:
+            mkdocs_argv = ["mkdocs", "serve", "--dev-addr", "127.0.0.1:8000"]
         server_process = subprocess.Popen(
-            [mkdocs_cmd, "serve", "--dev-addr", "127.0.0.1:8000"],
+            mkdocs_argv,
             cwd=SCRIPT_DIR,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
