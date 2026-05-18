@@ -92,11 +92,11 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
       Make a note of the security code.
 
-      Navigate to the Participants Tab and click on the "i" icon next to Charles's name. You will see the certificate and therefore the identity of Charles is verified by **Webex**. You can click the "i" to see the certificate information.
+      Navigate to the Participants Tab and click on the "i" icon next to Charles's name. You will see the certificate and therefore the identity of Charles is verified by **Webex**. 
 
       ![](./media/image286.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Now login to **WKST2** with **dcloud\\aperez** (password **dCloud123!**). Launch the Webex App and login with [**aperez@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!). You will see the Join meeting notification:
+1. Navigate to WKST2. Launch the Webex App and login with [**aperez@cbXXX.dc-YY.com**](mailto:aperez@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!). You will see the **Join meeting** notification , sometimes it takes a bit for the meeting notification toast to pop up.
 
       ![](./media/image403.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -105,7 +105,8 @@ Before you start this section, lets enable watermarking capabilities in Control 
       Click on **Meeting Info** then select **Security** and observe the security code. It has changed now that a new attendee has joined. Feel free to verify the certificate for Anita.
 
 
-1. Login to **WKST3** with **dcloud\\kmelby** (password provided in the pod sheet). Launch the Webex App and login with [**kmelby@cbXXX.dc-YY.com**](mailto:kmelby@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!). You will see the Join meeting notification, join the meeting by clicking on the green **Join** button.
+1. Navigate to WKST3. Launch the Webex App and login with [**kmelby@cbXXX.dc-YY.com**](mailto:kmelby@cbXXX.dc-YY.com) and password **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!). You will see the Join meeting notification, join the meeting by clicking on the green **Join** button.
+1. Click on **Join**, click **OK** in the **No microphone found** prompt. Click Join Meeting to enter the meeting.
 
       Click on **Meeting Info \> Security** and verify that the security code has changed again. Feel free to verify the certificate for Kellie.
 
@@ -135,9 +136,7 @@ In this section, you will learn some features that are made available in an End-
 
       ![](./media/image406.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      Note the message that displays when you hover over the Record button indicating that AI summaries are only available for cloud-based recordings. Since the only option here is to record to the local computer, AI meeting summaries won't be available.This is important point to remember about end-to-end encrypted meetings.
-
-      ![](./media/image290.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+     
 
 1. Connect to a Video System: In an E2EE meeting, Cisco video devices (RoomOS) can seamlessly join a meeting. In this lab, there are no video endpoints available for testing. However, you should know that Cisco video devices (RoomOS) can join an E2EE meeting. Refer to the screenshots below showing a video device joining a meeting and the identity certificate issued to the device.
 
@@ -167,9 +166,9 @@ In this section, you will learn some features that are made available in an End-
 
 1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.Once completed "Stop Sharing"
 
-      ![](./media/image405.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/PPT%20Share.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image407.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      
 
 1. Click on the ellipsis icon "..." next to reactions and explore other features available in an end to end encrypted meetings like "whiteboards" and "Enable Sign Language Interpretation" and designate Anita as the interpreter.
 
@@ -472,35 +471,21 @@ To begin, you will need to enable the zero trust end-to-end encryption feature. 
 
       d. Click **Save**.
 
-      e. On the next screen, select the location **CL EMEA** from the 'Location' dropdown. This will assign the user to this location.
+      e. On the next screen, select the location **AMER Event** from the 'Location' dropdown. This will assign the user to this location.
       
-      f. Next, select the 'Phone Number' dropdown and select one of the available numbers - for example, '+31 20 555 4191'. Then, configure the extension with the last 4-digits of the phone number - for example '4191'. (Note: These are just <u>examples</u>. The phone numbers and extensions available in your pod <u>will be different</u>).
+      f. Next, select the 'Phone Number' dropdown and select one of the available numbers - for example, '+1 212 555 5352'. Then, configure the extension with the last 4-digits of the phone number - for example '5352'. (Note: These are just <u>examples</u>. The phone numbers and extensions available in your pod <u>will be different</u>).
 
-      ![](./media/image_m2_wxc004.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/amerevent.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
      
       g. Click **Save** to assign the Webex Calling license and phone number to the user. The user now has a SIP line and phone number. Click **Close**.
 
       h. Click the **Calling** tab to review the directory number and confirm it was properly allocated.
 
-      ![](./media/image_m2_wxc005.png) 
+      ![](./media/directory%20number.png) 
 
-      i. Repeat the process above to assign Webex Calling license and phone number to user **Anita Perez**. In this case, user the other available phone number (for example, +31 20 555 4192 / extension 4192). (Note: The available phone number in your pod will be different).
+      i. Repeat the process above to assign Webex Calling license and phone number to user **Anita Perez**. In this case, user the other available phone number (for example, +1 212 555 5353 / extension 5353). (Note: The available phone number in your pod will be different).
 		
-1. Enable call recording for a user.
 
-      Enable call recording for one of the users just licensed for Webex Calling and provisioned for phone number. 
-
-      a. Navigate back to user Charles Holland (or Anita Perez) and click the **Calling** tab. 
-
-      b. Scroll down to the 'User calling experience' section and set Call recording to **'On'**. 
-   
-      c. Then, toggle on **Record incoming and outgoing calls...** and tick **On Demand**. This ensures the user can start/stop call recording. 
-  
-      d. Finally, tick <u>both</u> **'Play recording start/stop announcement for...'** boxes. 
- 
-      e. The rest of the settings can be left at default. Click **Save**.
-
-      ![](./media/image_m2_wxc006.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 ## Zero Trust End-to-End Encrypted Calling 
 
@@ -514,41 +499,41 @@ Now that two users have been provisioned for Webex Calling and SIP lines, it is 
 
       Once the users are logged into the Webex App, make a call between the two users. 
       
-      c. Using Charles Holland's Webex App on the local PC, click the Calling tab (1) and search for 'Anita Perez' (2). Right click on the phone icon (3) and select Audio Call (4) > Work <Work_Number> (e.g., +31 20 555 4192) (5) to place the call via the user's SIP line. Note: Do **not** select 'Call on Webex'.
+      c. Using Charles Holland's Webex App on the local PC, click the Calling tab (1) and search for 'Anita Perez' (2). Right click on the phone icon (3) and select Audio Call (4) > Work <Work_Number> (e.g., +1 212 555 5353) to place the call via the user's SIP line. Note: Do **not** select 'Call on Webex'.
 
-      ![](./media/image_m2_wxc008.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/Charles%20to%20Anita%20Calling.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       d. On the remote WKST3, answer the incoming call from Charles on Anita Perez's Webex App.
       
       ![](./media/image_m2_wxc009.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      e. Once the call is connected, observe the **blue shield** call info icon in the upper left-hand side of the call window. Observe as this icon transitions to a **blue shield with a lock**. (Note: It may take a few seconds for this transition). The message "End-to-end encryption is active" will also be displayed.
+      e. Once the call is connected, observe the **blue shield** call info icon in the upper left-hand side of the call window. Observe as this icon transitions to a **blue shield with a lock**. (Note: It may take a few seconds for this transition). The message "Zero Trust security is active" will also be displayed.
 
-      ![](./media/image_m2_wxc010.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/Zero%20Trust%20Security.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      f. Click the blue shield call info icon and review the security information. Note that the call audio (and any screen/application share) is 'Zero Trust end-to-end encrypted'. It's worth noting that chat and whiteboards if present are just standard Webex end-to-end encryption (and not zero trust E2EE).
+      f. Click the blue shield call info icon and review the security information. Note that the call audio (and any screen/application share) is 'Zero Trust end-to-end encryption'. It's worth noting that chat and whiteboards if present are just standard Webex end-to-end encryption (and not zero trust E2EE).
 
-      ![](./media/image_m2_wxc011.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/Zero%20Trust%20Security%20is%20active.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Downgrade call security from zero trust E2EE to standard encryption.
 
-	a. As the call continues, on the local PC Webex App (Charles) click the record icon on the menu bar and then the **Record** button to start recording. 
+	a. As the call continues, on the local PC Webex App (Charles) click the closed captioning icon to start closed captioning. 
 
-      ![](./media/image_m2_wxc012.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/Close%20Captioning.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      b. Observe that the call media is immediately **downgraded to standard encryption**. The blue shield with a lock call info icon reverts to the blue shield icon and a message appears indicating call has been moved to standard encryption ('Standard encryption is active').
+      b. Observe that the call media is immediately **downgraded to strong security**. The blue shield with a lock call info icon reverts to the blue shield icon and a message appears indicating call has been moved to standard encryption ('Strong security is active').
 
-      ![](./media/image_m2_wxc013.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/Strong%20Security%20is%20active.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
       
-      c. Again, click the blue shield icon to see security details for the call and note that call audio media (and screen/application sharing) is now **downgraded to standard encryption**.
+      c. Again, click the blue shield icon to see security details for the call and note that call audio media (and screen/application sharing) is now **downgraded to strong security/secure encryption**.
 
-      ![](./media/image_m2_wxc014.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/Secure%20Encryption.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Upgrade call security from standard encryption back to zero trust E2EE.
 	
-     a. Return to Charle's Webex App on the local PC and click the recording button and then the **Stop** button. Note that the call immediately **upgrades security back to zero trust E2EE** - the blue shield icon reverts back to shield with lock, and the 'End-to-end encryption is active' message is again displayed.
+     a. Return to Charle's Webex App on the local PC and click the close caption icon to turn off Close Captioning. Note that the call immediately **upgrades security back to zero trust E2EE** - the blue shield icon reverts back to shield with lock, and the 'Zero Trust security is active' message is again displayed.
 
-      ![](./media/image_m2_wxc015.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/Zero%20Trust%20Again.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       b. Click the 'X' button to hang up the zero trust E2EE Webex call.
 
