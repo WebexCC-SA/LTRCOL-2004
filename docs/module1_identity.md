@@ -71,7 +71,7 @@ At the end of this section, you will have synchronized on-premises AD users into
 
       ![](./media/module1_image1.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Scroll down and set the **Absolute Session Length** to **10 hours**.
+1. Scroll down and set the **Absolute Session Length** to **10 hours**. Scroll down and click **Save**.
 
       ![](./media/image18.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -294,7 +294,7 @@ To facilitate user provisioning to Webex, you will utilize the SCIM 2.0 API endp
 
       ![](./media/image49.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Enable logging of authentication events by navigating to **Security** \> **Audit** \> **Authentication Activities \> Generate Access** and enable **Allow user authentication data**. 
+
 
 1. Select **Groups** and you should see your **Lab Users** group in the **Webex groups** section.
 
@@ -734,7 +734,7 @@ At this point in the lab guide, you have configured the **Duo Authentication Pro
 
     c.  Click **Download XML** to get a copy of the Duo metadata.
 
-    d.  In the Service Provider section, click browse and select the
+    d.  In the Service Provider section, click **Choose File** and select the
         **idb-meta-...-SP.xml** file that you downloaded from Webex in
         step 4.
 
@@ -822,7 +822,7 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
 1. Leave this tab open and switch to your <https://admin.webex.com> tab and log back in if needed.
 
-1. Navigate to **Security** \> **Authentication** \> **Add an IdP.**
+1. Navigate to **Security** \> **Authentication** \> **Add an IdP**.
 
       ![](./media/image123.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -832,7 +832,7 @@ OIDC is an identity layer that is added to the OAuth 2.0 protocol. One of the ad
 
 1. You will need to fill in a few required boxes:
 
-    a.  **Name** → Webex OIDC
+    a.  **Name** → Duo_OIDC
 
     b.  **Client ID and Client Secret** → You can find these in the **Metadata** section in Duo - Click the **Copy** buttons and paste this information into Webex.
 
@@ -938,10 +938,6 @@ domain. This feature also allows you to use Webex Common Identity (CI) as an IdP
 - Global enterprises with separate IT organizations
 
 While powerful, this feature should only be used as a last resort. A rogue administrator could configure Webex to route users to an IdP that may not be monitored by an organization's security admins. If this IdP looked identical to the one with which users were accustomed to authenticating, users may not be aware that they are giving their credentials to a bad actor. In a different scenario, an IdP could be configured with a less strict password policy than is required by the security team.
-
-You enabled authentication logging earlier, so you can see authentication events at from your testing at **Security & Privacy** \> **Audit**. Refer to the screenshot below for sample data with this toggle enabled.
-
-![](./media/image138.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 Due to the inherent risk of a feature like this, alerts are generated to notify administrators when key changes are made. These alerts can be found at **Security & Privacy \> Audit \> Admin activities**:
 
@@ -1053,7 +1049,7 @@ In the next section, you will configure local Webex authentication for a group o
 
 1. Next, close your private/incognito window to clear any cached information, then open a new private/incognito window.
 
-1. Navigate to <https://web.webex.com> and enter aperez@cbXXX.dc-YY.com (ensuring that you update the XXX and YY with your session #s).
+1. Navigate to <https://web.webex.com> and enter aperez@cbXXX.dc-YY.com.
 
     a.  This user's group membership will be checked to see if she
         matches the criteria for the **WxLocalAuthRule.** Since Anita
