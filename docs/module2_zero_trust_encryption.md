@@ -411,11 +411,11 @@ In this module we shall leverage GetReal Security and Webex for Deepfake detecti
 
 1. Login with kmelby@cb311.dc-01.com and password dCloud0831! 
 
-1. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 180 days.
+1. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 365 days.
 
       ![](./media/image402.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image332.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/GetReal365Days.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. You should your violation right up on top, however before we go there lets review the one which has id "GR-1". You will see it has not only detected a Face Swap but also a known threat actor in terms of Fake IT worker. Expand on both the options to learn more on the violation by clicking "Full Details". 
 Also you will see that there is a video recording of the interaction in GR-1. Move the time stamp to 9-10 minutes into the conversation to how the user faked into a known threat actor.
