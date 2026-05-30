@@ -202,7 +202,7 @@ Note: You may not use all the components listed in Table 1 for this lab.
 
 ### Theta Lake
 - **URL**: https://useast.thetalake.ai/
-- **Username**: aperez@cbXXX.dc-YY.com
+- **Username**: co.read.only@gmail.com
 - **Password**: dCloud123!
 
 ---
