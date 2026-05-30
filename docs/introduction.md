@@ -205,7 +205,7 @@ Note: You may not use all the components listed in Table 1 for this lab.
 - **Username**: co.read.only@gmail.com
 - **Password**: dCloud123!
 
----
+
 ## Getting Started
 Follow the steps below to connect to your lab pod before proceeding with
 Module 1.
