@@ -249,11 +249,11 @@ verbally mentioning credit card numbers/SSN/DOB). You will learn how Theta Lake 
 
       Explore and review few records that have Meeting Poll
       
-      Repeat the search process with **Q&A** as the search term and click the green **Search** button.
+      Repeat the search process with **Q&A** as the search term  , select **Slido** as filter and click the green **Search** button.
 
       ![](./media/image265.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/image266.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/TL-Q&A-Slido.jpg){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       Close the Poll Search by clicking on the "x" next to search.
 
