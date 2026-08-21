@@ -1,5 +1,3 @@
-![](./media/image331.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-
 # Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
 <!-- Commented out for testing - config box moved to bottom of intro
 <div id="lab-config-container"></div>
