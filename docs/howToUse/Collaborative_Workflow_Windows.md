@@ -1,4 +1,4 @@
-# Collaborative Editing Workflow (Windows) - LTRCOL-2004 Lab Guide
+# Collaborative Editing Workflow (Windows) - LAB-21200 Lab Guide
 
 ## Prerequisites
 
@@ -512,6 +512,6 @@ LTRCOL-2004\
 ---
 
 **Created:** October 28, 2025  
-**Project:** LTRCOL-2004 Webex Security Lab Guide  
+**Project:** LAB-21200 Webex Security Lab Guide  
 **Platform:** Windows
 
