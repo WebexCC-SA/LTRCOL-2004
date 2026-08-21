@@ -2,7 +2,7 @@
 site_name: "LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
 site_description: "LTRCOL-2004 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" # must be same as "site_name"
 site_author: Scott Kiewert
-copyright: Copyright &copy; 2025 Cisco
+copyright: Copyright &copy; 2026 Cisco
 theme:
   name: material
   features:
@@ -31,12 +31,12 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-  logo: template_assets/cisco_logo.png
-  favicon: template_assets/cisco_logo.png
+  logo: template_assets/webexLogo91.png
+  favicon: template_assets/webex75.png
 extra:
   generator: false
   repo: "https://github.com/WebexCC-SA/WebexCC-SA/LTRCOL-2004.git"
-  site_event: test
+  site_event: WebexOne 2026
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
