@@ -575,9 +575,11 @@ locally. This will not work as none of the users have credentials in Duo. To wor
 
       ![](./media/image87.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Once you have added this section to your config, click the Windows button, enter **cmd** and launch **Command Prompt.**
+1. Once you have added this section to your config, click the Windows button on your AD server, enter **cmd** and launch **Command Prompt.**
 
       ![](./media/image88.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+
+      **Be sure that you are running this command inside of your AD RDP session and not on the local laptop.**
 
 1. Back in the Duo admin portal, copy the text in **step 2.**
 

@@ -493,9 +493,9 @@ Now that two users have been provisioned for Webex Calling and SIP lines, it is 
 		
 1. Make a Zero Trust E2EE Webex Call
 
-      a. On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cbXXX.dc-YY.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
+      a. On the local lab PC log back into the Webex App with Charles Holland's account (cholland@cbXXX.dc-YY.com // dCloud123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
 
-      b. On the remote PC Workstation 2 (WKST2), log back into the Webex App with Anita Perez's account (aperez@cbXXX.dc-YY.com // dCloud 123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
+      b. On the remote PC Workstation 2 (WKST2), log back into the Webex App with Anita Perez's account (aperez@cbXXX.dc-YY.com // dCloud123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
 
       Once the users are logged into the Webex App, make a call between the two users. 
       
