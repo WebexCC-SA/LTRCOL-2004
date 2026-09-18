@@ -1,0 +1,1821 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance">
+      
+      
+        <meta name="author" content="Scott Kiewert">
+      
+      
+      
+        <link rel="prev" href="../module2_zero_trust_encryption/">
+      
+      
+        <link rel="next" href="../conclusion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Module 3 - Webex Compliance - LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-3-webex-compliance-with-webex-compliance-hub-and-cisco-secure-access" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-header__button md-logo" aria-label="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 3 - Webex Compliance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab_setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab Setup
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module1_identity/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 1 - Webex Identity
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module2_zero_trust_encryption/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 2 - Webex Zero Trust Encryption
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 3 - Webex Compliance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conclusion/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusion
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../appendix/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Appendix
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../print_page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Print Lab Guide
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-nav__button md-logo" aria-label="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1_identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Webex Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2_zero_trust_encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Webex Zero Trust Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Webex Compliance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Webex Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#webex-compliance-and-preparing-for-compliance-platform-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex Compliance and Preparing for Compliance Platform Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-ediscovery-for-webex-meetings-in-webex-compliance-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore eDiscovery for Webex Meetings in Webex Compliance Hub
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Explore eDiscovery for Webex Meetings in Webex Compliance Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#webex-compliance-hub-archiving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex Compliance Hub Archiving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webex-compliance-hub-legal-hold" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex Compliance Hub Legal Hold
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#webex-compliance-hub-ediscovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webex Compliance Hub eDiscovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ediscovery-for-webex-meetings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        eDiscovery for Webex Meetings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#explore-ediscovery-for-webex-calling-in-webex-compliance-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explore eDiscovery for Webex Calling in Webex Compliance Hub
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cisco-secure-access-tenant-and-ad-onboarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cisco Secure Access Tenant and AD Onboarding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cisco-secure-access-webex-integration-and-policy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cisco Secure Access Webex Integration and Policy Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-user-data-and-monitor-secure-access-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generate User Data and Monitor Secure Access Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print Lab Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-3-webex-compliance-with-webex-compliance-hub-and-cisco-secure-access">Module 3: Webex Compliance  with Webex Compliance Hub and Cisco Secure Access</h1>
+<p>In this module, you will examine Webex compliance features and capabilities for meetings, calling, and messaging including data loss protection (DLP), anti-malware, and eDiscovery and archiving on an external compliance platform. </p>
+<p>There are 6 sections in this module:</p>
+<p>i. <a href="#webex-compliance-and-preparing-for-compliance-platform-integration">Webex Compliance and Preparing for Compliance Platform Integration</a></p>
+<p>ii. <a href="#explore-ediscovery-for-webex-meetings-in-webex-compliance-hub">Explore eDiscovery for Webex Meetings in Webex Compliance Hub</a></p>
+<p>iii. <a href="#explore-ediscovery-for-webex-calling-in-webex-compliance-hub">Explore eDiscovery for Webex Calling in Webex Compliance Hub</a></p>
+<p>iv. <a href="#cisco-secure-access-tenant-and-ad-onboarding">Cisco Secure Access Tenant and AD Onboarding</a></p>
+<p>v. <a href="#cisco-secure-access-webex-integration-and-policy-configuration">Cisco Secure Access Webex Integration and Policy Configuration</a></p>
+<p>vi. <a href="#generate-user-data-and-monitor-secure-access-operations">Generate User Data and Monitor Secure Access Operations</a></p>
+<p>Compliance integrations are critical for protecting an organization's private data from leakage and ensuring that it complies with appropriate rules and laws related to maintaining business and communication records.</p>
+<p>Webex supports both built-in compliance capabilities as well as API-based 3rd party integrations. Specifically:</p>
+<ul>
+<li>Webex provides a set of basic built-in compliance capabilities for <strong>data loss protection (DLP), anti-malware protection (AMP), eDiscovery/Legal Hold, and data retention (archive)</strong>.</li>
+<li>Webex also integrates with 3rd party DLP, anti-malware, eDiscovery/Legal Hold, and Archiving applications and services for advanced compliance capabilities including automatic remediation.</li>
+<li>Integrations with compliance services rely on <strong>Webex Events API</strong> to deliver message and meeting data to compliance services.</li>
+</ul>
+<p>In this module you will examine the following product-specific capabilities:</p>
+<ul>
+<li>
+<p>Webex built-in compliance capabilities including:</p>
+<ul>
+<li>Archiving with flexible data retention.</li>
+<li>External communication controls, and calling and meeting specific collaboration restrictions.</li>
+</ul>
+</li>
+<li>
+<p>Other compliance products:</p>
+<ul>
+<li>Webex Compliance Hub -- Archiving, eDiscovery, legal hold</li>
+<li>Cisco Secure Access -- Data loss protection, anti-malware protection</li>
+</ul>
+</li>
+</ul>
+<p>The figure below summarizes the Webex Events API method for compliance platform integration as well as the various platforms explored in this lab and their high-level capabilities. The Webex Events API provides a polling mechanism for compliance platforms to pull user-generated data from Webex for archiving, eDiscovery, and data loss protection (DLP). In the case of DLP, the compliance platform uses additional Webex APIs to remediate policy violations. </p>
+<p><strong>Webex Events API for Compliance Platform Integration</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image152_v2.png" data-desc-position="top"><img alt="" src="../media/image152_v2.png" style="border: 1px solid #888; border-radius: 4px; background-color: white; padding: 10px;" width="800"></a></p>
+<p>Webex Events APIs as well as remediation APIs require administrators to have the Compliance Officer role to enable and authorize these operations.</p>
+<p>For more information for Webex compliance with Webex APIs, please refer to the Webex for Developers site for documentation including:</p>
+<ul>
+<li>Compliance and Events: <a href="https://developer.webex.com/compliance/docs/compliance">https://developer.webex.com/compliance/docs/compliance</a></li>
+<li>Webex Events API: <a href="https://developer.webex.com/admin/docs/api/v1/events">https://developer.webex.com/admin/docs/api/v1/events</a></li>
+<li>Webex Messages API: <a href="https://developer.webex.com/messaging/docs/api/v1/messages">https://developer.webex.com/messaging/docs/api/v1/messages</a></li>
+<li>Webex Meetings API: <a href="https://developer.webex.com/docs/api/v1/meetings">https://developer.webex.com/docs/api/v1/meetings</a></li>
+<li>Webex Calling API: <a href="https://developer.webex.com/calling/docs/webex-calling-overview">https://developer.webex.com/calling/docs/webex-calling-overview</a></li>
+</ul>
+<p>This lab guide contains coverage for external compliance platforms Webex Compliance Platform and Cisco Secure Access.</p>
+<p><strong>Table 2: Compliance Platform Options, Capabilities, and Applicable sections of this Module</strong></p>
+<table>
+<thead>
+<tr>
+<th>Compliance Platform</th>
+<th>Capabilities Explored</th>
+<th>Module Sections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Webex (built-in)</strong></td>
+<td>- Data retention<br>- External communications<br>- Collaboration restrictions</td>
+<td><a href="#webex-compliance-and-preparing-for-compliance-platform-integration">Webex Compliance and Preparing for Compliance Platform Integration</a></td>
+</tr>
+<tr>
+<td><strong>Webex Compliance Hub</strong></td>
+<td>- eDiscovery &amp; Legal Hold<br>- Archival</td>
+<td><a href="#explore-ediscovery-for-webex-meetings-in-webex-compliance-hub">Explore eDiscovery for Webex Meetings in Webex Compliance Hub</a><br><br> <a href="#explore-ediscovery-for-webex-calling-in-webex-compliance-hub">Explore eDiscovery for Webex Calling in Webex Compliance Hub</a></td>
+</tr>
+<tr>
+<td><strong>Cisco Secure Access</strong></td>
+<td>- Data loss protection (DLP)<br>- Anti-malware protection (AMP)</td>
+<td><a href="#cisco-secure-access-tenant-and-ad-onboarding">Cisco Secure Access Tenant and AD Onboarding</a><br><br> <a href="#cisco-secure-access-webex-integration-and-policy-configuration">Cisco Secure Access Webex Integration and Policy Configuration</a><br><br> <a href="#generate-user-data-and-monitor-secure-access-operations">Generate User Data and Monitor Secure Access Operations</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="webex-compliance-and-preparing-for-compliance-platform-integration">Webex Compliance and Preparing for Compliance Platform Integration</h2>
+<ol>
+<li>
+<p>Enable the compliance officer role for user Anita Perez.</p>
+<p>To integrate compliance platforms with Webex, a full administrator with Compliance Officer privileges is required. This role gives the user permissions for DLP integrations, eDiscovery/Legal Hold, and retention and archival integrations. In this step you are assigning the organization Compliance Officer role to Anita Perez.</p>
+<p>Any full administrator can assign the compliance officer role to any person within their organization. However, full administrators <u>cannot</u> assign the Compliance Officer role to themselves, another full administrator must assign the role to them.</p>
+<p>To begin, connect to WKST1. Login will be as Charles Holland (dcloud\<strong>cholland</strong> // <strong>dCloud123!</strong>).</p>
+<p>a. Open the Chrome browser on WKST1 (wkst1.dcloud.cisco.com) and navigate to Collaboration Control Hub at <a href="http://admin.webex.com">http://admin.webex.com</a>.</p>
+<p>b. Login as full administrator, Charles Holland by entering: cholland@cbXXX.dc-YY.com (refer to the eXpo dCloud Session View Info page to find your DNS domain). Click <strong>Sign In</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image154_v2.png" data-desc-position="top"><img alt="" src="../media/image154_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>c. Enter password: <strong>dCloud123!</strong> (if you did not complete Module 1 and enable SSO, then the password will be dCloudZZZZ!)</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image155.png" data-desc-position="top"><img alt="" src="../media/image155.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>d. Once logged in, navigate to <strong>Users</strong> and select Anita Perez.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image156_v2.png" data-desc-position="top"><img alt="" src="../media/image156_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>e. Scroll down and click Administrator roles.</p>
+<p>f. Promote Anita Perez to Compliance Officer for the organization by ticking the box next to 'Compliance officer'. Click <strong>Save</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image157.png" data-desc-position="top"><img alt="" src="../media/image157.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Review retention settings for Webex Messaging, Meetings, and Calling.</p>
+<p>One of the first compliance considerations is data retention. How long should data be retained before it is deleted? It's important for the compliance officer to understand the retention policies of the organization and to configure Webex to match these policies.</p>
+<p>Before proceeding, <strong>move to WKST2</strong> (wkst2.dcloud.cisco.com). If not already connected, connect to WKST2. Login will be as Anita Prerez (dcloud\<strong>aperez</strong> // <strong>dCloud123!</strong>).</p>
+<p>a. Open the Chrome browser on WKST2 (wkst1.dcloud.cisco.com) and navigate to Collaboration Control Hub at <a href="https://admin.webex.com">https://admin.webex.com</a>.</p>
+<p>b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cbXXX.dc-YY.com. Click <strong>Sign In</strong>.</p>
+<p>c. Enter password: <strong>dCloud123!</strong> (non-SSO password is dCloudZZZZ!)</p>
+<p>d. Once logged in, navigate to Organization Settings. In the search window at the top of the page, enter 'Retention' to locate the retention settings. Notice there are separate retention policies for Webex Messaging (messages, files), Webex Meetings (recordings, transcripts, chats, Q&amp;A, whiteboards, polls, etc.), and Webex Calling (recordings).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_332_v2.png" data-desc-position="top"><img alt="" src="../media/image_m3_332_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>e. Click <strong>Settings</strong> under Webex App Messaging Retention Policy to review current messaging retention settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image159_v2.png" data-desc-position="top"><img alt="" src="../media/image159_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>By default, the retention period is set to 360 days. Notice that separate retention periods can be set for 1:1 chat and group chat.</p>
+<p>For the purposes of this lab, there is no reason to change the message retention policy, so click <strong>Cancel</strong> to close the Webex Space retention policy window.</p>
+<p>f. Click <strong>Settings</strong> under Webex Meetings Retention Policy to review current meeting retention settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image160_v2.png" data-desc-position="top"><img alt="" src="../media/image160_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>By default, the retention period is set to 360 days. Note that recording retention can be set to purge in 30 days, but by default the recordings follow the meetings retention policy. For the purposes of this lab, there is no reason to change the meeting retention policy, so just click <strong>Cancel</strong> to close the Webex Meetings Retention Policy window.</p>
+<p>g. Click <strong>Settings</strong> under Webex Calling Retention Policy to review current calling retention settings.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_333.png" data-desc-position="top"><img alt="" src="../media/image_m3_333.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>By default, the retention period for call recordings is set to 360 days. Notice that deleted recordings can be set to match the recording rentention period, but by default deleted recordings are set to purge immediately. Note that call details records (CDRs) retention is non-configurable. Again, for the purposes of this lab, there is no reason to change the calling retention policy, so just click <strong>Cancel</strong> to close the Webex Calling Retention Policy window.</p>
+<p><strong>Note:</strong> Keep in mind that retention policies in Control Hub apply to data retention for data archived or stored on the Webex platform. When relying on a external archival system (e.g., Webex Compliance Hub), the retention setting of that platform will determine how long organization data is retained. Always ensure that the retention period configured in Control Hub and/or the 3rd party platform matches your organization's retention policy for data.</p>
+</li>
+<li>
+<p>Review Webex Meeting controls and restrictions.</p>
+<p>On Control Hub navigate to <strong>Meeting</strong>, click <strong>Settings</strong>, and scroll down to review the data and communication restriction controls available for meetings.</p>
+<p>The internal and external meeting configuration options allow you to control which external users can join your organization's meetings (Internal Webex meetings) and which external organization's meetings (External Webex meeting sites) your users can join. This type of restriction control allows an organization to mitigate potential data loss by disallowing certain attendees and/or meeting sites and may sufficiently address organizational requirements regarding data loss.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image163_v2.png" data-desc-position="top"><img alt="" src="../media/image163_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>By default, external users are allowed to attend your organization's meetings, and your users can attend external meeting sites. For the purposes of this lab, you can leave the default values (e.g., no restrictions).</p>
+<p>In addition to controlling which users can join meetings and which meetings users are allowed to join, you can also restrict specific meeting features for both internal and external meetings.</p>
+<p>Scroll down and review the various meeting capabilities that can be disabled for internal or external meetings. For example, you could disable in-meeting tools like polling, Q&amp;A, chat, and recording. This type of meeting data restriction control allows an organization to mitigate and reduce potential data loss by disallowing certain channels of communication (e.g., Q&amp;A, chat, polling, etc.).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image164_v2.png" data-desc-position="top"><img alt="" src="../media/image164_v2.png" width="800"></a></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image165_v2.png" data-desc-position="top"><img alt="" src="../media/image165_v2.png" width="800"></a></p>
+<p>For the purposes of this lab, please leave the default values (e.g., no restrictions).</p>
+</li>
+<li>
+<p>Review Webex Calling controls and restrictions</p>
+<p>On Control Hub navigate to <strong>Calling</strong>, click <strong>Settings</strong>, then select <strong>Webex App</strong>, and scroll down to 'In-call feature access'. Review the available in-call features that can be disabled.</p>
+<p>An administrator can eliminate potential data leakage vectors to disable. For example, an adminstrator could prevent users from sharing content during a call (toggle off <strong>Screen Sharing</strong>) or sharing video on the call (toggle off <strong>Video on desktop</strong>/<strong>Video on mobile</strong>). Likewise, the administrator can prevent escalation of a call to a meeting (toggle off <strong>Move call to meetings on desktop app</strong>). These restrictions may sufficiently address organizational requirements regarding calling data loss.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_image334_v2.png" data-desc-position="top"><img alt="" src="../media/image_m3_image334_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Note that by default, there are no restrictions for in-call features. For the purposes of this lab, please leave the default values (e.g., no restrictions).</p>
+</li>
+</ol>
+<p>Now that you've enabled the Compliance Officer role for user Anita Perez and reviewed Webex's built-in data retention and restrictions capabilities, it's time to move on and explore Webex integration to an external compliance platform.</p>
+<h2 id="explore-ediscovery-for-webex-meetings-in-webex-compliance-hub">Explore eDiscovery for Webex Meetings in Webex Compliance Hub</h2>
+<p>eDiscovery is the mechanism for searching through and retrieving data from the retained user-generated data archive of an organization. This ensures that the compliance officer has full access to all retained user data as needed for compliance management and enforcement. Because <strong>eDiscovery</strong> enables search and retrieval of data, this is often discussed together with <strong>Archiving</strong> capabilities which pertains with how and where the data that is being searched is stored.</p>
+<p>Webex has built-in eDiscovery/Legal Hold and archiving or data storage capabilities which may be sufficient for some organizations. The built-in Webex eDiscovery Search and Extraction portal provides Webex organizations the ability to access Webex stored and retained user-generated data. And as discussed earlier, there are retention settings in Control Hub which determine how long user-generated data is stored on the Webex platform. Note that exploring the Webex eDiscovery Search and Extraction portal is not part of this lab. However, for your reference, the <a href="../appendix/#explore-webex-ediscovery-search-and-extraction-portal">Appendix</a> of this lab guide has a module that covers the built-in Webex eDiscovery tool. If you are interested in this module, please complete the rest of the lab before exploring.</p>
+<p>For advanced implementations of eDiscovery and Archiving, an external compliance platform integration is generally preferred.</p>
+<p>Webex Compliance Hub has a full set of compliance capabilities including eDiscovery, legal hold, and archiving for collaboration platform data. In this module you'll explore the archiving, legal hold and eDiscovery capabilities of Webex Compliance Hub.</p>
+<h3 id="webex-compliance-hub-archiving">Webex Compliance Hub Archiving</h3>
+<ol>
+<li>
+<p>Login to Webex Compliance Hub management portal with read-only admin login.</p>
+<p>As you examine Webex Compliance Hub eDiscovery capabilities, it helps to have some historical user data (something beyond just data you might generate today) so you can search and review data over a period days and weeks. In this section you'll use a read-only administrator account for a Webex Compliance Hub organization which contains months of user-generated message, meeting, and calling data.</p>
+<p>From the Chrome browser on Anita Perez's workstation (WKST2), navigate to the Webex Compliance Hub management portal at <a href="https://useast.thetalake.ai/">https://useast.thetalake.ai/</a>.</p>
+<p>Login using the read-only administrator account credentials (email / password): <strong>co.read.only@gmail.com</strong> / <strong>dCloud123!</strong></p>
+<p>Once logged in navigate to the Policies page by clicking '<strong>Policies</strong>' in the navigation menu at the top of the page.</p>
+</li>
+<li>
+<p>Review the Retention Library page.</p>
+<p>The retention library or archive is the final resting place for the data coming from the Webex platform, so it's important to understand where and how your data is archived before even thinking about eDiscovery.</p>
+<p>On the Webex Compliance Hub platform archiving is managed under the Policies sub-section '<strong>Content Destination</strong>'. Retention libraries are managed here.</p>
+<p>Navigate to the Archive retention libraries page by clicking 'Content Destination' in the left-hand navigation menu to expand, and then click 'Retention Libraries'.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image210_v2.png" data-desc-position="top"><img alt="" src="../media/image210_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>By default. Webex Compliance Hub automatically configures a retention library called 'Default' when the Webex Compliance Hub org is created.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image211_v2.png" data-desc-position="top"><img alt="" src="../media/image211_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Notice that the default retention period for the default retention library is 'Forever', meaning that user data for your org will be archived and maintained indefinitely. Data records have been created and archived to this retention library (Record Count = <em>nnn</em>).</p>
+<p><strong>Note:</strong> <em>You will see a second retention library called 'Delete Storage'. This retention library is for lab operational purposes. We use this library to clear data records from the Webex Compliance Hub tenant after the lab has been completed.</em></p>
+<p>Webex Compliance Hub allows for the creation of multiple retention libraries within an organization enabling you to segment data archiving to accommodate variable retention periods and storage requirements.</p>
+<p>Given this is a read-only account, you won't be able to edit the retention library and see details. Below is what the retention library edit dialog [would look like if you were to edit or create a new retention library.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image212_v2.png" data-desc-position="top"><img alt="" src="../media/image212_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>As mentioned earlier, this default library currently has no retention period set so data will be maintained indefinitely. If the compliance officer or administrator wanted to adjust the retention period, they simply enable the retention period and then specify the retention period in days.</p>
+</li>
+</ol>
+<h3 id="webex-compliance-hub-legal-hold">Webex Compliance Hub Legal Hold</h3>
+<p>Webex Compliance Hub also provides Legal Hold support. Legal Hold is a mechanism for creating and managing cases related to legal investigations where specific user data records must be maintained beyond the normal corporate data retention policies. User data records associated to a Legal Hold are maintained indefinitely until the Legal Hold case is closed.</p>
+<p>Webex Compliance Hub supports two types of Legal Hold:</p>
+<ul>
+<li>Cases - A case functions as an active eDiscovery workshop or a subset of an investigation. It is focused on specific artifacts rather than identities or custodians.</li>
+<li>Matters – A matter is a traditional, custodian-heavy legal hold vehicle. It is designed to mitigate the risk of data spoliation from the moment a duty to preserve arises.</li>
+</ul>
+<!-- list break -->
+
+<ol>
+<li>
+<p>Review Case Holds.</p>
+<p>a. Navigate to the Webex Compliance Hub legal hold Cases page.
+  On Webex Compliance Hub navigate to <strong>Holds &gt; Cases</strong> on the top navigation menu to reach the Cases page.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_417.png" data-desc-position="top"><img alt="" src="../media/image_m3_417.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>b. Review existing legal hold case.
+  Notice that a legal hold case already exists. Case number <strong>LHCR01003</strong> has already been created on the Webex Compliance Hub org you are currently logged into.</p>
+<p>Let’s review the existing legal hold case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_418.png" data-desc-position="top"><img alt="" src="../media/image_m3_418.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Notice this existing open case has 64 user data records already associated to it which will be maintained beyond the current retention period as long as the case remains open.</p>
+<p>Click the view icon (<a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_429.png" data-desc-position="top"><img alt="" src="../media/image_m3_429.png" style="border: 1px solid #888; border-radius: 4px;" width="20"></a>) on the right to review the case details.</p>
+<p>The case details screen shows the basic details about the case including media type and risk score content summary graphics.</p>
+<p>A case log is maintained and displayed on the right hand-side of the page providing details about this case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_419.png" data-desc-position="top"><img alt="" src="../media/image_m3_419.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>After a case is created, the compliance officer associates user data records to the case by searching for them via eDiscovery (Search), selecting them individually or in bulk, and then choosing ‘Add to Case’.</p>
+<p>Finally, click the ‘<strong>View Case Content</strong>’ button in the upper left-hand corner to navigate to the eDiscovery search page for the associated set of data records in this case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_420.png" data-desc-position="top"><img alt="" src="../media/image_m3_420.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Review Matter Holds.</p>
+<p>a. Navigate to the Webex Compliance Hub legal hold Matters page.</p>
+<p>On Webex Compliance Hub navigate to <strong>Holds &gt; Matters</strong> on the top navigation menu to reach the Cases page.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_421.png" data-desc-position="top"><img alt="" src="../media/image_m3_421.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>b. Review existing legal hold matter.</p>
+<p>Notice that a legal hold matter already exists. Matter ‘Patent Matter’ has already been created on the Webex Compliance Hub org you are currently logged into.</p>
+<p>Let’s review the existing legal hold matter.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_422.png" data-desc-position="top"><img alt="" src="../media/image_m3_422.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Notice this existing in-progress case called ‘Patent Matter’ has 3 data custodians associated to it which means these users’ data will be preserved beyond the current retention period as long as the matter remains open.</p>
+<p>Click the matter to load the details screen which shows basic information about the matter including description, matter start and end dates.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_423.png" data-desc-position="top"><img alt="" src="../media/image_m3_423.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Click the ‘Custodians’ button at the top to load the list of data custodians associated to this matter. Additional custodians can be added or deleted as required. </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_424.png" data-desc-position="top"><img alt="" src="../media/image_m3_424.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>A matter audit log is maintained and displayed on the right hand-side of the page providing details about this case.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_425.png" data-desc-position="top"><img alt="" src="../media/image_m3_425.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Once the matter is created, any data records created by any of the associated custodians are automatically added to the matter data set. 
+  To review data records for this legal hold matter, navigate to <strong>Search &gt; Search</strong>. In the left-hand side panel, scroll down and click ‘HOLDS’ to expand the filter and then, select ‘Legal Matter’.  </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_426.png" data-desc-position="top"><img alt="" src="../media/image_m3_426.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Finally, select ‘<em>Patent Matter (3 custodians)</em>’ from the drop-down list and then click ‘Apply’ to filter the list of records.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_427.png" data-desc-position="top"><img alt="" src="../media/image_m3_427.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Notice that 262 records have automatically been associated to this matter based on the 3 assigned custodians.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_428.png" data-desc-position="top"><img alt="" src="../media/image_m3_428.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+</ol>
+<p>Before proceeding click ‘Clear All’ at the top of the left-hand navigation window to clear the search parameters.</p>
+<h3 id="webex-compliance-hub-ediscovery">Webex Compliance Hub eDiscovery</h3>
+<ol>
+<li>
+<p>Navigate to Webex Compliance Hub eDiscvoery.</p>
+<p>Click 'Search' from the navigation menu and select 'Search' for eDiscovery where the administrator or compliance officer can search against all retained user data records across all media types including messages, files, and meeting and calling recordings. All available records are retrieved by default.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image213_v2.png" data-desc-position="top"><img alt="" src="../media/image213_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Note that this Webex Compliance Hub org has many Webex Messaging, Meeting, and Calling data records and lots of filters that can be applied to search easily through the records.</p>
+</li>
+</ol>
+<h3 id="ediscovery-for-webex-meetings">eDiscovery for Webex Meetings</h3>
+<p>Please spend some time reviewing some of the compliance options for Webex meetings available with Webex Compliance Hub.</p>
+<p>Webex Compliance Hub processes data from in-meeting chat, polls, Q&amp;A, shared files, and other meeting content (like the data you just generated). Webex Compliance Hub can also detect content from users' audio/video streams such as, files shared visually or verbally during the meeting (e.g., an attendee holding a paper with sensitive information written on it or verbally mentioning credit card numbers/SSN/DOB). You will learn how Webex Compliance Hub can help us flag these violations as well.</p>
+<ol>
+<li>
+<p>Review Webex Meeting data </p>
+<p>You will find pre-populated data that demonstrates some of the violations and types of data that Webex Copmliance Hub can process. Once logged in click the <strong>Search</strong> tab (1), click the <strong>Search</strong> option (2), enter the search term <strong>Poll</strong> (3), and click the <strong>Search</strong> (4) button. </p>
+<p>Note: the screenshot below is using the <strong>Table</strong> viewing format. This can be found on the right side of the screen near the <strong>Sort by</strong> option (5).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image264_v2.png" data-desc-position="top"><img alt="" src="../media/image264_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Explore and review few records that have Meeting Poll</p>
+<p>Close the Poll Search by clicking on the "x" next to search.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image267_v2.png" data-desc-position="top"><img alt="" src="../media/image267_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Repeat the search process with <strong>Q&amp;A</strong> (1) as the search term, select <strong>Slido</strong> (2) as filter and click the <strong>Search</strong> button (3).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/TL-Q%26A-Slido_v2.png" data-desc-position="top"><img alt="" src="../media/TL-Q%26A-Slido_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Before proceeding, close the Q&amp;A Search by clicking on the "x" next to search and the 'x' next to 'Slido'</p>
+</li>
+<li>
+<p>Search for and review records with specific built-in policy violations.</p>
+<p>In the left-hand navigation menu, under the <strong>FAVORITES</strong> section, click <strong>Policy Hits</strong>. In the resulting dialog box, scroll through the drop-down menu and select the following built-in detection rules then click <strong>Apply</strong>:</p>
+<p><strong>'Credit Card Number (CC#) -- Audio, Chat, Email, Image, AI Interaction, and Attachment'</strong>, <strong>'CryptoCurrency Discussions -- Video, Audio, Chat, Eamail, Image, AI Interaction, and Attachments'</strong>, and <strong>'Social Security Numbers(SSN) -- Audio, Chat, Email, Image, AI Interaction, and Attachments'</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image268_v2.png" data-desc-position="top"><img alt="" src="../media/image268_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Refine search to include specifc media types.</p>
+<p>Scroll down to the <strong>Media</strong> category in the left-hand navigation menu and click to expand the filter. Click <strong>Media Type</strong> and tick the boxes for <strong>Audio</strong> and <strong>Video</strong> then click <strong>Apply</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image269_v2.png" data-desc-position="top"><img alt="" src="../media/image269_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+<li>
+<p>Review a specific meeting data record. </p>
+<p>Select any meeting, you will observe a recording of the meeting and flags where the users have violated policies. You can use <strong>Record ID</strong> 576714780 as an example.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image270_v2.png" data-desc-position="top"><img alt="" src="../media/image270_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>If you are reviewing record 576714780, scroll to approximately 7 minutes and 06 seconds into the meeting and you will see that Webex Compliance Hub has the ability to flag documents held up to the screen containing PII and confidential data.</p>
+<p>Feel free to take a few minutes and review a couple more records for various other compliance policy violations to get a good understanding of Webex Compliance Hub detection capabilities. Once you have completed reviewing the options, clear out all the filters that you have selected by clicking "Clear All" on the top left of the screen.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image271_v2.png" data-desc-position="top"><img alt="" src="../media/image271_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<h2 id="explore-ediscovery-for-webex-calling-in-webex-compliance-hub">Explore eDiscovery for Webex Calling in Webex Compliance Hub</h2>
+<p>Please spend some time reviewing some of the compliance options for Webex Calling available in Webex Compliance Hub.</p>
+<p>Webex Compliance Hub provides archiving, eDiscovery, and supervision for Webex Calling with automated detection of compliance risks in audio content with comprehensive support for Webex Calling, including recordings, call detail records (CDRs), and business texting (SMS). </p>
+<p>In this section you will review Webex Calling data records in Webex Compliance Hub. </p>
+<ol>
+<li>
+<p>Search for Webex Calling data records.</p>
+<p>Navigate to eDicovery by clicking <strong>Search</strong> and then selecting <strong>Search</strong>. You will find pre-populated data that demonstrates some of the violations and types of data that Webex Compliance Hub can process. </p>
+<p>Click <strong>Webex Calling</strong> to add a platform filter. </p>
+<p>Note: the screenshots below show the <strong>Table</strong> view. This can be found on the right side of the screen near the <strong>Sort by</strong> option.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_335_v2.png" data-desc-position="top"><img alt="" src="../media/image_m3_335_v2.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Review list of records.</p>
+<p>You will find two types of Webex Calling records here:</p>
+<ul>
+<li>Call detail records (CDRs)
+        These records have a <u>Record Title</u> that starts with <strong>'Call between...'</strong>.  </li>
+<li>Call recordings
+        These records have a <u>Record Title</u> that starts with <strong>'Call with...'</strong> and ending with a numeric sequence corresponding to the calling number and call timestamp.</li>
+</ul>
+<p><strong>CDRs</strong></p>
+<p>If the call is internal (<strong>SIP_ENTERPRISE</strong>) you will see a pair of CDRs for each call - one for each call leg: originating, terminating.</p>
+<p>If the call is external (<strong>SIP_NATIONAL</strong> - to PSTN, or <strong>SIP_INBOUND</strong> - from PSTN) you will see a single CDR for each call - the internal call leg: originating or terminating.</p>
+<p><strong>Call Recordings</strong></p>
+<p>In addition to the CDRs described above, if the call is recorded, you will also find a corresponding recording record.  </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_336.png" data-desc-position="top"><img alt="" src="../media/image_m3_336.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Note: CDR data records will be the same for both standard and zero trust end-to-end encrypted (E2EE) Webex calls. However, as discussed in Module 2, zero trust E2EE calls do not support call recording (or other features like closed captioning) and as such the call will fall back to standard encryption. So if a call has a corresponding audio recording, then it was not a zero trust E2EE call. On the oher hand, for any unrecorded call it would be impossible to tell the difference between a standard encrypted call and a zero trust E2EE call.</p>
+</li>
+<li>
+<p>Review CDR data record details</p>
+<p>Begin to review data records for Webex Calling. Start with an internal call.</p>
+<p>Scroll down and locate the set of call records: 75052<strong>6890</strong>, 75052<strong>6883</strong>. These should be listed sequentially and correspond to the terminating and originating legs of an internal call.</p>
+<p>To review a record, click the record. Select the <strong>Attributes</strong> record to see the call detail information.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_337.png" data-desc-position="top"><img alt="" src="../media/image_m3_337.png" width="800"></a></p>
+<p>First, note the CallType for each record is <strong>SIP_ENTERPRISE</strong> indicating this is an internal call.</p>
+<p>Next, look at the <strong>CorrelationId</strong> attribute and notice that it is the same for both records (3d8bafcd-519b-4ec9-86cd-c68aa4565870). This indicates that these two records are part of the same call. Later you will see that the call recording data record has the same CorrelationId.</p>
+<p>Notice one of the records (75052<strong>6883</strong>) is the originating leg: <strong>CallDirection=ORIGINATING</strong>. And the other record (75052<strong>6890</strong>)is the terminating leg: <strong>CallDirection=TERMINATING</strong>.</p>
+<p>Additional detailed call information is displayed including call duration (CallDurationSeconds), times (CallAnswerTime, CallStartTime), numbers (CalledNumber, CallingNumber), and caller ID (CalledLineId, CallingLineId).</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_338.png" data-desc-position="top"><img alt="" src="../media/image_m3_338.png" width="800"></a></p>
+</li>
+<li>
+<p>Review a call recording record</p>
+<p>Now let's look at record 75052<strong>7005</strong>. This should be listed sequentially above the terminating and originating CDRs reviewed above. This record includes an audio recording of the call.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_339.png" data-desc-position="top"><img alt="" src="../media/image_m3_339.png" width="800"></a></p>
+<p>First, review the Attributes of the record. Observe that the <strong>CorrleationId</strong> (3d8bafcd-519b-4ec9-86cd-c68aa4565870) matches the two CDRs we reviewed above indicating this is the corresponding recording of that call. Also notice that the <strong>CallDirection</strong> parameter is 'ORIGINATING' indicating the call recording was started on the originator's leg of the call  </p>
+<p>Next, select <strong>Content Review</strong> to display the analysis of the recording made by the Webex Compliance Hub platform AI Compliance Advisor. This automated analysis indicates locations during the call recording where potential violations of compliance policy occurred. For example, the Compliance Advisor flagged multiple cases where <strong>'cryptopcurrency'</strong> is mentioned during the call which is a violation of the built-in 'CryptoCurrency Discussions' policy. Likewise, the Compliance Advisor flagged instances of social security numbers, credit card numbers, material nonpublic information (insider trading), and sensitive documents being discussed on the call. This analysis is a great starting place for the Compliance Officer when reviewing data records on the Webex Compliance Hub platform.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_340.png" data-desc-position="top"><img alt="" src="../media/image_m3_340.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a> </p>
+<p>Review the details of this analysis noting the policies that were violated. Using the timestamps in the Content Review analysis see if you can locate one of the potential violations in the audio recording.</p>
+<p>Next, review the transcript of the recording. Select <strong>Transcript</strong> to display the transcript of the audio reocrding generated by the Webex Compliance Hub platform AI Compliance Advisor. This transcript along with the automated analysis by the AI Compliance Advisor keeps the Compliance Officer from having to review the audio recording saving a lot of time.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_341.png" data-desc-position="top"><img alt="" src="../media/image_m3_341.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a>      </p>
+<p>Finally, try translating the transcript into another language. Click <strong>Translate</strong>, select the language to translate to from the dropdown (e.g., Spanish) and then, click <strong>Translate</strong> again. Notice the transcript has been translated into the language selected. This can be very useful if the call audio is in a language that the Compliance Officer is unable to understand.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_342.png" data-desc-position="top"><img alt="" src="../media/image_m3_342.png" width="800"></a></p>
+</li>
+<li>
+<p>Review other Webex Calling data records</p>
+<p>Take a few minutes to review some other records to see other types of calls and other possible compliance policy violations.</p>
+<p>For example, look at the records for a PSTN call with a single CDR data record and the corresponding audio recording data record. Scroll down and locate data recordings: 7312<strong>5943</strong> and 7312<strong>5955</strong> which are the respective CDR and audio recording for a PSTN call. (Hint: To find these records faster, use the side panel to select a 'Create Date' filter with a custom data range of January 19, 2026 12:00AM - January 19, 2026 11:00PM. This filter will return just these two data records).</p>
+<p>Note that under Attributes for both of these records, the <strong>CorrelationId</strong> (060b2e06-b871-435e-8a60-33c6be7862db) is the same indicating they are from the same call. The <u>CallType</u> attribute of the CDR is <strong>SIP_NATIONAL</strong> which indicates this is a PSTN call. This is an outbound call (<u>CallDirection</u> = <strong>ORGINATING</strong>) to the PSTN and as mentioned previously, this is the only call leg CDR available since the system has no visibility to the PSTN side of the call. </p>
+<p>(Note: If this were an inbound PSTN call, then the <u>CallType</u> would be <strong>SIP_INBOUND</strong> and the <u>CallDirection</u> would be <strong>TERMINATING</strong>)</p>
+<p>Feel free to review the Content Review and Transcript details for the audio recording data record.</p>
+<p>Once you are done exploring other Webex Calling data records, before you proceed, ensure that you have cleared any filters and logged out of Webex Compliance Hub. </p>
+<p>This concludes Webex Compliance Hub compliance sections.</p>
+<p>Note: Performing a Webex integration to Webex Compliance Hub with your Webex org is not part of this lab. However, for your reference, the <a href="../appendix/#webex-integration-to-webex-compliance-hub">Appendix</a> of this lab guide has a module that covers the integration of a Webex org to a Webex Compliance Hub tenant. If you are interested in this exercise, please complete any portion of the main lab you plan to do before exploring the exercises in the Appendix.</p>
+</li>
+</ol>
+<h2 id="cisco-secure-access-tenant-and-ad-onboarding">Cisco Secure Access Tenant and AD Onboarding</h2>
+<p>In this section of the lab, you will integrate the on-premises Active Directory (AD) to your Secure Access tenant. Integrating your on-premises directory with Secure Access ensures that data compliance is applied to the common identities across your organization.</p>
+<p>At the end of this section, you will have synchronized on-premises AD users into Secure Access.</p>
+<p><strong>Initial Secure Access Login</strong></p>
+<p>First, you need to access your Secure Access tenant so you can set up a connection between Secure Access and your Active Directory (AD) server.</p>
+<ol>
+<li>
+<p>Connect to the AD server (ad1) via Remote Desktop.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_344.png" data-desc-position="top"><img alt="" src="../media/image_m3_344.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Open the <strong>DUO – Secure Access</strong> folder on the desktop, then open the <em>SA-URL.txt</em> document.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_345.png" data-desc-position="top"><img alt="" src="../media/image_m3_345.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Copy and paste the URL in this document into the browser.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_346.png" data-desc-position="top"><img alt="" src="../media/image_m3_346.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+</li>
+<li>
+<p>Begin initial login to Secure Access with the copied link.</p>
+<p>In the Chrome browser on AD1, enter the copied Secure Access URL The browser will return a 403 App Not Assigned, scroll down and click ‘Go to login page’</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_347.png" data-desc-position="top"><img alt="" src="../media/image_m3_347.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>On the Application Portal page click the ‘Launch ’ button in the Secure Access tile under Applications to login to the Secure Access portal.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_348.png" data-desc-position="top"><img alt="" src="../media/image_m3_348.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Accept the license agreement and click through any additional prompts.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_349.png" data-desc-position="top"><img alt="" src="../media/image_m3_349.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>If a log in dialog appears, click the ‘X’ in the upper right-hand corner to close the window and proceed to the Secure Access portal.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_350.png" data-desc-position="top"><img alt="" src="../media/image_m3_350.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>The Secure Access portal is used throughout the lab to configure and manage the Secure Access tenant.</p>
+</li>
+</ol>
+<p><strong>Directory/User Onboarding</strong></p>
+<p>Now that the Secure Access portal is ready, the first task is to integrate the organization’s directory (in this case Active Directory) with the Secure Access platform, so it has visibility to the organization’s users. This is important not only for identifying users in the context of compliance violations (e.g., data loss prevention, anti-malware protection), but also if the organization plans to leverage Secure Access for network, user, and application access control. </p>
+<p>For the purposes of this lab, the focus is on user identity for data loss prevention (DLP) policy violations.</p>
+<ol>
+<li>
+<p>Prepare Active Directory for Integration with Secure Access. </p>
+<p>a. Add a user account in AD for authenticating the Secure Access cloud connecter</p>
+<p>On the Active Directory/Domain Controller (DC)) server (AD1) open Active Directory Users and Computers</p>
+<p>Right-click the dCloud object and select New &gt; User</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_351.png" data-desc-position="top"><img alt="" src="../media/image_m3_351.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Configure user as follows:</p>
+<ul>
+<li>First name:<strong>Cisco</strong></li>
+<li>Last name: <strong>Connector</strong></li>
+<li>User login name: <strong>Cisco_Connector</strong></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_352.png" data-desc-position="top"><img alt="" src="../media/image_m3_352.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Click ‘Next’ and enter password (<strong>dCloud123!</strong>) twice to confirm and untick all boxes except ‘Password never expires’</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_353.png" data-desc-position="top"><img alt="" src="../media/image_m3_353.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Click ‘Next’ and then ‘Finish’ to complete user creation.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_354.png" data-desc-position="top"><img alt="" src="../media/image_m3_354.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>b. Configure account group membership.</p>
+<p>To ensure the Cisco_Connector account has appropriate permissions to enable directory synchronization to Secure Access, make the account a member of the Enterprise Read-only Domain Controller group.</p>
+<p>Right-click the <strong>Cisco_Connector</strong> user and select ‘Properties’ and then select the ‘Member Of’ tab</p>
+<p>Click ‘Add’ and on the subsequent dialog, type ‘Enterprise Read-only’ and click ‘Check Name’ to load the ‘Enterprise Read-only Domain Controller’ group name and then click 'OK’ to add the account to this group</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_355.png" data-desc-position="top"><img alt="" src="../media/image_m3_355.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Confirm the group is now showing in the member of list and click ‘OK’ to save.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_356.png" data-desc-position="top"><img alt="" src="../media/image_m3_356.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>c. Set Audit account logon events group policy to both success and failure </p>
+<p>Open the Group Policy Management application, and under Domain Controllers, right-click ‘Default Domain Controllers Policy’ and select ‘Edit…’ to edit the policy.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_357.png" data-desc-position="top"><img alt="" src="../media/image_m3_357.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Then, under <em>Computer Configuration &gt; Policies &gt; Windows Settings &gt; Security Settings &gt; Local Policies &gt; Audit Policy</em> right-click 'Audit logon events' and select Properties. Finally, tick ‘Define these policy settings’ and then, tick 'Success’ and ‘Failure' and click ‘OK’ to save.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_358.png" data-desc-position="top"><img alt="" src="../media/image_m3_358.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Prepare Secure Access Platform for Directory Integration 
+API keys are required for securing the integration between Secure Access and the Active Directory server</p>
+<p>a. Generate KeyAdmin Key</p>
+<p>Return to Secure Access portal in the Chrome browser on AD1. If the login has timed out, re-enter the Secure Access encoded URL (or click on the bookmark created earlier)</p>
+<p>Navigate to <strong>Admin &gt; API Keys</strong> and notice there are 0 API Keys and 0 KeyAdmin Keys. You must create a KeyAdmin Key in order to generate an API Key.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_359.png" data-desc-position="top"><img alt="" src="../media/image_m3_359.png" style="border: 1px solid #888; border-radius: 4px;" width="300"></a></p>
+<p>To add an Admin key, click ‘KeyAdmin Keys’ and the +Add button. </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_360.png" data-desc-position="top"><img alt="" src="../media/image_m3_360.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>On the subsequent screen enter ‘<strong>ADadmin Key</strong>’ for the name  and tick the box next to all permissions and click ‘<strong>CREATE KEY</strong>’ to generate the key.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_361.png" data-desc-position="top"><img alt="" src="../media/image_m3_361.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Copy both the Admin API Key and the Admin API Key Secret to a text file for safe keeping and reuse.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_362.png" data-desc-position="top"><img alt="" src="../media/image_m3_362.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Note: The API Key and Key Secret for the Secure Access tenant will be different in your pod.</p>
+<p>b. Generate API Key for authentication using the Admin API Key</p>
+<p>Navigate to <strong>Connect &gt; Users, Groups and Endpoint Devices</strong>. Click the ‘Configuration Management’ and then select the ‘Advanced Settings’ tab.</p>
+<p>In the API Authentication section paste in both Key Admin API Key and Admin API Key Secret (from the ADadmin Key created in the previous step). Click the ‘Generate Client API Key Pair’ button to generate an API Client Key and Client Key Secret. </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_363.png" data-desc-position="top"><img alt="" src="../media/image_m3_363.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Note: The Key AdminAPI Key and Admin Key Secret for the Secure Access tenant will be different in your pod.</p>
+<p>Once generated, as before copy both the key and secret to the previous text file for safe keeping and reuse.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_364.png" data-desc-position="top"><img alt="" src="../media/image_m3_364.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Configure Directory Integration (Secure Access)</p>
+<p>Navigate to <strong>Connect &gt; User, Groups, and Endpoint Devices</strong></p>
+<p>a. Start the configuration flow for integration with Active Directory</p>
+<p>Click the ‘Configuration management’ button and then, click ‘Integrate directories’ button. Select ‘Active Directory’ and then click ‘Next’</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_365.png" data-desc-position="top"><img alt="" src="../media/image_m3_365.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>b. Register the Active Directory component </p>
+<p>Fill in the form with the following settings:</p>
+<ul>
+<li>Select ‘<strong>Domain Controller</strong>’</li>
+<li>Hostname: <strong>ad1</strong></li>
+<li>Internal IPv4 address: <strong>198.18.133.1</strong></li>
+<li>Domain: <strong>dcloud.cisco.com</strong></li>
+<li>Active Directory site: <strong>(1) Site (default site)</strong></li>
+</ul>
+<p>Click ‘Next’</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_366.png" data-desc-position="top"><img alt="" src="../media/image_m3_366.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Download Active Directory Integration files</p>
+<p>Click to download to Active Directory/DC both of the following files:</p>
+<ul>
+<li>Active Directory Connector (zip file – Cisco-Windows-Service.zip)</li>
+<li>Windows Configuration Script for Domain Controller (wsf file – Cisco-WindowsConfigurationScript-YYYY-MM-DD.wsf)</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_367.png" data-desc-position="top"><img alt="" src="../media/image_m3_367.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Once downloads complete, proceed to the next step.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_368.png" data-desc-position="top"><img alt="" src="../media/image_m3_368.png" style="border: 1px solid #888; border-radius: 4px;" width="300"></a></p>
+<p>Note: The name of the Windows Configuration Script will be based on today’s date (e.g., Cisco-WIndowsConfigurationScript-2026-10-08.wsf).</p>
+<p>If you receive a message in Chrome regarding the .wsf file being a suspicious download, click ‘Download suspicious file’ to allow the download.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_369.png" data-desc-position="top"><img alt="" src="../media/image_m3_369.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Note: The name of the Windows Configuration Script will be based on today’s date (e.g., Cisco-WIndowsConfigurationScript-2026-10-08.wsf).</p>
+</li>
+<li>
+<p>Install and Configure Cisco AD Connector</p>
+<p>a. Unzip AD Connector software and prepare for install</p>
+<p>On AD1 server, navigate to the downloaded files from previous step and unzip the AD Connector application (Cisco-Windows-Services.zip)</p>
+<p>Open the Config.dat file in Wordpad and and ensure the ‘Credential’ parameters in the dat file match the Client API Key and Client API Secret generated previously and copied to Notepad for safe keeping. </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_370.png" data-desc-position="top"><img alt="" src="../media/image_m3_370.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Note: The API keys and secrets in your pod will be different from those shown in the figure above.</p>
+<p>If they key and secret do not match, update the dat file to match and save. </p>
+<p>b. Install the Cisco AD Connector and start the service.</p>
+<p>Double-click 'Setup.msi' and click through the install wizard to install the Cisco AD Connector. Accept the default settings including ‘AD Lookup (using LDAP/LDAPS)’.</p>
+<p>When prompted for Active Directory credentials enter the Cisco_Connector account and password created earlier (<strong>Cisco_Connector // dCloud123!</strong>).</p>
+<p>Click through the rest of the wizard accepting the defaults and click the ‘Install’ button.</p>
+<p>Wait while the application is installed and the service is started. Click ‘Finish’ to complete the installation.</p>
+</li>
+<li>
+<p>Register AD DC to Complete the Integration with Secure Access (@Active Directory/DC)</p>
+<p>a. Run the Windows Configuration Script downloaded previously </p>
+<p>This script enables the integration of the Domain Controller (AD DC) to Secure Access.</p>
+<p>Open a command prompt on AD1 and navigate to C:\Users\Administrator\Desktop. </p>
+<p>Then, run the script using the ‘cscript’ utility (e.g. ‘cscript Cisco-WindowsConfigurationScript-2026-10-08.wsf'). As the script runs, respond with ‘y’ when prompted with:</p>
+<ul>
+<li>‘Do you want us to auto configure this Domain Controller (y or n)?’</li>
+<li>‘Would you like to register this Domain Controller (y or n)?’</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_371.png" data-desc-position="top"><img alt="" src="../media/image_m3_371.png" style="border: 1px solid #888; border-radius: 4px;" width="850"></a></p>
+<p>Ensure the script completes successfully – e.g., ‘Update success!’</p>
+</li>
+<li>
+<p>Confirm Users/Groups are Synced from AD to Secure Access</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_372.png" data-desc-position="top"><img alt="" src="../media/image_m3_372.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Note: It may take as long as 30 minutes for the AD connector and domain controller to show the green check mark (‘Okay’). Continue with the next section of the lab and return to check the status of the connector later.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_373.png" data-desc-position="top"><img alt="" src="../media/image_m3_373.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+</ol>
+<h2 id="cisco-secure-access-webex-integration-and-policy-configuration">Cisco Secure Access Webex Integration and Policy Configuration</h2>
+<p><strong>Webex Authentication for Secure Access Integration</strong></p>
+<p>Now that users have been synced to Secure Access, it’s time to enable the integration with Webex.</p>
+<p>Before authorizing the Webex integration to Secure Access, ensure the ‘Compliance Officer’ role has been assigned to Anita Perez’s user account (aperez@cbXXX.dc-YY.com). </p>
+<ol>
+<li>
+<p>Confirm the Compliance Officer Role for org Compliance Officer</p>
+<p>Open another Chrome browser tab on AD1 and navigate to Collaboration Control Hub (https://admin.webex.com)</p>
+<p>Because an administrator is not able to assign the Compliance Officer role to their own account, login with administrator Charles Holland’s credentials: cholland@cbXXX.dc-YY.com // dCloud123! (if you didn't complete module 1, the password will be dCloudZZZZ!).</p>
+<p>Navigate to <strong>Users</strong> and click user ‘Anita Perez’. On the main user page scroll down to the ‘Administrator role’ section and click to start the ‘Assign admin roles’ dialog. Ensure the box next to ‘Compliance officer’ is already ticked and then, click ‘Cancel’. Otherwise, tick the box and then, click ‘Save’ to complete the role assignment.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_374.png" data-desc-position="top"><img alt="" src="../media/image_m3_374.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Now that the compliance office role has been confirmed for / assigned to user Anita Perez, close the Control Hub Chrome browser tab.</p>
+</li>
+<li>
+<p>Authorize the Webex Platform for Secure Access Cloud Malware </p>
+<p>Before proceeding, <u><strong>connect to Workstation 2 (WKST2)</strong></u> via Remote Desktop.</p>
+<p>Now use Anita Perez’s account with compliance officer roles to authorize the Webex integration to Secure Access for data loss prevention (DLP) and malware. Webex integrates to Secure Access using the <strong>SaaS API</strong> method.</p>
+<p>Open the Chrome browser on WKST2 and navigate to the Secure Access portal by selecting ‘Cisco Secure Access’ from the Identity and Misc. Links menu on the default home page. </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_416.png" data-desc-position="top"><img alt="" src="../media/image_m3_416.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+<p>Once connected to the Secure Access portal, navigate to <strong>Admin &gt; Authentication</strong> to load the SaaS API Platforms list for integration to Secure Access.</p>
+<p>Scroll down to ‘Webex Teams’ at the bottom of the screen and click to expand and load the list of available Webex SaaS API authorizations: Cloud Malware and DLP (data loss prevention). </p>
+<p>Click ‘Authorize New Tenant’ under Cloud Malware to authorize Webex for Secure Access cloud malware.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_375.png" data-desc-position="top"><img alt="" src="../media/image_m3_375.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Tick the box to acknowledge the requirement for full administrator privileges with compliance officer role and click ‘Next’ to continue.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_376.png" data-desc-position="top"><img alt="" src="../media/image_m3_376.png" style="border: 1px solid #888; border-radius: 4px;" width="500"></a></p>
+<p>Next, provide a name for the tenant – for example, ‘<em>Webex AMP (cbXXX)</em>’. Click ‘Next’ to continue.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_377.png" data-desc-position="top"><img alt="" src="../media/image_m3_377.png" style="border: 1px solid #888; border-radius: 4px;" width="500"></a></p>
+<p>Select ‘Delete’ from the Response Action drop-down to ensure that any detected malware or virus files will be deleted. Click ‘Next’ to continue.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_378.png" data-desc-position="top"><img alt="" src="../media/image_m3_378.png" style="border: 1px solid #888; border-radius: 4px;" width="500"></a></p>
+<p>Finish the integration by clicking ‘Next’ to begin the authorization process</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_379.png" data-desc-position="top"><img alt="" src="../media/image_m3_379.png" style="border: 1px solid #888; border-radius: 4px;" width="500"></a></p>
+<p>When prompted provide Anita Perez’s Webex credentials (aperez@cbXXX.dc-YY.com // dCloud123! - if you didn't complete module 1, the password will be dCloudZZZZ!). When prompted by the Secure Access platform (Umbrella) to accept the required permissions, click ‘Accept’.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_380.png" data-desc-position="top"><img alt="" src="../media/image_m3_380.png" style="border: 1px solid #888; border-radius: 4px;" width="900"></a></p>
+<p>Finally, click ‘Done’ after successful authorization to complete the integration dialog.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_381.png" data-desc-position="top"><img alt="" src="../media/image_m3_381.png" style="border: 1px solid #888; border-radius: 4px;" width="500"></a></p>
+<p>Returning to the Authentication page under Webex Teams, the Cloud Malware section should now show that the Webex platform integration named ‘<em>Webex AMP (cbXXX)</em>’ with response action ‘Delete’ has been ‘Authorized’.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_382.png" data-desc-position="top"><img alt="" src="../media/image_m3_382.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+<li>
+<p>Authorize the Webex Platform for Secure Access DLP </p>
+<p>Now repeat the authorization flow for Secure Access DLP using the compliance officer account as before (Anita Perez). </p>
+<p>Click ‘Authorize New Tenant’ under DLP to authorize Webex for Secure Access data loss protection.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_383.png" data-desc-position="top"><img alt="" src="../media/image_m3_383.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Again, click through the dialogs acknowledging the compliance officer requirement, providing a name for the tenant – for example, ‘<em>Webex DLP (cbXXX)</em>’, and authorizing the integration by logging into Webex again. Note for this second integration, there is not a prompt to accept permissions as the permissions granted previously for malware are sufficient for DLP as well.</p>
+<p>Once the authorization flow is complete, return to the Authentication page. Under the Webex Teams section the DLP sub-section should now show that the Webex platform integration named ‘<em>Webex DLP (cbXXX)</em>’ has been ‘Authorized’.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_384.png" data-desc-position="top"><img alt="" src="../media/image_m3_384.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>With Webex authorizations done the integration to Secure Access for cloud malware and DLP is complete. Configuration of cloud malware and DLP functionality can begin.</p>
+</li>
+</ol>
+<p><strong>Enable Cloud Malware Protection</strong></p>
+<p>To begin leveraging cloud malware protection it needs to be enabled via security profiles.</p>
+<ol>
+<li>
+<p>Enable Secure Access malware protection </p>
+<p>Navigate to <strong>Secure &gt; Security Profiles</strong> to load the list of profiles. Two system provided profiles are available by default: ‘Internet Access’ and ‘Private Access’.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_385.png" data-desc-position="top"><img alt="" src="../media/image_m3_385.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Click to expand the ‘System Provided – Internet Access’ profile and scroll down to the ‘Security and Acceptable Use Controls’ section. Notice that the ‘File Inspection’ row includes a note indicating that malware analytics is disabled: ‘Cisco Secure Malware Analytics: Disabled’</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_386.png" data-desc-position="top"><img alt="" src="../media/image_m3_386.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Click ‘Edit’ and then click the ‘Cisco Secure Malware Analytics is Disabled’ toggle to enable the malware protection</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_387.png" data-desc-position="top"><img alt="" src="../media/image_m3_387.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Select ‘North America’ from the Sandbox Region drop-down and then tick to acknowledge the warning about the region configuration being permanent.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_388.png" data-desc-position="top"><img alt="" src="../media/image_m3_388.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Click ‘Save’ to enable malware analytics.</p>
+<p>Finally, click to expand the ‘System Provided – Private Access’ profile and repeat the same steps to enable malware analytics for this profile. Note that this time the sandbox region is hard-coded based on the previous profile selection.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_389.png" data-desc-position="top"><img alt="" src="../media/image_m3_389.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+</li>
+</ol>
+<p><strong>Configure DLP Data Classification and Policy</strong></p>
+<p>By default, there are no DLP policies in place on the Secure Access platform. In order to begin leveraging DLP, a DLP policy must be configured. </p>
+<ol>
+<li>
+<p>Configure Data Classification 
+      Because DLP policies consist of one or more data classifications, a data classification should be configured before adding a DLP policy</p>
+<p>Configure a data classification that includes a combination of standard built-in identifier, machine learning (ML) built-in identifier, and custom identifier. </p>
+<p>Here is a summary of the data classification’s identifier to assign:</p>
+<ul>
+<li>Credit Card Numbers (lenient) – identify instances of credit card number </li>
+<li>IRS Forms – identify US Internal Revenue Service tax forms</li>
+<li>NDA – identify non-disclosure agreements (NDAs)</li>
+<li>Custom regex – identify defined character string(s) </li>
+</ul>
+<p>This data classification will be used later in a DLP policy.</p>
+<p>a. Add a Custom Identifier</p>
+<p>Navigate to <strong>Secure &gt; Data Classification</strong>. Note that by default there are a handful of data classifications already configured on the platform. Each of these data classifications consists of a set of built-in data identifiers.</p>
+<p>To begin, click ‘ADD CUSTOM IDENTIFIER’</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_390.png" data-desc-position="top"><img alt="" src="../media/image_m3_390.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>On the subsequent screen enter the following information:</p>
+<ul>
+<li>Name: <strong>Secure Regex</strong></li>
+<li>Threshold: Leave ‘<strong>None</strong>’ and ‘<strong>Equal to</strong>’, enter ‘<strong>1</strong>’, and click ‘ADD’</li>
+<li>Entry Type: Tick ‘<strong>Pattern</strong>’</li>
+<li>Pattern:<ul>
+<li>Enter 1st pattern: ‘<strong>[Tt][Oo][Pp] [Ss][Ee][Cc][Rr][Ee][Tt]</strong>’ and click ‘ADD’</li>
+<li>Enter 2nd pattern ‘<strong>[Ss][Uu][Pp][Ee][Rr] [Ss][Ee][Cc][Rr][Ee][Tt]</strong>’ and click ‘ADD’</li>
+</ul>
+</li>
+<li>Click ‘SAVE’ to save the customer identifier</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_391.png" data-desc-position="top"><img alt="" src="../media/image_m3_391.png" style="border: 1px solid #888; border-radius: 4px;" width="700"></a></p>
+<p>b. Add a New Data Classification</p>
+<p>Click ‘<strong>+ Add</strong>’ button to add new Data Classification.</p>
+<p>On the subsequent screen configure the following information:</p>
+<ul>
+<li>Data Classification Name: <strong>Webex DLP</strong></li>
+<li>Include Data Identifiers: <ul>
+<li>Select Boolean Operator: <strong>OR</strong> (default)</li>
+<li>Built-in Data Identifiers: <ul>
+<li>Built-in Identifiers: <strong>Credit Card Number – Lenient</strong></li>
+<li>ML Built-in Identifiers: <strong>IRS Forms</strong>, <strong>NDA</strong>
+      (Note: When the box next to a built-in identifier is ticked, the identifier is immediately moved to the ‘Included Data Identifiers’ list near the top of the page)  </li>
+</ul>
+</li>
+<li>Custom Identifiers: <ul>
+<li><strong>Secure Regex</strong> (the customer identifier configured earlier)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Click ‘SAVE’ to save the new data classification.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_392.png" data-desc-position="top"><img alt="" src="../media/image_m3_392.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>Confirm the data classification has been added.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_393.png" data-desc-position="top"><img alt="" src="../media/image_m3_393.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>This data classification will be added to the DLP policy in the next step.</p>
+</li>
+<li>
+<p>Configure Data Loss Prevention Policy</p>
+<p>The DLP policies or rules configured on the system are applied to data received from integrated platforms. In this case, a DLP policy rule will be configured and applied to data received from the Webex SaaS API platform integration. </p>
+<p>a. Add a SaaS API Rule </p>
+<p>Navigate to <strong>Secure &gt; Data Loss Prevention Policy</strong>.</p>
+<p>Click ‘ADD RULE’ and select ‘SaaS API Rule’ from the drop-down menu to begin configuring the policy</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_394.png" data-desc-position="top"><img alt="" src="../media/image_m3_394.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>b. Set Rule Name and Severity</p>
+<p>Enter a name for the rule – e.g., ‘<strong>Webex DLP</strong>’. </p>
+<p>Select ‘<strong>Critical</strong>’ from the Severity drop-down. This sets the severity level for any events/incidents triggered by this rule. </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_395.png" data-desc-position="top"><img alt="" src="../media/image_m3_395.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>c. Select the Data Classification</p>
+<p>Under Data Classifications tick ‘<strong>Content and File Name</strong>’ and select the ‘<strong>Webex DLP</strong>’ Data Classification created earlier. Hover over ‘PREVIEW’ next to the ‘Webex DLP’ classification to review the details.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_396.png" data-desc-position="top"><img alt="" src="../media/image_m3_396.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+<p>This sets the rule to generate events for any credit card numbers, IRS forms, NDAs, and the terms ‘top secret’ and ‘super secret’ (Secure Regex custom identifier) found in the data received by the platform.</p>
+<p>d. Apply the Rule to the Webex Platform</p>
+<p>Under Platform apply the rule to Webex data by ticking ‘<strong>Webex Teams</strong>’ and then ‘<strong>Webex (cbXXX)</strong>’.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_397.png" data-desc-position="top"><img alt="" src="../media/image_m3_397.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+<p>e. Configure the User and Resource Scope</p>
+<p>By default, the rule should apply to all Webex users and the data from all resources. Under <em>Include and Exclude</em> ensure ‘<strong>Include all users</strong>’ is ticked. Under Resources ensure ‘<strong>Include All Resources</strong>’ is ticked.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_398.png" data-desc-position="top"><img alt="" src="../media/image_m3_398.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+<p>f. Set the Exposure and Action</p>
+<p>Under Exposure, tick ‘<strong>Shared with external users</strong>’ and ‘<strong>Shared with internal users</strong>’. This ensures that all file sharing will be monitored by the rule.</p>
+<p>For full remediation of DLP policy events, set the policy response action to delete violating data. Under Action, select ‘<strong>Delete</strong>’ from the drop-down.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_399.png" data-desc-position="top"><img alt="" src="../media/image_m3_399.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+<p>g. Configure Notification</p>
+<p>To ensure notification is provided to users that violate DLP policy rules, enable email notification. Under User Notifications toggle on ‘<strong>Email Message enabled</strong>’. </p>
+<p>Next, ensure all recipient types are ticked (‘<strong>File owner</strong>’, ‘<strong>Event actor</strong>’, ‘<strong>Actor’s manager</strong>’, and ‘<strong>Custom recipient</strong>’). Under ‘<strong>Custom recipient</strong>’ type the compliance officer’s email: <strong>aperez@cbXXX.dc-YY.com</strong> and press enter to add the email to the list.</p>
+<p>Finally, tick ‘<strong>Default Email</strong>’ to configure the email notification. </p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_400.png" data-desc-position="top"><img alt="" src="../media/image_m3_400.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+<p>Click ‘<strong>Preview Default Email &gt;&gt;</strong>’ to review the email notification the system will send for policy violation(s).</p>
+<p>Now, click ‘Save’ to complete the DLP policy rule configuration.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_401.png" data-desc-position="top"><img alt="" src="../media/image_m3_401.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+</li>
+</ol>
+<p>Secure Access is now monitoring all Webex data from the integrated organization and applying both cloud malware and DLP to the data stream based on the configuration applied.</p>
+<h2 id="generate-user-data-and-monitor-secure-access-operations">Generate User Data and Monitor Secure Access Operations</h2>
+<p>With the Webex org integrated to Secure Access, cloud malware and DLP enabled, and data classifications and policies in place, it's time to generate user data and see the Secure Access platform in action.</p>
+<p>Note: Before continuing, return to check that the AD connector and domain controller show a green check mark ( ‘Okay’) (Navigate to <strong>Connect &gt; Uses, Groups, and Endpoint Devices) &gt; Configuration management</strong>)</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_373.png" data-desc-position="top"><img alt="" src="../media/image_m3_373.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p><strong>Data Loss Prevention Validation</strong></p>
+<ol>
+<li>
+<p>Prepare Environment for Webex Messaging Data Generation.</p>
+<p>To validate Secure Access DLP operation, messaging data needs to be generated. The data will be generated using the Webex App on the Windows workstation.</p>
+<p>a. Webex App Login for Org Users on Workstations </p>
+<p>Login to the Webex App on WKST1 with Charles Holland’s account: cholland@cbXXX.dc-YY.com // dCloud123! (if you didn't complete module 1, the password will be dCloudZZZZ!)</p>
+<p>Login to the Webex App on WKST3 with Kellie Melby’s account: kmelby@cbXXX.dc-YY.com // dCloud123! (if you didn't complete module 1, the password will be dCloudZZZZ!)</p>
+<p>b. Create a Webex Messaging Space</p>
+<p>On WKST1 Webex App create a new Webex messaging space:</p>
+<ul>
+<li>Space name: <strong>Secure Access – DLP</strong></li>
+<li>Add member: <strong>Kellie Melby (kmelby)</strong></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_402.png" data-desc-position="top"><img alt="" src="../media/image_m3_402.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Once the space is created, confirm creation on WKST1 and then, return to WKST3 and confirm Kellie has been added to the ‘<em>Secure Access – DLP</em>’ space.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_403.png" data-desc-position="top"><img alt="" src="../media/image_m3_403.png" style="border: 1px solid #888; border-radius: 4px;" width="600"></a></p>
+</li>
+<li>
+<p>Generate Webex Messaging Data
+      Send messages and files from Charles Holland’s Webex App on WKST1 in the ‘<strong>Secure Access – DLP</strong>’ space as described in the table below. The table indicates the DLP data classification the message or file should match on the Secure Access platform. </p>
+<p>On WKST1 the files listed in the table below are available in the following directory: C:\Users\cholland\Downloads\file-dlp-amp\</p>
+<p><strong>Table 3: Secure Access DLP Data Generation</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sender</th>
+<th>Recipient / Space</th>
+<th>Message / File</th>
+<th>Details</th>
+<th>DLP Classifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cholland</td>
+<td>Secure Access DLP</td>
+<td>Message</td>
+<td>“Hi, Here’s some <span style="color: red;"><strong>TOP secret</strong></span> information”</td>
+<td>Secure Regex <br> <em>(Custom Identifier)</em></td>
+</tr>
+<tr>
+<td>cholland</td>
+<td>Secure Access DLP</td>
+<td>File</td>
+<td>ccn.txt</td>
+<td>Credit Card Number - Lenient <br> <em>(Built-in Identifier)</em></td>
+</tr>
+<tr>
+<td>cholland</td>
+<td>Secure Access DLP</td>
+<td>Message</td>
+<td>“In case you didn't get the file. My credit care number is <span style="color: red;"><strong>4508-1304-5718-5563</strong></span>. This is a Visa credit card. The expiration data is 09/2028 and the CVC is 233"information”</td>
+<td>Credit Card Number - Lenient <br> <em>(Built-in Identifier)</em></td>
+</tr>
+<tr>
+<td>cholland</td>
+<td>Secure Access DLP</td>
+<td>File</td>
+<td>nda.pdf</td>
+<td>NDA <br> <em>(ML Built-in Identifier)</em></td>
+</tr>
+<tr>
+<td>cholland</td>
+<td>Secure Access DLP</td>
+<td>File</td>
+<td>fw9.pdf</td>
+<td>IRS Forms <br> <em>(ML Built-in Identifier)</em></td>
+</tr>
+</tbody>
+</table>
+<p>When sending messages and files, periodically return to Kellie Melby’s Webex App on WKST3 to confirm that all messages and files have been received in the space.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_404.png" data-desc-position="top"><img alt="" src="../media/image_m3_404.png" width="800"></a></p>
+<p>All messages and files should be remediated (deleted) by the Secure Access platform (on behalf of the compliance officer (Anita Perez- aperez) after a short period of time.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_405.png" data-desc-position="top"><img alt="" src="../media/image_m3_405.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p><span style="color: red;"><strong>[Note: Currently it takes between 7 and 15 minutes before files and messages are remediated.]</strong></span></p>
+<p>In the meantime, move on and start validating cloud malware functionality.</p>
+</li>
+</ol>
+<p><strong>Cloud Malware Validation:</strong></p>
+<ol>
+<li>
+<p>Prepare Environment for Webex Messaging AMP Data Generation.</p>
+<p>a. Create a Webex Messaging Space for sharing AMP sample files</p>
+<p>On WKST1 Webex App create a new Webex messaging space:</p>
+<ul>
+<li>Space name: <strong>Secure Access – AMP</strong></li>
+<li>Add member: <strong>Kellie Melby (kmelby)</strong></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_406.png" data-desc-position="top"><img alt="" src="../media/image_m3_406.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p>Once the space is created, return to WKST3 and confirm Kellie has been added to the ‘<em>Secure Access – AMP</em>’ space.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_407.png" data-desc-position="top"><img alt="" src="../media/image_m3_407.png" style="border: 1px solid #888; border-radius: 4px;" width="700"></a></p>
+</li>
+<li>
+<p>Generate Webex Messaging AMP Data</p>
+<p>Send files from Charles Holland’s Webex App on WKST1 in the ‘<strong>Secure Access – AMP</strong>’ space as described in the table below.</p>
+<p>On WKST1 the malware files listed in the table below are available in the following directory: C:\Users\cholland\Downloads\file-dlp-amp\quarantine\</p>
+<p><strong>Table 4: Secure Access Cloud Malware Data Generation</strong></p>
+<table>
+<thead>
+<tr>
+<th>Sender</th>
+<th>Recipient / Space</th>
+<th>Message / File</th>
+<th>Sample File</th>
+<th>Sample Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cholland</td>
+<td>Secure Access AMP</td>
+<td>File</td>
+<td>5c0987d0ee…f9b9bf8</td>
+<td>2023-06-MysticStealer</td>
+</tr>
+<tr>
+<td>cholland</td>
+<td>Secure Access AMP</td>
+<td>File</td>
+<td>6be18e3afe…14aed8f.txt</td>
+<td>2019-06-Frankenstein</td>
+</tr>
+<tr>
+<td>cholland</td>
+<td>Secure Access AMP</td>
+<td>File</td>
+<td>0cba53c36…1e976e4.js</td>
+<td>2018-04-GandCrab-Swarm (javascript)</td>
+</tr>
+<tr>
+<td>cholland</td>
+<td>Secure Access AMP</td>
+<td>File</td>
+<td>0e8c2f38…79d4932.macro</td>
+<td>2018-04-GandCrab-Swarm (macros)</td>
+</tr>
+</tbody>
+</table>
+<p>When sending files, periodically return to Kellie Melby’s Webex App on WKST3 to confirm that all the files have been received in the space.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_408.png" data-desc-position="top"><img alt="" src="../media/image_m3_408.png" style="border: 1px solid #888; border-radius: 4px;" width="700"></a></p>
+<p>Because all the files sent in the ‘Secure Access – AMP’ contained malware, they should be remediated (deleted) by the Secure Access platform (on behalf of the compliance officer (Anita Perez) after a short period of time.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_409.png" data-desc-position="top"><img alt="" src="../media/image_m3_409.png" style="border: 1px solid #888; border-radius: 4px;" width="400"></a></p>
+<p><span style="color: red;"><strong>[Note: Currently it takes between 7 and 15 minutes before files and messages are remediated.]</strong></span></p>
+</li>
+</ol>
+<p><strong>Monitor Secure Access DLP and Malware Operation</strong></p>
+<p>Because messages and files have been shared in Webex by users of the organization, Secure Access which has been monitoring Webex data now has some actual data to analyze. When monitoring and analyzing data from the Webex org Secure Access will apply configured DLP and malware policy and log events for any violations of policy. It is now time to review Secure Access policy violation events to validate operation </p>
+<ol>
+<li>
+<p>Review DLP Events Generated by Secure Access for DLP Policy Violations </p>
+<p>Since all of the previous messages and files sent in the Webex App contain content that violates the ‘Webex DLP’ data loss prevention policy (due to the ‘Webex DLP’ data classification included in the policy), there should be several events logged on the system.</p>
+<p>a. Review DLP Monitor List of Events</p>
+<p>Return to the Secure Access portal (use the encoded URL or the browser bookmark to login again, if required). </p>
+<p>Navigate to <strong>Monitor &gt; Data Loss Prevention</strong> to load a list of the latest events.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_410.png" data-desc-position="top"><img alt="" src="../media/image_m3_410.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>There should be an event listed for each DLP policy violation corresponding to the messages and files sent earlier.</p>
+<p>Note there are five events logged (for the two messages and the three files): </p>
+<ul>
+<li>All events have a severity level of ‘Critical’ and were all initiated by the event actor ‘Charles Holland, cholland@...’</li>
+<li>The name of any files shared are displayed in the ‘File Name’ column (ccn.txt, fw9.pdf, nda.pdf), otherwise ‘Message’ is shown indicating the event corresponds to a specific message.</li>
+<li>The name of the DLP policy the event violates is shown (e.g, ‘Webex DLP’ the policy configured earlier in this lab) as well as the space where the policy violation occurred (e.g., ‘Secure Access – DLP’).</li>
+<li>In all cases the response action to the policy violation was to delete the message or file (e.g., ‘Deleted’).</li>
+<li>Click the three dot (ellipsis) in the far right column for any event to view more details about the event</li>
+</ul>
+<p>b. Review DLP Event Details</p>
+<p>Click the three dots (‘…’) in the far-right column next to any event and select ‘View details’ to see additional information about the event including the timeline of operations, application/platform tenant details, violated rule details, and data classification matching details.</p>
+<p>Review the event details for at least one message (‘File Name’ = Message) and one file (‘File Name’ = ...txt or ...pdf).</p>
+<p><strong>Message:</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_411.png" data-desc-position="top"><img alt="" src="../media/image_m3_411.png" width="800"></a></p>
+<p><strong>File:</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_412.png" data-desc-position="top"><img alt="" src="../media/image_m3_412.png" width="800"></a></p>
+</li>
+<li>
+<p>Review Malware Files Detected by Secure Access Cloud Malware</p>
+<p>Since the last four files sent in the Webex App contained malware, the cloud malware should have detected and logged as malicious files on the system.</p>
+<p>a. Review Cloud Malware Malicious File List</p>
+<p>On the Secure Access portal navigate to <strong>Monitor &gt; Cloud Malware</strong> to load malware scanning information and the list malicious files detected.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_413.png" data-desc-position="top"><img alt="" src="../media/image_m3_413.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>In addition to the counters for number of files scanned (4), malware found (4), and users with malware (2), the list of malicious files should contain an entry for each detected malware file. Note there are four malicious files detected (corresponding to the four malware files previously sent). </p>
+<p>For each malicious file note the: </p>
+<ul>
+<li>‘File Name’ (e.g., ‘0e8c2f387c4a76c024dc69e69ee8163fac5a...’, ‘6be18e3afeec482c79c9dea119d11d9c159...’, ‘0cba53c366aeb34bd6dfb1ed1f9b9b7d8ca6...’, ‘5c0987d0ee43f2d149a38fc7320d9ffd0254...’)</li>
+<li>‘Resource Name’ (name of the space, e.g., ‘Secure Access – AMP’)</li>
+<li>‘Description’ (name of the identified malware/virus signature – e.g., ‘W32.0E8C2F387C-95.SBX.TG’, ‘Doc.Exploit.Xploit::100.sbx.vioc’, ‘Auto.0CBA53C366.212551.in07.Talos’, ‘Gen:Variant.Midie.125365’).</li>
+</ul>
+<p>b. Review Malicious File Full Details</p>
+<p>Click the three dots (‘…’) in the far-right column for any malicious file and select ‘See Full Details’ to see detailed information about the detected malware/virus file. Details include the platform/instance, file owner, resource name, AMP scan detection, and an external link to the malware/virus detection page on the Virus Total website with more information.</p>
+<p>Review the full details for at least one of the detected malicious files.</p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_414.png" data-desc-position="top"><img alt="" src="../media/image_m3_414.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p><strong>Virus Total:</strong></p>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../media/image_m3_415.png" data-desc-position="top"><img alt="" src="../media/image_m3_415.png" style="border: 1px solid #888; border-radius: 4px;" width="800"></a></p>
+<p>This completes the lab exercises. Feel free to continue exploring the DLP and malware protection capabilities of the Secure Access platform for Webex data – for example:</p>
+<ul>
+<li>Review previous events and malicious file details.</li>
+<li>Review and configure new or updated data classifications.</li>
+<li>Generate additional Webex data to trigger new data classification/DLP policy violations or malicious file detection for additional in-depth review of Secure Access operational behavior and response.</li>
+</ul>
+</li>
+</ol>
+<p><strong>*** END of MODULE 3 **</strong></p>
+<p>Continue with Appendix or return to either Module 1 or Module 2:</p>
+<ul>
+<li><a href="../module1_identity/">Module 1: Webex Identity</a></li>
+<li><a href="../module2_zero_trust_encryption/">Module 2: Zero Trust Encryption</a></li>
+<li><a href="./">Module 3: Webex Compliance</a> <em>(current)</em></li>
+<li><a href="../appendix/">Appendix</a></li>
+<li><a href="../conclusion/">Conclusion</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../module2_zero_trust_encryption/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Module 2 - Webex Zero Trust Encryption">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Module 2 - Webex Zero Trust Encryption
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../conclusion/" class="md-footer__link md-footer__link--next" aria-label="Next: Conclusion">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Conclusion
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+        <script src="../template_assets/js/labConfig.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

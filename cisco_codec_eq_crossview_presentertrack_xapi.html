@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cisco Codec EQ — Cross View and Presenter Track xAPI Reference</title>
+  <style>
+    :root { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 11pt; line-height: 1.45; color: #222; }
+    body { max-width: 800px; margin: 0 auto; padding: 24px 32px; }
+    h1 { font-size: 1.5rem; border-bottom: 2px solid #049fd9; padding-bottom: 6px; margin-top: 0; }
+    h2 { font-size: 1.2rem; margin-top: 1.5em; color: #049fd9; }
+    h3 { font-size: 1.05rem; margin-top: 1.2em; }
+    h4 { font-size: 1rem; margin-top: 1em; }
+    table { border-collapse: collapse; width: 100%; margin: 0.6em 0; font-size: 0.95em; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    th { background: #e8f4fc; font-weight: 600; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+    pre { background: #f5f5f5; padding: 12px; border-radius: 4px; overflow-x: auto; font-size: 0.85em; }
+    pre code { background: none; padding: 0; }
+    hr { border: none; border-top: 1px solid #ddd; margin: 1.5em 0; }
+    .meta { color: #666; font-size: 0.9em; margin-bottom: 1em; }
+    ul { margin: 0.4em 0; }
+    @media print {
+      body { padding: 16px; }
+      pre { break-inside: avoid; }
+      table { break-inside: avoid; }
+      h2, h3 { break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Cisco Codec EQ: Cross View and Presenter Track Camera — xAPI Reference</h1>
+  <p class="meta"><strong>Document version:</strong> 1.0 &nbsp;|&nbsp; <strong>Applicable devices:</strong> Cisco Codec EQ (RoomOS) &nbsp;|&nbsp; <strong>Reference:</strong> <a href="https://roomos.cisco.com/xapi">RoomOS xAPI</a></p>
+  <hr />
+
+  <h2>1. Overview</h2>
+  <p>The <strong>Cisco Codec EQ</strong> is a RoomOS-based video conferencing endpoint that supports:</p>
+  <ul>
+    <li><strong>Cross View</strong> — AI-driven cinematic meeting views using multiple cameras (PTZ 4K or Quad).</li>
+    <li><strong>Presenter Track</strong> — Camera follows the active presenter when using a PTZ 4K or Precision 60 camera.</li>
+  </ul>
+  <p>Control is via <strong>xAPI</strong> (RoomOS XML/HTTP API): Commands, Configuration, Status, and Events.</p>
+  <hr />
+
+  <h2>2. Cross View</h2>
+  <h3>2.1 What Is Cross View?</h3>
+  <p>Cross View uses multiple cameras and room analytics to analyze room activity, recognize and track participants, and select optimal camera angles.</p>
+  <h3>2.2 Typical Codec EQ Cross View Setup</h3>
+  <table>
+    <tr><th>Component</th><th>Role</th></tr>
+    <tr><td>Codec EQ</td><td>Main room codec</td></tr>
+    <tr><td>Two side cameras</td><td>PTZ 4K or Quad (left/right)</td></tr>
+    <tr><td>One Quad camera</td><td>Above the display</td></tr>
+    <tr><td>Ceiling or Table Microphones Pro</td><td>Speaker location and framing</td></tr>
+  </table>
+  <h3>2.3 Setup and Calibration</h3>
+  <ul>
+    <li>Follow Cisco <strong>Multi Camera Setup Guidelines</strong>.</li>
+    <li>Use the <strong>Multi camera director</strong> setup wizard.</li>
+    <li>Use the calibration board during the wizard.</li>
+    <li>Configure SpeakerTrack with external mics (see SpeakerTrack xAPI below).</li>
+  </ul>
+  <h3>2.4 Related xAPI for Cross View</h3>
+  <ul>
+    <li>Cameras — roles, placement, presets</li>
+    <li>Cameras SpeakerTrack — tracking, frames, meeting zone</li>
+    <li>Video Input — main video source</li>
+    <li><code>Configuration.Cameras.Camera[n].Role</code></li>
+  </ul>
+  <hr />
+
+  <h2>3. Presenter Track</h2>
+  <h3>3.1 What Is Presenter Track?</h3>
+  <p>Uses a <strong>PTZ 4K</strong> or <strong>Precision 60</strong> to detect a person in the presenter zone, track the head, and keep them framed. Turns off when changing presets/camera/standby (unless Persistent).</p>
+  <h3>3.2 Enable Presenter Track (Configuration)</h3>
+  <table>
+    <tr><th>xAPI Path</th><th>Description</th></tr>
+    <tr><td><code>Configuration.Cameras.PresenterTrack.Enabled</code></td><td>Enable/disable</td></tr>
+    <tr><td><code>Configuration.Cameras.PresenterTrack.Connector</code></td><td>PTZ/presenter camera connector</td></tr>
+    <tr><td><code>Configuration.Cameras.PresenterTrack.TriggerZone</code></td><td>Trigger zone for detection</td></tr>
+    <tr><td><code>Configuration.Cameras.PresenterTrack.CameraPosition.Pan/Tilt/Zoom</code></td><td>Default/limit positions</td></tr>
+  </table>
+  <h3>3.3 Command.Cameras.PresenterTrack.Set</h3>
+  <p>Set presenter tracking mode (PTZ 4K or Precision 60 required; Presenter Track must be enabled).</p>
+  <p><strong>Syntax (JavaScript):</strong></p>
+  <pre><code>xapi.Command.Cameras.PresenterTrack.Set({ Mode: value });</code></pre>
+  <p><strong>Modes:</strong></p>
+  <table>
+    <tr><th>Mode</th><th>Description</th></tr>
+    <tr><td>Off</td><td>Turn off presenter tracking</td></tr>
+    <tr><td>Follow</td><td>Turn on tracking (default from UI)</td></tr>
+    <tr><td>Diagnostic</td><td>Show trigger zone and tracking on screen for troubleshooting</td></tr>
+    <tr><td>Background</td><td>Tracking on without cropping (internal scripts)</td></tr>
+    <tr><td>Setup</td><td>Show trigger zone during setup (web UI)</td></tr>
+    <tr><td>Persistent</td><td>Tracking stays on until preset change etc.</td></tr>
+  </table>
+  <p><strong>Examples:</strong></p>
+  <pre><code>xapi.Command.Cameras.PresenterTrack.Set({ Mode: 'Follow' });
+xapi.Command.Cameras.PresenterTrack.Set({ Mode: 'Off' });
+xapi.Command.Cameras.PresenterTrack.Set({ Mode: 'Diagnostic' });</code></pre>
+  <h3>3.4 Other Presenter Track Commands</h3>
+  <ul>
+    <li><code>Command.Cameras.PresenterTrack.StorePosition()</code> — Store current camera position</li>
+    <li><code>Command.Cameras.PresenterTrack.ClearPosition()</code> — Clear stored position</li>
+  </ul>
+  <h3>3.5 Presenter Track Status</h3>
+  <table>
+    <tr><th>xAPI Path</th><th>Description</th></tr>
+    <tr><td><code>Status.Cameras.PresenterTrack.Availability</code></td><td>Feature available</td></tr>
+    <tr><td><code>Status.Cameras.PresenterTrack.Status</code></td><td>Current status</td></tr>
+    <tr><td><code>Status.Cameras.PresenterTrack.PresenterDetected</code></td><td>Presenter currently detected</td></tr>
+  </table>
+  <hr />
+
+  <h2>4. SpeakerTrack (Multi-Camera / Cross View)</h2>
+  <p>SpeakerTrack controls speaker tracking and view composition; used with Cross View.</p>
+  <p><strong>Commands (selected):</strong> <code>Command.Cameras.SpeakerTrack.Activate</code>, <code>Deactivate</code>, <code>Set</code>, <code>Closeup.Activate/Deactivate</code>, <code>Frames.Activate/Deactivate</code>, <code>ViewLimits.Activate/Deactivate</code>, <code>ViewLimits.StorePosition</code>, <code>Whiteboard.StorePosition</code>, <code>Whiteboard.ActivatePosition</code>.</p>
+  <p><strong>Configuration (selected):</strong> <code>Configuration.Cameras.SpeakerTrack.Mode</code>, <code>Closeup</code>, <code>DefaultBehavior</code>, <code>TrackingMode</code>, <code>Frames.Mode</code>, <code>Frames.RowConfiguration</code>, <code>MeetingZone.Mode/Area</code>, <code>MultiCamera.CalibrationMonitoring</code>.</p>
+  <p><strong>Status:</strong> <code>Status.Cameras.SpeakerTrack.Availability</code>, <code>State</code>, <code>Status</code>, <code>ActiveConnector</code>, <code>Frames.Availability</code>, <code>Frames.Status</code>, <code>ViewLimits.Pan/Tilt/Zoom</code>.</p>
+  <hr />
+
+  <h2>5. Camera Configuration (Codec EQ)</h2>
+  <p><strong>Configuration:</strong> <code>Configuration.Cameras.Camera[n].Role</code>, <code>PtzAutoFraming</code>, <code>DefaultPosition.Pan/Tilt/Zoom</code>, <code>Placement.X/Y/Z</code>, <code>Focus.Mode</code>, <code>Standby.Mode</code>.</p>
+  <p><strong>Status:</strong> <code>Status.Cameras.Camera[n].Connected</code>, <code>Position.Pan/Tilt/Zoom</code>, <code>Model</code>, <code>DetectedConnector</code>.</p>
+  <hr />
+
+  <h2>6. Connecting to xAPI</h2>
+  <p>SSH, HTTP/HTTPS (e.g. POST to <code>/putxml</code>), WebSocket, or RS-232.</p>
+  <p><strong>Example HTTP (XML):</strong></p>
+  <pre><code>POST /putxml HTTP/1.1
+Host: &lt;codec-ip&gt;
+Content-Type: application/xml
+
+&lt;Command&gt;&lt;Cameras&gt;&lt;PresenterTrack&gt;&lt;Set&gt;&lt;Mode&gt;Follow&lt;/Mode&gt;&lt;/Set&gt;&lt;/PresenterTrack&gt;&lt;/Cameras&gt;&lt;/Command&gt;</code></pre>
+  <hr />
+
+  <h2>7. Quick Reference — Presenter Track</h2>
+  <table>
+    <tr><th>Goal</th><th>xAPI</th></tr>
+    <tr><td>Turn on</td><td><code>Command.Cameras.PresenterTrack.Set({ Mode: 'Follow' })</code></td></tr>
+    <tr><td>Turn off</td><td><code>Command.Cameras.PresenterTrack.Set({ Mode: 'Off' })</code></td></tr>
+    <tr><td>Troubleshoot</td><td><code>Command.Cameras.PresenterTrack.Set({ Mode: 'Diagnostic' })</code></td></tr>
+    <tr><td>Enable feature</td><td><code>Configuration.Cameras.PresenterTrack.Enabled</code> = true</td></tr>
+    <tr><td>Presenter detected?</td><td><code>Status.Cameras.PresenterTrack.PresenterDetected</code></td></tr>
+    <tr><td>Store position</td><td><code>Command.Cameras.PresenterTrack.StorePosition()</code></td></tr>
+  </table>
+  <hr />
+
+  <h2>8. References</h2>
+  <ul>
+    <li>RoomOS xAPI: <a href="https://roomos.cisco.com/xapi">roomos.cisco.com/xapi</a></li>
+    <li>PresenterTrack.Set: <a href="https://roomos.cisco.com/xapi/Command.Cameras.PresenterTrack.Set/">roomos.cisco.com/xapi/Command.Cameras.PresenterTrack.Set/</a></li>
+    <li>Cameras domain: <a href="https://roomos.cisco.com/xapi/domain/?domain=Cameras">roomos.cisco.com/xapi (Cameras)</a></li>
+    <li>Cisco Multi Camera Setup / Cross View guidelines (help.webex.com, cisco.com)</li>
+    <li>RoomOS API Reference Guide (PDF) — Cisco documentation portal</li>
+  </ul>
+  <p><em>This document is a concise reference for Cisco Codec EQ Cross View and Presenter Track with xAPI. For exact parameters and product support, use the official RoomOS xAPI reference.</em></p>
+</body>
+</html>
