@@ -741,7 +741,11 @@ Before authorizing the Webex integration to Secure Access, ensure the ‘Complia
       
       ![](./media/image_m3_379.png){ width="500" style="border: 1px solid #888; border-radius: 4px;" }
       
-      When prompted provide Anita Perez’s Webex credentials (aperez@cbXXX.dc-YY.com // dCloud123! - if you didn't complete module 1, the password will be dCloudZZZZ!). When prompted by the Secure Access platform (Umbrella) to accept the required permissions, click ‘Accept’.
+      When prompted provide Anita Perez’s Webex credentials (aperez@cbXXX.dc-YY.com // dCloud123! - if you didn't complete module 1, the password will be dCloudZZZZ!). 
+      
+      Note: If you completed module 1, after entering the email address, you will be redirected to the Duo SSO login dialog rather than the standard Webex login password prompt.
+      
+      When prompted by the Secure Access platform (Umbrella) to accept the required permissions, click ‘Accept’.
       
       ![](./media/image_m3_380.png){ width="900" style="border: 1px solid #888; border-radius: 4px;" }
       
