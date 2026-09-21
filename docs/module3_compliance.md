@@ -454,7 +454,7 @@ In this section you will review Webex Calling data records in Webex Compliance H
       
       This concludes Webex Compliance Hub compliance sections.
 
-      Note: Performing a Webex integration to Webex Compliance Hub with your Webex org is not part of this lab. However, for your reference, the [Appendix](appendix.md#webex-integration-to-webex-compliance-hub) of this lab guide has a module that covers the integration of a Webex org to a Webex Compliance Hub tenant. If you are interested in this exercise, please complete any portion of the main lab you plan to do before exploring the exercises in the Appendix.
+      Note: Performing a Webex integration to Webex Compliance Hub with your Webex org is not part of this lab. However, for your reference, the [Appendix](appendix.md#webex-integrations-to-webex-compliance-hub) of this lab guide has a module that covers the integration of a Webex org to a Webex Compliance Hub tenant. If you are interested in this exercise, please complete any portion of the main lab you plan to do before exploring the exercises in the Appendix.
 
 ## Cisco Secure Access Tenant and AD Onboarding
 In this section of the lab, you will integrate the on-premises Active Directory (AD) to your Secure Access tenant. Integrating your on-premises directory with Secure Access ensures that data compliance is applied to the common identities across your organization.
