@@ -234,6 +234,8 @@ In this section, you will configure one or more Webex service integrations on a 
     ![](./media/image_a_436.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
     At the login prompt enter your compliance officer Anita Perez’s email (**aperez@cbXXX.dc-YY.com**) and click the ‘**Sign In**’ button to login into Webex to authorize the integration.
+  
+    ![](./media/image_a_437.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
     When prompted, enter the account password: **dCloud123!** (if you did not complete Module 1, then the non-SSO password is dCloudZZZZ!). 
 
