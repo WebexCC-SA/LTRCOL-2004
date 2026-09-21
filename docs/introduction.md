@@ -14,7 +14,7 @@ available with Webex deployments, including:
 
 - End-to-End (E2E) Encryption: Examine Webex zero trust end-to-end encrypted meetings and calling, along with media watermarking, and deepfake integration with Webex.
 
-- Compliance: Investigate compliance for Webex meetings and calling including eDiscovery with Theta Lake.
+- Compliance: Investigate compliance for Webex meetings, calling, and messaging including eDiscovery with Webex Compliance Hub and data loss prevention and anti-malware protection with Cisco Secure Access.
 
 
 **Table of Contents**
@@ -47,9 +47,13 @@ available with Webex deployments, including:
     - [Webex Compliance and Preparing for Compliance Platform Integration](module3_compliance.md#webex-compliance-and-preparing-for-compliance-platform-integration)
     - [Explore eDiscovery for Webex Meetings in Theta Lake](module3_compliance.md#explore-ediscovery-for-webex-meetings-in-theta-lake)
     - [Explore eDiscovery for Webex Calling in Theta Lake](module3_compliance.md#explore-ediscovery-for-webex-calling-in-theta-lake)
+    - [Cisco Secure Access Tenant and AD Onboarding](module3_compliance.md#cisco-secure-access-tenant-and-ad-onboarding)
+    - [Cisco Secure Access Webex Integration and Policy Configuration](module3_compliance.md#cisco-secure-access-webex-integration-and-policy-configuration)
+    - [Generate User Data and Monitor Secure Access Operations](module3_compliance.md#generate-user-data-and-montior-secure-access-operations)
 
 - [Appendix](appendix.md#appendix)
     - [Explore Webex eDiscovery Search and Extraction Portal](appendix.md#explore-webex-ediscovery-search-and-extraction-portal)
+    - [Webex Integrations to Webex Compliance Hub](appendix.md#webex-integrations-to-webex-compliance-hub)
 
 ---
 
@@ -59,8 +63,8 @@ available with Webex deployments, including:
 - **Getting Started** → [Getting Started](#getting-started)
 - **Module 1** → [Webex Identity and Authentication/Authorization with Duo](module1_identity.md#module-1-webex-identity-and-authenticationauthorization-with-duo)
 - **Module 2** → [Zero Trust End-to-End Encrypted Calling and Meetings, Media Watermarking, and Deepfake Detection](module2_zero_trust_encryption.md#module-2-zero-trust-end-to-end-encrypted-calling-and-meetings-media-watermarking-and-deepfake-detection)
-- **Module 3** → [Webex Compliance with Webex and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-webex-and-theta-lake)
-- **Appendix** → [Explore Webex eDiscovery Search and Extraction Portal](appendix.md#appendix)
+- **Module 3** → [Webex Compliance with Webex Compliance Hub and Cisco Secure Access](module3_compliance.md#module-3-webex-compliance-with-webex-compliance-hub-and-cisco-secure-access)
+- **Appendix** → [Appendix](appendix.md#appendix)
 
 ---
 
@@ -77,7 +81,7 @@ compliance capabilities across the Webex suite. This includes:
 
 - Built-in policy and compliance functionality as well as configurable
   integration(s) to third-party data loss prevention (DLP), eDiscovery,
-  and Archival vendor solutions for messaging and meeting compliance.
+  and Archival vendor solutions for calling, messaging, and meeting compliance.
 
 - State of the art end-to-end encryption and verified identity
   capabilities for zero trust meetings on the encrypted in transit,
@@ -103,10 +107,10 @@ This lab contains 3 modules:
      This module exampines Webex zero trust end-to-end encrypted meetings and calling, along with media watermarking, and deepfake integration with Webex.
      (Components: Webex Control Hub, Webex App, GetReal Labs)
 
-- [Module 3: Webex Compliance with Webex and Theta Lake](module3_compliance.md#module-3-webex-compliance-with-webex-and-theta-lake)
+- [Module 3: Webex Compliance with Webex Compliance Hub and Cisco Secure Access](module3_compliance.md#module-3-webex-compliance-with-webex-compliance-hub-and-cisco-secure-access)
   
-     This module investigates compliance for Webex meetings and calling including eDiscovery with Theta Lake. 
-     (Components: Webex Control Hub, Webex App, Theta Lake)
+     This module investigates compliance for Webex calling, messaging, and meetings including eDiscovery and archiving with Webex Compliance Hub and data loss prevention and AMP with Cisco Secure Access. 
+     (Components: Webex Control Hub, Webex App, Webex Compliance Hub, Cisco Secure Access)
 
 Upon completion of all modules, participants will gain a good working
 knowledge of the latest Webex security capabilities including identity
@@ -129,10 +133,10 @@ topology consists of:
   collaboration services including meeting, messaging, and calling.
 
 - Dedicated cloud service components for identity and compliance (Duo,
-  Cisco Cloudlock, Theta Lake).
+  Cisco Secure Access, Webex Compliance Hub).
 
 ![Figure 1. Webex Security Lab
-Topology](./media/image4.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+Topology](./media/image4_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
 This lab includes pre-configured users and components to facilitate the
 lab scenarios covering the features and capabilities of Webex security.
@@ -192,13 +196,7 @@ Note: You may not use all the components listed in Table 1 for this lab.
 - **Username**: cholland@cbXXX.dc-YY.com
 - **Password**: dCloud12345!
 
-### Cisco Cloudlock
-- **URL**: https://demo.cloudlockng.com/
-- **Username**: aperez@cbXXX.dc-YY.com
-- **Password** (SSO disabled): **dCloudZZZZ!**
-- **Password** (SSO enabled): **dCloud123!**
-
-### Theta Lake
+### Webex Compliance Hub
 - **URL**: https://useast.thetalake.ai/
 - **Username**: co.read.only@gmail.com
 - **Password**: dCloud123!
