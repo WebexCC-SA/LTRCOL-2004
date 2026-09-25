@@ -484,7 +484,7 @@ Next, you will explore settings templates.
 
       ![](./media/image73.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. No changes need to be made so set the template name to **No Restrictions** and click **Create template and next**.
+1. The default settings will block file previews on all client types.  Select the **Block file preview on** option and untick all 4 options. Set the template name to **No Restrictions** and click **Create template and next**.
 
       ![](./media/image74.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
