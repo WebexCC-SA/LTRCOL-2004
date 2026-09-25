@@ -1,7 +1,7 @@
 # Module 1: Webex Identity and Authentication/Authorization with Duo
 In this module, you will start by integrating an on-premises Active Directory (AD) with a Duo tenant. From there, you will set up an integration between Duo and Webex for user provisioning via SCIM 2.0. This is designed to simulate a common scenario where an organization needs to migrate away from an on-premises AD deployment to a cloud platform for identity. Once the migration from AD to Duo has been completed, there will be a brief section covering licensing information so you can ensure that you are properly licensing your users. Next, you will configure Single Sign-On (SSO) with Duo using SAML and OpenID Connect (OIDC). During the process you will learn the configuration differences along with some of the advantages and disadvantages of SAML and OIDC. Finally, you will explore enabling built-in Multi-Factor Authentication for Webex.
 
-There are 6 sections in this module:
+There are 7 sections in this module:
 
 i.  [Sync Users from Active Directory to Duo](#sync-users-from-active-directory-to-duo)
 
@@ -28,7 +28,7 @@ At the end of this section, you will have synchronized on-premises AD users into
 
       ![](./media/image7.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Open the **DUO** folder on desktop, then open the **Duo-URL.txt** document.
+1. Open the **DUO - Secure Access** folder on desktop, then open the **Duo-URL.txt** document.
 
       ![](./media/image8.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -87,7 +87,7 @@ At the end of this section, you will have synchronized on-premises AD users into
 
       ![](./media/image21.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Minimize the browser and launch the **Duo Authentication Proxy Manager** from Desktop. Once the application is open, **delete all text from the configuration**, then can paste the text from the example below into your auth proxy:
+1. Minimize the browser and launch the **Duo Authentication Proxy Manager** from Desktop. Once the application is open, **delete all text from the configuration**, then paste the text from the example below into your auth proxy:
 
       <div class="admonition example">
       <p class="admonition-title">Example</p>
@@ -122,9 +122,9 @@ At the end of this section, you will have synchronized on-premises AD users into
       <https://duo.com/docs/adsync#encrypting-passwords>.</p>
       </div>
 
-1. Once you have filled in the config, click **Validate** in the **Duo Authentication Proxy Manager** and verify that there are no errors in the **Output.** If you see additional text in the config, you may not have cleared the text that is entered by default. Please repeat step 16 so that your configuration looks like the below screenshot.
+1. Once you have entered the config, click **Validate** in the **Duo Authentication Proxy Manager** and verify that there are no errors in the **Output.** If you see additional text in the config, you may not have cleared the text that is entered by default. Please repeat step 18 so that your configuration looks like the below screenshot.
 
-      ![](./media/image23.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image23.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
       <div class="admonition tip">
       <p class="admonition-title">Tip</p>
@@ -145,10 +145,6 @@ At the end of this section, you will have synchronized on-premises AD users into
       ![](./media/image27.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       ![](./media/image28.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-
-1. Once you're on the **AD Sync Connection** page, click **Test Connection** (step 5).
-
-      ![](./media/image29.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. The **Status** section should still reflect that the Auth Proxy is **Not Connected** but you should see a check next to **Add Authentication Proxy**.
 
@@ -209,11 +205,9 @@ At this point, all the demo users have been synced from the on-prem AD into Duo.
 To facilitate user provisioning to Webex, you will utilize the SCIM 2.0 API endpoints available in Webex. With other connectors, this required pulling an API token with the appropriate scopes. However, Duo has a connector that is much easier to configure.
 
 
-1. On the Duo Admin portal, navigate to **Applications** \> **Applications**
+1. On the Duo Admin portal, navigate to **Applications** \> **Application Catalog**
 
-1. Click **Add application** and then click **+ Add** for **Cisco Webex (with Control Hub)**
-
-      ![](./media/image39.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+1. Search for **Webex** and click **+ Add** for the **Cisco Webex (with Control Hub)** application.
 
       ![](./media/image40.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
