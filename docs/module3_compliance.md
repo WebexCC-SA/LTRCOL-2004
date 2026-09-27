@@ -104,7 +104,7 @@ This lab guide contains coverage for external compliance platforms Webex Complia
 
       ![](./media/image_m3_332_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
-      e. Click **Settings** under Webex App Messaging Retention Policy to review current messaging retention settings.
+      e. Click **Update** for Webex App Messaging Retention Policy to review current messaging retention settings.
 
       ![](./media/image159_v2.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -112,13 +112,13 @@ This lab guide contains coverage for external compliance platforms Webex Complia
 
       For the purposes of this lab, there is no reason to change the message retention policy, so click **Cancel** to close the Webex Space retention policy window.
 
-      f. Click **Settings** under Webex Meetings Retention Policy to review current meeting retention settings.
+      f. Click **Update** for Webex Meetings Retention Policy to review current meeting retention settings.
 
       ![](./media/image160_v2.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       By default, the retention period is set to 360 days. Note that recording retention can be set to purge in 30 days, but by default the recordings follow the meetings retention policy. For the purposes of this lab, there is no reason to change the meeting retention policy, so just click **Cancel** to close the Webex Meetings Retention Policy window.
 
-      g. Click **Settings** under Webex Calling Retention Policy to review current calling retention settings.
+      g. Click **Update** for Webex Calling Retention Policy to review current calling retention settings.
 
       ![](./media/image_m3_333.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -253,7 +253,7 @@ Webex Compliance Hub supports two types of Legal Hold:
 
       a. Navigate to the Webex Compliance Hub legal hold Matters page.
 
-      On Webex Compliance Hub navigate to **Holds > Matters** on the top navigation menu to reach the Cases page.
+      On Webex Compliance Hub navigate to **Holds > Matters** on the top navigation menu to reach the Matters page.
 
       ![](./media/image_m3_421.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -288,7 +288,7 @@ Webex Compliance Hub supports two types of Legal Hold:
 
       ![](./media/image_m3_427.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
-      Notice that 262 records have automatically been associated to this matter based on the 3 assigned custodians.
+      Notice that well over 200 records have automatically been associated to this matter based on the 3 assigned custodians.
 
       ![](./media/image_m3_428.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -434,7 +434,7 @@ In this section you will review Webex Calling data records in Webex Compliance H
 
       ![](./media/image_m3_341.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }      
 
-      Finally, try translating the transcript into another language. Click **Translate**, select the language to translate to from the dropdown (e.g., Spanish) and then, click **Translate** again. Notice the transcript has been translated into the language selected. This can be very useful if the call audio is in a language that the Compliance Officer is unable to understand.
+      Finally, try translating the transcript into another language. Click **Translate**, select the language to translate to from the dropdown (e.g., Dutch) and then, click **Translate** again. Notice the transcript has been translated into the language selected. This can be very useful if the call audio is in a language that the Compliance Officer is unable to understand.
 
       ![](./media/image_m3_342.png){ width="800" }
       
@@ -483,7 +483,7 @@ First, you need to access your Secure Access tenant so you can set up a connecti
       
       ![](./media/image_m3_347.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
-      On the Application Portal page click the ‘Launch ’ button in the Secure Access tile under Applications to login to the Secure Access portal.
+      On the Application Portal page click the ‘Launch ->’ button in the Secure Access tile under Applications to login to the Secure Access portal.
       
       ![](./media/image_m3_348.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
@@ -497,6 +497,8 @@ First, you need to access your Secure Access tenant so you can set up a connecti
       
       The Secure Access portal is used throughout the lab to configure and manage the Secure Access tenant.
 
+      Once logged in, bookmark this site so you can easily return to the portal if you get logged out or you close the browser window.
+
 **Directory/User Onboarding**
 
 Now that the Secure Access portal is ready, the first task is to integrate the organization’s directory (in this case Active Directory) with the Secure Access platform, so it has visibility to the organization’s users. This is important not only for identifying users in the context of compliance violations (e.g., data loss prevention, anti-malware protection), but also if the organization plans to leverage Secure Access for network, user, and application access control. 
@@ -507,11 +509,11 @@ For the purposes of this lab, the focus is on user identity for data loss preven
       
       a. Add a user account in AD for authenticating the Secure Access cloud connecter
       
-      On the Active Directory/Domain Controller (DC)) server (AD1) open Active Directory Users and Computers
+      On the Active Directory/Domain Controller (DC)) server (AD1) open Active Directory Users and Computers (1)
       
-      Right-click the dCloud object and select New > User
+      Right-click the dCloud object (2) and select New (3)  > User (4)
       
-      ![](./media/image_m3_351.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image_m3_351_v2.png){ width="800" }
       
       Configure user as follows:
 
@@ -535,7 +537,7 @@ For the purposes of this lab, the focus is on user identity for data loss preven
       
       Right-click the **Cisco_Connector** user and select ‘Properties’ and then select the ‘Member Of’ tab
       
-      Click ‘Add’ and on the subsequent dialog, type ‘Enterprise Read-only’ and click ‘Check Name’ to load the ‘Enterprise Read-only Domain Controller’ group name and then click 'OK’ to add the account to this group
+      Click ‘Add’ and on the subsequent dialog, type ‘Enterprise Read-only’ and click ‘Check Names’ to load the ‘Enterprise Read-only Domain Controller’ group name and then click 'OK’ to add the account to this group
       
       ![](./media/image_m3_355.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
@@ -545,13 +547,13 @@ For the purposes of this lab, the focus is on user identity for data loss preven
       
       c. Set Audit account logon events group policy to both success and failure 
       
-      Open the Group Policy Management application, and under Domain Controllers, right-click ‘Default Domain Controllers Policy’ and select ‘Edit…’ to edit the policy.
+      In the Windows search box type 'Group Policy Mangaement' to locate the application. Click to open the Group Policy Management (1) application, and under Domain Controllers, right-click ‘Default Domain Controllers Policy’ (2) and select ‘Edit…’ (3) to edit the policy.
       
-      ![](./media/image_m3_357.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image_m3_357_v2.png){ width="800" }
       
-      Then, under *Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Audit Policy* right-click 'Audit logon events' and select Properties. Finally, tick ‘Define these policy settings’ and then, tick 'Success’ and ‘Failure' and click ‘OK’ to save.
+      Then,in the Group Policy Management Editor (1) under *Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Audit Policy* (2) right-click 'Audit logon events' (3) and select Properties. Finally, tick ‘Define these policy settings’ and then, tick 'Success’ and ‘Failure' (4) and click ‘OK’ (5) to save.
       
-      ![](./media/image_m3_358.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image_m3_358_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Prepare Secure Access Platform for Directory Integration 
 API keys are required for securing the integration between Secure Access and the Active Directory server
@@ -572,7 +574,9 @@ API keys are required for securing the integration between Secure Access and the
       
       ![](./media/image_m3_361.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
-      Copy both the Admin API Key and the Admin API Key Secret to a text file for safe keeping and reuse.
+      Copy both the Admin API Key and the Admin API Key Secret to a text file for safe keeping and reuse. 
+
+      Then, click '**Accept and Close**'
       
       ![](./media/image_m3_362.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -588,7 +592,7 @@ API keys are required for securing the integration between Secure Access and the
 
       Note: The Key AdminAPI Key and Admin Key Secret for the Secure Access tenant will be different in your pod.
       
-      Once generated, as before copy both the key and secret to the previous text file for safe keeping and reuse.
+      Once generated, as before copy both the key and secret to the previous text file for safe keeping and reuse. Then, click '**Accept and close**'.
       
       ![](./media/image_m3_364.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -678,11 +682,19 @@ API keys are required for securing the integration between Secure Access and the
       
       Ensure the script completes successfully – e.g., ‘Update success!’
 
+      Return to Secure Access portal and click '**Done**' to complete the Active Directory configuration.
+
 1. Confirm Users/Groups are Synced from AD to Secure Access
       
+      It may take several minutes for the users to begin syncing from AD to Secure Access.
+
+      Navigate to '**Connect > Users, Groups, and Endpoint Devices**' to confirm the users are synced. Periodically refresh the page until users begin appearing.
+
       ![](./media/image_m3_372.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
-      Note: It may take as long as 30 minutes for the AD connector and domain controller to show the green check mark (‘Okay’). Continue with the next section of the lab and return to check the status of the connector later.
+      Next, click '**Configuration management**' to return to the directory integration configuration. Then, click 'Active Directory' to expand the integration detailed information.
+
+      Note: It may take as long as 30 minutes for the AD connector and domain controller to complete checks and change from grey circle ('Pending checks') to blue check mark (‘Okay’). Continue with the next section of the lab and return to check the status of the connector later.
       
       ![](./media/image_m3_373.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -743,7 +755,7 @@ Before authorizing the Webex integration to Secure Access, ensure the ‘Complia
       
       When prompted provide Anita Perez’s Webex credentials (aperez@cbXXX.dc-YY.com // dCloud123! - if you didn't complete module 1, the password will be dCloudZZZZ!). When prompted by the Secure Access platform (Umbrella) to accept the required permissions, click ‘Accept’.
       
-      ![](./media/image_m3_380.png){ width="900" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image_m3_380_v2.png){ width="900" }
       
       Finally, click ‘Done’ after successful authorization to complete the integration dialog.
       
@@ -777,25 +789,25 @@ To begin leveraging cloud malware protection it needs to be enabled via security
       
       Navigate to **Secure > Security Profiles** to load the list of profiles. Two system provided profiles are available by default: ‘Internet Access’ and ‘Private Access’.
       
-      ![](./media/image_m3_385.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+      Click the three dots (...) to the far right of the first entry (‘System Provided – Internet Access’) and click 'Edit' to edit the profile. 
       
-      Click to expand the ‘System Provided – Internet Access’ profile and scroll down to the ‘Security and Acceptable Use Controls’ section. Notice that the ‘File Inspection’ row includes a note indicating that malware analytics is disabled: ‘Cisco Secure Malware Analytics: Disabled’
+      ![](./media/image_m3_385_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
-      ![](./media/image_m3_386.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+      Scroll down and click ‘Security and Acceptable Use Controls’. Notice that ‘File Inspection’ is enabled, but the 'Cisco Secure Malware Analytics' option is unticked and 'Malware Analytics: Disabled' is displayed.
       
-      Click ‘Edit’ and then click the ‘Cisco Secure Malware Analytics is Disabled’ toggle to enable the malware protection
+      ![](./media/image_m3_386_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
-      ![](./media/image_m3_387.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      Tick ‘Cisco Secure Malware Analytics’ and in the Sandbox Region drop-down list select 'North America'
       
-      Select ‘North America’ from the Sandbox Region drop-down and then tick to acknowledge the warning about the region configuration being permanent.
+      ![](./media/image_m3_387_v2.png){ width="600" style="border: 1px solid #888; border-radius: 4px;" }
       
-      ![](./media/image_m3_388.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      Tick to acknowledge the warning about the region configuration being permanent. Then, scroll down and click '**Save**' to enable malware analytics.
       
-      Click ‘Save’ to enable malware analytics.
+      ![](./media/image_m3_388_v2.png){ width="600" }
       
-      Finally, click to expand the ‘System Provided – Private Access’ profile and repeat the same steps to enable malware analytics for this profile. Note that this time the sandbox region is hard-coded based on the previous profile selection.
+      Finally, click the three dots (...) to the far right of the second entry (‘System Provided – Private Access’) and click 'Edit' to edit the profile and repeat the same steps to enable malware analytics for this profile. Note that this time the sandbox region is hard-coded based on the previous profile selection.
       
-      ![](./media/image_m3_389.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image_m3_389_v2.png){ width="600" style="border: 1px solid #888; border-radius: 4px;" }
 
 **Configure DLP Data Classification and Policy**
 
@@ -932,9 +944,9 @@ Secure Access is now monitoring all Webex data from the integrated organization 
 
 With the Webex org integrated to Secure Access, cloud malware and DLP enabled, and data classifications and policies in place, it's time to generate user data and see the Secure Access platform in action.
 
-Note: Before continuing, return to check that the AD connector and domain controller show a green check mark ( ‘Okay’) (Navigate to **Connect > Uses, Groups, and Endpoint Devices) > Configuration management**)
+Note: Before continuing, return to review the AD connector and domain controller components status and ensure they show a blue check mark ( ‘Okay’) (Navigate to **Connect > Uses, Groups, and Endpoint Devices) > Configuration management** and then, click 'Active Directory' to expand integration details)
 
-![](./media/image_m3_373.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+![](./media/image_m3_373_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
 **Data Loss Prevention Validation**
 
@@ -964,7 +976,7 @@ Note: Before continuing, return to check that the AD connector and domain contro
 1. Generate Webex Messaging Data
       Send messages and files from Charles Holland’s Webex App on WKST1 in the ‘**Secure Access – DLP**’ space as described in the table below. The table indicates the DLP data classification the message or file should match on the Secure Access platform. 
       
-      On WKST1 the files listed in the table below are available in the following directory: C:\Users\cholland\Downloads\file-dlp-amp\
+      On WKST1 the files listed in the table below are available in the following directory: C:\Users\cholland\Downloads\file-dlp-amp\file-dlp-amp\
 
       **Table 3: Secure Access DLP Data Generation**
 
@@ -972,7 +984,7 @@ Note: Before continuing, return to check that the AD connector and domain contro
       |-------------------|-------------------|-------------------|-------------------|-------------------|
       | cholland | Secure Access DLP | Message | “Hi, Here’s some <span style="color: red;"><strong>TOP secret</strong></span> information” | Secure Regex <br> *(Custom Identifier)* |
       | cholland | Secure Access DLP | File | ccn.txt | Credit Card Number - Lenient <br> *(Built-in Identifier)* |
-      | cholland | Secure Access DLP | Message | “In case you didn't get the file. My credit care number is <span style="color: red;"><strong>4508-1304-5718-5563</strong></span>. This is a Visa credit card. The expiration data is 09/2028 and the CVC is 233"information” | Credit Card Number - Lenient <br> *(Built-in Identifier)* |
+      | cholland | Secure Access DLP | Message | “In case you didn't get the file. My credit card number is <span style="color: red;"><strong>4508-1304-5718-5563</strong></span>. This is a Visa credit card. The expiration data is 09/2028 and the CVC is 233" | Credit Card Number - Lenient <br> *(Built-in Identifier)* |
       | cholland | Secure Access DLP | File | nda.pdf | NDA <br> *(ML Built-in Identifier)* |
       | cholland | Secure Access DLP | File | fw9.pdf | IRS Forms <br> *(ML Built-in Identifier)* |
 
@@ -1005,11 +1017,20 @@ Note: Before continuing, return to check that the AD connector and domain contro
       
       ![](./media/image_m3_407.png){ width="700" style="border: 1px solid #888; border-radius: 4px;" }
 
+1. Disable Microsoft Windows Virus Protection
+      Before proceeding, you should first disable Microsoft real-time virus protection. 
+
+      In the Windows search window, type 'Virus' and then click 'Virus & threat proctection'. Then, under 'Virus & threat protection settings' click 'Manage settings'. Finally, toggle 'Real-time protection' off.
+
+      ![](./media/image_m3_436.png){ width="800" }
+
+      Note: This is not a recommended setting. You are disabling the virus protection in this case to prevent Windows from removing the files before you can send them.
+
 1. Generate Webex Messaging AMP Data
       
       Send files from Charles Holland’s Webex App on WKST1 in the ‘**Secure Access – AMP**’ space as described in the table below.
       
-      On WKST1 the malware files listed in the table below are available in the following directory: C:\Users\cholland\Downloads\file-dlp-amp\quarantine\
+      On WKST1 the malware files listed in the table below are available in the following directory: C:\Users\cholland\Downloads\file-dlp-amp\file-dlp-amp\quarantine\
 
       
       **Table 4: Secure Access Cloud Malware Data Generation**
