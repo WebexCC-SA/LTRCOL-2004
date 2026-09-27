@@ -696,7 +696,7 @@ API keys are required for securing the integration between Secure Access and the
 
       Note: It may take as long as 30 minutes for the AD connector and domain controller to complete checks and change from grey circle ('Pending checks') to blue check mark (‘Okay’). Continue with the next section of the lab and return to check the status of the connector later.
       
-      ![](./media/image_m3_373.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image_m3_373_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
 
 ## Cisco Secure Access Webex Integration and Policy Configuration
@@ -1006,6 +1006,15 @@ Note: Before continuing, return to review the AD connector and domain controller
 
 **Cloud Malware Validation:**
 
+1. Disable Microsoft Windows Virus Protection on Workstation 1 (WKST1)
+      Before proceeding, you should first disable Microsoft real-time virus protection. 
+
+      On WKST1 In the Windows search window, type 'Virus' and then click 'Virus & threat proctection'. Then, under 'Virus & threat protection settings' click 'Manage settings'. Finally, toggle 'Real-time protection' off.
+
+      ![](./media/image_m3_436.png){ width="800" }
+
+      Note: This is not a recommended setting. You are disabling the virus protection in this case to prevent Windows from removing the files before you can send them.
+
 1. Prepare Environment for Webex Messaging AMP Data Generation.
       
       a. Create a Webex Messaging Space for sharing AMP sample files
@@ -1020,15 +1029,6 @@ Note: Before continuing, return to review the AD connector and domain controller
       Once the space is created, return to WKST3 and confirm Kellie has been added to the ‘*Secure Access – AMP*’ space.
       
       ![](./media/image_m3_407.png){ width="700" style="border: 1px solid #888; border-radius: 4px;" }
-
-1. Disable Microsoft Windows Virus Protection
-      Before proceeding, you should first disable Microsoft real-time virus protection. 
-
-      In the Windows search window, type 'Virus' and then click 'Virus & threat proctection'. Then, under 'Virus & threat protection settings' click 'Manage settings'. Finally, toggle 'Real-time protection' off.
-
-      ![](./media/image_m3_436.png){ width="800" }
-
-      Note: This is not a recommended setting. You are disabling the virus protection in this case to prevent Windows from removing the files before you can send them.
 
 1. Generate Webex Messaging AMP Data
       
