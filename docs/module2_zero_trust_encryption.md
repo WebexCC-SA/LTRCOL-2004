@@ -43,7 +43,7 @@ Webex devices with up to 1000 participants.
 
 Before you start this section, lets enable watermarking capabilities in Control Hub, you will need it for the next section.
 
-1. RDP to WKST1, ensure that you are logged into the Webex app with Charles's credentials , cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, the password will be dCloudZZZZ!).
+1. RDP to WKST1 and ensure that you are logged into the Webex app with Charles' credentials, cholland@cbXXX.dc-YY.com and password dCloud123! (if you didn't complete module 1, the password will be dCloudZZZZ!).
 
 1. Navigate to admin.webex.com and click on **Sign in** with credentials for cholland, <cholland@cbXXX.dc-YY.com> and password **dCloud123!** (if you didn't complete module 1, the password will be dCloudZZZZ!).
 
@@ -56,7 +56,7 @@ Before you start this section, lets enable watermarking capabilities in Control 
       You will now schedule an end-to-end encrypted meeting.
 
 
-1. Once you have enabled watermarks, lets go ahead and schedule an end-to-end encrypted meetings. Go to Services\--\>Meeting and copy the site name.
+1. Once you have enabled audio and visual watermarks, schedule an end-to-end encrypted meeting. Go to Services\--\>Meeting and copy the site name.
 
       ![](./media/image279.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -79,7 +79,7 @@ Before you start this section, lets enable watermarking capabilities in Control 
 1. To start, let Charles be the only participant in the meeting. 
 
     - Click OK on the **No Microphone found** prompt.
-    - Click on Start Meeting.Click OK on the "No Microphone found" after starting the meeting. 
+    - Click on Start Meeting. Click OK on the "No Microphone found" after starting the meeting. 
     - Observe the blue shield icon at the top left of the meeting window, the padlock indicates that this is an E2EE meeting.
 
       ![](./media/image284.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
@@ -162,13 +162,13 @@ In this section, you will learn some features that are made available in an End-
 
       ![](./media/image297.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.Once completed "Stop Sharing"
+1. Return to Webex App and click on share, select Show me in Front of Presentation and select Microsoft PowerPoint from the options and click Share.
 
       ![](./media/PPT%20Share.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
       
 
-1. Click on the ellipsis icon "..." next to reactions and explore other features available in an end to end encrypted meetings like "whiteboards" and "Enable Sign Language Interpretation" and designate Anita as the interpreter.
+1. Click **Stop** at the top of the screne to stop sharing. Click on the ellipsis icon "..." next to reactions and explore other features available in an end to end encrypted meetings like "whiteboards" and "Enable Sign Language Interpretation" and designate Anita as the interpreter.
 
 1. Finally the end the meeting for All.
 

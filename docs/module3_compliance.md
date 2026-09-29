@@ -94,7 +94,7 @@ This lab guide contains coverage for external compliance platforms Webex Complia
 
       Before proceeding, **move to WKST2** (wkst2.dcloud.cisco.com). If not already connected, connect to WKST2. Login will be as Anita Prerez (dcloud\\**aperez** // **dCloud123!**).
 
-      a. Open the Chrome browser on WKST2 (wkst1.dcloud.cisco.com) and navigate to Collaboration Control Hub at <https://admin.webex.com>.
+      a. Open the Chrome browser on WKST2 (wkst2.dcloud.cisco.com) and navigate to Collaboration Control Hub at <https://admin.webex.com>.
 
       b. Login to Control Hub as the compliance officer, Anita Perez by entering: aperez@cbXXX.dc-YY.com. Click **Sign In**.
 
