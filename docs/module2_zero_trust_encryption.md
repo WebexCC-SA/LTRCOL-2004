@@ -549,13 +549,13 @@ Now that two users have been provisioned for Webex Calling and SIP lines, it is 
 
       a. Zero Trust E2EE Webex calling is also now supported for 'Call on Webex' (non-SIP-based lines). 
 
-      b. Make another call from Charles Holland's Webex App on the local PC, but this time call 'Kellie Melby'. 
+      b. Make another call from Charles Holland's Webex App on the local PC, but this time call 'Kellie Melby'. On the remote PC Workstation 3 (WKST2), log back into the Webex App with Kellie's account (kmelby@cbXXX.dc-YY.com // dCloud123! - if you did <u>not</u> complete SSO in Module 1, then the password is dCloudZZZZ!).
             
       c. Because Kellie does not have an assigned SIP line number, the only available call option is 'Call on Webex'. 
             
       d. As before, after answering the call, notice that the call security icon is again a blue shield with a lock and the message "Zero Trust security is active" is again displayed indicating the call is Zero Trust E2EE."
 
-      ![](./media/E2ECallonWebex.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/E2E-CallonWebex.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
      
       e. Click the 'X' button to hang up the zero trust Call on Webex Call.
 
