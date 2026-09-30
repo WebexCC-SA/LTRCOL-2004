@@ -98,6 +98,10 @@ Before you start this section, lets enable watermarking capabilities in Control 
 
       ![](./media/image403.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
+      If you dont see the toast on the workstation, you can click on Meetings Tab in the webex App and click on "Join" to join the meeting.
+
+      ![](./media/meetingtoast.png)
+
 1. Click on **Join**, click **OK** in the **No microphone found** prompt. Click Join Meeting to enter the meeting.
 
       Click on **Meeting Info** then select **Security** and observe the security code. It has changed now that a new attendee has joined. Feel free to verify the certificate for Anita.
@@ -138,9 +142,8 @@ In this section, you will learn some features that are made available in an End-
 
 1. Connect to a Video System: In an E2EE meeting, Cisco video devices (RoomOS) can seamlessly join a meeting. In this lab, there are no video endpoints available for testing. However, you should know that Cisco video devices (RoomOS) can join an E2EE meeting. Refer to the screenshots below showing a video device joining a meeting and the identity certificate issued to the device.
 
-      ![](./media/image291.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-
-      ![](./media/image292.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+     
+      ![](./media/Video.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. Click the arrow next to the Unmute button to review. Audio Options: Zero Trust E2EE meetings do not give Webex access to meeting encryption keys. This means that cloud services and endpoints that need to decrypt meeting content cannot participate in E2EE meetings: e.g., PSTN and SIP endpoints. So, the only audio-only option available is a computer running the Webex App.
 
