@@ -545,6 +545,19 @@ Now that two users have been provisioned for Webex Calling and SIP lines, it is 
 
       b. Click the 'X' button to hang up the zero trust E2EE Webex call.
 
+1. Make a Zero Trust E2EE Webex 'Call on Webex' Call
+
+      a. Zero Trust E2EE Webex calling is also now supported for 'Call on Webex' (non-SIP-based lines). 
+
+      b. Make another call from Charles Holland's Webex App on the local PC, but this time call 'Kellie Melby'. 
+            
+      c. Because Kellie does not have an assigned SIP line number, the only available call option is 'Call on Webex'. 
+            
+      d. As before, after answering the call, notice that the call security icon is again a blue shield with a lock and the message "Zero Trust security is active" is again displayed indicating the call is Zero Trust E2EE."
+
+      ![](./media/E2ECallonWebex.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+     
+      e. Click the 'X' button to hang up the zero trust Call on Webex Call.
 
 This concludes Module 2
 
