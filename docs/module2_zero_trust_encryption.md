@@ -223,6 +223,8 @@ Let's look at enabling and testing these features: <span style="color: green;"><
 1. Click on Schedule, there is no need to start the meeting as you shall
 use a shared org to test watermark analysis.
 
+**If you dont see the watermark options appear, sign out and sign back in on the Webex App**
+
 **For the purpose of this lab and the practicality of multiple participants
 recording audio simultaneously for testing this feature, the below part
 is review only. Please see a proctor to get an audio file for testing
@@ -405,28 +407,33 @@ In this module we shall leverage GetReal Security and Webex for Deepfake detecti
 
 **Step 4: Preview the violations on GetReal Portal.**
 
-1. So we have created a test case where we have GetReal Trust Advisor flagging the participant as an impersonator.
-1. Let's have a quick look into how those violations are captured on GetReal portal.
+1. Now lets have a quick look at the GetReal portal to see the analysis of the recently concluded meeting and how those violations are captured on GetReal portal.
 
-1. On your local PC or any of the lab workstations , open an incognito instance of Chrome browser and Browse to url https://app.getreallabs.com/ , click on "Continue with Webex".
+1. On your local PC or any of the lab workstations , open an incognito instance of Chrome browser and Browse to url https://app.getreallabs.com/ 
 
 1. Login with kmelby@cb311.dc-01.com and password dCloud0831! 
+
+1. Click on "Continue with Webex".
+
+      ![](./media/GetRealLogin.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
 1. On the left hand side you will see an option with identity violations, select "Identity Violations" and in the period option select 365 days.
 
       ![](./media/image402.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
-      ![](./media/GetReal365Days.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
-
-1. You should your violation right up on top, however before we go there lets review the one which has id "GR-1". You will see it has not only detected a Face Swap but also a known threat actor in terms of Fake IT worker. Expand on both the options to learn more on the violation by clicking "Full Details". 
-Also you will see that there is a video recording of the interaction in GR-1. Move the time stamp to 9-10 minutes into the conversation to how the user faked into a known threat actor.
-
-      ![](./media/image351.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+   
+1. You should your violation right up on top, 
 
 
-1. Perform the same analysis for your recent violation.
+      ![](./media/Violations.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+
+
+1. Perform the  analysis for your recent violation. Click on View Details to view further details.
+
+      ![](./media/Deepfake2026.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+
 1. Once completed logout of GetReal portal and ensure you are signed out of the webex app from your Local PC. 
-1. Since this is a shared account, please do not make any changes on this account.
+<span style="color: Green;"> <strong> Since this is a shared account, please do not make any changes on this account.</span></strong></strong>
 
 ## Provision users and configure Zero Trust End-to-End Encrypted Calling
 
