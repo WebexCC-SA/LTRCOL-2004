@@ -1,0 +1,1265 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance">
+      
+      
+        <meta name="author" content="Scott Kiewert">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../template_assets/webex75.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Cisco Codec EQ: Cross View and Presenter Track Camera — xAPI Reference - LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cisco-codec-eq-cross-view-and-presenter-track-camera-xapi-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-header__button md-logo" aria-label="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cisco Codec EQ: Cross View and Presenter Track Camera — xAPI Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lab_setup/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Lab Setup
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module1_identity/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 1 - Webex Identity
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module2_zero_trust_encryption/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 2 - Webex Zero Trust Encryption
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../module3_compliance/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Module 3 - Webex Compliance
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../conclusion/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Conclusion
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../appendix/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Appendix
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../print_page/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Print Lab Guide
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" class="md-nav__button md-logo" aria-label="LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance" data-md-component="logo">
+      
+  <img src="../template_assets/webexLogo91.png" alt="logo">
+
+    </a>
+    LAB-21200 Securing Webex with Identity Management, Zero Trust Encryption, and Data Compliance
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module1_identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 1 - Webex Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module2_zero_trust_encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 2 - Webex Zero Trust Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module3_compliance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module 3 - Webex Compliance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../conclusion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../print_page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Print Lab Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cisco-codec-eq-cross-view-and-presenter-track-camera-xapi-reference">Cisco Codec EQ: Cross View and Presenter Track Camera — xAPI Reference</h1>
+<p><strong>Document version:</strong> 1.0<br>
+<strong>Applicable devices:</strong> Cisco Codec EQ (RoomOS)<br>
+<strong>Reference:</strong> <a href="https://roomos.cisco.com/xapi">RoomOS xAPI</a></p>
+<hr>
+<h2 id="export-to-pdf">Export to PDF</h2>
+<ul>
+<li><strong>PDF generated:</strong> <code>docs/cisco_codec_eq_crossview_presentertrack_xapi.pdf</code> (4 pages).</li>
+<li><strong>To regenerate or create a new PDF:</strong> Open <code>docs/cisco_codec_eq_crossview_presentertrack_xapi.html</code> in Chrome or Safari → <strong>File → Print → Save as PDF</strong> (or <strong>Print → PDF → Save as PDF</strong> on macOS).</li>
+</ul>
+<hr>
+<h2 id="1-overview">1. Overview</h2>
+<p>The <strong>Cisco Codec EQ</strong> is a RoomOS-based video conferencing endpoint that supports advanced camera features:</p>
+<ul>
+<li><strong>Cross View</strong> — AI-driven cinematic meeting views using multiple cameras (PTZ 4K or Quad) to automatically choose the best angles and frame participants.</li>
+<li><strong>Presenter Track</strong> — Camera automatically follows the active presenter/speaker when using a PTZ 4K or Precision 60 camera.</li>
+</ul>
+<p>Control and automation are done via <strong>xAPI</strong> (RoomOS XML/HTTP API), which provides Commands, Configuration, Status, and Events for cameras and video.</p>
+<hr>
+<h2 id="2-cross-view">2. Cross View</h2>
+<h3 id="21-what-is-cross-view">2.1 What Is Cross View?</h3>
+<p>Cross View uses multiple cameras and room analytics to:</p>
+<ul>
+<li>Analyze room activity and speaker position</li>
+<li>Recognize and track participants</li>
+<li>Select optimal camera angles and compose cinematic views</li>
+</ul>
+<h3 id="22-typical-codec-eq-cross-view-setup">2.2 Typical Codec EQ Cross View Setup</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Codec EQ</strong></td>
+<td>Main room codec</td>
+</tr>
+<tr>
+<td><strong>Two side cameras</strong></td>
+<td>PTZ 4K or Quad (left/right)</td>
+</tr>
+<tr>
+<td><strong>One Quad camera</strong></td>
+<td>Above the display</td>
+</tr>
+<tr>
+<td><strong>Ceiling or Table Microphones Pro</strong></td>
+<td>For speaker location and framing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-setup-and-calibration">2.3 Setup and Calibration</h3>
+<ul>
+<li>Follow Cisco <strong>Multi Camera Setup Guidelines</strong> (room dimensions, camera placement, table, seating, microphones, lighting).</li>
+<li>Use the <strong>Multi camera director</strong> setup wizard on the device or in the web UI.</li>
+<li>Use the <strong>calibration board</strong> during the wizard for correct alignment.</li>
+<li>Configure <strong>SpeakerTrack</strong> with external microphones for better framing (see SpeakerTrack xAPI below).</li>
+</ul>
+<h3 id="24-related-xapi-areas-for-cross-view">2.4 Related xAPI Areas for Cross View</h3>
+<p>Cross View uses multi-camera and SpeakerTrack behavior. Relevant xAPI namespaces include:</p>
+<ul>
+<li><strong>Cameras</strong> — camera list, roles, placement, presets</li>
+<li><strong>Cameras SpeakerTrack</strong> — tracking, frames, multi-camera, meeting zone</li>
+<li><strong>Video Input</strong> — which camera/connector is used as main video source</li>
+<li><strong>Configuration.Cameras.Camera[n].Role</strong> — assign camera roles (e.g. for left/right/overhead)</li>
+</ul>
+<p>Example: set camera role (syntax may vary by RoomOS version):</p>
+<div class="highlight"><pre><span></span><code>Configuration.Cameras.Camera[1].Role
+Configuration.Cameras.Camera[2].Role
+Configuration.Cameras.Camera[3].Role
+</code></pre></div>
+<hr>
+<h2 id="3-presenter-track">3. Presenter Track</h2>
+<h3 id="31-what-is-presenter-track">3.1 What Is Presenter Track?</h3>
+<p>Presenter Track uses a <strong>PTZ 4K</strong> or <strong>Precision 60</strong> camera to:</p>
+<ul>
+<li>Detect when a person is in the presenter area (trigger zone)</li>
+<li>Track the presenter’s head and keep them framed</li>
+<li>Automatically turn off when switching presets, changing camera, or going to standby (unless using Persistent mode)</li>
+</ul>
+<h3 id="32-enable-presenter-track-configuration">3.2 Enable Presenter Track (Configuration)</h3>
+<p>Before using commands, enable the feature:</p>
+<table>
+<thead>
+<tr>
+<th>xAPI Path</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Configuration.Cameras.PresenterTrack.Enabled</code></td>
+<td>Config</td>
+<td>Enable/disable Presenter Track</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.PresenterTrack.Connector</code></td>
+<td>Config</td>
+<td>Connector used for the PTZ/presenter camera</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.PresenterTrack.TriggerZone</code></td>
+<td>Config</td>
+<td>Define the trigger zone for presenter detection</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.PresenterTrack.PresenterDetectedStatus</code></td>
+<td>Config</td>
+<td>Whether to show “presenter detected” on screen</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.PresenterTrack.CameraPosition.Pan</code></td>
+<td>Config</td>
+<td>Default/limit pan</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.PresenterTrack.CameraPosition.Tilt</code></td>
+<td>Config</td>
+<td>Default/limit tilt</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.PresenterTrack.CameraPosition.Zoom</code></td>
+<td>Config</td>
+<td>Default/limit zoom</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-presenter-track-commands">3.3 Presenter Track Commands</h3>
+<h4 id="commandcameraspresentertrackset">Command.Cameras.PresenterTrack.Set</h4>
+<p>Set the presenter tracking <strong>mode</strong>. Only applies when a PTZ 4K or Precision 60 is used for presenter tracking and Presenter Track is enabled.</p>
+<p><strong>Syntax (JavaScript):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">xapi</span><span class="p">.</span><span class="nx">Command</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nb">Set</span><span class="p">({</span><span class="w"> </span><span class="nx">Mode</span><span class="o">:</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>Modes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Off</strong></td>
+<td>Turn off presenter tracking</td>
+</tr>
+<tr>
+<td><strong>Follow</strong></td>
+<td>Turn on presenter tracking (default when activated from UI). Turns off when preset changes, another camera is selected, or standby is activated</td>
+</tr>
+<tr>
+<td><strong>Diagnostic</strong></td>
+<td>Show trigger zone and tracking state on screen (red = trigger zone, green = tracked head, etc.) for troubleshooting</td>
+</tr>
+<tr>
+<td><strong>Background</strong></td>
+<td>Used by codec scripts; tracking on without cropping</td>
+</tr>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Used by web UI to show trigger zone during setup</td>
+</tr>
+<tr>
+<td><strong>Persistent</strong></td>
+<td>Tracking stays on until explicitly turned off (e.g. preset change turns it off)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example (Follow):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">xapi</span><span class="p">.</span><span class="nx">Command</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nb">Set</span><span class="p">({</span><span class="w"> </span><span class="nx">Mode</span><span class="o">:</span><span class="w"> </span><span class="s1">'Follow'</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>Example (Off):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">xapi</span><span class="p">.</span><span class="nx">Command</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nb">Set</span><span class="p">({</span><span class="w"> </span><span class="nx">Mode</span><span class="o">:</span><span class="w"> </span><span class="s1">'Off'</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>Example (Diagnostic):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nx">xapi</span><span class="p">.</span><span class="nx">Command</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nb">Set</span><span class="p">({</span><span class="w"> </span><span class="nx">Mode</span><span class="o">:</span><span class="w"> </span><span class="s1">'Diagnostic'</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>Applicable products (among others):</strong> Codec EQ, Codec Pro, Board Pro 55/55 G2/75/75 G2, Room 70 Dual G2, Room 70 Single G2, Room Bar Pro.</p>
+<hr>
+<h4 id="commandcameraspresentertrackstoreposition">Command.Cameras.PresenterTrack.StorePosition</h4>
+<p>Store the current camera position as the presenter track position.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">xapi</span><span class="p">.</span><span class="nx">Command</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nx">StorePosition</span><span class="p">();</span>
+</code></pre></div>
+<hr>
+<h4 id="commandcameraspresentertrackclearposition">Command.Cameras.PresenterTrack.ClearPosition</h4>
+<p>Clear the stored presenter track position.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">xapi</span><span class="p">.</span><span class="nx">Command</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nx">ClearPosition</span><span class="p">();</span>
+</code></pre></div>
+<hr>
+<h3 id="34-presenter-track-status">3.4 Presenter Track Status</h3>
+<table>
+<thead>
+<tr>
+<th>xAPI Path</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Status.Cameras.PresenterTrack.Availability</code></td>
+<td>Whether Presenter Track is available</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.PresenterTrack.Status</code></td>
+<td>Current status</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.PresenterTrack.PresenterDetected</code></td>
+<td>Whether a presenter is currently detected</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example (read status):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">xapi</span><span class="p">.</span><span class="nx">Status</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nx">Status</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">detected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">xapi</span><span class="p">.</span><span class="nx">Status</span><span class="p">.</span><span class="nx">Cameras</span><span class="p">.</span><span class="nx">PresenterTrack</span><span class="p">.</span><span class="nx">PresenterDetected</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+</code></pre></div>
+<hr>
+<h2 id="4-speakertrack-multi-camera-cross-view">4. SpeakerTrack (Multi-Camera / Cross View)</h2>
+<p>SpeakerTrack controls how the system tracks speakers and composes views; it is used together with Cross View and multi-camera setups.</p>
+<h3 id="41-speakertrack-commands">4.1 SpeakerTrack Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Activate</code></td>
+<td>Activate SpeakerTrack</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Deactivate</code></td>
+<td>Deactivate SpeakerTrack</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Set</code></td>
+<td>Set SpeakerTrack behavior/options</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Closeup.Activate</code></td>
+<td>Activate close-up view</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Closeup.Deactivate</code></td>
+<td>Deactivate close-up view</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Frames.Activate</code></td>
+<td>Activate frame view</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Frames.Deactivate</code></td>
+<td>Deactivate frame view</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.ViewLimits.Activate</code></td>
+<td>Use view limits</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.ViewLimits.Deactivate</code></td>
+<td>Ignore view limits</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.ViewLimits.StorePosition</code></td>
+<td>Store current position as limit</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Whiteboard.StorePosition</code></td>
+<td>Store whiteboard position</td>
+</tr>
+<tr>
+<td><code>Command.Cameras.SpeakerTrack.Whiteboard.ActivatePosition</code></td>
+<td>Activate whiteboard position</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-speakertrack-configuration-selected">4.2 SpeakerTrack Configuration (Selected)</h3>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.Mode</code></td>
+<td>SpeakerTrack mode</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.Closeup</code></td>
+<td>Close-up behavior</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.DefaultBehavior</code></td>
+<td>Default behavior when activated</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.TrackingMode</code></td>
+<td>Tracking mode</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.Frames.Mode</code></td>
+<td>Frames (multi-camera) mode</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.Frames.RowConfiguration</code></td>
+<td>Row layout for frames</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.MeetingZone.Mode</code></td>
+<td>Meeting zone mode</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.MeetingZone.Area</code></td>
+<td>Meeting zone area</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.SpeakerTrack.MultiCamera.CalibrationMonitoring</code></td>
+<td>Multi-camera calibration</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.Camera[1..15].SpeakerTrack.Overview</code></td>
+<td>Per-camera overview</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-speakertrack-status">4.3 SpeakerTrack Status</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Status.Cameras.SpeakerTrack.Availability</code></td>
+<td>Whether SpeakerTrack is available</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.SpeakerTrack.State</code></td>
+<td>Current state</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.SpeakerTrack.Status</code></td>
+<td>Status string</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.SpeakerTrack.ActiveConnector</code></td>
+<td>Active camera connector</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.SpeakerTrack.Frames.Availability</code></td>
+<td>Frames feature available</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.SpeakerTrack.Frames.Status</code></td>
+<td>Frames status</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.SpeakerTrack.ViewLimits.Pan/Tilt/Zoom</code></td>
+<td>Current view limits</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-camera-configuration-relevant-to-codec-eq">5. Camera Configuration (Relevant to Codec EQ)</h2>
+<h3 id="51-camera-roles-and-identity">5.1 Camera Roles and Identity</h3>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Configuration.Cameras.Camera[n].Role</code></td>
+<td>Role of camera n (e.g. for Cross View left/right/overhead)</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.Camera[n].PtzAutoFraming</code></td>
+<td>PTZ auto-framing on/off</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.Camera[n].DefaultPosition.Pan/Tilt/Zoom</code></td>
+<td>Default PTZ position</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.Camera[n].Placement.X/Y/Z</code></td>
+<td>Physical placement (for multi-camera)</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.Camera[n].Focus.Mode</code></td>
+<td>Focus mode (e.g. Auto)</td>
+</tr>
+<tr>
+<td><code>Configuration.Cameras.Camera[n].Standby.Mode</code></td>
+<td>Standby behavior</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-camera-status">5.2 Camera Status</h3>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Status.Cameras.Camera[n].Connected</code></td>
+<td>Camera connected</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.Camera[n].Position.Pan/Tilt/Zoom</code></td>
+<td>Current PTZ position</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.Camera[n].Model</code></td>
+<td>Camera model</td>
+</tr>
+<tr>
+<td><code>Status.Cameras.Camera[n].DetectedConnector</code></td>
+<td>Connector used</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-connecting-to-xapi">6. Connecting to xAPI</h2>
+<p>You can talk to the Codec EQ over:</p>
+<ul>
+<li><strong>SSH</strong> — run <code>xapi</code> or send commands in the CLI</li>
+<li><strong>HTTP/HTTPS</strong> — POST XML or JSON to the device (e.g. <code>/putxml</code>)</li>
+<li><strong>WebSocket</strong> — for real-time status/events</li>
+<li><strong>RS-232</strong> — for control systems</li>
+</ul>
+<p><strong>Example HTTP (conceptual):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nf">POST</span> <span class="nn">/putxml</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">&lt;codec-ip&gt;</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/xml</span>
+
+<span class="nt">&lt;Command&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Cameras&gt;</span>
+<span class="w">    </span><span class="nt">&lt;PresenterTrack&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Set&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Mode&gt;</span>Follow<span class="nt">&lt;/Mode&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/Set&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/PresenterTrack&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/Cameras&gt;</span>
+<span class="nt">&lt;/Command&gt;</span>
+</code></pre></div>
+<hr>
+<h2 id="7-quick-reference-presenter-track">7. Quick Reference — Presenter Track</h2>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>xAPI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turn presenter track on</td>
+<td><code>Command.Cameras.PresenterTrack.Set({ Mode: 'Follow' })</code></td>
+</tr>
+<tr>
+<td>Turn presenter track off</td>
+<td><code>Command.Cameras.PresenterTrack.Set({ Mode: 'Off' })</code></td>
+</tr>
+<tr>
+<td>Troubleshoot on screen</td>
+<td><code>Command.Cameras.PresenterTrack.Set({ Mode: 'Diagnostic' })</code></td>
+</tr>
+<tr>
+<td>Enable feature</td>
+<td><code>Configuration.Cameras.PresenterTrack.Enabled</code> = true</td>
+</tr>
+<tr>
+<td>Check if presenter detected</td>
+<td><code>Status.Cameras.PresenterTrack.PresenterDetected</code></td>
+</tr>
+<tr>
+<td>Store presenter position</td>
+<td><code>Command.Cameras.PresenterTrack.StorePosition()</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="8-references">8. References</h2>
+<ul>
+<li><strong>RoomOS xAPI:</strong> https://roomos.cisco.com/xapi  </li>
+<li><strong>PresenterTrack.Set:</strong> https://roomos.cisco.com/xapi/Command.Cameras.PresenterTrack.Set/  </li>
+<li><strong>Cameras domain:</strong> https://roomos.cisco.com/xapi/domain/?domain=Cameras  </li>
+<li><strong>Cisco Multi Camera Setup / Cross View:</strong> See Cisco Multi Camera Setup Guidelines and Cross-View setup and guidelines (help.webex.com, cisco.com documentation).  </li>
+<li><strong>RoomOS API Reference Guide (PDF):</strong> Cisco documentation portal (e.g. roomos-1114 or later API Reference Guide).</li>
+</ul>
+<hr>
+<p><em>This document is a concise reference for Cisco Codec EQ Cross View and Presenter Track with xAPI. For exact parameters and product support matrix, use the official RoomOS xAPI reference and device-specific release notes.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 Cisco
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+        <script src="../template_assets/js/newLoad.js"></script>
+      
+        <script src="../template_assets/js/setInfo.js"></script>
+      
+        <script src="../template_assets/js/labConfig.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "fade", "closeEffect": "fade", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
