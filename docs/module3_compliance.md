@@ -192,7 +192,7 @@ Webex Compliance Hub has a full set of compliance capabilities including eDiscov
 
       ![](./media/image210_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
-      By default. Webex Compliance Hub automatically configures a retention library called 'Default' when the Webex Compliance Hub org is created.
+      By default, Webex Compliance Hub automatically configures a retention library called 'Default' when the Webex Compliance Hub org is created.
 
       ![](./media/image211_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -551,7 +551,7 @@ For the purposes of this lab, the focus is on user identity for data loss preven
       
       ![](./media/image_m3_357_v2.png){ width="800" }
       
-      Then,in the Group Policy Management Editor (1) under *Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Audit Policy* (2) right-click 'Audit logon events' (3) and select Properties. Finally, tick ‘Define these policy settings’ and then, tick 'Success’ and ‘Failure' (4) and click ‘OK’ (5) to save.
+      Then, in the Group Policy Management Editor (1) under *Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Audit Policy* (2) right-click 'Audit logon events' (3) and select Properties. Finally, tick ‘Define these policy settings’ and then, tick 'Success’ and ‘Failure' (4) and click ‘OK’ (5) to save.
       
       ![](./media/image_m3_358_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
 
@@ -598,7 +598,7 @@ API keys are required for securing the integration between Secure Access and the
 
 1. Configure Directory Integration (Secure Access)
       
-      Navigate to **Connect > User, Groups, and Endpoint Devices**
+      Navigate to **Connect > User, Groups, and Endpoint Devices > Configuration management > Integrate directories**
       
       a. Start the configuration flow for integration with Active Directory
       
