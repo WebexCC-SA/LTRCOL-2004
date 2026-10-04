@@ -369,11 +369,15 @@ In this module we shall leverage GetReal Security and Webex for Deepfake detecti
     **If you dont see the option of "Add GetReal Trust Advisor to the Call" , click on the refresh icon at top of the app window.**
      
 
-
 1. This process does take a couple of minutes , once its ready you will get a notification on the meeting window to "Let In" the trust advisor. 
 
       ![](./media/image337.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
 
+1. If you don't see the option to add GetReal Trust Advisor to the call and you see the option for "Paste Meeting Link Below", Click on the Meeting information , click on "Copy Meeting Link" and the paste the URL to the dialog box for GetReal.
+
+      ![](./media/GetRealMeetingURL.png){ width="400" style="border: 1px solid #888; border-radius: 4px;" }
+
+      <span style="color: green;"><strong>Please ensure that you are copying the meeting link and not the Meeting Information<span style="color: Red;"> <strong>
 
 1. At this point you should have two participants on the call, the person you are logged in with and the GetReal Trust Advisor.
 
