@@ -627,7 +627,7 @@ API keys are required for securing the integration between Secure Access and the
       - Active Directory Connector (zip file – Cisco-Windows-Service.zip)
       - Windows Configuration Script for Domain Controller (wsf file – Cisco-WindowsConfigurationScript-YYYY-MM-DD.wsf)
       
-      ![](./media/image_m3_367.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+      ![](./media/image_m3_367_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
       
       Once downloads complete, proceed to the next step.
       
@@ -697,6 +697,8 @@ API keys are required for securing the integration between Secure Access and the
       Note: It may take as long as 30 minutes for the AD connector and domain controller to complete checks and change from grey circle ('Pending checks') to blue check mark (‘Okay’). Continue with the next section of the lab and return to check the status of the connector later.
       
       ![](./media/image_m3_373_v2.png){ width="800" style="border: 1px solid #888; border-radius: 4px;" }
+
+      Note: In order to see all three components listed as shown above, set the 'Rows per page' dropdown to '10'.
 
 
 ## Cisco Secure Access Webex Integration and Policy Configuration
